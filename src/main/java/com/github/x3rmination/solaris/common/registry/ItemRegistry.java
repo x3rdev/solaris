@@ -1,14 +1,10 @@
 package com.github.x3rmination.solaris.common.registry;
 
 import com.github.x3rmination.solaris.Solaris;
-import com.github.x3rmination.solaris.common.item.FlamingFlambergeItem;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.ItemTags;
+import com.github.x3rmination.solaris.common.item.FlamingFlamberge.FlamingFlambergeItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraftforge.common.ForgeTier;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
