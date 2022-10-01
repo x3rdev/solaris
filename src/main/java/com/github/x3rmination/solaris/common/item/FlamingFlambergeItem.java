@@ -1,11 +1,23 @@
 package com.github.x3rmination.solaris.common.item;
 
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.ForgeTier;
 
 public class FlamingFlambergeItem extends SwordItem {
 
-    public FlamingFlambergeItem(Tier p_43269_, int p_43270_, float p_43271_, Properties p_43272_) {
-        super(p_43269_, p_43270_, p_43271_, p_43272_);
+    public FlamingFlambergeItem(Properties pProperties) {
+        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 9, -2.83F, pProperties);
+    }
+
+    @Override
+    public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
+        pTarget.setRemainingFireTicks(Math.max(100, pTarget.getRemainingFireTicks()));
+        return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 }
