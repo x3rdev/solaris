@@ -19,7 +19,7 @@ public class FlamingFlambergeParticles {
     @SubscribeEvent
     public static void playerTickEvent(RenderPlayerEvent.Pre event) {
         ItemStack itemStack = event.getPlayer().getMainHandItem();
-        if(itemStack.getItem() instanceof FlamingFlambergeItem) {
+        if(itemStack.getItem() instanceof FlamingFlambergeItem && false) {
             Collider collider = EpicFightCapabilities.getItemStackCapability(itemStack).getWeaponCollider();
             try {
                 Field field = Collider.class.getDeclaredField("worldCenter");

@@ -8,7 +8,7 @@
 		"6": "solaris:/item/flaming_flamberge/fire_gem",
 		"7": "solaris:/item/flaming_flamberge/flam_blade",
 		"8": "solaris:/item/flaming_flamberge/flam_guard",
-		"particle": "solaris:textures/item/flaming_flamberge/flam_edge"
+		"particle": "solaris:item/flaming_flamberge/flam_edge"
 	},
 	"elements": [
 		{

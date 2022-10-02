@@ -1,8 +1,7 @@
 package com.github.x3rmination.solaris;
 
 import com.github.x3rmination.solaris.client.ClientSetup;
-import com.github.x3rmination.solaris.common.registry.ItemRegistry;
-import com.github.x3rmination.solaris.common.registry.MobEffectRegistry;
+import com.github.x3rmination.solaris.common.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -26,9 +25,13 @@ public class Solaris {
         modEventBus.addListener(this::setup);
         modEventBus.addListener(ClientSetup::setup);
         modEventBus.addListener(ClientSetup::addLayers);
+        modEventBus.addListener(ClientSetup::registerParticleFactories);
 
+        BlockRegistry.BLOCKS.register(modEventBus);
+        BlockItemRegistry.BLOCK_ITEMS.register(modEventBus);
         ItemRegistry.ITEMS.register(modEventBus);
         MobEffectRegistry.POTIONS.register(modEventBus);
+        ParticleRegistry.PARTICLE_TYPES.register(modEventBus);
 
         forgeBus.register(this);
     }

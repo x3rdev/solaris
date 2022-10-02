@@ -4,7 +4,6 @@ import com.github.x3rmination.solaris.common.registry.MobEffectRegistry;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -15,7 +14,7 @@ import net.minecraftforge.common.ForgeTier;
 public class FrostbiteItem extends SwordItem {
 
     public FrostbiteItem(Properties pProperties) {
-        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 9, -3F, pProperties);
+        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -2F, pProperties);
     }
 
     @Override
@@ -27,7 +26,6 @@ public class FrostbiteItem extends SwordItem {
         } else {
             potency = effect.getAmplifier() + 1;
         }
-        System.out.println(potency);
         if(potency > 3) {
             pTarget.removeEffect(MobEffectRegistry.FROSTBITE.get());
             pTarget.hurt(DamageSource.FREEZE, 6);

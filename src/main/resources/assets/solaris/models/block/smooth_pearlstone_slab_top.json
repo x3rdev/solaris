@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "solaris:block/smooth_pearlstone",
+    "top": "solaris:block/smooth_pearlstone",
+    "side": "solaris:block/smooth_pearlstone_slabs_top"
+  }
+}
