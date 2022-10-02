@@ -2,6 +2,7 @@ package com.github.x3rmination.solaris.common.registry;
 
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.item.FlamingFlamberge.FlamingFlambergeItem;
+import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -15,6 +16,9 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> FLAMING_FLAMBERGE = ITEMS.register("flaming_flamberge",
             () -> new FlamingFlambergeItem((new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> FROSTBITE = ITEMS.register("frostbite",
+            () -> new FrostbiteItem((new Item.Properties()).tab(ModItemTab.instance)));
 
     public static class ModItemTab extends CreativeModeTab {
         public static final ModItemTab instance = new ModItemTab(CreativeModeTab.TABS.length, Solaris.MOD_ID);
