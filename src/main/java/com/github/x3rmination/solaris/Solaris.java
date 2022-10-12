@@ -6,11 +6,15 @@ import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import top.theillusivec4.curios.api.SlotTypeMessage;
+import top.theillusivec4.curios.api.SlotTypePreset;
 
 @Mod(Solaris.MOD_ID)
 public class Solaris {
@@ -23,6 +27,7 @@ public class Solaris {
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
 
         modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::onInterModEnqueueEvent);
         modEventBus.addListener(ClientSetup::setup);
         modEventBus.addListener(ClientSetup::addLayers);
         modEventBus.addListener(ClientSetup::registerParticleFactories);
@@ -41,6 +46,11 @@ public class Solaris {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+    }
+
+    @SubscribeEvent
+    public void onInterModEnqueueEvent(final InterModEnqueueEvent event) {
+        InterModComms.sendTo("curios", SlotTypeMessage.REGISTER_TYPE, () -> SlotTypePreset.BODY.getMessageBuilder().build());
     }
 
 }

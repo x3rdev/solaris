@@ -11,7 +11,8 @@ import net.minecraftforge.registries.RegistryObject;
 public class MobEffectRegistry {
 
     public static final DeferredRegister<MobEffect> POTIONS = DeferredRegister.create(ForgeRegistries.MOB_EFFECTS, Solaris.MOD_ID);
-
     public static final RegistryObject<MobEffect> FROSTBITE = POTIONS.register("frostbite",
             () -> new FrostbiteMobEffect(MobEffectCategory.HARMFUL, 0x03fce8));
+    public static final RegistryObject<MobEffect> FIRE_RING = POTIONS.register("fire_ring",
+            () -> new FrostbiteMobEffect(MobEffectCategory.HARMFUL, 0xff5500));
 }

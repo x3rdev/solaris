@@ -46,3 +46,15 @@ description = '''
     versionRange = "[18.3.6,)"
     ordering = "NONE"
     side = "BOTH"
+[[dependencies.solaris]]
+    modId = "curios"
+    mandatory = true
+    versionRange = "[1.18.2-5.0.7.1,)"
+    ordering = "NONE"
+    side = "BOTH"
+[[dependencies.solaris]]
+    modId = "geckolib3"
+    mandatory = true
+    versionRange = "[3.0.41,)"
+    ordering = "NONE"
+    side = "BOTH"

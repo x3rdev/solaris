@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
+	"gui_light": "front",
 	"textures": {
 		"0": "solaris:/item/flaming_flamberge/flam_edge",
 		"4": "solaris:/item/flaming_flamberge/line",

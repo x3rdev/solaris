@@ -2,6 +2,7 @@ package com.github.x3rmination.solaris.common.item.FlamingFlamberge;
 
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
@@ -17,6 +18,7 @@ public class FlamingFlambergeItem extends SwordItem {
     @Override
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
         pTarget.setRemainingFireTicks(Math.max(100, pTarget.getRemainingFireTicks()));
+        pTarget.hurt(DamageSource.ON_FIRE, 1);
         return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 
