@@ -1,6 +1,7 @@
 package com.github.x3rmination.solaris.common.registry;
 
 import com.github.x3rmination.solaris.Solaris;
+import com.github.x3rmination.solaris.common.mob_effect.BaseMobEffect;
 import com.github.x3rmination.solaris.common.mob_effect.FrostbiteMobEffect;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -14,5 +15,5 @@ public class MobEffectRegistry {
     public static final RegistryObject<MobEffect> FROSTBITE = POTIONS.register("frostbite",
             () -> new FrostbiteMobEffect(MobEffectCategory.HARMFUL, 0x03fce8));
     public static final RegistryObject<MobEffect> FIRE_RING = POTIONS.register("fire_ring",
-            () -> new FrostbiteMobEffect(MobEffectCategory.HARMFUL, 0xff5500));
+            () -> new BaseMobEffect(MobEffectCategory.HARMFUL, 0xff5500));
 }

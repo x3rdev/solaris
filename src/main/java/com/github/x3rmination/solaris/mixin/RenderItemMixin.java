@@ -1,99 +1,161 @@
 package com.github.x3rmination.solaris.mixin;
 
-import com.mojang.blaze3d.systems.RenderSystem;
+import com.github.x3rmination.solaris.common.registry.ItemRegistry;
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Matrix3f;
 import com.mojang.math.Matrix4f;
-import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.phys.AABB;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import yesman.epicfight.api.animation.Joint;
 import yesman.epicfight.api.animation.JointTransform;
 import yesman.epicfight.api.model.Armature;
-import yesman.epicfight.api.utils.math.Vec3f;
 import yesman.epicfight.client.renderer.patched.item.RenderItemBase;
 import yesman.epicfight.gameasset.Models;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
-import java.util.Map;
+import java.util.List;
 import java.util.Random;
 
 @Mixin(RenderItemBase.class)
 public abstract class RenderItemMixin {
 
-    @Inject(method = "renderItemInHand", at = @At("TAIL"), remap = false)
+//    @Inject(method = "renderItemInHand", at = @At("TAIL"), remap = false)
     public void renderItemInHandMixin(ItemStack stack, LivingEntityPatch<?> entitypatch, InteractionHand hand, MultiBufferSource buffer, PoseStack poseStack, int packedLight, CallbackInfo ci) {
         Armature armature = entitypatch.getEntityModel(Models.LOGICAL_SERVER).getArmature();
         armature.initializeTransform();
         Matrix3f matrix3f = poseStack.last().normal();
         Matrix4f matrix4f = poseStack.last().pose();
 
-//        // Elbow
-//        double torsoX = 0.0;
-//        double torsoY = 1.5;
-//        double torsoZ = 0.0;
-//        JointTransform Root = entitypatch.getAnimator().getPose(0.0F).getJointTransformData().get("Root");
-////        System.out.println(entitypatch.getAnimator().getPose(0.0F).getJointTransformData());
-//        if(Root == null) return;
-//        Vec3f RootTranslation = Root.translation();
-//        Vector3f RootStart = new Vector3f((float) (torsoX + RootTranslation.x), (float) (torsoY + RootTranslation.y), (float) (torsoZ + RootTranslation.z));
-//        Vector3f RootEnd = new Vector3f((float) (torsoX + RootTranslation.x) +  0.5F, (float) (torsoY + RootTranslation.y), (float) (torsoZ + RootTranslation.z));
-////        RootEnd.transform(Root.rotation());
-//        renderVector(RootStart, RootEnd, matrix3f, matrix4f, buffer);
+        List<Joint> jointList = armature.getJoints().stream().toList();
+        jointList.forEach(joint -> {
+//            System.out.println(joint.getName() + " " + jointList.indexOf(joint));
+        });
 
-        // Navel
+        /*
+        Joint positions are available in the Epic Fight Model
+         */
+
+        // Root
         JointTransform root = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Root");
         if(root == null) return;
-        Vector3f navelStart = new Vector3f(0, 0, 0);
-        Vector3f navelEnd = new Vector3f(0 + root.translation().x, 0.75F + root.translation().y, 0 + root.translation().z);
-        navelEnd.transform(root.rotation());
-        renderVector(navelStart, navelEnd, matrix3f, matrix4f, buffer);
+        Vector3f rootStart = new Vector3f(0, 0.75F, 0);
+        Vector3f rootEnd = new Vector3f(0, 0.05F, 0);
+        rootEnd.transform(root.rotation());
+        rootEnd.add(root.translation().x, root.translation().y, root.translation().z);
+        rootEnd.mul(root.scale().x, root.scale().y, root.scale().z);
+        rootEnd.mul(1, 1, -1);
+        rootEnd.add(rootStart);
+        renderVector(rootStart, rootEnd, matrix3f, matrix4f);
 
-        // Shoulder
+        // Torso
         JointTransform torso = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Torso");
-        JointTransform chest = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Chest");
         if(torso == null) return;
+        Vector3f torsoStart = rootEnd.copy();
+        Vector3f torsoEnd = new Vector3f(0, 0.3F, 0);
+        torsoEnd.transform(torso.rotation());
+        torsoEnd.add(torso.translation().x, torso.translation().y, torso.translation().z);
+        torsoEnd.mul(torso.scale().x, torso.scale().y, torso.scale().z);
+        torsoEnd.mul(1, 1, -1);
+        torsoEnd.add(torsoStart);
+        renderVector(torsoStart, torsoEnd, matrix3f, matrix4f);
+
+        // Chest
+        JointTransform chest = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Chest");
         if(chest == null) return;
-        Vector3f shoulderStart = navelEnd.copy();
-        Vector3f shoulderEnd = new Vector3f(0.25F, 1.5F + root.translation().y, 0F);
-        shoulderEnd.transform(root.rotation());
-        shoulderEnd.transform(chest.rotation());
-        shoulderEnd.mul(1, 1, -1);
-        renderVector(shoulderStart, shoulderEnd, matrix3f, matrix4f, buffer);
+        Vector3f chestStart = torsoEnd.copy();
+        Vector3f chestEnd = new Vector3f(0, 0.4F, 0);
+        chestEnd.transform(chest.rotation());
+        chestEnd.add(chest.translation().x, chest.translation().y, chest.translation().z);
+        chestEnd.mul(chest.scale().x, chest.scale().y, chest.scale().z);
+        chestEnd.mul(1, 1, -1);
+        chestEnd.add(chestStart);
+        renderVector(chestStart, chestEnd, matrix3f, matrix4f);
 
-        // Elbow
-//        System.out.println(entitypatch.getAnimator().getPose(4.0F).getJointTransformData());
-        JointTransform arm = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Arm_R");
+        // Chest to Shoulder_R
         JointTransform shoulder = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Shoulder_R");
-        if(arm == null) return;
         if(shoulder == null) return;
-        Vector3f elbowStart = shoulderEnd.copy();
-        Vector3f elbowEnd = new Vector3f(0.325F, 1.125F + root.translation().y, 0F);
-        elbowEnd.add(shoulder.translation().x, shoulder.translation().y, shoulder.translation().z);
-        renderVector(elbowStart, elbowEnd, matrix3f, matrix4f, buffer);
+        Vector3f shoulderStart = chestEnd.copy();
+        Vector3f shoulderEnd = new Vector3f(0.325F, -0.125F, 0);
+        shoulderEnd.transform(root.rotation());
+        shoulderEnd.transform(torso.rotation());
+        shoulderEnd.transform(chest.rotation());
+        shoulderEnd.transform(shoulder.rotation());
+//        shoulderEnd.mul(1, 1, -1);
+        shoulderEnd.add(shoulderStart);
+        renderVector(shoulderStart, shoulderEnd, matrix3f, matrix4f);
 
-        //Hand
+        // Shoulder_R to Arm_R
+        JointTransform arm = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Arm_R");
+        JointTransform elbow = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Elbow_R");
+        if(arm == null) return;
+        if(elbow == null) return;
+        Vector3f armStart = shoulderEnd.copy();
+        Vector3f armEnd = new Vector3f(0, -0.5F, 0);
+        armEnd.transform(root.rotation());
+        armEnd.transform(torso.rotation());
+        armEnd.transform(chest.rotation());
+//        armEnd.transform(shoulder.rotation());
+        armEnd.mul(1, 1, -1);
+        armEnd.transform(arm.rotation());
+        armEnd.transform(elbow.rotation());
+        armEnd.add(arm.translation().x, arm.translation().y, arm.translation().z);
+        armEnd.mul(arm.scale().x, arm.scale().y, arm.scale().z);
+        armEnd.add(armStart);
+        renderVector(armStart, armEnd, matrix3f, matrix4f);
 
+        // Arm_R to Hand_R
+
+        JointTransform handBone = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Hand_R");
+        if(handBone == null) return;
+        Vector3f handStart = armEnd.copy();
+        Vector3f handEnd = new Vector3f(0, -0.325F, 0);
+        handEnd.transform(root.rotation());
+        handEnd.transform(torso.rotation());
+        handEnd.transform(chest.rotation());
+        handEnd.transform(shoulder.rotation());
+        handEnd.transform(arm.rotation());
+        handEnd.transform(handBone.rotation());
+        handEnd.transform(elbow.rotation());
+        handEnd.mul(1, 1, -1);
+        handEnd.add(handStart);
+        renderVector(handStart, handEnd, matrix3f, matrix4f);
+
+        JointTransform tool = entitypatch.getAnimator().getPose(4.0F).getJointTransformData().get("Tool_R");
+        if(tool == null) return;
+        Vector3f toolStart = handEnd.copy();
+        Vector3f toolEnd = new Vector3f(0, 0, 1F);
+        handEnd.transform(root.rotation());
+        handEnd.transform(torso.rotation());
+        handEnd.transform(chest.rotation());
+        handEnd.transform(shoulder.rotation());
+        handEnd.transform(arm.rotation());
+        handEnd.transform(handBone.rotation());
+        handEnd.transform(elbow.rotation());
+        toolEnd.transform(tool.rotation());
+        toolEnd.mul(1, 1, -1);
+        toolEnd.add(toolStart);
+        renderVector(toolStart, toolEnd, matrix3f, matrix4f);
+
+        if(entitypatch.getOriginal() instanceof LocalPlayer localPlayer) {
+            swingEffect(localPlayer, toolEnd);
+        }
     }
 
-    private void renderVector(Vector3f startVertex, Vector3f endVertex, Matrix3f matrix3f, Matrix4f matrix4f, MultiBufferSource buffer) {
+    private void renderVector(Vector3f startVertex, Vector3f endVertex, Matrix3f matrix3f, Matrix4f matrix4f) {
         Minecraft.getInstance().renderBuffers().bufferSource().getBuffer(RenderType.LINES).vertex(matrix4f, startVertex.x(), startVertex.y(), startVertex.z()).color(0, 0, 255, 255).normal(matrix3f, startVertex.x(), startVertex.y(), startVertex.z()).endVertex();
         Minecraft.getInstance().renderBuffers().bufferSource().getBuffer(RenderType.LINES).vertex(matrix4f, endVertex.x(), endVertex.y(), endVertex.z()).color(0, 255, 0, 255).normal(matrix3f, endVertex.x(), endVertex.y(), endVertex.z()).endVertex();
     }
 
-    private void swingEffect(JointTransform jointTransform, LocalPlayer player) {
+    private void swingEffect(LocalPlayer player, Vector3f toolVec) {
         ItemStack itemStack = player.getMainHandItem();
         Random random = new Random();
         ClientLevel level = Minecraft.getInstance().level;
@@ -103,18 +165,17 @@ public abstract class RenderItemMixin {
         double x = player.position().x;
         double y = player.position().y;
         double z = player.position().z;
-//        System.out.println(toolVec);
-//        if(itemStack.getItem() == ItemRegistry.FLAMING_FLAMBERGE.get()) {
-//            level.addParticle(ParticleTypes.FLAME, x + toolVec.x, y + toolVec.y, z + toolVec.z, random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F));
-//        }
-//        if(itemStack.getItem() == ItemRegistry.FIRE_KATANA.get()) {
-//            level.addParticle(ParticleTypes.FLAME, x + toolVec.x, y + toolVec.y, z + toolVec.z, 0, 0, 0);
-//        }
-//        if(itemStack.getItem() == ItemRegistry.FROSTBITE.get()) {
-//            level.addParticle(ParticleTypes.SNOWFLAKE, x + toolVec.x, y + toolVec.y, z + toolVec.z, random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F));
-//        }
-//        if(itemStack.getItem() == ItemRegistry.ICE_HALBERD.get()) {
-//            level.addParticle(ParticleTypes.SNOWFLAKE, x + toolVec.x, y + toolVec.y, z + toolVec.z, random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F));
-//        }
+        if(itemStack.getItem() == ItemRegistry.FLAMING_FLAMBERGE.get()) {
+            level.addParticle(ParticleTypes.FLAME, x + toolVec.x(), y + toolVec.y(), z + toolVec.z(), random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F));
+        }
+        if(itemStack.getItem() == ItemRegistry.FIRE_KATANA.get()) {
+            level.addParticle(ParticleTypes.FLAME, x + toolVec.x(), y + toolVec.y(), z + toolVec.z(), 0, 0, 0);
+        }
+        if(itemStack.getItem() == ItemRegistry.FROSTBITE.get()) {
+            level.addParticle(ParticleTypes.SNOWFLAKE, x + toolVec.x(), y + toolVec.y(), z + toolVec.z(), random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F));
+        }
+        if(itemStack.getItem() == ItemRegistry.ICE_HALBERD.get()) {
+            level.addParticle(ParticleTypes.SNOWFLAKE, x + toolVec.x(), y + toolVec.y(), z + toolVec.z(), random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F), random.nextFloat(-0.1F, 0.1F));
+        }
     }
 }

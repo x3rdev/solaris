@@ -3,13 +3,19 @@ package com.github.x3rmination.solaris.client;
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
+import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackEntity;
+import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackRenderer;
+import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackRenderer;
+import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteAttackRenderer;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadItem;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadRenderer;
+import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ItemRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -28,6 +34,9 @@ public class ClientSetup {
 
     public static void setup(final FMLClientSetupEvent event) {
         CuriosRendererRegistry.register(ItemRegistry.ICE_SHOULDER_PAD.get(), IceShoulderPadRenderer::new);
+        EntityRenderers.register(EntityRegistry.FIRE_KATANA_ATTACK.get(), FireKatanaAttackRenderer::new);
+        EntityRenderers.register(EntityRegistry.FROSTBITE_ATTACK.get(), FrostbiteAttackRenderer::new);
+        EntityRenderers.register(EntityRegistry.ABYSSAL_EDGE_ATTACK.get(), AbyssalEdgeAttackRenderer::new);
     }
 
     public static void addLayers(EntityRenderersEvent.AddLayers event) {
@@ -45,7 +54,7 @@ public class ClientSetup {
                     }
                 }
             } catch (Exception e) {
-                Solaris.LOGGER.warn(entityType.getRegistryName() + "has custom renderer, FrostBiteLayer could not be added");
+                Solaris.LOGGER.warn(entityType.getRegistryName() + " has custom renderer, FrostBiteLayer could not be added");
             }
         }));
         for (String skinType : event.getSkins()){

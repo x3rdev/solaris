@@ -37,6 +37,7 @@ public class Solaris {
         ItemRegistry.ITEMS.register(modEventBus);
         MobEffectRegistry.POTIONS.register(modEventBus);
         ParticleRegistry.PARTICLE_TYPES.register(modEventBus);
+        EntityRegistry.ENTITIES.register(modEventBus);
 
         forgeBus.register(this);
     }

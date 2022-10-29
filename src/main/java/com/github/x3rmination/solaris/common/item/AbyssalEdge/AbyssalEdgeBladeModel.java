@@ -13,7 +13,7 @@ public class AbyssalEdgeBladeModel extends AnimatedGeoModel<AbyssalEdgeBladeItem
 
     @Override
     public ResourceLocation getTextureLocation(AbyssalEdgeBladeItem object) {
-        return new ResourceLocation(Solaris.MOD_ID, "item/abyssal_edge/abyssal_edge_0");
+        return new ResourceLocation(Solaris.MOD_ID, "textures/item/abyssal_edge/abyssal_edge_0.png");
     }
 
     @Override

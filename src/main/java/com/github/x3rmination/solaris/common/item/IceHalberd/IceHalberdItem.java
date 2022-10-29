@@ -1,5 +1,6 @@
 package com.github.x3rmination.solaris.common.item.IceHalberd;
 
+import com.github.x3rmination.solaris.common.mob_effect.FrostbiteMobEffect;
 import com.github.x3rmination.solaris.common.registry.MobEffectRegistry;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -18,19 +19,7 @@ public class IceHalberdItem extends SwordItem {
 
     @Override
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
-        MobEffectInstance effect = pTarget.getEffect(MobEffectRegistry.FROSTBITE.get());
-        int potency;
-        if(effect == null) {
-            potency = 0;
-        } else {
-            potency = effect.getAmplifier() + 1;
-        }
-        if(potency > 3) {
-            pTarget.removeEffect(MobEffectRegistry.FROSTBITE.get());
-            pTarget.hurt(DamageSource.FREEZE, 6);
-        } else {
-            pTarget.addEffect(new MobEffectInstance(MobEffectRegistry.FROSTBITE.get(), 40, potency), pAttacker);
-        }
+        FrostbiteMobEffect.applyEffect(pTarget);
         return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
 }

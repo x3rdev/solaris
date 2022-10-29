@@ -2,13 +2,15 @@ package com.github.x3rmination.solaris.common.registry;
 
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeBladeItem;
-import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeHandleItem;
 import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaItem;
 import com.github.x3rmination.solaris.common.item.FlamingFlamberge.FlamingFlambergeItem;
 import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteItem;
 import com.github.x3rmination.solaris.common.item.IceHalberd.IceHalberdItem;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadItem;
 import com.github.x3rmination.solaris.common.item.MithrilChainsword.MithrilChainswordItem;
+import com.github.x3rmination.solaris.common.item.RenderItem;
+import com.github.x3rmination.solaris.common.item.SteamCounter.SteamCounterItem;
+import com.github.x3rmination.solaris.common.item.SteamCounter.blade.SteamCounterBladeItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -35,12 +37,17 @@ public class ItemRegistry {
     public static final RegistryObject<Item> ABYSSAL_EDGE_BLADE = ITEMS.register("abyssal_edge",
             () -> new AbyssalEdgeBladeItem(new Item.Properties().tab(ModItemTab.instance)));
 
-    //Internal item for rendering
     public static final RegistryObject<Item> ABYSSAL_EDGE_HANDLE = ITEMS.register("abyssal_edge_handle",
-            () -> new AbyssalEdgeHandleItem((new Item.Properties())));
+            RenderItem::new);
 
     public static final RegistryObject<Item> MITHRIL_CHAINSWORD = ITEMS.register("mithril_chainsword",
             () -> new MithrilChainswordItem((new Item.Properties().tab(ModItemTab.instance))));
+
+    public static final RegistryObject<Item> STEAM_COUNTER = ITEMS.register("steam_counter",
+            () -> new SteamCounterItem((new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> STEAM_COUNTER_BLADE = ITEMS.register("steam_counter_blade",
+            SteamCounterBladeItem::new);
 
     public static final RegistryObject<Item> ICE_SHOULDER_PAD = ITEMS.register("ice_shoulder_pad",
             () -> new IceShoulderPadItem((new Item.Properties()).tab(ModItemTab.instance)));
