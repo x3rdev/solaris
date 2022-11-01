@@ -27,6 +27,7 @@ public class PearlstoneBlock extends Block {
         if(pLevel.getBrightness(LightLayer.BLOCK, pPos.above()) > 5 || pLevel.getBrightness(LightLayer.SKY, pPos.above()) > 5) {
             pLevel.sendParticles(ParticleRegistry.ANIMATED_SPARKS.get(), pPos.getX() + 0.5D, pPos.getY(), pPos.getZ() + 0.5D, 10, 0, 0, 0, 0.4D);
         }
+        //
     }
 
 }
