@@ -1,6 +1,7 @@
 {
 	"credit": "Made with Blockbench",
 	"ambientocclusion": false,
+	"gui_light": "front",
 	"textures": {
 		"0": "solaris:/item/fire_katana/fire_blade",
 		"1": "solaris:/item/fire_katana/fire_edge",
