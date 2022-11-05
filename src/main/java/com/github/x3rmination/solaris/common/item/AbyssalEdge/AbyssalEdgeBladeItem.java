@@ -1,6 +1,10 @@
 package com.github.x3rmination.solaris.common.item.AbyssalEdge;
 
+import com.github.x3rmination.solaris.common.item.SolarisWeapon;
+import com.github.x3rmination.solaris.common.scheduler.Executable;
+import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
@@ -14,7 +18,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import java.util.function.Consumer;
 
-public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable {
+public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable, SolarisWeapon {
     public AnimationFactory factory = new AnimationFactory(this);
     public AbyssalEdgeBladeItem(Properties pProperties) {
         super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -2F, pProperties);
@@ -41,4 +45,20 @@ public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable {
             }
         });
     }
+
+    @Override
+    public void serverAttack(ServerPlayer serverPlayer) throws NoSuchMethodException {
+        ServerScheduler.schedule(new Executable(
+                this,
+                this.getClass().getDeclaredMethod("abyssalEdgeServer", ServerPlayer.class),
+                new Object[]{serverPlayer}, 35));
+    }
+
+    public void abyssalEdgeServer(ServerPlayer serverPlayer) {
+        AbyssalEdgeAttackEntity abyssalEdgeAttackEntity = new AbyssalEdgeAttackEntity(serverPlayer.level);
+        abyssalEdgeAttackEntity.setYRot(-serverPlayer.getYHeadRot());
+        abyssalEdgeAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(3, 0, 3)));
+        serverPlayer.level.addFreshEntity(abyssalEdgeAttackEntity);
+    }
+
 }

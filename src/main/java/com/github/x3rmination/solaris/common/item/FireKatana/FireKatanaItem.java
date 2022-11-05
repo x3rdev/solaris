@@ -2,10 +2,18 @@ package com.github.x3rmination.solaris.common.item.FireKatana;
 
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.helper.ParticleHelper;
+import com.github.x3rmination.solaris.common.item.SolarisWeapon;
+import com.github.x3rmination.solaris.common.registry.ItemRegistry;
 import com.github.x3rmination.solaris.common.registry.MobEffectRegistry;
+import com.github.x3rmination.solaris.common.scheduler.ClientScheduler;
+import com.github.x3rmination.solaris.common.scheduler.Executable;
+import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
+import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
@@ -25,7 +33,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = Solaris.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class FireKatanaItem extends SwordItem {
+public class FireKatanaItem extends SwordItem implements SolarisWeapon {
     public FireKatanaItem(Properties pProperties) {
         super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -2F, pProperties);
     }
@@ -57,5 +65,30 @@ public class FireKatanaItem extends SwordItem {
         }
     }
 
+    @Override
+    public void clientAttack(LocalPlayer localPlayer) throws NoSuchMethodException {
+        ClientScheduler.schedule(new Executable(
+                this,
+                this.getClass().getDeclaredMethod("fireKatanaClient", LocalPlayer.class),
+                new Object[]{localPlayer}, 35));
+    }
 
+    public void fireKatanaClient(LocalPlayer localPlayer) {
+        ParticleHelper particleHelper = new ParticleHelper(localPlayer.level, ParticleTypes.FLAME, localPlayer.position().add(0, 1, 0));
+        particleHelper.spawnArc(2, 10, Mth.wrapDegrees(localPlayer.getXRot()), localPlayer.getYRot(), localPlayer.getLookAngle());
+    }
+
+    @Override
+    public void serverAttack(ServerPlayer serverPlayer) throws NoSuchMethodException {
+        ServerScheduler.schedule(new Executable(
+                this,
+                this.getClass().getDeclaredMethod("fireKatanaServer", ServerPlayer.class),
+                new Object[]{serverPlayer}, 35));
+    }
+
+    public void fireKatanaServer(ServerPlayer serverPlayer) {
+        FireKatanaAttackEntity fireKatanaAttack = new FireKatanaAttackEntity(serverPlayer, serverPlayer.getLookAngle().x, serverPlayer.getLookAngle().y, serverPlayer.getLookAngle().z, serverPlayer.level);
+        fireKatanaAttack.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(3, 0, 3)));
+        serverPlayer.level.addFreshEntity(fireKatanaAttack);
+    }
 }
