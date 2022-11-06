@@ -3,6 +3,7 @@ package com.github.x3rmination.solaris.common.registry;
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeBladeItem;
 import com.github.x3rmination.solaris.common.item.BloodyEclipse.BloodyEclipseItem;
+import com.github.x3rmination.solaris.common.item.BloodyFlamberge.BloodyFlambergeItem;
 import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaItem;
 import com.github.x3rmination.solaris.common.item.FlamingFlamberge.FlamingFlambergeItem;
 import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteItem;
@@ -44,6 +45,9 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> BLOODY_ECLIPSE = ITEMS.register("bloody_eclipse",
             () -> new BloodyEclipseItem((new Item.Properties().tab(ModItemTab.instance))));
+
+    public static final RegistryObject<Item> BLOODY_FLAMBERGE = ITEMS.register("bloody_flamberge",
+            () -> new BloodyFlambergeItem((new Item.Properties().tab(ModItemTab.instance))));
 
     public static final RegistryObject<Item> ICE_SHOULDER_PAD = ITEMS.register("ice_shoulder_pad",
             () -> new IceShoulderPadItem((new Item.Properties()).tab(ModItemTab.instance)));
