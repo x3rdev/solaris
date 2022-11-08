@@ -16,12 +16,17 @@ import top.theillusivec4.curios.api.SlotContext;
 import top.theillusivec4.curios.api.client.ICurioRenderer;
 
 public class IceShoulderPadRenderer implements ICurioRenderer {
+
+    public IceShoulderPadRenderer() {
+
+    }
     @Override
     public <T extends LivingEntity, M extends EntityModel<T>> void render(ItemStack itemStack, SlotContext slotContext, PoseStack poseStack, RenderLayerParent<T, M> renderLayerParent, MultiBufferSource multiBufferSource, int light, float limbSwing, float limbSwingAmount, float partialTicks, float ticks, float headYaw, float headPitch) {
         LivingEntity livingEntity = slotContext.entity();
-        BakedModel model = Minecraft.getInstance().getItemRenderer().getItemModelShaper().getItemModel(itemStack);
+//        BakedModel model = Minecraft.getInstance().getItemRenderer().getItemModelShaper().getItemModel(itemStack);
         ICurioRenderer.translateIfSneaking(poseStack, livingEntity);
         ICurioRenderer.rotateIfSneaking(poseStack, livingEntity);
+        ICurioRenderer.followBodyRotations(slotContext.entity());
         poseStack.scale(1F, 1F, 1F);
         poseStack.translate(0.1F, 0.9F, 0F);
         poseStack.mulPose(Direction.DOWN.getRotation());

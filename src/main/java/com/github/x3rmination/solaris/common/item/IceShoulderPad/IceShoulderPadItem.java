@@ -45,6 +45,8 @@ public class IceShoulderPadItem extends Item {
             public ItemStack getStack() {
                 return new ItemStack(ItemRegistry.ICE_SHOULDER_PAD.get(), 1);
             }
+
+
         });
     }
 }
