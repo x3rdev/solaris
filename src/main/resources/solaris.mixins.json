@@ -6,7 +6,7 @@
   "refmap": "solaris.refmap.json",
   "mixins": [
     "SkillContainerMixin",
-    "RenderItemMixin"
+    "PatchedLivingEntityRendererMixin"
   ],
   "client": [
   ],
