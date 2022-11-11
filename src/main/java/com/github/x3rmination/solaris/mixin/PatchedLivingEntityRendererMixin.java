@@ -1,12 +1,18 @@
 package com.github.x3rmination.solaris.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Matrix3f;
+import com.mojang.math.Matrix4f;
+import com.mojang.math.Vector3f;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -14,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import yesman.epicfight.api.animation.Animator;
 import yesman.epicfight.api.model.Armature;
 import yesman.epicfight.api.utils.math.OpenMatrix4f;
+import yesman.epicfight.api.utils.math.Vec3f;
 import yesman.epicfight.client.renderer.patched.entity.PatchedLivingEntityRenderer;
 import yesman.epicfight.gameasset.Models;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
@@ -24,16 +31,26 @@ public abstract class PatchedLivingEntityRendererMixin {
     @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;Lyesman/epicfight/world/capabilities/entitypatch/LivingEntityPatch;Lnet/minecraft/client/renderer/entity/EntityRenderer;Lnet/minecraft/client/renderer/MultiBufferSource;Lcom/mojang/blaze3d/vertex/PoseStack;IF)V", at = @At("TAIL"), remap = false)
     private void render(LivingEntity livingEntity, LivingEntityPatch<? extends LivingEntity> entityPatch, EntityRenderer<? extends net.minecraft.world.entity.Entity> entityRenderer, MultiBufferSource bufferSource, PoseStack poseStack, int packedLight, float partialTicks, CallbackInfo ci) {
         Armature armature = entityPatch.getEntityModel(Models.LOGICAL_SERVER).getArmature();
+
+        Matrix3f matrix3f = poseStack.last().normal();
+        Matrix4f matrix4f = poseStack.last().pose();
+
         if(entityPatch.getOriginal() instanceof Player player) {
             if (entityPatch.getAnimator().getPose(partialTicks).getJointTransformData().get("Tool_R") != null) {
                 OpenMatrix4f transformMatrix = Animator.getBindedJointTransformByName(entityPatch.getAnimator().getPose(partialTicks), armature, "Tool_R");
-                double degrees = entityPatch.getOriginal().getYRot();
-                System.out.println(degrees);
-                double radians = degrees * Math.PI / 180;
-                livingEntity.level.addParticle(ParticleTypes.ASH, livingEntity.getX() + (Math.sin(radians - 90) * transformMatrix.m30), livingEntity.getY() + transformMatrix.m31, livingEntity.getZ() + (Math.cos(radians - 90) * transformMatrix.m32), 0, 0, 0);
+                double degrees = Mth.wrapDegrees(entityPatch.getOriginal().yBodyRot);
+                double radians = degrees * Math.PI / 180F;
+                double xHandPos = transformMatrix.m30 * -1;
+                double zHandPos = transformMatrix.m32 * -1;
+                double xMod = (xHandPos * Math.cos(radians)) - (zHandPos * Math.sin(radians));
+                double zMod = (xHandPos * Math.sin(radians)) + (zHandPos * Math.cos(radians));
+                livingEntity.level.addParticle(ParticleTypes.WAX_OFF, livingEntity.position().x + xMod, livingEntity.position().y + transformMatrix.m31, livingEntity.position().z + zMod, 0, 0, 0);
             }
         }
     }
 
-
+    private void renderVector(Vector3f startVertex, Vector3f endVertex, Matrix3f matrix3f, Matrix4f matrix4f) {
+        Minecraft.getInstance().renderBuffers().bufferSource().getBuffer(RenderType.LINES).vertex(matrix4f, startVertex.x(), startVertex.y(), startVertex.z()).color(0, 0, 255, 255).normal(matrix3f, startVertex.x(), startVertex.y(), startVertex.z()).endVertex();
+        Minecraft.getInstance().renderBuffers().bufferSource().getBuffer(RenderType.LINES).vertex(matrix4f, endVertex.x(), endVertex.y(), endVertex.z()).color(0, 255, 0, 255).normal(matrix3f, endVertex.x(), endVertex.y(), endVertex.z()).endVertex();
+    }
 }
