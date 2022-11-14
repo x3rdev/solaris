@@ -13,4 +13,6 @@ public class ParticleRegistry {
 
     public static final RegistryObject<SimpleParticleType> ANIMATED_SPARKS = PARTICLE_TYPES.register("animated_sparks",
             () -> new SimpleParticleType(true));
+    public static final RegistryObject<SimpleParticleType> CHERRY_BLOSSOM = PARTICLE_TYPES.register("cherry_blossom",
+            () -> new SimpleParticleType(true));
 }

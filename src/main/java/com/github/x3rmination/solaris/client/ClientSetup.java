@@ -3,6 +3,7 @@ package com.github.x3rmination.solaris.client;
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
+import com.github.x3rmination.solaris.client.particle.CherryBlossomParticle;
 import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackEntity;
 import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackRenderer;
 import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackRenderer;
@@ -66,5 +67,7 @@ public class ClientSetup {
 
     public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.ANIMATED_SPARKS.get(), AnimatedSparksParticle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ParticleRegistry.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Provider::new);
+
     }
 }
