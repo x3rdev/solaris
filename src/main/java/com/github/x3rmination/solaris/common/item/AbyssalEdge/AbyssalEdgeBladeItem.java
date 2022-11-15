@@ -15,6 +15,8 @@ import net.minecraftforge.common.ForgeTier;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import yesman.epicfight.gameasset.Skills;
+import yesman.epicfight.skill.Skill;
 
 import java.util.function.Consumer;
 
@@ -47,11 +49,13 @@ public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable, Sola
     }
 
     @Override
-    public void serverAttack(ServerPlayer serverPlayer) throws NoSuchMethodException {
-        ServerScheduler.schedule(new Executable(
-                this,
-                this.getClass().getDeclaredMethod("abyssalEdgeServer", ServerPlayer.class),
-                new Object[]{serverPlayer}, 35));
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
+        if(skill.equals(Skills.FATAL_DRAW)) {
+            ServerScheduler.schedule(new Executable(
+                    this,
+                    this.getClass().getDeclaredMethod("abyssalEdgeServer", ServerPlayer.class),
+                    new Object[]{serverPlayer}, 35));
+        }
     }
 
     public void abyssalEdgeServer(ServerPlayer serverPlayer) {

@@ -31,6 +31,8 @@ import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import yesman.epicfight.gameasset.Skills;
+import yesman.epicfight.skill.Skill;
 
 @Mod.EventBusSubscriber(modid = Solaris.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FireKatanaItem extends SwordItem implements SolarisWeapon {
@@ -66,11 +68,13 @@ public class FireKatanaItem extends SwordItem implements SolarisWeapon {
     }
 
     @Override
-    public void clientAttack(LocalPlayer localPlayer) throws NoSuchMethodException {
-        ClientScheduler.schedule(new Executable(
-                this,
-                this.getClass().getDeclaredMethod("fireKatanaClient", LocalPlayer.class),
-                new Object[]{localPlayer}, 35));
+    public void clientAttack(LocalPlayer localPlayer, Skill skill) throws NoSuchMethodException {
+        if(skill.equals(Skills.FATAL_DRAW)) {
+            ClientScheduler.schedule(new Executable(
+                    this,
+                    this.getClass().getDeclaredMethod("fireKatanaClient", LocalPlayer.class),
+                    new Object[]{localPlayer}, 35));
+        }
     }
 
     public void fireKatanaClient(LocalPlayer localPlayer) {
@@ -79,11 +83,13 @@ public class FireKatanaItem extends SwordItem implements SolarisWeapon {
     }
 
     @Override
-    public void serverAttack(ServerPlayer serverPlayer) throws NoSuchMethodException {
-        ServerScheduler.schedule(new Executable(
-                this,
-                this.getClass().getDeclaredMethod("fireKatanaServer", ServerPlayer.class),
-                new Object[]{serverPlayer}, 35));
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
+        if(skill.equals(Skills.FATAL_DRAW)) {
+            ServerScheduler.schedule(new Executable(
+                    this,
+                    this.getClass().getDeclaredMethod("fireKatanaServer", ServerPlayer.class),
+                    new Object[]{serverPlayer}, 35));
+        }
     }
 
     public void fireKatanaServer(ServerPlayer serverPlayer) {

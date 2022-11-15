@@ -15,6 +15,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
+import yesman.epicfight.gameasset.Skills;
+import yesman.epicfight.skill.Skill;
 
 public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon {
 
@@ -30,11 +32,13 @@ public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon {
     }
 
     @Override
-    public void clientAttack(LocalPlayer localPlayer) throws NoSuchMethodException {
-        ClientScheduler.schedule(new Executable(
-                this,
-                this.getClass().getDeclaredMethod("flamingFlambergeClient", LocalPlayer.class),
-                new Object[]{localPlayer}, 35));
+    public void clientAttack(LocalPlayer localPlayer, Skill skill) throws NoSuchMethodException {
+        if(skill.equals(Skills.GIANT_WHIRLWIND)) {
+            ClientScheduler.schedule(new Executable(
+                    this,
+                    this.getClass().getDeclaredMethod("flamingFlambergeClient", LocalPlayer.class),
+                    new Object[]{localPlayer}, 35));
+        }
     }
 
     public void flamingFlambergeClient(LocalPlayer localPlayer) {

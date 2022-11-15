@@ -39,6 +39,6 @@ public class CherryBlossomParticle extends GlowParticle {
 
     @Override
     public int getLightColor(float pPartialTick) {
-        return 120;
+        return 190;
     }
 }

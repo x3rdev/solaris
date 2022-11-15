@@ -41,23 +41,16 @@ public abstract class SkillContainerMixin {
     public void clientExecute(LocalPlayerPatch executer, Set<Object> packetStorage, CallbackInfoReturnable<Boolean> cir) throws NoSuchMethodException {
         SkillContainer skillContainer = ((SkillContainer) (Object) this);
         LocalPlayer localPlayer = executer.getOriginal();
-        if(localPlayer.getMainHandItem().getItem() instanceof SolarisWeapon) {
-            if (skillContainer.getSkill().equals(Skills.FATAL_DRAW)) {
-                ((SolarisWeapon) localPlayer.getMainHandItem().getItem()).clientAttack(localPlayer);
-            }
-            if (skillContainer.getSkill().equals(Skills.GIANT_WHIRLWIND)) {
-                ((SolarisWeapon) localPlayer.getMainHandItem().getItem()).clientAttack(localPlayer);
-            }
+        if(localPlayer.getMainHandItem().getItem() instanceof SolarisWeapon solarisWeapon) {
+            solarisWeapon.clientAttack(localPlayer, skillContainer.getSkill());
         }
     }
     @Inject(method = "requestExecute", at = @At("HEAD"), remap = false)
     public void serverExecute(ServerPlayerPatch executer, FriendlyByteBuf buf, CallbackInfoReturnable<Boolean> cir) throws NoSuchMethodException {
         SkillContainer skillContainer = ((SkillContainer) (Object) this);
         ServerPlayer serverPlayer = executer.getOriginal();
-        if(serverPlayer.getMainHandItem().getItem() instanceof SolarisWeapon) {
-            if (skillContainer.getSkill().equals(Skills.FATAL_DRAW)) {
-                ((SolarisWeapon) serverPlayer.getMainHandItem().getItem()).serverAttack(serverPlayer);
-            }
+        if(serverPlayer.getMainHandItem().getItem() instanceof SolarisWeapon solarisWeapon) {
+            solarisWeapon.serverAttack(serverPlayer, skillContainer.getSkill());
         }
     }
 }

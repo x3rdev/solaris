@@ -19,6 +19,8 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
+import yesman.epicfight.gameasset.Skills;
+import yesman.epicfight.skill.Skill;
 
 public class FrostbiteAttackEntity extends AbstractHurtingProjectile implements SolarisWeapon {
 
@@ -54,11 +56,13 @@ public class FrostbiteAttackEntity extends AbstractHurtingProjectile implements 
     }
 
     @Override
-    public void clientAttack(LocalPlayer localPlayer) throws NoSuchMethodException {
-        ClientScheduler.schedule(new Executable(
-                this,
-                this.getClass().getDeclaredMethod("frostbiteClient", LocalPlayer.class),
-                new Object[]{localPlayer}, 35));
+    public void clientAttack(LocalPlayer localPlayer, Skill skill) throws NoSuchMethodException {
+        if(skill.equals(Skills.FATAL_DRAW)) {
+            ClientScheduler.schedule(new Executable(
+                    this,
+                    this.getClass().getDeclaredMethod("frostbiteClient", LocalPlayer.class),
+                    new Object[]{localPlayer}, 35));
+        }
     }
 
     public void frostbiteClient(LocalPlayer localPlayer) {
@@ -72,11 +76,13 @@ public class FrostbiteAttackEntity extends AbstractHurtingProjectile implements 
     }
 
     @Override
-    public void serverAttack(ServerPlayer serverPlayer) throws NoSuchMethodException {
-        ServerScheduler.schedule(new Executable(
-                this,
-                this.getClass().getDeclaredMethod("frostbiteServer", ServerPlayer.class),
-                new Object[]{serverPlayer}, 35));
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
+        if(skill.equals(Skills.FATAL_DRAW)) {
+            ServerScheduler.schedule(new Executable(
+                    this,
+                    this.getClass().getDeclaredMethod("frostbiteServer", ServerPlayer.class),
+                    new Object[]{serverPlayer}, 35));
+        }
     }
 
     public void frostbiteServer(ServerPlayer serverPlayer) {

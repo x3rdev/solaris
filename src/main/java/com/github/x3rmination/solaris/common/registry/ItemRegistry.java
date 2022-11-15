@@ -11,6 +11,7 @@ import com.github.x3rmination.solaris.common.item.IceHalberd.IceHalberdItem;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadItem;
 import com.github.x3rmination.solaris.common.item.MithrilChainsword.MithrilChainswordItem;
 import com.github.x3rmination.solaris.common.item.RenderItem;
+import com.github.x3rmination.solaris.common.item.SpringWind.SpringWindItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -48,6 +49,9 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> BLOODY_FLAMBERGE = ITEMS.register("bloody_flamberge",
             () -> new BloodyFlambergeItem((new Item.Properties().tab(ModItemTab.instance))));
+
+    public static final RegistryObject<Item> SPRING_WIND = ITEMS.register("spring_wind",
+            () -> new SpringWindItem((new Item.Properties().tab(ModItemTab.instance))));
 
     public static final RegistryObject<Item> ICE_SHOULDER_PAD = ITEMS.register("ice_shoulder_pad",
             () -> new IceShoulderPadItem((new Item.Properties()).tab(ModItemTab.instance)));
