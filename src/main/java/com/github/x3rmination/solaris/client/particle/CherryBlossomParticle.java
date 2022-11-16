@@ -13,10 +13,18 @@ public class CherryBlossomParticle extends GlowParticle {
         this.xd = pXSpeed;
         this.yd = pYSpeed;
         this.zd = pZSpeed;
-        this.quadSize *= 0.75F;
-        this.lifetime = 60 + this.random.nextInt(12);
+        this.quadSize = 0.06F;
+        this.lifetime = 20 + this.random.nextInt(12);
         this.hasPhysics = false;
         this.setSpriteFromAge(pSprites);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        if(this.yd > -0.01) {
+            this.yd -= 0.005;
+        }
     }
 
     @OnlyIn(Dist.CLIENT)

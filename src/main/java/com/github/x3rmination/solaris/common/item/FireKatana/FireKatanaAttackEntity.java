@@ -37,7 +37,7 @@ public class FireKatanaAttackEntity extends AbstractHurtingProjectile {
     }
 
     @Override
-    protected boolean shouldBurn() {
+    public boolean isOnFire() {
         return false;
     }
 

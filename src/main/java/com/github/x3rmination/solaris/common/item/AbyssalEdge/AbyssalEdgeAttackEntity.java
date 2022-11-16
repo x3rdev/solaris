@@ -70,4 +70,9 @@ public class AbyssalEdgeAttackEntity extends Entity implements IAnimatable {
     public AnimationFactory getFactory() {
         return this.factory;
     }
+
+    @Override
+    public boolean isOnFire() {
+        return false;
+    }
 }

@@ -10,6 +10,7 @@ import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackRen
 import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteAttackRenderer;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadItem;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadRenderer;
+import com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker.CherryBlossomSeekerRenderer;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ItemRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
@@ -38,6 +39,7 @@ public class ClientSetup {
         EntityRenderers.register(EntityRegistry.FIRE_KATANA_ATTACK.get(), FireKatanaAttackRenderer::new);
         EntityRenderers.register(EntityRegistry.FROSTBITE_ATTACK.get(), FrostbiteAttackRenderer::new);
         EntityRenderers.register(EntityRegistry.ABYSSAL_EDGE_ATTACK.get(), AbyssalEdgeAttackRenderer::new);
+        EntityRenderers.register(EntityRegistry.CHERRY_BLOSSOM_SEEKER.get(), CherryBlossomSeekerRenderer::new);
     }
 
     public static void addLayers(EntityRenderersEvent.AddLayers event) {

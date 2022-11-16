@@ -18,7 +18,6 @@ import yesman.epicfight.client.renderer.patched.entity.PatchedLivingEntityRender
 import yesman.epicfight.gameasset.Models;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
-@SuppressWarnings("")
 @Mixin(PatchedLivingEntityRenderer.class)
 public abstract class PatchedLivingEntityRendererMixin {
 
@@ -34,7 +33,7 @@ public abstract class PatchedLivingEntityRendererMixin {
                 double zHandPos = transformMatrix.m32 * -1;
                 double xMod = (xHandPos * Math.cos(radians)) - (zHandPos * Math.sin(radians));
                 double zMod = (xHandPos * Math.sin(radians)) + (zHandPos * Math.cos(radians));
-                livingEntity.level.addParticle(ParticleTypes.WAX_OFF, livingEntity.position().x + xMod, livingEntity.position().y + transformMatrix.m31, livingEntity.position().z + zMod, 0, 0, 0);
+//                livingEntity.level.addParticle(ParticleTypes.WAX_OFF, livingEntity.position().x + xMod, livingEntity.position().y + transformMatrix.m31, livingEntity.position().z + zMod, 0, 0, 0);
             }
         }
     }
