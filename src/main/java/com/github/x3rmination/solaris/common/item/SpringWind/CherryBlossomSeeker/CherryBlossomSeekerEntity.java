@@ -1,18 +1,22 @@
 package com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker;
 
+import com.github.x3rmination.solaris.common.helper.ParticleHelper;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import yesman.epicfight.api.utils.math.MathUtils;
 
 import java.util.List;
 
@@ -40,12 +44,22 @@ public class CherryBlossomSeekerEntity extends Projectile {
                 List<Entity> seekTargets = getTargets();
                 if(seekTargets.isEmpty()) {
                     //Idle animation
+                    Vec3 ownerPos = getOwner().position();
+                    moveToSmooth(new Vec3(ownerPos.x + 4 * Math.cos(tickCount/20F), ownerPos.y + 4, ownerPos.z + 4 * Math.sin(tickCount/20F)), 0.5);
                 } else {
-                    incrementLookAt(EntityAnchorArgument.Anchor.EYES, seekTargets.get(0).position().add(0, 1, 0));
-                    Vec3 posIncrement = this.getLookAngle().scale(0.1);
-                    this.moveTo(this.position().add(posIncrement));
+                    moveToSmooth(seekTargets.get(0).position().add(0, 1, 0), 0.2);
                 }
             }
+        }
+    }
+
+    public void moveToSmooth(Vec3 pos, double scale) {
+        incrementLookAt(EntityAnchorArgument.Anchor.EYES, pos);
+        Vec3 posIncrement = this.getLookAngle().scale(scale);
+        if(distanceToSqr(pos) < Math.abs(posIncrement.lengthSqr())) {
+            this.moveTo(pos);
+        } else {
+            this.moveTo(this.position().add(posIncrement));
         }
     }
 
@@ -55,11 +69,11 @@ public class CherryBlossomSeekerEntity extends Projectile {
         double d1 = pTarget.y - vec3.y;
         double d2 = pTarget.z - vec3.z;
         double d3 = Math.sqrt(d0 * d0 + d2 * d2);
-        float xDegrees = Mth.wrapDegrees((float)(-(Mth.atan2(d1, d3) * (double)(180F / (float)Math.PI)))) - getXRot();
-        float yDegrees = Mth.wrapDegrees((float)(Mth.atan2(d2, d0) * (double)(180F / (float)Math.PI)) - 90.0F) - getYRot();
-        float modifier = 0.5F;
-        this.setXRot(xDegrees * modifier + getXRot());
-        this.setYRot(yDegrees * modifier + getYRot());
+        float xDegrees = (float)(-(Mth.atan2(d1, d3) * (180F / (float)Math.PI))) - getXRot();
+        float yDegrees = (float)(Mth.atan2(d2, d0) * (180F / (float)Math.PI)) - 90.0F - getYRot();
+        float modifier = 1; //0.5F;
+        this.setXRot(Mth.wrapDegrees(xDegrees * modifier + getXRot()));
+        this.setYRot(Mth.wrapDegrees(yDegrees * modifier + getYRot()));
         this.setYHeadRot(this.getYRot());
         this.xRotO = this.getXRot();
         this.yRotO = this.getYRot();
