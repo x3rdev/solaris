@@ -37,7 +37,6 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> ABYSSAL_EDGE_BLADE = ITEMS.register("abyssal_edge",
             () -> new AbyssalEdgeBladeItem(new Item.Properties().tab(ModItemTab.instance)));
-
     public static final RegistryObject<Item> ABYSSAL_EDGE_HANDLE = ITEMS.register("abyssal_edge_handle",
             RenderItem::new);
 
@@ -52,6 +51,11 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> SPRING_WIND = ITEMS.register("spring_wind",
             () -> new SpringWindItem((new Item.Properties().tab(ModItemTab.instance))));
+
+    public static final RegistryObject<Item> SPRING_WIND_HANDLE = ITEMS.register("spring_wind_handle",
+            RenderItem::new);
+    public static final RegistryObject<Item> SPRING_WIND_BLADE = ITEMS.register("spring_wind_blade",
+            RenderItem::new);
 
     public static final RegistryObject<Item> ICE_SHOULDER_PAD = ITEMS.register("ice_shoulder_pad",
             () -> new IceShoulderPadItem((new Item.Properties()).tab(ModItemTab.instance)));

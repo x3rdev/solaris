@@ -1,9 +1,0 @@
-{
-	"format_version": "1.8.0",
-	"animations": {
-		"animation.steam_handle.new": {
-			"loop": true
-		}
-	},
-	"geckolib_format_version": 2
-}

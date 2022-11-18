@@ -44,7 +44,8 @@ public class ClientSetup {
 
     public static void addLayers(EntityRenderersEvent.AddLayers event) {
         List<EntityType<? extends LivingEntity>> entityTypes = ImmutableList.copyOf(
-                ForgeRegistries.ENTITIES.getValues().stream()
+                ForgeRegistries.ENTITIES
+                        .getValues().stream()
                         .filter(DefaultAttributes::hasSupplier)
                         .map(entityType -> (EntityType<? extends LivingEntity>) entityType)
                         .toList());
