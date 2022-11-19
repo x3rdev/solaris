@@ -22,6 +22,8 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import yesman.epicfight.gameasset.Skills;
 import yesman.epicfight.skill.Skill;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Consumer;
 
 public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWeapon {
@@ -52,27 +54,26 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
     }
 
     public void springWindServer(ServerPlayer serverPlayer) {
-        CompoundTag tag = serverPlayer.getMainHandItem().getTagElement("solaris.spring_wind.active");
+        CompoundTag tag = serverPlayer.getMainHandItem().getTag();
         tag.putBoolean("active", true);
         tag.putInt("delay", 20*20);
         //Code for spawning seekers
+        List<Integer> seekerList = new ArrayList<>();
         for(int i = 0; i < 4; i++) {
-            spawnSeeker(serverPlayer, 1.7F * i);
+            seekerList.add(spawnSeeker(serverPlayer, 1.7F * i));
         }
     }
 
-    public void spawnSeeker(ServerPlayer player, float offset) {
+    public int spawnSeeker(ServerPlayer player, float offset) {
         CherryBlossomSeekerEntity seekerEntity = new CherryBlossomSeekerEntity(player.level, player, offset);
         seekerEntity.setPos(player.position().add(0, 2, 0));
         player.level.addFreshEntity(seekerEntity);
+        return seekerEntity.getId();
     }
 
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
-        if(!activeTagPresent(pStack)) {
-            initializeActiveTag(pStack);
-        }
-        CompoundTag tag = pStack.getTagElement("solaris.spring_wind.active");
+        CompoundTag tag = pStack.getTag();
         if(tag.getBoolean("active")) {
             tag.putInt("delay", tag.getInt("delay") - 1);
             if(tag.getInt("delay") <= 0) {
@@ -80,20 +81,6 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
             }
         }
     }
-
-    public void initializeActiveTag(ItemStack stack) {
-        CompoundTag activeTag = stack.getOrCreateTagElement("solaris.spring_wind.active");
-        if(activeTag.isEmpty()) {
-            activeTag.putBoolean("active", false);
-            activeTag.putInt("delay", 0);
-        }
-    }
-
-    public boolean activeTagPresent(ItemStack stack) {
-        CompoundTag tag = stack.getTagElement("solaris.spring_wind.active");
-        return tag != null && tag.get("active") != null && tag.get("delay") != null;
-    }
-
     @Override
     public void initializeClient(Consumer<IItemRenderProperties> consumer) {
         super.initializeClient(consumer);
@@ -107,5 +94,10 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
         });
     }
 
-
+    @Override
+    public void verifyTagAfterLoad(CompoundTag pCompoundTag) {
+        super.verifyTagAfterLoad(pCompoundTag);
+        pCompoundTag.putBoolean("active", false);
+        pCompoundTag.putInt("delay", 0);
+    }
 }

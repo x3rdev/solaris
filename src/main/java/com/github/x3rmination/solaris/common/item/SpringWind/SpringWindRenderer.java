@@ -28,7 +28,7 @@ public class SpringWindRenderer extends GeoItemRenderer {
                 stack,
                 bufferIn,
                 0);
-        CompoundTag renderTag = itemStack.getTagElement("solaris.spring_wind.active");
+        CompoundTag renderTag = itemStack.getTag();
         if(renderTag != null && !renderTag.getBoolean("active")) {
             Minecraft.getInstance().getItemRenderer().renderStatic(
                     new ItemStack(ItemRegistry.SPRING_WIND_BLADE.get(), 1),
