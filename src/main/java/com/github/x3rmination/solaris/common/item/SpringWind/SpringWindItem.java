@@ -77,16 +77,12 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
     public void startSeekerMovement(ServerPlayer serverPlayer) {
         List<Entity> list = getTargets(serverPlayer);
         for (Entity targetEntity : list) {
-            Vec3 lookVector = serverPlayer.getLookAngle();
-            lookVector.multiply(1, 0, 1);
-            lookVector.normalize();
-            Vec3 targetVector = targetEntity.position().subtract(serverPlayer.position());
-            targetVector.multiply(1, 0, 1);
-            targetVector.normalize();
-            double lookAngle = 1F / Math.tan(lookVector.x/lookVector.z);
-            double targetAngle = 1F / Math.tan(targetVector.x/targetVector.z);
-            System.out.println(lookAngle + " " + targetAngle);
-            if(Math.abs(lookAngle) - Math.abs(targetAngle) < Math.PI/8) {
+            Vec3 lookVector = serverPlayer.getLookAngle().multiply(1, 0, 1).normalize();
+            Vec3 targetVector = targetEntity.position().subtract(serverPlayer.position()).multiply(1, 0, 1).normalize();
+            System.out.println(lookVector + " " + targetVector);
+            double lookAngle = Math.atan(lookVector.x/lookVector.z);
+            double targetAngle = Math.atan(targetVector.x/targetVector.z);
+            if(Math.abs(lookAngle - targetAngle) < Math.PI/6) {
                 for (int seeker : serverPlayer.getMainHandItem().getTag().getIntArray("seeker_list")) {
                     CherryBlossomSeekerEntity seekerEntity = ((CherryBlossomSeekerEntity) serverPlayer.level.getEntity(seeker));
                     if(seekerEntity != null) {

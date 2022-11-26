@@ -51,7 +51,7 @@ public class CherryBlossomSeekerEntity extends Projectile {
             } else {
                 if(this.attackTarget == null || !this.attackTarget.isAlive()) {
                     Vec3 ownerPos = getOwner().position();
-                    moveToSmooth(new Vec3(ownerPos.x + 4 * Math.cos(tickCount/20F + this.entityData.get(DATA_OFFSET)), ownerPos.y + this.random.nextFloat(2, 3), ownerPos.z + 4 * Math.sin(tickCount/20F + this.entityData.get(DATA_OFFSET))), 0.8);
+                    moveToSmooth(new Vec3(ownerPos.x + 4 * Math.cos(tickCount/20F + this.entityData.get(DATA_OFFSET)), ownerPos.y + this.random.nextFloat(2, 2.5F), ownerPos.z + 4 * Math.sin(tickCount/20F + this.entityData.get(DATA_OFFSET))), 0.8);
                 } else {
                     moveToSmooth(this.attackTarget.position().add(0, 1, 0), 0.5);
                 }
@@ -69,7 +69,7 @@ public class CherryBlossomSeekerEntity extends Projectile {
         AABB hurtBox = new AABB(this.getX() - 0.5, this.getY() - 0.5, this.getZ() - 0.5, this.getX() + 0.5, this.getY() + 0.5, this.getZ() + 0.5);
         List<Entity> collisionList = level.getEntities(this, hurtBox);
         collisionList.forEach(entity -> {
-            if(entity != this.getOwner()) {
+            if (entity == this.attackTarget) {
                 entity.hurt(DamageSource.indirectMagic(entity, this.getOwner()), this.random.nextInt(3, 6));
             }
         });
