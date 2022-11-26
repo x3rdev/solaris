@@ -1,13 +1,28 @@
 {
-  "type": "minecraft:overworld",
+  "type": {
+    "ultrawarm": false,
+    "natural": false,
+    "piglin_safe": false,
+    "respawn_anchor_works": false,
+    "bed_works": false,
+    "has_raids": false,
+    "has_skylight": false,
+    "has_ceiling": false,
+    "coordinate_scale": 1,
+    "ambient_light": 0,
+    "logical_height": 256,
+    "infiniburn": "#minecraft:infiniburn_overworld",
+    "min_y": 0,
+    "height": 256
+  },
   "generator": {
     "type": "minecraft:noise",
-    "seed": 660455362,
+    "seed": -358614565,
     "settings": {
       "sea_level": 63,
       "disable_mob_generation": false,
-      "aquifers_enabled": false,
-      "ore_veins_enabled": false,
+      "aquifers_enabled": true,
+      "ore_veins_enabled": true,
       "legacy_random_source": false,
       "default_block": {
         "Name": "solaris:pearlstone"
@@ -30,13 +45,13 @@
           "y_factor": 160
         },
         "bottom_slide": {
-          "target": -10,
+          "target": 0.1171875,
           "size": 3,
           "offset": 0
         },
         "top_slide": {
-          "target": -10,
-          "size": 20,
+          "target": -0.078125,
+          "size": 2,
           "offset": 8
         },
         "terrain_shaper": {
@@ -66,13 +81,12 @@
         "vein_gap": 0
       },
       "surface_rule": {
-        "type": "minecraft:sequence",
-        "sequence": []
+        "type": "minecraft:bandlands"
       }
     },
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "minecraft:end_midlands"
+      "biome": "minecraft:basalt_deltas"
     }
   }
 }

@@ -28,5 +28,7 @@ public class DimensionEffects {
         public SkyType skyType() {
             return SkyType.END;
         }
+
+
     }
 }
