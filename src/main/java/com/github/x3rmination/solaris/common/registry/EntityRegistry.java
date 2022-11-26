@@ -42,5 +42,6 @@ public class EntityRegistry {
                     .sized(0.75F, 0.75F)
                     .clientTrackingRange(4)
                     .updateInterval(2)
+                    .noSave()
                     .build(new ResourceLocation(Solaris.MOD_ID, "cherry_blossom_seeker").toString()));
 }

@@ -10,10 +10,13 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.IItemRenderProperties;
 import net.minecraftforge.common.ForgeTier;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -22,13 +25,14 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import yesman.epicfight.gameasset.Skills;
 import yesman.epicfight.skill.Skill;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.function.Consumer;
 
 public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWeapon {
 
     public AnimationFactory factory = new AnimationFactory(this);
+    public static final int SEEKER_COUNT = 4;
     public SpringWindItem(Properties pProperties) {
         super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -3F, pProperties);
     }
@@ -55,13 +59,54 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
 
     public void springWindServer(ServerPlayer serverPlayer) {
         CompoundTag tag = serverPlayer.getMainHandItem().getTag();
+        assert tag != null;
+
+        //Code for spawning seekers
+        if(!tag.getBoolean("active")) {
+            int[] seekerArray = new int[SEEKER_COUNT];
+            for (int i = 0; i < SEEKER_COUNT; i++) {
+                seekerArray[i] = spawnSeeker(serverPlayer, 1.7F * i);
+            }
+            tag.putIntArray("seeker_list", seekerArray);
+        }
         tag.putBoolean("active", true);
         tag.putInt("delay", 20*20);
-        //Code for spawning seekers
-        List<Integer> seekerList = new ArrayList<>();
-        for(int i = 0; i < 4; i++) {
-            seekerList.add(spawnSeeker(serverPlayer, 1.7F * i));
+        startSeekerMovement(serverPlayer);
+    }
+
+    public void startSeekerMovement(ServerPlayer serverPlayer) {
+        List<Entity> list = getTargets(serverPlayer);
+        for (Entity targetEntity : list) {
+            Vec3 lookVector = serverPlayer.getLookAngle();
+            lookVector.multiply(1, 0, 1);
+            lookVector.normalize();
+            Vec3 targetVector = targetEntity.position().subtract(serverPlayer.position());
+            targetVector.multiply(1, 0, 1);
+            targetVector.normalize();
+            double lookAngle = 1F / Math.tan(lookVector.x/lookVector.z);
+            double targetAngle = 1F / Math.tan(targetVector.x/targetVector.z);
+            System.out.println(lookAngle + " " + targetAngle);
+            if(Math.abs(lookAngle) - Math.abs(targetAngle) < Math.PI/8) {
+                for (int seeker : serverPlayer.getMainHandItem().getTag().getIntArray("seeker_list")) {
+                    CherryBlossomSeekerEntity seekerEntity = ((CherryBlossomSeekerEntity) serverPlayer.level.getEntity(seeker));
+                    if(seekerEntity != null) {
+                        seekerEntity.setTarget(targetEntity);
+                        seekerEntity.tickCount = 0;
+                    }
+                }
+                return;
+            }
         }
+    }
+
+    public List<Entity> getTargets(LivingEntity livingEntity) {
+        Vec3 ownerPos = livingEntity.position();
+        AABB seekingArea = new AABB(ownerPos.x - 10, ownerPos.y - 10, ownerPos.z - 10, ownerPos.x + 10, ownerPos.y + 10, ownerPos.z + 10);
+        List<Entity> seekTargets = livingEntity.level.getEntities(livingEntity, seekingArea);
+        seekTargets.removeIf(CherryBlossomSeekerEntity.class::isInstance);
+        seekTargets.removeIf(entity -> !(entity instanceof LivingEntity));
+        seekTargets.removeIf(entity -> !entity.isAlive());
+        return seekTargets;
     }
 
     public int spawnSeeker(ServerPlayer player, float offset) {
@@ -74,10 +119,11 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         CompoundTag tag = pStack.getTag();
-        if(tag.getBoolean("active")) {
+        if(tag.getInt("delay") > 0) {
             tag.putInt("delay", tag.getInt("delay") - 1);
             if(tag.getInt("delay") <= 0) {
                 tag.putBoolean("active", false);
+                tag.putIntArray("seeker_list", new int[SEEKER_COUNT]);
             }
         }
     }

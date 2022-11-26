@@ -3,11 +3,17 @@ package com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeke
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
+import net.minecraft.core.Direction;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.syncher.EntityDataAccessor;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Shulker;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
@@ -17,8 +23,8 @@ import java.util.List;
 
 public class CherryBlossomSeekerEntity extends Projectile {
 
-    private float offset;
-    private Vec3 attackPos;
+    private static final EntityDataAccessor<Float> DATA_OFFSET = SynchedEntityData.defineId(CherryBlossomSeekerEntity.class, EntityDataSerializers.FLOAT);
+    private Entity attackTarget;
 
     public CherryBlossomSeekerEntity(EntityType<? extends Projectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -28,37 +34,34 @@ public class CherryBlossomSeekerEntity extends Projectile {
     public CherryBlossomSeekerEntity(Level pLevel, LivingEntity pShooter, float v) {
         this(EntityRegistry.CHERRY_BLOSSOM_SEEKER.get(), pLevel);
         this.setOwner(pShooter);
-        this.offset = v;
+        this.entityData.set(DATA_OFFSET, v);
     }
 
     @Override
     public void tick() {
         super.tick();
-        this.level.addParticle(ParticleRegistry.CHERRY_BLOSSOM.get(), this.getX(), this.getY(), this.getZ(), (this.random.nextFloat() - 0.5F) * 0.01, 0.05, (this.random.nextFloat() - 0.5F) * 0.01);
+        this.level.addParticle(ParticleRegistry.CHERRY_BLOSSOM.get(), this.getX(), this.getY(), this.getZ(), (this.random.nextFloat() - 0.5F) * 0.03, 0.05, (this.random.nextFloat() - 0.5F) * 0.03);
+        this.level.addParticle(ParticleRegistry.CHERRY_BLOSSOM.get(), this.getX(), this.getY() - 0.5, this.getZ(), (this.random.nextFloat() - 0.5F) * 0.03, 0.03, (this.random.nextFloat() - 0.5F) * 0.03);
+        this.level.addParticle(ParticleRegistry.CHERRY_BLOSSOM.get(), this.getX(), this.getY() - 1, this.getZ(), (this.random.nextFloat() - 0.5F) * 0.03, 0.03, (this.random.nextFloat() - 0.5F) * 0.03);
+
         tryHurt();
         if(!this.level.isClientSide) {
             if (this.tickCount > 20 * 20 || this.getOwner() == null) {
                 this.kill();
             } else {
-                List<Entity> seekTargets = getTargets();
-                if(seekTargets.isEmpty()) {
-                    this.attackPos = null;
+                if(this.attackTarget == null || !this.attackTarget.isAlive()) {
                     Vec3 ownerPos = getOwner().position();
-//                    ((ServerLevel) level).sendParticles(ParticleTypes.ELECTRIC_SPARK, ownerPos.x + 4 * Math.cos(tickCount/20F + 1.7), ownerPos.y + 5, ownerPos.z + 4 * Math.sin(tickCount/20F + 1.7), 1, 0, 0, 0, 0);
-                    moveToSmooth(new Vec3(ownerPos.x + 4 * Math.cos(tickCount/20F + this.offset), ownerPos.y + this.random.nextFloat(2, 3), ownerPos.z + 4 * Math.sin(tickCount/20F + this.offset)), 0.8);
+                    moveToSmooth(new Vec3(ownerPos.x + 4 * Math.cos(tickCount/20F + this.entityData.get(DATA_OFFSET)), ownerPos.y + this.random.nextFloat(2, 3), ownerPos.z + 4 * Math.sin(tickCount/20F + this.entityData.get(DATA_OFFSET))), 0.8);
                 } else {
-                    if(this.attackPos == null) {
-                        pickNewTarget();
-                    }
-                    moveToSmooth(this.attackPos, 0.5);
+                    moveToSmooth(this.attackTarget.position().add(0, 1, 0), 0.5);
                 }
             }
         }
     }
 
-    public void pickNewTarget() {
-        if(!getTargets().isEmpty()) {
-            this.attackPos = getTargets().get(this.random.nextInt(getTargets().size())).position().add(0, 1, 0);
+    public void setTarget(Entity target) {
+        if(target != null) {
+            this.attackTarget = target;
         }
     }
 
@@ -68,7 +71,6 @@ public class CherryBlossomSeekerEntity extends Projectile {
         collisionList.forEach(entity -> {
             if(entity != this.getOwner()) {
                 entity.hurt(DamageSource.indirectMagic(entity, this.getOwner()), this.random.nextInt(3, 6));
-                pickNewTarget();
             }
         });
     }
@@ -99,17 +101,6 @@ public class CherryBlossomSeekerEntity extends Projectile {
         this.yRotO = this.getYRot();
     }
 
-
-    public List<Entity> getTargets() {
-        Vec3 ownerPos = this.getOwner().position();
-        AABB seekingArea = new AABB(ownerPos.x - 10, ownerPos.y - 10, ownerPos.z - 10, ownerPos.x + 10, ownerPos.y + 10, ownerPos.z + 10);
-        List<Entity> seekTargets = level.getEntities(this.getOwner(), seekingArea);
-        seekTargets.removeIf(CherryBlossomSeekerEntity.class::isInstance);
-        seekTargets.removeIf(entity -> !(entity instanceof LivingEntity));
-        seekTargets.removeIf(entity -> !isAlive());
-        return seekTargets;
-    }
-
     @Override
     public void kill() {
         for(int i = 0; i < 10; i++) {
@@ -120,6 +111,7 @@ public class CherryBlossomSeekerEntity extends Projectile {
 
     @Override
     public void defineSynchedData() {
+        this.entityData.define(DATA_OFFSET, 0F);
     }
 
     @Override
@@ -131,4 +123,6 @@ public class CherryBlossomSeekerEntity extends Projectile {
     public boolean isOnFire() {
         return false;
     }
+
+
 }
