@@ -4,6 +4,7 @@ import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.client.DimensionEffects;
 import com.github.x3rmination.solaris.common.registry.WeaponCapabilityRegistry;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import yesman.epicfight.api.forgeevent.WeaponCapabilityPresetRegistryEvent;
