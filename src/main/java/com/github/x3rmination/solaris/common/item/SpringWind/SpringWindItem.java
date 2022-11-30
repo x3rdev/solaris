@@ -56,24 +56,29 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
                     this,
                     this.getClass().getDeclaredMethod("springWindServer", ServerPlayer.class),
                     new Object[]{serverPlayer}, 35));
+        } else {
+            startSeekerMovement(serverPlayer);
+            setActive(serverPlayer);
         }
     }
 
     public void springWindServer(ServerPlayer serverPlayer) {
         CompoundTag tag = serverPlayer.getMainHandItem().getTag();
         assert tag != null;
-
-        //Code for spawning seekers
         if(!tag.getBoolean("active")) {
             int[] seekerArray = new int[SEEKER_COUNT];
             for (int i = 0; i < SEEKER_COUNT; i++) {
                 seekerArray[i] = spawnSeeker(serverPlayer, 1.7F * i);
             }
             tag.putIntArray("seeker_list", seekerArray);
+            setActive(serverPlayer);
         }
+    }
+
+    private void setActive(ServerPlayer serverPlayer) {
+        CompoundTag tag = serverPlayer.getMainHandItem().getTag();
         tag.putBoolean("active", true);
         tag.putInt("delay", 20*20);
-        startSeekerMovement(serverPlayer);
     }
 
     public void startSeekerMovement(ServerPlayer serverPlayer) {
