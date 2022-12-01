@@ -79,6 +79,12 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
         CompoundTag tag = serverPlayer.getMainHandItem().getTag();
         tag.putBoolean("active", true);
         tag.putInt("delay", 20*20);
+        for(int id : tag.getIntArray("seeker_list")) {
+            CherryBlossomSeekerEntity seekerEntity = (CherryBlossomSeekerEntity) serverPlayer.level.getEntity(id);
+            if(seekerEntity != null) {
+                seekerEntity.tickCount = 0;
+            }
+        }
     }
 
     public void startSeekerMovement(ServerPlayer serverPlayer) {
@@ -93,7 +99,6 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
                     CherryBlossomSeekerEntity seekerEntity = ((CherryBlossomSeekerEntity) serverPlayer.level.getEntity(seeker));
                     if(seekerEntity != null) {
                         seekerEntity.setTarget(targetEntity);
-                        seekerEntity.tickCount = 0;
                     }
                 }
                 return;

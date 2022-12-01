@@ -38,8 +38,8 @@ public class CherryBlossomSeekerEntity extends Projectile {
     public void tick() {
         super.tick();
         this.level.addParticle(ParticleRegistry.CHERRY_BLOSSOM.get(), this.getX(), this.getY(), this.getZ(), (this.random.nextFloat() - 0.5F) * 0.03, 0.05, (this.random.nextFloat() - 0.5F) * 0.03);
-        this.level.addParticle(ParticleRegistry.CHERRY_BLOSSOM.get(), this.getX(), this.getY() - 0.5, this.getZ(), (this.random.nextFloat() - 0.5F) * 0.03, 0.03, (this.random.nextFloat() - 0.5F) * 0.03);
-        this.level.addParticle(ParticleRegistry.CHERRY_BLOSSOM.get(), this.getX(), this.getY() - 1, this.getZ(), (this.random.nextFloat() - 0.5F) * 0.03, 0.03, (this.random.nextFloat() - 0.5F) * 0.03);
+        this.level.addParticle(ParticleRegistry.CHERRY_BLOSSOM.get(), this.getX(), this.getY() - 0.25, this.getZ(), (this.random.nextFloat() - 0.5F) * 0.03, 0.03, (this.random.nextFloat() - 0.5F) * 0.03);
+        this.level.addParticle(ParticleRegistry.CHERRY_BLOSSOM.get(), this.getX(), this.getY() + 0.25, this.getZ(), (this.random.nextFloat() - 0.5F) * 0.03, 0.03, (this.random.nextFloat() - 0.5F) * 0.03);
 
         tryHurt();
         if(!this.level.isClientSide) {
