@@ -4,10 +4,8 @@ import com.github.x3rmination.solaris.common.item.SolarisWeapon;
 import com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker.CherryBlossomSeekerEntity;
 import com.github.x3rmination.solaris.common.scheduler.Executable;
 import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -28,7 +26,6 @@ import yesman.epicfight.gameasset.Skills;
 import yesman.epicfight.skill.Skill;
 
 import java.util.List;
-import java.util.Random;
 import java.util.function.Consumer;
 
 public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWeapon {
@@ -58,7 +55,10 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
                     new Object[]{serverPlayer}, 35));
         } else {
             startSeekerMovement(serverPlayer);
-            setActive(serverPlayer);
+            CompoundTag tag = serverPlayer.getMainHandItem().getTag();
+            if(tag.getBoolean("active")) {
+                setActive(serverPlayer);
+            }
         }
     }
 

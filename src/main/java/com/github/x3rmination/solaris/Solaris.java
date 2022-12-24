@@ -2,15 +2,16 @@ package com.github.x3rmination.solaris;
 
 import com.github.x3rmination.solaris.client.ClientSetup;
 import com.github.x3rmination.solaris.common.CommonSetup;
+import com.github.x3rmination.solaris.common.capability.CapabilityEvents;
+import com.github.x3rmination.solaris.common.capability.race.RaceCapabilityAttacher;
 import com.github.x3rmination.solaris.common.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
@@ -27,7 +28,6 @@ public class Solaris {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
 
-        modEventBus.addListener(this::setup);
         modEventBus.addListener(this::onInterModEnqueueEvent);
 
         modEventBus.addListener(ClientSetup::setup);
@@ -35,7 +35,10 @@ public class Solaris {
         modEventBus.addListener(ClientSetup::registerParticleFactories);
 
         modEventBus.addListener(CommonSetup::setup);
-        modEventBus.addListener(CommonSetup::registerWeaponCapabilities);
+        modEventBus.addListener(CommonSetup::registerEFMWeaponCaps);
+        modEventBus.addListener(CapabilityEvents::registerCaps);
+        forgeBus.register(CapabilityEvents.class);
+        forgeBus.register(RaceCapabilityAttacher.class);
 
         BlockRegistry.BLOCKS.register(modEventBus);
         BlockItemRegistry.BLOCK_ITEMS.register(modEventBus);
@@ -46,9 +49,6 @@ public class Solaris {
         SoundRegistry.SOUND_EVENTS.register(modEventBus);
 
         forgeBus.register(this);
-    }
-
-    private void setup(final FMLCommonSetupEvent event) {
     }
 
     @SubscribeEvent
