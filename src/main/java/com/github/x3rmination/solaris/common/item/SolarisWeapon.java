@@ -13,4 +13,8 @@ public interface SolarisWeapon {
     default void clientAttack(LocalPlayer localPlayer, Skill skill) throws NoSuchMethodException {
 
     }
+
+    default void activateAbility(ServerPlayer serverPlayer) {
+
+    }
 }

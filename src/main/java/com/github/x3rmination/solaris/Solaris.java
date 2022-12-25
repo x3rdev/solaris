@@ -1,5 +1,6 @@
 package com.github.x3rmination.solaris;
 
+import com.github.x3rmination.solaris.client.ClientEvents;
 import com.github.x3rmination.solaris.client.ClientSetup;
 import com.github.x3rmination.solaris.common.CommonSetup;
 import com.github.x3rmination.solaris.common.capability.CapabilityEvents;
@@ -33,6 +34,7 @@ public class Solaris {
         modEventBus.addListener(ClientSetup::setup);
         modEventBus.addListener(ClientSetup::addLayers);
         modEventBus.addListener(ClientSetup::registerParticleFactories);
+        forgeBus.register(ClientEvents.class);
 
         modEventBus.addListener(CommonSetup::setup);
         modEventBus.addListener(CommonSetup::registerEFMWeaponCaps);

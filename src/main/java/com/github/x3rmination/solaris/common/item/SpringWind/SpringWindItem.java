@@ -6,6 +6,8 @@ import com.github.x3rmination.solaris.common.scheduler.Executable;
 import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -13,12 +15,14 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.client.IItemRenderProperties;
 import net.minecraftforge.common.ForgeTier;
+import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
@@ -30,6 +34,10 @@ import java.util.function.Consumer;
 
 public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWeapon {
 
+    public static final String FIRST_MODE = "first_mode";
+    public static final String DELAY = "delay";
+    public static final String ACTIVE = "active";
+    public static final String SEEKER_LIST = "seeker_list";
     public AnimationFactory factory = new AnimationFactory(this);
     public static final int SEEKER_COUNT = 4;
     public SpringWindItem(Properties pProperties) {
@@ -48,7 +56,7 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
 
     @Override
     public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
-        if(skill.equals(Skills.FATAL_DRAW)) {
+        if (skill.equals(Skills.FATAL_DRAW)) {
             ServerScheduler.schedule(new Executable(
                     this,
                     this.getClass().getDeclaredMethod("springWindServer", ServerPlayer.class),
@@ -56,7 +64,7 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
         } else {
             startSeekerMovement(serverPlayer);
             CompoundTag tag = serverPlayer.getMainHandItem().getTag();
-            if(tag.getBoolean("active")) {
+            if(tag.getBoolean(ACTIVE) && tag.getBoolean(FIRST_MODE)) {
                 setActive(serverPlayer);
             }
         }
@@ -65,21 +73,29 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
     public void springWindServer(ServerPlayer serverPlayer) {
         CompoundTag tag = serverPlayer.getMainHandItem().getTag();
         assert tag != null;
-        if(!tag.getBoolean("active")) {
+        if(!tag.getBoolean(ACTIVE)) {
             int[] seekerArray = new int[SEEKER_COUNT];
             for (int i = 0; i < SEEKER_COUNT; i++) {
                 seekerArray[i] = spawnSeeker(serverPlayer, 1.7F * i);
             }
-            tag.putIntArray("seeker_list", seekerArray);
+            tag.putIntArray(SEEKER_LIST, seekerArray);
             setActive(serverPlayer);
+        }
+    }
+
+    @Override
+    public void activateAbility(ServerPlayer serverPlayer) {
+        if(serverPlayer.getMainHandItem().getItem() instanceof SpringWindItem) {
+            CompoundTag tag = serverPlayer.getMainHandItem().getTag();
+            tag.putBoolean(FIRST_MODE, !tag.getBoolean(FIRST_MODE));
         }
     }
 
     private void setActive(ServerPlayer serverPlayer) {
         CompoundTag tag = serverPlayer.getMainHandItem().getTag();
-        tag.putBoolean("active", true);
-        tag.putInt("delay", 20*20);
-        for(int id : tag.getIntArray("seeker_list")) {
+        tag.putBoolean(ACTIVE, true);
+        tag.putInt(DELAY, 20*20);
+        for(int id : tag.getIntArray(SEEKER_LIST)) {
             CherryBlossomSeekerEntity seekerEntity = (CherryBlossomSeekerEntity) serverPlayer.level.getEntity(id);
             if(seekerEntity != null) {
                 seekerEntity.tickCount = 0;
@@ -95,7 +111,7 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
             double lookAngle = Math.atan(lookVector.x/lookVector.z);
             double targetAngle = Math.atan(targetVector.x/targetVector.z);
             if(Math.abs(lookAngle - targetAngle) < Math.PI/6) {
-                for (int seeker : serverPlayer.getMainHandItem().getTag().getIntArray("seeker_list")) {
+                for (int seeker : serverPlayer.getMainHandItem().getTag().getIntArray(SEEKER_LIST)) {
                     CherryBlossomSeekerEntity seekerEntity = ((CherryBlossomSeekerEntity) serverPlayer.level.getEntity(seeker));
                     if(seekerEntity != null) {
                         seekerEntity.setTarget(targetEntity);
@@ -126,11 +142,18 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
     @Override
     public void inventoryTick(ItemStack pStack, Level pLevel, Entity pEntity, int pSlotId, boolean pIsSelected) {
         CompoundTag tag = pStack.getTag();
-        if(tag.getInt("delay") > 0) {
-            tag.putInt("delay", tag.getInt("delay") - 1);
-            if(tag.getInt("delay") <= 0) {
-                tag.putBoolean("active", false);
-                tag.putIntArray("seeker_list", new int[SEEKER_COUNT]);
+        if(tag.getInt(DELAY) > 0) {
+            tag.putInt(DELAY, tag.getInt(DELAY) - 1);
+            if(tag.getInt(DELAY) <= 0) {
+                tag.putBoolean(ACTIVE, false);
+                tag.putIntArray(SEEKER_LIST, new int[SEEKER_COUNT]);
+            }
+        }
+        if(pEntity instanceof ServerPlayer serverPlayer && !tag.getBoolean(FIRST_MODE)) {
+            for (int seeker : pStack.getTag().getIntArray(SEEKER_LIST)) {
+                if(serverPlayer.level.getEntity(seeker) instanceof CherryBlossomSeekerEntity seekerEntity) {
+                    seekerEntity.moveToSmooth(serverPlayer.getLookAngle().scale(4).add(serverPlayer.position()).add(0, 1, 0), 1);
+                }
             }
         }
     }
@@ -150,7 +173,18 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
     @Override
     public void verifyTagAfterLoad(CompoundTag pCompoundTag) {
         super.verifyTagAfterLoad(pCompoundTag);
-        pCompoundTag.putBoolean("active", false);
-        pCompoundTag.putInt("delay", 0);
+        pCompoundTag.putBoolean(ACTIVE, false);
+        pCompoundTag.putInt(DELAY, 0);
+        pCompoundTag.putBoolean(FIRST_MODE, true);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        CompoundTag tag = pStack.getTag();
+        if(tag.getBoolean(FIRST_MODE)) {
+            pTooltipComponents.add(new TextComponent("MODE 1"));
+        } else {
+            pTooltipComponents.add(new TextComponent("MODE 2"));
+        }
     }
 }
