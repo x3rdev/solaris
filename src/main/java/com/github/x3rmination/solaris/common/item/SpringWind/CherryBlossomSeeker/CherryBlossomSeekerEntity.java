@@ -1,11 +1,13 @@
 package com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker;
 
+import com.github.x3rmination.solaris.common.item.SpringWind.SpringWindItem;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
@@ -65,11 +67,21 @@ public class CherryBlossomSeekerEntity extends Projectile {
     public void tryHurt() {
         AABB hurtBox = new AABB(this.getX() - 0.5, this.getY() - 0.5, this.getZ() - 0.5, this.getX() + 0.5, this.getY() + 0.5, this.getZ() + 0.5);
         List<Entity> collisionList = level.getEntities(this, hurtBox);
-        collisionList.forEach(entity -> {
-            if (entity == this.attackTarget) {
-                entity.hurt(DamageSource.indirectMagic(entity, this.getOwner()), this.random.nextInt(3, 6));
+        if(this.getOwner() instanceof ServerPlayer serverPlayer) {
+            if(serverPlayer.getMainHandItem().getItem() instanceof SpringWindItem && serverPlayer.getMainHandItem().getTag().getBoolean(SpringWindItem.FIRST_MODE)) {
+                collisionList.forEach(entity -> {
+                    if (entity == this.attackTarget) {
+                        entity.hurt(DamageSource.indirectMagic(entity, this.getOwner()), this.random.nextInt(3, 6));
+                    }
+                });
+            } else {
+                collisionList.forEach(entity -> {
+                    if (entity != this.getOwner()) {
+                        entity.hurt(DamageSource.indirectMagic(entity, this.getOwner()), this.random.nextInt(3, 6));
+                    }
+                });
             }
-        });
+        }
     }
 
     public void moveToSmooth(Vec3 pos, double speed) {
