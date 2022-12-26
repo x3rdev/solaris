@@ -55,6 +55,6 @@ description = '''
 [[dependencies.solaris]]
     modId = "geckolib3"
     mandatory = true
-    versionRange = "[3.0.41,)"
+    versionRange = "[3.0.46,)"
     ordering = "NONE"
     side = "BOTH"
