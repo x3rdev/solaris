@@ -42,4 +42,6 @@ public class SolarisSunBlockEntity extends BlockEntity implements IAnimatable {
     public AABB getRenderBoundingBox() {
         return INFINITE_EXTENT_AABB;
     }
+
+
 }

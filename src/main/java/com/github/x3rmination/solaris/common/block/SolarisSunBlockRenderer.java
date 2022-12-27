@@ -27,7 +27,11 @@ public class SolarisSunBlockRenderer extends GeoBlockRenderer<SolarisSunBlockEnt
 
     @Override
     public RenderType getRenderType(SolarisSunBlockEntity animatable, float partialTick, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, ResourceLocation texture) {
-        return RenderType.entityCutoutNoCull(getTextureLocation(animatable));
+        return RenderType.entityTranslucent(getTextureLocation(animatable));
     }
 
+    @Override
+    public int getViewDistance() {
+        return 10000;
+    }
 }
