@@ -1,0 +1,10 @@
+{
+  "parent": "builtin/entity",
+  "textures": {
+    "particle": "solaris:block/solaris_sun"
+  },
+  "texture_size": [
+    256,
+    256
+  ]
+}

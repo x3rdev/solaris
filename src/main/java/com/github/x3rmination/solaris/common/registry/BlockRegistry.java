@@ -4,6 +4,7 @@ import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.block.PearlstoneBlock;
 import com.github.x3rmination.solaris.common.block.PearlstoneSlabs;
 import com.github.x3rmination.solaris.common.block.PearlstoneStairs;
+import com.github.x3rmination.solaris.common.block.SolarisSunBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -29,4 +30,7 @@ public class BlockRegistry {
             () -> new PearlstoneStairs(() -> PEARLSTONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.of(Material.STONE)));
     public static final RegistryObject<Block> SMOOTH_PEARLSTONE_SLABS = BLOCKS.register("smooth_pearlstone_slabs",
             () -> new PearlstoneSlabs(BlockBehaviour.Properties.of(Material.STONE)));
+
+    public static final RegistryObject<Block> SOLARIS_SUN = BLOCKS.register("solaris_sun",
+            () -> new SolarisSunBlock(BlockBehaviour.Properties.of(Material.STONE)));
 }

@@ -15,13 +15,14 @@ import net.minecraftforge.common.ForgeTier;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 import yesman.epicfight.gameasset.Skills;
 import yesman.epicfight.skill.Skill;
 
 import java.util.function.Consumer;
 
 public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable, SolarisWeapon {
-    public AnimationFactory factory = new AnimationFactory(this);
+    public AnimationFactory factory = GeckoLibUtil.createFactory(this);
     public AbyssalEdgeBladeItem(Properties pProperties) {
         super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -2F, pProperties);
     }

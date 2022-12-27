@@ -4,6 +4,7 @@ import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
 import com.github.x3rmination.solaris.client.particle.CherryBlossomParticle;
+import com.github.x3rmination.solaris.common.block.SolarisSunBlockRenderer;
 import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackEntity;
 import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackRenderer;
 import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackRenderer;
@@ -11,6 +12,7 @@ import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteAttackRende
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadItem;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadRenderer;
 import com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker.CherryBlossomSeekerRenderer;
+import com.github.x3rmination.solaris.common.registry.BlockEntityRegistry;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ItemRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
@@ -69,9 +71,13 @@ public class ClientSetup {
         }
     }
 
+    public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(BlockEntityRegistry.SOLARIS_SUN_BLOCK_ENTITY.get(), SolarisSunBlockRenderer::new);
+    }
+
     public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.ANIMATED_SPARKS.get(), AnimatedSparksParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Provider::new);
-
     }
+
 }

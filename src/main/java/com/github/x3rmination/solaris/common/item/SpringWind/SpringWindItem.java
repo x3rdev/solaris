@@ -26,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
+import software.bernie.geckolib3.util.GeckoLibUtil;
 import yesman.epicfight.gameasset.Skills;
 import yesman.epicfight.skill.Skill;
 
@@ -38,7 +39,7 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
     public static final String DELAY = "delay";
     public static final String ACTIVE = "active";
     public static final String SEEKER_LIST = "seeker_list";
-    public AnimationFactory factory = new AnimationFactory(this);
+    public AnimationFactory factory = GeckoLibUtil.createFactory(this);
     public static final int SEEKER_COUNT = 4;
     public SpringWindItem(Properties pProperties) {
         super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -3F, pProperties);

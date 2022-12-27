@@ -25,4 +25,6 @@ public class BlockItemRegistry {
             () -> new BlockItem(BlockRegistry.PEARLSTONE_STAIRS.get(), new Item.Properties().tab(ItemRegistry.ModItemTab.instance)));
     public static final RegistryObject<BlockItem> SMOOTH_PEARLSTONE_SLABS = BLOCK_ITEMS.register("smooth_pearlstone_slabs",
             () -> new BlockItem(BlockRegistry.SMOOTH_PEARLSTONE_SLABS.get(), new Item.Properties().tab(ItemRegistry.ModItemTab.instance)));
+    public static final RegistryObject<BlockItem> SOLARIS_SUN = BLOCK_ITEMS.register("solaris_sun",
+            () -> new BlockItem(BlockRegistry.SOLARIS_SUN.get(), new Item.Properties().tab(ItemRegistry.ModItemTab.instance)));
 }

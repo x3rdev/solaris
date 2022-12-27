@@ -33,6 +33,7 @@ public class Solaris {
 
         modEventBus.addListener(ClientSetup::setup);
         modEventBus.addListener(ClientSetup::addLayers);
+        modEventBus.addListener(ClientSetup::registerRenderers);
         modEventBus.addListener(ClientSetup::registerParticleFactories);
         forgeBus.register(ClientEvents.class);
 
@@ -44,6 +45,7 @@ public class Solaris {
 
         BlockRegistry.BLOCKS.register(modEventBus);
         BlockItemRegistry.BLOCK_ITEMS.register(modEventBus);
+        BlockEntityRegistry.BLOCK_ENTITIES.register(modEventBus);
         EntityRegistry.ENTITIES.register(modEventBus);
         ItemRegistry.ITEMS.register(modEventBus);
         MobEffectRegistry.POTIONS.register(modEventBus);

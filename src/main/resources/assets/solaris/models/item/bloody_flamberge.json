@@ -6,7 +6,7 @@
 		"2": "solaris:/item/bloody_flamberge/flam_blade",
 		"3": "solaris:/item/bloody_flamberge/flam_handle",
 		"4": "solaris:/item/bloody_flamberge/line",
-		"particle": "flam_edge"
+		"particle": "solaris:/item/bloody_flamberge/flam_edge"
 	},
 	"elements": [
 		{
