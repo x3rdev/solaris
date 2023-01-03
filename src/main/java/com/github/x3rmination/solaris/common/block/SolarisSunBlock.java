@@ -24,5 +24,4 @@ public class SolarisSunBlock extends BaseEntityBlock {
         return RenderShape.ENTITYBLOCK_ANIMATED;
     }
 
-
 }

@@ -6,8 +6,6 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoBlockRenderer;
@@ -21,7 +19,7 @@ public class SolarisSunBlockRenderer extends GeoBlockRenderer<SolarisSunBlockEnt
     @Override
     public void render(GeoModel model, SolarisSunBlockEntity animatable, float partialTick, RenderType type, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         poseStack.translate(0, 0.5 - (1/128F), 0);
-        poseStack.scale(2, 2, 2);
+        poseStack.scale(6, 6, 6);
         super.render(model, animatable, partialTick, type, poseStack, bufferSource, buffer, 15728880, packedOverlay, red, green, blue, alpha);
     }
 
