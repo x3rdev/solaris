@@ -23,12 +23,14 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
+import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
+import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.client.RenderProperties;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
@@ -50,6 +52,7 @@ public class ClientSetup {
         EntityRenderers.register(EntityRegistry.CHERRY_BLOSSOM_SEEKER.get(), CherryBlossomSeekerRenderer::new);
     }
 
+    @SuppressWarnings({"rawtypes", "unchecked"})
     public static void addLayers(EntityRenderersEvent.AddLayers event) {
         GeoArmorRenderer.registerArmorRenderer(SolarArmorItem.class, SolarArmorRenderer::new);
         List<EntityType<? extends LivingEntity>> entityTypes = ImmutableList.copyOf(
@@ -71,12 +74,12 @@ public class ClientSetup {
             }
         }));
         for (String skinType : event.getSkins()){
-            if(event.getSkin(skinType) != null) {
-                event.getSkin(skinType).layers.add(new FrostBiteLayer(event.getSkin(skinType)));
-//                event.getSkin(skinType).layers.add(new BodyPartLayer(event.getSkin(skinType)));
+            EntityRenderer<? extends Player> renderer = event.getSkin(skinType);
+            if(renderer instanceof LivingEntityRenderer livingRenderer) {
+                livingRenderer.addLayer(new FrostBiteLayer(livingRenderer));
+                livingRenderer.addLayer(new BodyPartLayer(livingRenderer));
             }
         }
-
     }
 
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
