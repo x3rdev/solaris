@@ -14,6 +14,6 @@ public abstract class PHumanoidRendererMixin {
 
     @Inject(method = "<init>", at = @At("RETURN"))
     private void init(CallbackInfo ci) {
-//        ((PHumanoidRenderer) ((Object) this)).addPatchedLayer(BodyPartLayer.class, new PatchedBodyPartLayer<>());
+        ((PHumanoidRenderer) ((Object) this)).addPatchedLayer(BodyPartLayer.class, new PatchedBodyPartLayer<>());
     }
 }
