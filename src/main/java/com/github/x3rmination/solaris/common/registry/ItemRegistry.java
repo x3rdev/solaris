@@ -11,7 +11,9 @@ import com.github.x3rmination.solaris.common.item.IceHalberd.IceHalberdItem;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadItem;
 import com.github.x3rmination.solaris.common.item.MithrilChainsword.MithrilChainswordItem;
 import com.github.x3rmination.solaris.common.item.RenderItem;
+import com.github.x3rmination.solaris.common.item.SolarArmor.SolarArmorItem;
 import com.github.x3rmination.solaris.common.item.SpringWind.SpringWindItem;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -59,6 +61,18 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> ICE_SHOULDER_PAD = ITEMS.register("ice_shoulder_pad",
             () -> new IceShoulderPadItem((new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> SOLAR_HELMET = ITEMS.register("solar_helmet",
+            () -> new SolarArmorItem(EquipmentSlot.HEAD, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> SOLAR_CHESTPLATE = ITEMS.register("solar_chestplate",
+            () -> new SolarArmorItem(EquipmentSlot.CHEST, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> SOLAR_LEGGINGS = ITEMS.register("solar_leggings",
+            () -> new SolarArmorItem(EquipmentSlot.LEGS, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> SOLAR_BOOTS = ITEMS.register("solar_boots",
+            () -> new SolarArmorItem(EquipmentSlot.FEET, (new Item.Properties()).tab(ModItemTab.instance)));
 
     public static class ModItemTab extends CreativeModeTab {
         public static final ModItemTab instance = new ModItemTab(CreativeModeTab.TABS.length, Solaris.MOD_ID);

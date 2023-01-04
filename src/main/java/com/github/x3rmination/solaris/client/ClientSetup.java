@@ -1,6 +1,7 @@
 package com.github.x3rmination.solaris.client;
 
 import com.github.x3rmination.solaris.Solaris;
+import com.github.x3rmination.solaris.client.body_parts.BodyPartLayer;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
 import com.github.x3rmination.solaris.client.particle.CherryBlossomParticle;
@@ -11,6 +12,8 @@ import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackRen
 import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteAttackRenderer;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadItem;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadRenderer;
+import com.github.x3rmination.solaris.common.item.SolarArmor.SolarArmorItem;
+import com.github.x3rmination.solaris.common.item.SolarArmor.SolarArmorRenderer;
 import com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker.CherryBlossomSeekerRenderer;
 import com.github.x3rmination.solaris.common.registry.BlockEntityRegistry;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
@@ -22,6 +25,7 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
@@ -31,6 +35,7 @@ import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.fml.ModLoadingException;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
+import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 
 import java.util.List;
@@ -46,6 +51,7 @@ public class ClientSetup {
     }
 
     public static void addLayers(EntityRenderersEvent.AddLayers event) {
+        GeoArmorRenderer.registerArmorRenderer(SolarArmorItem.class, SolarArmorRenderer::new);
         List<EntityType<? extends LivingEntity>> entityTypes = ImmutableList.copyOf(
                 ForgeRegistries.ENTITIES
                         .getValues().stream()
@@ -55,7 +61,7 @@ public class ClientSetup {
         entityTypes.forEach((entityType -> {
             try {
                 if (entityType != EntityType.ENDER_DRAGON) {
-                    LivingEntityRenderer<LivingEntity, ? extends net.minecraft.client.model.EntityModel<LivingEntity>> renderer = event.getRenderer(entityType);
+                    LivingEntityRenderer<LivingEntity, ? extends EntityModel<LivingEntity>> renderer = event.getRenderer(entityType);
                     if (renderer != null) {
                         renderer.addLayer(new FrostBiteLayer(renderer));
                     }
@@ -67,8 +73,10 @@ public class ClientSetup {
         for (String skinType : event.getSkins()){
             if(event.getSkin(skinType) != null) {
                 event.getSkin(skinType).layers.add(new FrostBiteLayer(event.getSkin(skinType)));
+//                event.getSkin(skinType).layers.add(new BodyPartLayer(event.getSkin(skinType)));
             }
         }
+
     }
 
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
