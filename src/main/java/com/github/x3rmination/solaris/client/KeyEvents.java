@@ -4,10 +4,9 @@ import com.github.x3rmination.solaris.common.network.ActivateSolarisWeaponMessag
 import com.github.x3rmination.solaris.common.network.SolarisPacketHandler;
 import com.github.x3rmination.solaris.common.registry.KeyRegistry;
 import net.minecraftforge.client.event.InputEvent;
-import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
-public class ClientEvents {
+public class KeyEvents {
 
     @SubscribeEvent
     public static void keyPressed(InputEvent.KeyInputEvent event) {
