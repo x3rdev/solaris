@@ -10,6 +10,7 @@ import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteItem;
 import com.github.x3rmination.solaris.common.item.IceHalberd.IceHalberdItem;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadItem;
 import com.github.x3rmination.solaris.common.item.MithrilChainsword.MithrilChainswordItem;
+import com.github.x3rmination.solaris.common.item.PheonixSpear.PhoenixSpearItem;
 import com.github.x3rmination.solaris.common.item.RenderItem;
 import com.github.x3rmination.solaris.common.item.SolarArmor.SolarArmorItem;
 import com.github.x3rmination.solaris.common.item.SpringWind.SpringWindItem;
@@ -53,11 +54,12 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> SPRING_WIND = ITEMS.register("spring_wind",
             () -> new SpringWindItem((new Item.Properties().tab(ModItemTab.instance))));
-
     public static final RegistryObject<Item> SPRING_WIND_HANDLE = ITEMS.register("spring_wind_handle",
             RenderItem::new);
     public static final RegistryObject<Item> SPRING_WIND_BLADE = ITEMS.register("spring_wind_blade",
             RenderItem::new);
+    public static final RegistryObject<Item> PHOENIX_SPEAR = ITEMS.register("phoenix_spear",
+            () -> new PhoenixSpearItem((new Item.Properties().tab(ModItemTab.instance))));
 
     public static final RegistryObject<Item> ICE_SHOULDER_PAD = ITEMS.register("ice_shoulder_pad",
             () -> new IceShoulderPadItem((new Item.Properties()).tab(ModItemTab.instance)));
