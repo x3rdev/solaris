@@ -1,9 +1,8 @@
-package com.github.x3rmination.solaris.common.item.PheonixSpear;
+package com.github.x3rmination.solaris.common.item.PhoenixSpear;
 
 import com.github.x3rmination.solaris.Solaris;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
-import software.bernie.geckolib3.model.provider.GeoModelProvider;
 
 public class PhoenixSpearModel extends AnimatedGeoModel<PhoenixSpearItem> {
 
