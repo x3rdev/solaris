@@ -1,7 +1,14 @@
 package com.github.x3rmination.solaris.common.item.PhoenixShield;
 
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ShieldItem;
+import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.level.Level;
 import net.minecraftforge.client.IItemRenderProperties;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
@@ -10,7 +17,8 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 
-public class PhoenixShieldItem extends ShieldItem implements IAnimatable {
+//Does not extend ShieldItem because EFM does not want to behave :/
+public class PhoenixShieldItem extends Item implements IAnimatable {
 
     public AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
@@ -28,6 +36,20 @@ public class PhoenixShieldItem extends ShieldItem implements IAnimatable {
         return this.factory;
     }
 
+    public UseAnim getUseAnimation(ItemStack pStack) {
+        return UseAnim.BLOCK;
+    }
+
+    public int getUseDuration(ItemStack pStack) {
+        return 72000;
+    }
+
+    public InteractionResultHolder<ItemStack> use(Level pLevel, Player pPlayer, InteractionHand pHand) {
+        ItemStack itemstack = pPlayer.getItemInHand(pHand);
+        pPlayer.startUsingItem(pHand);
+        return InteractionResultHolder.consume(itemstack);
+    }
+
     @Override
     public void initializeClient(Consumer<IItemRenderProperties> consumer) {
         consumer.accept(new IItemRenderProperties() {
@@ -36,5 +58,10 @@ public class PhoenixShieldItem extends ShieldItem implements IAnimatable {
                 return new PhoenixShieldRenderer();
             }
         });
+    }
+
+    @Override
+    public boolean canPerformAction(ItemStack stack, net.minecraftforge.common.ToolAction toolAction) {
+        return net.minecraftforge.common.ToolActions.DEFAULT_SHIELD_ACTIONS.contains(toolAction);
     }
 }

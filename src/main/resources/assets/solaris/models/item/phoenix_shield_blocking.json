@@ -7,14 +7,14 @@
   "display": {
     "thirdperson_righthand": {
       "rotation": [
-        0,
-        -90,
+        40,
+        -50,
         0
       ],
       "translation": [
         4,
-        -19.25,
-        2.75
+        -14.25,
+        -12
       ],
       "scale": [
         1.3,
@@ -24,22 +24,27 @@
     },
     "thirdperson_lefthand": {
       "rotation": [
-        0,
-        -90,
+        40,
+        -50,
         0
       ],
       "translation": [
-        3.74,
-        -17.9,
-        2.75
+        4,
+        -14.25,
+        -12
       ],
       "scale": [
-        1.2,
-        1.2,
-        1.2
+        1.3,
+        1.3,
+        1.3
       ]
     },
     "firstperson_righthand": {
+      "rotation": [
+        0,
+        0,
+        10
+      ],
       "translation": [
         -4,
         -11,
@@ -47,10 +52,20 @@
       ]
     },
     "firstperson_lefthand": {
+      "rotation": [
+        0,
+        0,
+        10
+      ],
       "translation": [
         -4,
         -11,
         4.5
+      ],
+      "scale": [
+        1,
+        1,
+        1
       ]
     },
     "ground": {
@@ -94,13 +109,5 @@
         1.2
       ]
     }
-  },
-  "overrides": [
-    {
-      "predicate": {
-        "blocking": 1
-      },
-      "model": "solaris:item/phoenix_shield_blocking"
-    }
-  ]
+  }
 }

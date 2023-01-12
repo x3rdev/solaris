@@ -5,11 +5,12 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "solaris.refmap.json",
   "mixins": [
-    "SkillContainerMixin",
     "PatchedLivingEntityRendererMixin",
-    "PHumanoidRendererMixin"
+    "PHumanoidRendererMixin",
+    "SkillContainerMixin"
   ],
   "client": [
+
   ],
   "injectors": {
     "defaultRequire": 1
