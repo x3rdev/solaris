@@ -1,8 +1,6 @@
 package com.github.x3rmination.solaris.mixin;
 
-import com.github.x3rmination.solaris.common.item.PhoenixShield.PhoenixShieldItem;
 import com.mojang.blaze3d.vertex.PoseStack;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.util.Mth;
@@ -39,4 +37,6 @@ public abstract class PatchedLivingEntityRendererMixin {
         }
         entityPatch.getOriginal().getOffhandItem();
     }
+
+
 }

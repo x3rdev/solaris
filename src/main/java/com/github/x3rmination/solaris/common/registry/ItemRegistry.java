@@ -26,13 +26,11 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemRegistry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Solaris.MOD_ID);
-
     public static final RegistryObject<Item> FLAMING_FLAMBERGE = ITEMS.register("flaming_flamberge",
             () -> new FlamingFlambergeItem((new Item.Properties()).tab(ModItemTab.instance)));
 
     public static final RegistryObject<Item> FROSTBITE = ITEMS.register("frostbite",
             () -> new FrostbiteItem((new Item.Properties()).tab(ModItemTab.instance)));
-
     public static final RegistryObject<Item> FIRE_KATANA = ITEMS.register("fire_katana",
             () -> new FireKatanaItem((new Item.Properties()).tab(ModItemTab.instance)));
 

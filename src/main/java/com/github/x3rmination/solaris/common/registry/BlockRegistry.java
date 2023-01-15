@@ -32,5 +32,5 @@ public class BlockRegistry {
             () -> new PearlstoneSlabs(BlockBehaviour.Properties.of(Material.STONE)));
 
     public static final RegistryObject<Block> SOLARIS_SUN = BLOCKS.register("solaris_sun",
-            () -> new SolarisSunBlock(BlockBehaviour.Properties.of(Material.STONE)));
+            () -> new SolarisSunBlock(BlockBehaviour.Properties.of(Material.STONE).emissiveRendering((pState, pLevel, pPos) -> true).lightLevel(value -> 15)));
 }

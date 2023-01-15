@@ -64,4 +64,6 @@ public class PhoenixShieldItem extends Item implements IAnimatable {
     public boolean canPerformAction(ItemStack stack, net.minecraftforge.common.ToolAction toolAction) {
         return net.minecraftforge.common.ToolActions.DEFAULT_SHIELD_ACTIONS.contains(toolAction);
     }
+
+
 }

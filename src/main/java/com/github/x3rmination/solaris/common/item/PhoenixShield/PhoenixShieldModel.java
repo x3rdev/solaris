@@ -2,6 +2,7 @@ package com.github.x3rmination.solaris.common.item.PhoenixShield;
 
 import com.github.x3rmination.solaris.Solaris;
 import net.minecraft.resources.ResourceLocation;
+import software.bernie.geckolib3.core.processor.IBone;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class PhoenixShieldModel extends AnimatedGeoModel<PhoenixShieldItem> {
@@ -19,4 +20,6 @@ public class PhoenixShieldModel extends AnimatedGeoModel<PhoenixShieldItem> {
     public ResourceLocation getAnimationFileLocation(PhoenixShieldItem animatable) {
         return null;
     }
+
+
 }
