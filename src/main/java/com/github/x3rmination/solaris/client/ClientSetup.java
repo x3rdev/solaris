@@ -5,7 +5,7 @@ import com.github.x3rmination.solaris.client.layer.BodyPartLayer;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
 import com.github.x3rmination.solaris.client.particle.CherryBlossomParticle;
-import com.github.x3rmination.solaris.common.block.SolarisSunBlockRenderer;
+import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
 import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackRenderer;
 import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackRenderer;
 import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteAttackRenderer;
@@ -19,7 +19,6 @@ import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -36,9 +35,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 import yesman.epicfight.client.ClientEngine;
-import yesman.epicfight.client.renderer.patched.entity.PatchedLivingEntityRenderer;
-import yesman.epicfight.main.EpicFightMod;
-import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
 import java.util.List;
 

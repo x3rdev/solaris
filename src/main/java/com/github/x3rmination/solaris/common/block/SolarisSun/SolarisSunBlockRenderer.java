@@ -1,6 +1,5 @@
-package com.github.x3rmination.solaris.common.block;
+package com.github.x3rmination.solaris.common.block.SolarisSun;
 
-import com.github.x3rmination.solaris.common.registry.BlockItemRegistry;
 import com.github.x3rmination.solaris.common.registry.ItemRegistry;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,7 +12,6 @@ import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
-import org.spongepowered.asm.mixin.MixinEnvironment;
 import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoBlockRenderer;
 
@@ -32,7 +30,7 @@ public class SolarisSunBlockRenderer extends GeoBlockRenderer<SolarisSunBlockEnt
         poseStack.mulPose(Vector3f.YP.rotationDegrees(180.0F));
         poseStack.mulPose(Vector3f.ZP.rotationDegrees(animatable.time + partialTick % 180));
         poseStack.translate(0, -17, 0);
-        poseStack.scale(140, 140, 141);
+        poseStack.scale(150, 150, 150);
         Minecraft.getInstance().getItemRenderer().renderStatic(ItemRegistry.SOLARIS_SUN.get().getDefaultInstance(), ItemTransforms.TransformType.GROUND, 15728880, OverlayTexture.NO_OVERLAY, poseStack, bufferSource, 0);
         poseStack.popPose();
 
@@ -45,7 +43,7 @@ public class SolarisSunBlockRenderer extends GeoBlockRenderer<SolarisSunBlockEnt
         Minecraft.getInstance().getItemRenderer().renderStatic(ItemRegistry.SOLARIS_SUN_AURA.get().getDefaultInstance(), ItemTransforms.TransformType.GROUND, 15728880, OverlayTexture.NO_OVERLAY, poseStack, bufferSource, 0);
         poseStack.popPose();
 
-        poseStack.scale(6.1F, 6.1F, 6.1F);
+        poseStack.scale(6F, 6F, 6F);
         super.render(model, animatable, partialTick, type, poseStack, bufferSource, buffer, 15728880, packedOverlay, red, green, blue, alpha);
     }
 

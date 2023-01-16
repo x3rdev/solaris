@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.block;
+package com.github.x3rmination.solaris.common.block.SolarisSun;
 
 import com.github.x3rmination.solaris.Solaris;
 import net.minecraft.resources.ResourceLocation;

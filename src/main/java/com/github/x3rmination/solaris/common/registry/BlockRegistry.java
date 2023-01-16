@@ -4,7 +4,7 @@ import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.block.PearlstoneBlock;
 import com.github.x3rmination.solaris.common.block.PearlstoneSlabs;
 import com.github.x3rmination.solaris.common.block.PearlstoneStairs;
-import com.github.x3rmination.solaris.common.block.SolarisSunBlock;
+import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
