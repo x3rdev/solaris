@@ -26,6 +26,12 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemRegistry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Solaris.MOD_ID);
+
+    public static final RegistryObject<Item> SOLARIS_SUN = ITEMS.register("solaris",
+            () -> new Item((new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> SOLARIS_SUN_AURA = ITEMS.register("solaris_aura",
+            () -> new Item((new Item.Properties()).tab(ModItemTab.instance)));
     public static final RegistryObject<Item> FLAMING_FLAMBERGE = ITEMS.register("flaming_flamberge",
             () -> new FlamingFlambergeItem((new Item.Properties()).tab(ModItemTab.instance)));
 

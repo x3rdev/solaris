@@ -26,13 +26,25 @@ public class SolarisSunBlockRenderer extends GeoBlockRenderer<SolarisSunBlockEnt
     @Override
     public void render(GeoModel model, SolarisSunBlockEntity animatable, float partialTick, RenderType type, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         poseStack.translate(0, 0.5 - (1/128F), 0);
+
         poseStack.pushPose();
-        poseStack.translate(0, -17, 0);
-        poseStack.scale(140, 140, 140);
         poseStack.mulPose(Minecraft.getInstance().getEntityRenderDispatcher().cameraOrientation());
         poseStack.mulPose(Vector3f.YP.rotationDegrees(180.0F));
-        Minecraft.getInstance().getItemRenderer().renderStatic(BlockItemRegistry.SOLARIS_SUN.get().getDefaultInstance(), ItemTransforms.TransformType.GROUND, 15728880, OverlayTexture.NO_OVERLAY, poseStack, bufferSource, 0);
+        poseStack.mulPose(Vector3f.ZP.rotationDegrees(animatable.time + partialTick % 180));
+        poseStack.translate(0, -17, 0);
+        poseStack.scale(140, 140, 141);
+        Minecraft.getInstance().getItemRenderer().renderStatic(ItemRegistry.SOLARIS_SUN.get().getDefaultInstance(), ItemTransforms.TransformType.GROUND, 15728880, OverlayTexture.NO_OVERLAY, poseStack, bufferSource, 0);
         poseStack.popPose();
+
+        poseStack.pushPose();
+        poseStack.mulPose(Minecraft.getInstance().getEntityRenderDispatcher().cameraOrientation());
+        poseStack.mulPose(Vector3f.YP.rotationDegrees(180.0F));
+        poseStack.mulPose(Vector3f.ZP.rotationDegrees((animatable.time + partialTick % 180) * -1));
+        poseStack.translate(0, -17, 0);
+        poseStack.scale(140, 140, 140);
+        Minecraft.getInstance().getItemRenderer().renderStatic(ItemRegistry.SOLARIS_SUN_AURA.get().getDefaultInstance(), ItemTransforms.TransformType.GROUND, 15728880, OverlayTexture.NO_OVERLAY, poseStack, bufferSource, 0);
+        poseStack.popPose();
+
         poseStack.scale(6.1F, 6.1F, 6.1F);
         super.render(model, animatable, partialTick, type, poseStack, bufferSource, buffer, 15728880, packedOverlay, red, green, blue, alpha);
     }
