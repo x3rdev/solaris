@@ -63,12 +63,11 @@ public class ItemRegistry {
             RenderItem::new);
     public static final RegistryObject<Item> SPRING_WIND_BLADE = ITEMS.register("spring_wind_blade",
             RenderItem::new);
+
     public static final RegistryObject<Item> PHOENIX_SPEAR = ITEMS.register("phoenix_spear",
             () -> new PhoenixSpearItem((new Item.Properties().tab(ModItemTab.instance))));
-
     public static final RegistryObject<Item> PHOENIX_SHIELD = ITEMS.register("phoenix_shield",
             () -> new PhoenixShieldItem((new Item.Properties().tab(ModItemTab.instance))));
-
     public static final RegistryObject<Item> ICE_SHOULDER_PAD = ITEMS.register("ice_shoulder_pad",
             () -> new IceShoulderPadItem((new Item.Properties()).tab(ModItemTab.instance)));
 
