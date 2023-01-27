@@ -35,9 +35,6 @@ public class PhoenixShieldRenderer extends GeoItemRenderer<PhoenixShieldItem> {
 
     @Override
     public void renderRecursively(GeoBone bone, PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        if(bone.getName().equals("feather")) {
-//                bone.addRotationY((float) (Math.PI + (Math.PI / 7)));
-        }
         super.renderRecursively(bone, poseStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
