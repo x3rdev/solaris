@@ -1,28 +1,13 @@
 {
-  "type": {
-    "ultrawarm": false,
-    "natural": false,
-    "piglin_safe": false,
-    "respawn_anchor_works": false,
-    "bed_works": false,
-    "has_raids": false,
-    "has_skylight": false,
-    "has_ceiling": false,
-    "coordinate_scale": 1,
-    "ambient_light": 0,
-    "logical_height": 256,
-    "infiniburn": "#minecraft:infiniburn_overworld",
-    "min_y": 0,
-    "height": 256
-  },
+  "type": "minecraft:overworld",
   "generator": {
     "type": "minecraft:noise",
-    "seed": -358614565,
+    "seed": 501247891,
     "settings": {
       "sea_level": 63,
       "disable_mob_generation": false,
       "aquifers_enabled": true,
-      "ore_veins_enabled": true,
+      "ore_veins_enabled": false,
       "legacy_random_source": false,
       "default_block": {
         "Name": "solaris:pearlstone"
@@ -30,12 +15,12 @@
       "default_fluid": {
         "Name": "minecraft:air",
         "Properties": {
-          "level": "0"
+          "level": "2"
         }
       },
       "noise": {
-        "min_y": -64,
-        "height": 384,
+        "min_y": -16,
+        "height": 160,
         "size_horizontal": 1,
         "size_vertical": 2,
         "sampling": {
@@ -61,15 +46,15 @@
         }
       },
       "noise_router": {
-        "barrier": 0,
+        "barrier": "minecraft:end/sloped_cheese",
         "fluid_level_floodedness": 0,
         "fluid_level_spread": 0,
         "lava": 0,
         "temperature": 0,
         "vegetation": 0,
-        "continents": 0,
-        "erosion": 0,
-        "depth": 0,
+        "continents": "minecraft:y",
+        "erosion": "minecraft:end/sloped_cheese",
+        "depth": "minecraft:end/sloped_cheese",
         "ridges": 0,
         "initial_density_without_jaggedness": 0,
         "final_density": {
@@ -81,12 +66,13 @@
         "vein_gap": 0
       },
       "surface_rule": {
-        "type": "minecraft:bandlands"
+        "type": "minecraft:sequence",
+        "sequence": []
       }
     },
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "minecraft:basalt_deltas"
+      "biome": "solaris:solaris_midlands"
     }
   }
 }

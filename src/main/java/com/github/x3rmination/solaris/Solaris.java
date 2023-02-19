@@ -44,6 +44,7 @@ public class Solaris {
         forgeBus.register(CapabilityEvents.class);
         forgeBus.register(RaceCapabilityAttacher.class);
 
+        BiomeRegistry.BIOMES.register(modEventBus);
         BlockRegistry.BLOCKS.register(modEventBus);
         BlockItemRegistry.BLOCK_ITEMS.register(modEventBus);
         BlockEntityRegistry.BLOCK_ENTITIES.register(modEventBus);

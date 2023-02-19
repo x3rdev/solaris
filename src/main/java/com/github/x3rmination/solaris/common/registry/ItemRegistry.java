@@ -15,6 +15,7 @@ import com.github.x3rmination.solaris.common.item.PhoenixSpear.PhoenixSpearItem;
 import com.github.x3rmination.solaris.common.item.RenderItem;
 import com.github.x3rmination.solaris.common.item.SolarArmor.SolarArmorItem;
 import com.github.x3rmination.solaris.common.item.SpringWind.SpringWindItem;
+import com.github.x3rmination.solaris.common.item.TestDemon.TestDemonItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -82,6 +83,9 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> SOLAR_BOOTS = ITEMS.register("solar_boots",
             () -> new SolarArmorItem(EquipmentSlot.FEET, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> TEST_DEMON = ITEMS.register("test_demon",
+            () -> new TestDemonItem((new Item.Properties()).tab(ModItemTab.instance)));
 
     public static class ModItemTab extends CreativeModeTab {
         public static final ModItemTab instance = new ModItemTab(CreativeModeTab.TABS.length, Solaris.MOD_ID);

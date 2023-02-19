@@ -15,4 +15,5 @@ public class ParticleRegistry {
             () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> CHERRY_BLOSSOM = PARTICLE_TYPES.register("cherry_blossom",
             () -> new SimpleParticleType(true));
+
 }

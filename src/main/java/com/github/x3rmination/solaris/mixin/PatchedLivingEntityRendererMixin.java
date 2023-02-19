@@ -1,11 +1,15 @@
 package com.github.x3rmination.solaris.mixin;
 
+import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.*;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -26,13 +30,27 @@ public abstract class PatchedLivingEntityRendererMixin {
         if(entityPatch.getOriginal() instanceof Player) {
             if (entityPatch.getAnimator().getPose(partialTicks).getJointTransformData().get("Tool_R") != null) {
                 OpenMatrix4f transformMatrix = Animator.getBindedJointTransformByName(entityPatch.getAnimator().getPose(partialTicks), armature, "Tool_R");
-                double degrees = Mth.wrapDegrees(entityPatch.getOriginal().yBodyRot);
-                double radians = degrees * Math.PI / 180F;
+                double bodyRot = Mth.wrapDegrees(entityPatch.getOriginal().yBodyRot) * Math.PI / 180F;
                 double xHandPos = transformMatrix.m30 * -1;
                 double zHandPos = transformMatrix.m32 * -1;
-                double xMod = (xHandPos * Math.cos(radians)) - (zHandPos * Math.sin(radians));
-                double zMod = (xHandPos * Math.sin(radians)) + (zHandPos * Math.cos(radians));
-//                livingEntity.level.addParticle(ParticleTypes.WAX_OFF, livingEntity.position().x + xMod, livingEntity.position().y + transformMatrix.m31, livingEntity.position().z + zMod, 0, 0, 0);
+
+                double handX = (xHandPos * Math.cos(bodyRot)) - (zHandPos * Math.sin(bodyRot)) + livingEntity.position().x;
+                double handZ = (xHandPos * Math.sin(bodyRot)) + (zHandPos * Math.cos(bodyRot)) + livingEntity.position().z;
+                livingEntity.level.addParticle(ParticleTypes.FLAME, handX, livingEntity.position().y + transformMatrix.m31, handZ, 0, 0, 0);
+
+//                double toolX = ((xHandPos + 1) * Math.cos(bodyRot)) - ((zHandPos + 1) * Math.sin(bodyRot));
+//                double toolY = transformMatrix.m31;
+//                double toolZ = ((xHandPos + 1) * Math.sin(bodyRot)) + ((zHandPos + 1) * Math.cos(bodyRot));
+                Vector3f toolPos = new Vector3f(0, 0, 1);
+                Quaternion rotation = transformMatrix.toQuaternion();
+                rotation.set(-rotation.i(), rotation.j(), rotation.k(), -rotation.r());
+                toolPos.transform(rotation);
+                livingEntity.level.addParticle(ParticleTypes.FLAME, toolPos.x() + livingEntity.position().x, toolPos.y() + livingEntity.position().y, toolPos.z() + livingEntity.position().z, 0, 0, 0);
+
+                Vector3f toolPostest = new Vector3f(0, 0, 1);
+                Quaternion rotationtest = transformMatrix.toQuaternion();
+                toolPostest.transform(rotationtest);
+                livingEntity.level.addParticle(ParticleTypes.CRIT, toolPostest.x() + livingEntity.position().x, toolPostest.y() + livingEntity.position().y, toolPostest.z() + livingEntity.position().z, 0, 0, 0);
             }
         }
         entityPatch.getOriginal().getOffhandItem();
