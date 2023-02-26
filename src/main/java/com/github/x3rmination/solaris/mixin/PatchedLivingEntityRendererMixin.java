@@ -40,8 +40,8 @@ public abstract class PatchedLivingEntityRendererMixin {
                 livingEntity.level.addParticle(ParticleTypes.FLAME, handX, handY, handZ, 0, 0, 0);
 
                 Vector3f toolPos = new Vector3f(0, 0, 1);
-                toolPos.setX((float) -Math.sin(bodyRot));
-                toolPos.setZ((float) Math.cos(bodyRot));
+                toolPos.setX((float) ((toolPos.x() * Math.cos(bodyRot)) - (toolPos.z() * Math.sin(bodyRot))));
+                toolPos.setZ((float) ((toolPos.x() * Math.sin(bodyRot)) + (toolPos.z() * Math.cos(bodyRot))));
                 Quaternion rotation = transformMatrix.toQuaternion();
                 rotation.set(rotation.i(), -rotation.j(), rotation.k(), rotation.r());
                 toolPos.transform(rotation);
