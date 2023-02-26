@@ -35,22 +35,23 @@ public abstract class PatchedLivingEntityRendererMixin {
                 double zHandPos = transformMatrix.m32 * -1;
 
                 double handX = (xHandPos * Math.cos(bodyRot)) - (zHandPos * Math.sin(bodyRot)) + livingEntity.position().x;
+                double handY = livingEntity.position().y + transformMatrix.m31;
                 double handZ = (xHandPos * Math.sin(bodyRot)) + (zHandPos * Math.cos(bodyRot)) + livingEntity.position().z;
-                livingEntity.level.addParticle(ParticleTypes.FLAME, handX, livingEntity.position().y + transformMatrix.m31, handZ, 0, 0, 0);
+                livingEntity.level.addParticle(ParticleTypes.FLAME, handX, handY, handZ, 0, 0, 0);
 
-//                double toolX = ((xHandPos + 1) * Math.cos(bodyRot)) - ((zHandPos + 1) * Math.sin(bodyRot));
-//                double toolY = transformMatrix.m31;
-//                double toolZ = ((xHandPos + 1) * Math.sin(bodyRot)) + ((zHandPos + 1) * Math.cos(bodyRot));
                 Vector3f toolPos = new Vector3f(0, 0, 1);
+                toolPos.setX((float) -Math.sin(bodyRot));
+                toolPos.setZ((float) Math.cos(bodyRot));
                 Quaternion rotation = transformMatrix.toQuaternion();
-                rotation.set(-rotation.i(), rotation.j(), rotation.k(), -rotation.r());
+                rotation.set(rotation.i(), -rotation.j(), rotation.k(), rotation.r());
                 toolPos.transform(rotation);
-                livingEntity.level.addParticle(ParticleTypes.FLAME, toolPos.x() + livingEntity.position().x, toolPos.y() + livingEntity.position().y, toolPos.z() + livingEntity.position().z, 0, 0, 0);
 
-                Vector3f toolPostest = new Vector3f(0, 0, 1);
-                Quaternion rotationtest = transformMatrix.toQuaternion();
-                toolPostest.transform(rotationtest);
-                livingEntity.level.addParticle(ParticleTypes.CRIT, toolPostest.x() + livingEntity.position().x, toolPostest.y() + livingEntity.position().y, toolPostest.z() + livingEntity.position().z, 0, 0, 0);
+                livingEntity.level.addParticle(ParticleTypes.FLAME, handX + toolPos.x(), handY, handZ + toolPos.z(), 0, 0, 0);
+//
+//                Vector3f toolPostest = new Vector3f(0, 0, 1);
+//                Quaternion rotationtest = transformMatrix.toQuaternion();
+//                toolPostest.transform(rotationtest);
+//                livingEntity.level.addParticle(ParticleTypes.CRIT, toolPostest.x() + livingEntity.position().x, toolPostest.y() + livingEntity.position().y, toolPostest.z() + livingEntity.position().z, 0, 0, 0);
             }
         }
         entityPatch.getOriginal().getOffhandItem();
