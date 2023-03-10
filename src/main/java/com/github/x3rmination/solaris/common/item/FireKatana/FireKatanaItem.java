@@ -2,40 +2,42 @@ package com.github.x3rmination.solaris.common.item.FireKatana;
 
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.helper.ParticleHelper;
+import com.github.x3rmination.solaris.common.item.SolarisParticleWeapon;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
-import com.github.x3rmination.solaris.common.registry.ItemRegistry;
-import com.github.x3rmination.solaris.common.registry.MobEffectRegistry;
 import com.github.x3rmination.solaris.common.scheduler.ClientScheduler;
 import com.github.x3rmination.solaris.common.scheduler.Executable;
 import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
+import com.mojang.math.Vector3f;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeTier;
-import net.minecraftforge.event.entity.living.LivingAttackEvent;
-import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import yesman.epicfight.gameasset.Skills;
 import yesman.epicfight.skill.Skill;
 
 @Mod.EventBusSubscriber(modid = Solaris.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
-public class FireKatanaItem extends SwordItem implements SolarisWeapon {
+public class FireKatanaItem extends SwordItem implements SolarisWeapon, SolarisParticleWeapon {
+
+    protected static final Vector3f[] PARTICLE_ARRAY = {
+            new Vector3f(0, 0, 1.25F),
+            new Vector3f(0, 0, 0.75F),
+            new Vector3f(0, 0, 0.25F)
+    };
     public FireKatanaItem(Properties pProperties) {
         super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -2F, pProperties);
     }
@@ -96,5 +98,20 @@ public class FireKatanaItem extends SwordItem implements SolarisWeapon {
         FireKatanaAttackEntity fireKatanaAttack = new FireKatanaAttackEntity(serverPlayer, serverPlayer.getLookAngle().x, serverPlayer.getLookAngle().y, serverPlayer.getLookAngle().z, serverPlayer.level);
         fireKatanaAttack.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(3, 0, 3)));
         serverPlayer.level.addFreshEntity(fireKatanaAttack);
+    }
+
+    @Override
+    public Vector3f[] getParticles() {
+        return PARTICLE_ARRAY;
+    }
+
+    @Override
+    public ParticleOptions getParticleType() {
+        return PARTRAND.nextFloat() < 0.3 ? ParticleTypes.ASH : ParticleTypes.FLAME;
+    }
+
+    @Override
+    public int getParticleDelay() {
+        return 3;
     }
 }
