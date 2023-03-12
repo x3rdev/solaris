@@ -20,6 +20,7 @@ import yesman.epicfight.gameasset.Models;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
 import java.util.Arrays;
+import java.util.Random;
 
 @Mixin(PatchedLivingEntityRenderer.class)
 public abstract class PatchedLivingEntityRendererMixin {
@@ -54,7 +55,8 @@ public abstract class PatchedLivingEntityRendererMixin {
             Quaternion rotation = transformMatrix.toQuaternion();
             rotation.set(rotation.i(), -rotation.j(), rotation.k(), rotation.r());
             toolPos.transform(rotation);
-            livingEntity.level.addParticle(particleType, toolPos.x() + handX + livingEntity.position().x, -toolPos.y() + handY + livingEntity.position().y, toolPos.z() + handZ + livingEntity.position().z, 0, 0, 0);
+            Random random = livingEntity.getRandom();
+            livingEntity.level.addParticle(particleType, toolPos.x() + handX + livingEntity.position().x + (0.2 * (random.nextDouble() - 0.5)), -toolPos.y() + handY + livingEntity.position().y + (0.2 * (random.nextDouble() - 0.5)), toolPos.z() + handZ + livingEntity.position().z + (0.2 * (random.nextDouble() - 0.5)), 0, 0, 0);
         }
     }
 }

@@ -32,11 +32,4 @@ public class PhoenixShieldRenderer extends GeoItemRenderer<PhoenixShieldItem> {
         }
         super.renderByItem(stack, transformType, poseStack, bufferSource, packedLight, packedOverlay);
     }
-
-    @Override
-    public void renderRecursively(GeoBone bone, PoseStack poseStack, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        super.renderRecursively(bone, poseStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
-    }
-
-
 }
