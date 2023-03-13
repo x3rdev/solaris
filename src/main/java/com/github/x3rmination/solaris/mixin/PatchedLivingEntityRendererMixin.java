@@ -48,15 +48,16 @@ public abstract class PatchedLivingEntityRendererMixin {
             double handZ = (xHandPos * Math.sin(bodyRot)) + (zHandPos * Math.cos(bodyRot));
 
             Vector3f toolPos = inputVector.copy();
+            Quaternion rotation = transformMatrix.toQuaternion();
+            rotation.set(rotation.i(), -rotation.j(), rotation.k(), rotation.r());
+            toolPos.transform(rotation);
             float[] vector = {toolPos.x(), toolPos.y(), toolPos.z()};
             toolPos.setX((float) (vector[0] * Math.cos(bodyRot) - vector[2] * Math.sin(bodyRot)));
             toolPos.setZ((float) (vector[0] * Math.sin(bodyRot) + vector[2] * Math.cos(bodyRot)));
 
-            Quaternion rotation = transformMatrix.toQuaternion();
-            rotation.set(rotation.i(), -rotation.j(), rotation.k(), rotation.r());
-            toolPos.transform(rotation);
+
             Random random = livingEntity.getRandom();
-            livingEntity.level.addParticle(particleType, toolPos.x() + handX + livingEntity.position().x + (0.2 * (random.nextDouble() - 0.5)), -toolPos.y() + handY + livingEntity.position().y + (0.2 * (random.nextDouble() - 0.5)), toolPos.z() + handZ + livingEntity.position().z + (0.2 * (random.nextDouble() - 0.5)), 0, 0, 0);
+            livingEntity.level.addParticle(particleType, toolPos.x() + handX + livingEntity.position().x + (0.2 * (random.nextDouble() - 0.5)), toolPos.y() + handY + livingEntity.position().y + (0.2 * (random.nextDouble() - 0.5)), toolPos.z() + handZ + livingEntity.position().z + (0.2 * (random.nextDouble() - 0.5)), 0, 0, 0);
         }
     }
 }

@@ -1,11 +1,14 @@
 package com.github.x3rmination.solaris.common.item.FlamingFlamberge;
 
 import com.github.x3rmination.solaris.common.helper.ParticleHelper;
+import com.github.x3rmination.solaris.common.item.SolarisParticleWeapon;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
 import com.github.x3rmination.solaris.common.registry.ItemRegistry;
 import com.github.x3rmination.solaris.common.scheduler.ClientScheduler;
 import com.github.x3rmination.solaris.common.scheduler.Executable;
+import com.mojang.math.Vector3f;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
@@ -18,7 +21,7 @@ import net.minecraftforge.common.ForgeTier;
 import yesman.epicfight.gameasset.Skills;
 import yesman.epicfight.skill.Skill;
 
-public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon {
+public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, SolarisParticleWeapon {
 
     public FlamingFlambergeItem(Properties pProperties) {
         super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 9, -3F, pProperties);
@@ -46,5 +49,15 @@ public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon {
         for(int i = 0; i < 10; i++) {
             particleHelper.spawnCircle(2 + (i * 0.1), (int) (32 + (Math.random() * 4)));
         }
+    }
+
+    @Override
+    public Vector3f[] getParticles() {
+        return SolarisParticleWeapon.GENERIC_PARTICLE_ARRAY;
+    }
+
+    @Override
+    public ParticleOptions getParticleType() {
+        return PART_RAND.nextFloat() < 0.3 ? ParticleTypes.ASH : ParticleTypes.FLAME;
     }
 }

@@ -7,7 +7,13 @@ import java.util.Random;
 
 public interface SolarisParticleWeapon {
 
-    static final Random PARTRAND = new Random();
+    static final Random PART_RAND = new Random();
+
+    static final Vector3f[] GENERIC_PARTICLE_ARRAY = {
+            new Vector3f(0, 0, 1.5F),
+            new Vector3f(0, 0, 1.0F),
+            new Vector3f(0, 0, 0.5F)
+    };
 
     Vector3f[] getParticles();
 

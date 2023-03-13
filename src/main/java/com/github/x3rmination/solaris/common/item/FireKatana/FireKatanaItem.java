@@ -32,12 +32,6 @@ import yesman.epicfight.skill.Skill;
 
 @Mod.EventBusSubscriber(modid = Solaris.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class FireKatanaItem extends SwordItem implements SolarisWeapon, SolarisParticleWeapon {
-
-    protected static final Vector3f[] PARTICLE_ARRAY = {
-            new Vector3f(0, 0, 1.25F),
-            new Vector3f(0, 0, 0.75F),
-            new Vector3f(0, 0, 0.25F)
-    };
     public FireKatanaItem(Properties pProperties) {
         super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -2F, pProperties);
     }
@@ -102,12 +96,12 @@ public class FireKatanaItem extends SwordItem implements SolarisWeapon, SolarisP
 
     @Override
     public Vector3f[] getParticles() {
-        return PARTICLE_ARRAY;
+        return SolarisParticleWeapon.GENERIC_PARTICLE_ARRAY;
     }
 
     @Override
     public ParticleOptions getParticleType() {
-        return PARTRAND.nextFloat() < 0.3 ? ParticleTypes.ASH : ParticleTypes.FLAME;
+        return PART_RAND.nextFloat() < 0.3 ? ParticleTypes.ASH : ParticleTypes.FLAME;
     }
 
     @Override
