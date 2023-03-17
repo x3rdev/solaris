@@ -38,4 +38,9 @@ public class FrostbiteItem extends SwordItem implements SolarisParticleWeapon {
     public ParticleOptions getParticleType() {
         return ParticleTypes.SNOWFLAKE;
     }
+
+    @Override
+    public int getParticleDelay() {
+        return 6;
+    }
 }
