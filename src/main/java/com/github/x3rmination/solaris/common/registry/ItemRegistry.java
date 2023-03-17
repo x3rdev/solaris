@@ -13,6 +13,7 @@ import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadI
 import com.github.x3rmination.solaris.common.item.MithrilChainsword.MithrilChainswordItem;
 import com.github.x3rmination.solaris.common.item.PhoenixShield.PhoenixShieldItem;
 import com.github.x3rmination.solaris.common.item.PhoenixSpear.PhoenixSpearItem;
+import com.github.x3rmination.solaris.common.item.RavensBlade.RavensBladeItem;
 import com.github.x3rmination.solaris.common.item.RenderItem;
 import com.github.x3rmination.solaris.common.item.SolarArmor.SolarArmorItem;
 import com.github.x3rmination.solaris.common.item.SpringWind.SpringWindItem;
@@ -87,6 +88,9 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> CLOUD_SPLITTER = ITEMS.register("cloud_splitter",
             () -> new CloudSplitterItem((new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> RAVENS_BLADE = ITEMS.register("ravens_blade",
+            () -> new RavensBladeItem((new Item.Properties()).tab(ModItemTab.instance)));
 
     public static class ModItemTab extends CreativeModeTab {
         public static final ModItemTab instance = new ModItemTab(CreativeModeTab.TABS.length, Solaris.MOD_ID);
