@@ -4,6 +4,7 @@ import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeBladeItem;
 import com.github.x3rmination.solaris.common.item.BloodyEclipse.BloodyEclipseItem;
 import com.github.x3rmination.solaris.common.item.BloodyFlamberge.BloodyFlambergeItem;
+import com.github.x3rmination.solaris.common.item.CloudSplitter.CloudSplitterItem;
 import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaItem;
 import com.github.x3rmination.solaris.common.item.FlamingFlamberge.FlamingFlambergeItem;
 import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteItem;
@@ -84,8 +85,8 @@ public class ItemRegistry {
     public static final RegistryObject<Item> SOLAR_BOOTS = ITEMS.register("solar_boots",
             () -> new SolarArmorItem(EquipmentSlot.FEET, (new Item.Properties()).tab(ModItemTab.instance)));
 
-    public static final RegistryObject<Item> TEST_DEMON = ITEMS.register("test_demon",
-            () -> new TestDemonItem((new Item.Properties()).tab(ModItemTab.instance)));
+    public static final RegistryObject<Item> CLOUD_SPLITTER = ITEMS.register("cloud_splitter",
+            () -> new CloudSplitterItem((new Item.Properties()).tab(ModItemTab.instance)));
 
     public static class ModItemTab extends CreativeModeTab {
         public static final ModItemTab instance = new ModItemTab(CreativeModeTab.TABS.length, Solaris.MOD_ID);
