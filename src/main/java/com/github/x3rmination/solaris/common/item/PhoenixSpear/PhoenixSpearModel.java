@@ -5,7 +5,6 @@ import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class PhoenixSpearModel extends AnimatedGeoModel<PhoenixSpearItem> {
-
     @Override
     public ResourceLocation getModelLocation(PhoenixSpearItem object) {
         return new ResourceLocation(Solaris.MOD_ID, "geo/phoenix_spear.geo.json");
