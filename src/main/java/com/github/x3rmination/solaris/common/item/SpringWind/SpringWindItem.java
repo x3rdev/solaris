@@ -153,7 +153,7 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
         if(pEntity instanceof ServerPlayer serverPlayer && !tag.getBoolean(FIRST_MODE)) {
             for (int seeker : pStack.getTag().getIntArray(SEEKER_LIST)) {
                 if(serverPlayer.level.getEntity(seeker) instanceof CherryBlossomSeekerEntity seekerEntity) {
-                    seekerEntity.moveToSmooth(serverPlayer.getLookAngle().scale(4).add(serverPlayer.position()).add(0, 1, 0), 2);
+                    seekerEntity.moveToSmooth(serverPlayer.getLookAngle().scale(5).add(serverPlayer.position()).add(0, 1, 0), 2);
                 }
             }
         }
