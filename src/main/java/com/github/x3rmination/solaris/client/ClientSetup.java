@@ -5,6 +5,7 @@ import com.github.x3rmination.solaris.client.layer.BodyPartLayer;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
 import com.github.x3rmination.solaris.client.particle.CherryBlossomParticle;
+import com.github.x3rmination.solaris.client.particle.Flame0Particle;
 import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
 import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackRenderer;
 import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackRenderer;
@@ -31,6 +32,7 @@ import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
@@ -94,6 +96,11 @@ public class ClientSetup {
     public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.ANIMATED_SPARKS.get(), AnimatedSparksParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ParticleRegistry.FLAME_0.get(), Flame0Particle.Provider::new);
     }
+
+//    public static void registerShaders(final RegisterShadersEvent event) {
+//        event.registerShader();
+//    }
 
 }

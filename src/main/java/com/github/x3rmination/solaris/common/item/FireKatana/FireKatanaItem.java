@@ -9,6 +9,7 @@ import com.github.x3rmination.solaris.common.scheduler.Executable;
 import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
@@ -18,6 +19,7 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -64,21 +66,6 @@ public class FireKatanaItem extends SwordItem implements SolarisWeapon, SolarisP
     }
 
     @Override
-    public void clientAttack(LocalPlayer localPlayer, Skill skill) throws NoSuchMethodException {
-        if(skill.equals(Skills.FATAL_DRAW)) {
-            ClientScheduler.schedule(new Executable(
-                    this,
-                    this.getClass().getDeclaredMethod("fireKatanaClient", LocalPlayer.class),
-                    new Object[]{localPlayer}, 35));
-        }
-    }
-
-    public void fireKatanaClient(LocalPlayer localPlayer) {
-        ParticleHelper particleHelper = new ParticleHelper(localPlayer.level, ParticleTypes.FLAME, localPlayer.position().add(0, 1, 0));
-        particleHelper.spawnArc(2, 10, Mth.wrapDegrees(localPlayer.getXRot()), localPlayer.getYRot(), localPlayer.getLookAngle());
-    }
-
-    @Override
     public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
         if(skill.equals(Skills.FATAL_DRAW)) {
             ServerScheduler.schedule(new Executable(
@@ -89,8 +76,9 @@ public class FireKatanaItem extends SwordItem implements SolarisWeapon, SolarisP
     }
 
     public void fireKatanaServer(ServerPlayer serverPlayer) {
-        FireKatanaAttackEntity fireKatanaAttack = new FireKatanaAttackEntity(serverPlayer, serverPlayer.getLookAngle().x, serverPlayer.getLookAngle().y, serverPlayer.getLookAngle().z, serverPlayer.level);
-        fireKatanaAttack.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(3, 0, 3)));
+        FireKatanaAttackEntity fireKatanaAttack = new FireKatanaAttackEntity(serverPlayer, serverPlayer.level);
+        fireKatanaAttack.shootFromRotation(serverPlayer, serverPlayer.getXRot(), serverPlayer.yRotO, 0.0F, 0.5F, 0);
+        fireKatanaAttack.move(MoverType.SELF, new Vec3(0, 1, 0));
         serverPlayer.level.addFreshEntity(fireKatanaAttack);
     }
 

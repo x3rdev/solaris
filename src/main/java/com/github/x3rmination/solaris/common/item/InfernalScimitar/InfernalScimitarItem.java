@@ -18,11 +18,19 @@ public class InfernalScimitarItem extends SwordItem implements SolarisParticleWe
 
     @Override
     public Vector3f[] getParticles() {
-        return SolarisParticleWeapon.GENERIC_PARTICLE_ARRAY;
+        return new Vector3f[] {
+                new Vector3f(0, 0, 1.0F),
+                new Vector3f(0, 0, 0.5F)
+        };
     }
 
     @Override
     public ParticleOptions getParticleType() {
         return ParticleTypes.FLAME;
+    }
+
+    @Override
+    public int getParticleDelay() {
+        return 4;
     }
 }
