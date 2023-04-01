@@ -1,0 +1,96 @@
+{
+  "parent": "builtin/entity",
+  "texture_size": [
+    256,
+    256
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        0,
+        -90,
+        0
+      ],
+      "translation": [
+        4,
+        -18.75,
+        4.25
+      ],
+      "scale": [
+        1.27,
+        1.27,
+        1.27
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        0,
+        -90,
+        0
+      ],
+      "translation": [
+        3.75,
+        -18.75,
+        4.5
+      ],
+      "scale": [
+        1.27,
+        1.27,
+        1.27
+      ]
+    },
+    "firstperson_righthand": {
+      "translation": [
+        0,
+        -13,
+        0
+      ]
+    },
+    "firstperson_lefthand": {
+      "translation": [
+        0,
+        -13,
+        0
+      ]
+    },
+    "ground": {
+      "translation": [
+        0.5,
+        -5.5,
+        0.5
+      ]
+    },
+    "gui": {
+      "translation": [
+        0,
+        -14,
+        0
+      ],
+      "scale": [
+        0.95,
+        0.95,
+        0.95
+      ]
+    },
+    "fixed": {
+      "translation": [
+        0,
+        -17.25,
+        -0.75
+      ],
+      "scale": [
+        1.17,
+        1.17,
+        1.17
+      ]
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "solaris:item/living_shield_blocking"
+    }
+  ]
+}

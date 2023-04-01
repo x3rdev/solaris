@@ -20,6 +20,4 @@ public class PhoenixShieldModel extends AnimatedGeoModel<PhoenixShieldItem> {
     public ResourceLocation getAnimationFileLocation(PhoenixShieldItem animatable) {
         return null;
     }
-
-
 }

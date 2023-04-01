@@ -17,8 +17,7 @@ import software.bernie.geckolib3.util.GeckoLibUtil;
 
 import java.util.function.Consumer;
 
-//Does not extend ShieldItem because EFM does not want to behave :/
-public class PhoenixShieldItem extends Item implements IAnimatable {
+public class PhoenixShieldItem extends ShieldItem implements IAnimatable {
 
     public AnimationFactory factory = GeckoLibUtil.createFactory(this);
 

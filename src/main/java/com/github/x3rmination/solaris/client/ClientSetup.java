@@ -46,7 +46,10 @@ public class ClientSetup {
         EntityRenderers.register(EntityRegistry.FROSTBITE_ATTACK.get(), FrostbiteAttackRenderer::new);
         EntityRenderers.register(EntityRegistry.ABYSSAL_EDGE_ATTACK.get(), AbyssalEdgeAttackRenderer::new);
         EntityRenderers.register(EntityRegistry.CHERRY_BLOSSOM_SEEKER.get(), CherryBlossomSeekerRenderer::new);
-        event.enqueueWork(() -> ItemProperties.register(ItemRegistry.PHOENIX_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F));
+        event.enqueueWork(() -> {
+            ItemProperties.register(ItemRegistry.PHOENIX_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
+            ItemProperties.register(ItemRegistry.LIVING_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
+        });
     }
 
     @SuppressWarnings({"rawtypes", "unchecked"})

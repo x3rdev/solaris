@@ -22,6 +22,7 @@ import com.github.x3rmination.solaris.common.item.InfernalScimitar.InfernalScimi
 import com.github.x3rmination.solaris.common.item.LightClaymore.LightClaymoreItem;
 import com.github.x3rmination.solaris.common.item.LivingGlaive.LivingGlaiveItem;
 import com.github.x3rmination.solaris.common.item.LivingGreatsword.LivingGreatswordItem;
+import com.github.x3rmination.solaris.common.item.LivingShield.LivingShieldItem;
 import com.github.x3rmination.solaris.common.item.MithrilChainsword.MithrilChainswordItem;
 import com.github.x3rmination.solaris.common.item.PhoenixShield.PhoenixShieldItem;
 import com.github.x3rmination.solaris.common.item.PhoenixSpear.PhoenixSpearItem;
@@ -141,8 +142,8 @@ public class ItemRegistry {
     public static final RegistryObject<Item> LIVING_GREATSWORD = ITEMS.register("living_greatsword",
             () -> new LivingGreatswordItem((new Item.Properties()).tab(ModItemTab.instance)));
 
-//    public static final RegistryObject<Item> LIVING_SHIELD = ITEMS.register("living_shield",
-//            () -> new LivingShieldItem((new Item.Properties()).tab(ModItemTab.instance)));
+    public static final RegistryObject<Item> LIVING_SHIELD = ITEMS.register("living_shield",
+            () -> new LivingShieldItem((new Item.Properties()).tab(ModItemTab.instance)));
 
     public static final RegistryObject<Item> LIVING_GLAIVE = ITEMS.register("living_glaive",
             () -> new LivingGlaiveItem((new Item.Properties()).tab(ModItemTab.instance)));
