@@ -1,5 +1,4 @@
 {
-	"ambientocclusion": false,
 	"texture_size": [8, 8],
 	"textures": {
 		"2": "solaris:item/demons_blade/lava_flow1",
