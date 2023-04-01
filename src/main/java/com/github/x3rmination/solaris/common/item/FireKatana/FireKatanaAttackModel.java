@@ -13,7 +13,7 @@ public class FireKatanaAttackModel extends AnimatedGeoModel<FireKatanaAttackEnti
 
     @Override
     public ResourceLocation getTextureLocation(FireKatanaAttackEntity object) {
-        int count = (int) (object.getLevel().nextSubTickCount()/10 % 32);
+        int count = (int) (object.getLevel().nextSubTickCount()/20 % 32);
         return new ResourceLocation(Solaris.MOD_ID, "textures/entity/fire_katana_attack/fire_" + count + ".png");
     }
 

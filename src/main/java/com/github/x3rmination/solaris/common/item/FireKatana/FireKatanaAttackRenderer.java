@@ -24,13 +24,13 @@ public class FireKatanaAttackRenderer extends GeoProjectilesRenderer<FireKatanaA
     @Override
     public void render(FireKatanaAttackEntity animatable, float yaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
         poseStack.translate(0, -1, 0);
-        poseStack.scale(10, 5, 10);
+        poseStack.scale(10, 10, 10);
         super.render(animatable, yaw, partialTick, poseStack, bufferSource, packedLight);
     }
 
-//    @Override
-//    public RenderType getRenderType(FireKatanaAttackEntity animatable, float partialTick, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, ResourceLocation texture) {
-//        return SolarisRenderTypes.emissive(texture);
-//    }
+    @Override
+    public RenderType getRenderType(FireKatanaAttackEntity animatable, float partialTick, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, ResourceLocation texture) {
+        return RenderType.entityTranslucent(texture);
+    }
 
 }
