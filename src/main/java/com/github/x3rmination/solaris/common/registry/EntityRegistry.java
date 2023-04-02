@@ -18,30 +18,30 @@ public class EntityRegistry {
 
     public static final RegistryObject<EntityType<FireKatanaAttackEntity>> FIRE_KATANA_ATTACK = ENTITIES.register("fire_katana_attack",
             () -> EntityType.Builder.<FireKatanaAttackEntity>of(FireKatanaAttackEntity::new, MobCategory.MISC)
-                    .sized(0.25F, 0.25F)
+                    .sized(3F, 0.75F)
                     .clientTrackingRange(4)
-                    .updateInterval(20)
+                    .updateInterval(10)
                     .build(new ResourceLocation(Solaris.MOD_ID, "fire_katana_attack").toString()));
 
     public static final RegistryObject<EntityType<FrostbiteAttackEntity>> FROSTBITE_ATTACK = ENTITIES.register("frostbite_attack",
             () -> EntityType.Builder.<FrostbiteAttackEntity>of(FrostbiteAttackEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F)
                     .clientTrackingRange(4)
-                    .updateInterval(20)
+                    .updateInterval(10)
                     .build(new ResourceLocation(Solaris.MOD_ID, "frostbite_attack").toString()));
 
     public static final RegistryObject<EntityType<AbyssalEdgeAttackEntity>> ABYSSAL_EDGE_ATTACK = ENTITIES.register("abyssal_edge_attack",
             () -> EntityType.Builder.<AbyssalEdgeAttackEntity>of(AbyssalEdgeAttackEntity::new, MobCategory.MISC)
                     .sized(0.25F, 0.25F)
                     .clientTrackingRange(4)
-                    .updateInterval(20)
+                    .updateInterval(10)
                     .build(new ResourceLocation(Solaris.MOD_ID, "abyssal_edge_attack").toString()));
 
     public static final RegistryObject<EntityType<CherryBlossomSeekerEntity>> CHERRY_BLOSSOM_SEEKER = ENTITIES.register("cherry_blossom_seeker",
             () -> EntityType.Builder.<CherryBlossomSeekerEntity>of(CherryBlossomSeekerEntity::new, MobCategory.MISC)
                     .sized(0.75F, 0.75F)
                     .clientTrackingRange(4)
-                    .updateInterval(2)
+                    .updateInterval(10)
                     .noSave()
                     .build(new ResourceLocation(Solaris.MOD_ID, "cherry_blossom_seeker").toString()));
 }

@@ -134,7 +134,7 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
     }
 
     public int spawnSeeker(ServerPlayer player, float offset) {
-        CherryBlossomSeekerEntity seekerEntity = new CherryBlossomSeekerEntity(player.level, player, offset);
+        CherryBlossomSeekerEntity seekerEntity = new CherryBlossomSeekerEntity(player, offset);
         seekerEntity.setPos(player.position().add(0, 2, 0));
         player.level.addFreshEntity(seekerEntity);
         return seekerEntity.getId();

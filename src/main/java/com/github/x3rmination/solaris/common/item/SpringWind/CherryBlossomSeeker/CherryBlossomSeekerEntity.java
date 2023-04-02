@@ -30,8 +30,8 @@ public class CherryBlossomSeekerEntity extends Projectile {
         this.noPhysics = true;
     }
 
-    public CherryBlossomSeekerEntity(Level pLevel, LivingEntity pShooter, float v) {
-        this(EntityRegistry.CHERRY_BLOSSOM_SEEKER.get(), pLevel);
+    public CherryBlossomSeekerEntity(LivingEntity pShooter, float v) {
+        this(EntityRegistry.CHERRY_BLOSSOM_SEEKER.get(), pShooter.level);
         this.setOwner(pShooter);
         this.entityData.set(DATA_OFFSET, v);
     }

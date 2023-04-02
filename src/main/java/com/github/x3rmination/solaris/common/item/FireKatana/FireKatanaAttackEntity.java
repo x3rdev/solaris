@@ -6,13 +6,18 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import net.minecraftforge.network.NetworkHooks;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -23,21 +28,36 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
 
-public class FireKatanaAttackEntity extends AbstractHurtingProjectile implements IAnimatable {
+public class FireKatanaAttackEntity extends Projectile implements IAnimatable {
 
     private AnimationFactory factory = GeckoLibUtil.createFactory(this);
-    public FireKatanaAttackEntity(EntityType<? extends AbstractHurtingProjectile> pEntityType, Level pLevel) {
+    public FireKatanaAttackEntity(EntityType<? extends Projectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.noCulling = true;
     }
 
-    public FireKatanaAttackEntity(LivingEntity pShooter, Level pLevel) {
-        super(EntityRegistry.FIRE_KATANA_ATTACK.get(), pShooter, 0, 0, 0, pLevel);
+    public FireKatanaAttackEntity(LivingEntity pShooter) {
+        this(EntityRegistry.FIRE_KATANA_ATTACK.get(), pShooter.level);
+        this.setPos(pShooter.position().add(pShooter.getLookAngle()));
+        this.setOwner(pShooter);
+        this.setRot(pShooter.getYRot(), pShooter.getXRot());
+    }
+
+    @Override
+    protected void defineSynchedData() {
+
     }
 
     @Override
     public void tick() {
         super.tick();
+
+        this.setPos(this.position().add(this.getDeltaMovement()));
+        HitResult hitresult = ProjectileUtil.getHitResult(this, this::canHitEntity);
+        if (hitresult.getType() != HitResult.Type.MISS && !net.minecraftforge.event.ForgeEventFactory.onProjectileImpact(this, hitresult)) {
+            this.onHit(hitresult);
+        }
+
         if(this.tickCount > 600) {
             this.kill();
         }
@@ -48,18 +68,8 @@ public class FireKatanaAttackEntity extends AbstractHurtingProjectile implements
     }
 
     @Override
-    protected ParticleOptions getTrailParticle() {
-        return ParticleTypes.FLAME;
-    }
-
-    @Override
     public boolean isOnFire() {
         return false;
-    }
-
-    @Override
-    public float getInertia() {
-        return 1;
     }
 
     @Override
