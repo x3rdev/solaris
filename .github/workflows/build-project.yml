@@ -17,6 +17,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      - name: Make Gradle wrapper accessible
+        run: chmod +x ./gradlew
       - name: build
         run: ./gradlew build
       - run: echo "This job's status is ${{ job.status }}."
