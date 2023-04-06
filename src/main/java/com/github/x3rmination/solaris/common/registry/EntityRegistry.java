@@ -19,7 +19,7 @@ public class EntityRegistry {
 
     public static final RegistryObject<EntityType<FireKatanaAttackEntity>> FIRE_KATANA_ATTACK = ENTITIES.register("fire_katana_attack",
             () -> EntityType.Builder.<FireKatanaAttackEntity>of(FireKatanaAttackEntity::new, MobCategory.MISC)
-                    .sized(3F, 0.75F)
+                    .sized(0.5F, 0.5F)
                     .clientTrackingRange(4)
                     .updateInterval(10)
                     .build(new ResourceLocation(Solaris.MOD_ID, "fire_katana_attack").toString()));
@@ -48,7 +48,7 @@ public class EntityRegistry {
 
     public static final RegistryObject<EntityType<WaterFlowerAttackEntity>> WATER_FLOWER_ATTACK = ENTITIES.register("water_flower_attack",
             () -> EntityType.Builder.<WaterFlowerAttackEntity>of(WaterFlowerAttackEntity::new, MobCategory.MISC)
-                    .sized(2F, 0.75F)
+                    .sized(0.5F, 0.5F)
                     .clientTrackingRange(4)
                     .updateInterval(10)
                     .build(new ResourceLocation(Solaris.MOD_ID, "water_flower_attack").toString()));

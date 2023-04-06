@@ -16,12 +16,12 @@ import java.util.function.Supplier;
 public class SendParticleMessage {
 
     private ParticleOptions pParticleData;
-    private double pX;
-    private double pY;
-    private double pZ;
-    private double pXSpeed;
-    private double pYSpeed;
-    private double pZSpeed;
+    private final double pX;
+    private final double pY;
+    private final double pZ;
+    private final double pXSpeed;
+    private final double pYSpeed;
+    private final double pZSpeed;
 
     public SendParticleMessage(ParticleOptions pParticleData, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
         this.pParticleData = pParticleData;
@@ -38,9 +38,9 @@ public class SendParticleMessage {
         this.pX = buf.readDouble();
         this.pY = buf.readDouble();
         this.pZ = buf.readDouble();
-        this.pXSpeed = buf.readFloat();
-        this.pYSpeed = buf.readFloat();
-        this.pZSpeed = buf.readFloat();
+        this.pXSpeed = buf.readDouble();
+        this.pYSpeed = buf.readDouble();
+        this.pZSpeed = buf.readDouble();
         this.pParticleData = this.readParticle(buf, particleType);
     }
 
