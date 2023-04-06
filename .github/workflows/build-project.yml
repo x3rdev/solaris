@@ -1,6 +1,9 @@
 name: Build Project
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+on:
+  push:
+    branches:
+      -master
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -18,4 +21,4 @@ jobs:
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: build
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "This job's status is ${{ job.status }}."
