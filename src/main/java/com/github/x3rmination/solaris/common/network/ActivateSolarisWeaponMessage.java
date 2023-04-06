@@ -12,11 +12,11 @@ public class ActivateSolarisWeaponMessage {
     public ActivateSolarisWeaponMessage() {
     }
 
-    public void encode(FriendlyByteBuf buf) {
+    public ActivateSolarisWeaponMessage(FriendlyByteBuf buf) {
+
     }
 
-    public static ActivateSolarisWeaponMessage decode(FriendlyByteBuf buf) {
-        return new ActivateSolarisWeaponMessage();
+    public void encode(FriendlyByteBuf buf) {
     }
 
     public void handle(Supplier<NetworkEvent.Context> context) {

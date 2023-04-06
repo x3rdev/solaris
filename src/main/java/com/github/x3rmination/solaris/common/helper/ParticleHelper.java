@@ -1,17 +1,23 @@
 package com.github.x3rmination.solaris.common.helper;
 
 import com.github.x3rmination.solaris.Solaris;
+import com.github.x3rmination.solaris.common.network.SendParticleMessage;
+import com.github.x3rmination.solaris.common.network.SolarisPacketHandler;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.chunk.ChunkStatus;
+import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.network.PacketDistributor;
 
 public class ParticleHelper {
 
@@ -66,6 +72,7 @@ public class ParticleHelper {
     }
 
     public void spawnParticle(ServerLevel serverLevel, Vec3 pos, Vec3 speed) {
+        SolarisPacketHandler.INSTANCE.send(PacketDistributor.TRACKING_CHUNK.with(() -> (LevelChunk) serverLevel.getChunk(new BlockPos(pos))), new SendParticleMessage(particleOptions, pos.x, pos.y, pos.z, speed.x, speed.y, speed.z));
         serverLevel.sendParticles(particleOptions, pos.x, pos.y, pos.z, 1, 0, 0, 0, speed.x);
     }
 

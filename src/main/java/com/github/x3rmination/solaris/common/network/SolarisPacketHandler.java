@@ -16,6 +16,7 @@ public class SolarisPacketHandler {
 
     public static void registerPackets() {
         int id = 0;
-        INSTANCE.registerMessage(id++, ActivateSolarisWeaponMessage.class, ActivateSolarisWeaponMessage::encode, ActivateSolarisWeaponMessage::decode, ActivateSolarisWeaponMessage::handle);
+        INSTANCE.registerMessage(id++, ActivateSolarisWeaponMessage.class, ActivateSolarisWeaponMessage::encode, ActivateSolarisWeaponMessage::new, ActivateSolarisWeaponMessage::handle);
+        INSTANCE.registerMessage(id++, SendParticleMessage.class, SendParticleMessage::encode, SendParticleMessage::new, SendParticleMessage::messageConsumer);
     }
 }
