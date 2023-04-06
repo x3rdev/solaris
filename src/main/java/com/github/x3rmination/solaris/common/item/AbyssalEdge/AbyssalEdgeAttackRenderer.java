@@ -23,9 +23,7 @@ public class AbyssalEdgeAttackRenderer extends GeoProjectilesRenderer {
 
     @Override
     public void renderLate(Object animatable, PoseStack stackIn, float partialTicks, MultiBufferSource renderTypeBuffer, VertexConsumer bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
-        stackIn.translate(44, -10, 0);
         stackIn.scale(30, 10, 1);
-//        stackIn.translate(-1.5, -1.5, 0);
         super.renderLate(animatable, stackIn, partialTicks, renderTypeBuffer, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
     }
 

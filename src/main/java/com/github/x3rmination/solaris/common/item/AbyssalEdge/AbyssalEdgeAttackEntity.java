@@ -59,10 +59,18 @@ public class AbyssalEdgeAttackEntity extends Entity implements IAnimatable {
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController(this, "controller", 4, this::predicate));
+        data.addAnimationController(new AnimationController(this, "controller", 5, this::predicate));
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if(event.getController().isJustStarting || event.animationTick < 20) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.abyssal_edge_attack.opening", ILoopType.EDefaultLoopTypes.PLAY_ONCE));
+            return PlayState.CONTINUE;
+        }
+        if(event.animationTick > 80) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.abyssal_edge_attack.closing", ILoopType.EDefaultLoopTypes.HOLD_ON_LAST_FRAME));
+            return PlayState.CONTINUE;
+        }
         event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.abyssal_edge_attack.idle", ILoopType.EDefaultLoopTypes.LOOP));
         return PlayState.CONTINUE;
     }
