@@ -73,7 +73,6 @@ public class ParticleHelper {
 
     public void spawnParticle(ServerLevel serverLevel, Vec3 pos, Vec3 speed) {
         SolarisPacketHandler.INSTANCE.send(PacketDistributor.TRACKING_CHUNK.with(() -> (LevelChunk) serverLevel.getChunk(new BlockPos(pos))), new SendParticleMessage(particleOptions, pos.x, pos.y, pos.z, speed.x, speed.y, speed.z));
-        serverLevel.sendParticles(particleOptions, pos.x, pos.y, pos.z, 1, 0, 0, 0, speed.x);
     }
 
     public Vec3 getPos() {
