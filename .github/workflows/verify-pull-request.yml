@@ -1,4 +1,4 @@
-name: Build Project
+name: Verify Pull Request
 run-name: Verify Pull Request 📄
 on:
   pull_request:
