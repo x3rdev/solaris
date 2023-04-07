@@ -38,9 +38,9 @@ public class FireKatanaAttackEntity extends Projectile implements IAnimatable {
 
     public FireKatanaAttackEntity(LivingEntity pShooter) {
         this(EntityRegistry.FIRE_KATANA_ATTACK.get(), pShooter.level);
-        this.setPos(pShooter.position().add(pShooter.getLookAngle()));
         this.setOwner(pShooter);
-        this.setRot(pShooter.getYRot(), pShooter.getXRot());
+        this.setPos(pShooter.position().add(pShooter.getLookAngle().scale(1.25).add(0, 0.75, 0)));
+        this.setRot(pShooter.getYHeadRot(), pShooter.getXRot());
     }
 
     @Override
@@ -51,7 +51,6 @@ public class FireKatanaAttackEntity extends Projectile implements IAnimatable {
     @Override
     public void tick() {
         super.tick();
-
         this.setPos(this.position().add(this.getDeltaMovement()));
         HitResult hitresult = ProjectileUtil.getHitResult(this, this::canHitEntity);
         if (hitresult.getType() != HitResult.Type.MISS && !net.minecraftforge.event.ForgeEventFactory.onProjectileImpact(this, hitresult)) {

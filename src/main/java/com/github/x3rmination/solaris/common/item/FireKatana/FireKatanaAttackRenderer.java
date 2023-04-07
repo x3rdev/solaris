@@ -25,7 +25,7 @@ public class FireKatanaAttackRenderer extends GeoProjectilesRenderer<FireKatanaA
 
     @Override
     public void render(FireKatanaAttackEntity animatable, float yaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
-        poseStack.translate(0, -2, 0);
+        poseStack.translate(0, -2.5, 0);
         poseStack.scale(10, 10, 10);
         super.render(animatable, yaw, partialTick, poseStack, bufferSource, packedLight);
     }
