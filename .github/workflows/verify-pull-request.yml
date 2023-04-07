@@ -1,6 +1,8 @@
 name: Build Project
 run-name: Verify Pull Request 📄
-on: [pull-request]
+on:
+  pull_request:
+    types: [opened, reopened]
 jobs:
   Build:
     runs-on: ubuntu-latest
