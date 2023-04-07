@@ -1,9 +1,9 @@
 name: Build Project
 run-name: $New build available 🚀
 on:
-  merge:
+  push:
     branches:
-      -master
+      master
 jobs:
   Build:
     runs-on: ubuntu-latest
