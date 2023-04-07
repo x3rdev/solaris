@@ -1,7 +1,7 @@
 name: Build Project
 run-name: $New build available 🚀
 on:
-  push:
+  merge:
     branches:
       -master
 jobs:
