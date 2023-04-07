@@ -49,7 +49,7 @@ description = '''
 [[dependencies.solaris]]
     modId = "curios"
     mandatory = true
-    versionRange = "[1.18.2-5.0.7.1,)"
+    versionRange = "[1.18.2-5.0.9.0,)"
     ordering = "NONE"
     side = "BOTH"
 [[dependencies.solaris]]

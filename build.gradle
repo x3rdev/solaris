@@ -146,10 +146,10 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft "net.minecraftforge:forge:1.18.2-40.1.80"
     implementation fg.deobf("curse.maven:epic-fight-mod-405076:4018756")
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.7.1")
-    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.7.1:api")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.9.0")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.9.0:api")
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.18:3.0.57")
-    implementation fg.deobf("com.github.Virtuoel:Pehkui:3.6.2-1.18.2-forge")
+    implementation fg.deobf("com.github.Virtuoel:Pehkui:3.7.2-1.18.2-forge")
 
 
 //    implementation fg.deobf('com.github.glitchfiend:TerraBlender-forge:1.18.2-1.2.0.126')
