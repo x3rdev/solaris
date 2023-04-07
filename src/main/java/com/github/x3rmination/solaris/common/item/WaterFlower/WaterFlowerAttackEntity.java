@@ -62,7 +62,6 @@ public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
         this.level.getEntities(this, this.getBoundingBox().inflate(1.5)).forEach(entity -> {
             entity.hurt(DamageSource.GENERIC, 4);
         });
-
         createParticles();
     }
 
@@ -76,7 +75,6 @@ public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
         if(this.level instanceof ServerLevel serverLevel) {
             serverLevel.sendParticles(ParticleTypes.SPLASH, this.getX(), this.getY(), this.getZ(), 100, 0, 0.5, 0, 0.5);
             serverLevel.sendParticles(ParticleTypes.POOF, this.getX(), this.getY(), this.getZ(), 5, 0, 0.5, 0, 0.5);
-
         }
         this.kill();
     }
@@ -97,13 +95,14 @@ public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
     }
 
     private void createParticles() {
-        ParticleHelper helper = new ParticleHelper(this.level, ParticleTypes.DRIPPING_WATER, this.position());
+        ParticleHelper helper = new ParticleHelper(this.level, ParticleTypes.SPLASH, this.position());
         if(this.level instanceof ServerLevel serverLevel) {
             for (int i = 0; i < 8; i++) {
                 double v = (i * Math.PI/4) + this.tickCount/15F;
                 double particleX = Math.cos(v) * 3;
                 double particleZ = Math.sin(v) * 3;
-                helper.spawnParticle(serverLevel, new Vec3(this.getX() + particleX, this.getY(), this.getZ() + particleZ), new Vec3(particleX, 0, particleZ).scale(0.1));
+                Vec3 speedVector = new Vec3(particleX, 0, particleZ).scale(0.25);
+                helper.spawnParticle(serverLevel, new Vec3(this.getX() + particleX, this.getY(), this.getZ() + particleZ), speedVector.add(this.getDeltaMovement()));
             }
         }
     }
