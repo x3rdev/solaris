@@ -17,10 +17,11 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          cache: 'gradle'
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
       - name: Build with gradle
-        run: ./gradlew build
+        run: ./gradlew build --no-daemon
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
