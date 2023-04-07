@@ -1,8 +1,9 @@
 name: Verify Pull Request
 run-name: Verify Pull Request 📄
 on:
-  pull_request:
-    types: [opened, reopened]
+  push:
+    branches-ignore:
+      master
 jobs:
   Build:
     runs-on: ubuntu-latest
