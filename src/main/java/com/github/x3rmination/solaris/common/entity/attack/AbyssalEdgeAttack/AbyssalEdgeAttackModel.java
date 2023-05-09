@@ -1,8 +1,7 @@
-package com.github.x3rmination.solaris.common.item.AbyssalEdge;
+package com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack;
 
 import com.github.x3rmination.solaris.Solaris;
 import net.minecraft.resources.ResourceLocation;
-import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 
 public class AbyssalEdgeAttackModel extends AnimatedGeoModel<AbyssalEdgeAttackEntity> {

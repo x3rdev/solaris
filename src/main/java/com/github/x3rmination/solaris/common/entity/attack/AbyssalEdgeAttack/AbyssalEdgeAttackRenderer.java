@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.item.AbyssalEdge;
+package com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -8,7 +8,6 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.Nullable;
-import software.bernie.geckolib3.model.AnimatedGeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoProjectilesRenderer;
 
 public class AbyssalEdgeAttackRenderer extends GeoProjectilesRenderer {

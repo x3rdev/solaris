@@ -3,17 +3,18 @@ package com.github.x3rmination.solaris.client;
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.client.layer.BodyPartLayer;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
+import com.github.x3rmination.solaris.client.model.armor.CentipedeScaleArmorModel;
+import com.github.x3rmination.solaris.client.model.armor.SolarArmorModel;
 import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
 import com.github.x3rmination.solaris.client.particle.CherryBlossomParticle;
 import com.github.x3rmination.solaris.client.particle.Flame0Particle;
 import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
-import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackRenderer;
-import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackRenderer;
-import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteAttackRenderer;
+import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackRenderer;
+import com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack.FireKatanaAttackRenderer;
+import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackRenderer;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadRenderer;
-import com.github.x3rmination.solaris.client.model.armor.SolarArmorModel;
-import com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker.CherryBlossomSeekerRenderer;
-import com.github.x3rmination.solaris.common.item.WaterFlower.WaterFlowerAttackRenderer;
+import com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker.CherryBlossomSeekerRenderer;
+import com.github.x3rmination.solaris.common.entity.attack.WaterFlowerAttack.WaterFlowerAttackRenderer;
 import com.github.x3rmination.solaris.common.registry.BlockEntityRegistry;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ItemRegistry;
@@ -33,7 +34,6 @@ import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
-import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
@@ -89,6 +89,7 @@ public class ClientSetup {
         //Vanilla is 0.5F inner, 1.0F outer, some models may vary
         event.registerLayerDefinition(SolarArmorModel.INNER_LAYER_LOCATION, () -> SolarArmorModel.createBodyLayer(new CubeDeformation(0.1F), 0.0F));
         event.registerLayerDefinition(SolarArmorModel.OUTER_LAYER_LOCATION, () -> SolarArmorModel.createBodyLayer(new CubeDeformation(0.6F), 0.0F));
+        event.registerLayerDefinition(CentipedeScaleArmorModel.MAIN_LAYER_LOCATION, CentipedeScaleArmorModel::createBodyLayer);
     }
 
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {

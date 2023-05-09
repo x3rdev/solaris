@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker;
+package com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker;
 
 import com.github.x3rmination.solaris.common.item.SpringWind.SpringWindItem;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;

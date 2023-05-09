@@ -17,5 +17,6 @@ public class ParticleRegistry {
             () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> FLAME_0 = PARTICLE_TYPES.register("flame_0",
             () -> new SimpleParticleType(true));
-
+    public static final RegistryObject<SimpleParticleType> BLIZZARD = PARTICLE_TYPES.register("blizzard",
+            () -> new SimpleParticleType(true));
 }

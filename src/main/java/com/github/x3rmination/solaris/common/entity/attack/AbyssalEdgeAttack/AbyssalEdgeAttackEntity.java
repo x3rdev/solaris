@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.item.AbyssalEdge;
+package com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack;
 
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import net.minecraft.nbt.CompoundTag;

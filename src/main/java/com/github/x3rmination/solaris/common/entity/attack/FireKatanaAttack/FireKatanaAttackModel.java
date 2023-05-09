@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.item.FireKatana;
+package com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack;
 
 import com.github.x3rmination.solaris.Solaris;
 import net.minecraft.resources.ResourceLocation;
