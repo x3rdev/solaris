@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.item.WaterFlower;
+package com.github.x3rmination.solaris.common.entity.attack.WaterFlowerAttack;
 
 import com.github.x3rmination.solaris.Solaris;
 import net.minecraft.resources.ResourceLocation;

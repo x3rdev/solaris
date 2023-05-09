@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.item.FireKatana;
+package com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack;
 
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;

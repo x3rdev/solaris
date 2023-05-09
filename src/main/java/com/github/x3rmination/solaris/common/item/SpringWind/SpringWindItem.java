@@ -1,7 +1,7 @@
 package com.github.x3rmination.solaris.common.item.SpringWind;
 
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
-import com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker.CherryBlossomSeekerEntity;
+import com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker.CherryBlossomSeekerEntity;
 import com.github.x3rmination.solaris.common.scheduler.Executable;
 import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;

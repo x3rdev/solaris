@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker;
+package com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker;
 
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

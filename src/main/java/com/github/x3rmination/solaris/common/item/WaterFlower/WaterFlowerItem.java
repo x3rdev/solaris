@@ -1,6 +1,6 @@
 package com.github.x3rmination.solaris.common.item.WaterFlower;
 
-import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackEntity;
+import com.github.x3rmination.solaris.common.entity.attack.WaterFlowerAttack.WaterFlowerAttackEntity;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
 import com.github.x3rmination.solaris.common.scheduler.Executable;
 import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
@@ -9,7 +9,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeTier;

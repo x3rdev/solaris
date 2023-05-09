@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.item.WaterFlower;
+package com.github.x3rmination.solaris.common.entity.attack.WaterFlowerAttack;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;

@@ -1,34 +1,14 @@
 package com.github.x3rmination.solaris.mixin;
 
-import com.github.x3rmination.solaris.common.helper.ParticleHelper;
-import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackEntity;
-import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackEntity;
-import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteAttackEntity;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
-import com.github.x3rmination.solaris.common.registry.ItemRegistry;
-import com.github.x3rmination.solaris.common.scheduler.ClientScheduler;
-import com.github.x3rmination.solaris.common.scheduler.Executable;
-import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
-import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
-import net.minecraft.commands.arguments.EntityAnchorArgument;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.util.Mth;
-import net.minecraft.world.level.levelgen.structure.BoundingBox;
-import net.minecraft.world.phys.AABB;
-import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
-import yesman.epicfight.api.collider.MultiOBBCollider;
-import yesman.epicfight.api.collider.OBBCollider;
 import yesman.epicfight.client.world.capabilites.entitypatch.player.LocalPlayerPatch;
-import yesman.epicfight.gameasset.Skills;
-import yesman.epicfight.skill.FatalDrawSkill;
 import yesman.epicfight.skill.SkillContainer;
 import yesman.epicfight.world.capabilities.entitypatch.player.ServerPlayerPatch;
 

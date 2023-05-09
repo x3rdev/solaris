@@ -1,11 +1,11 @@
 package com.github.x3rmination.solaris.common.registry;
 
 import com.github.x3rmination.solaris.Solaris;
-import com.github.x3rmination.solaris.common.item.AbyssalEdge.AbyssalEdgeAttackEntity;
-import com.github.x3rmination.solaris.common.item.FireKatana.FireKatanaAttackEntity;
-import com.github.x3rmination.solaris.common.item.Frostbite.FrostbiteAttackEntity;
-import com.github.x3rmination.solaris.common.item.SpringWind.CherryBlossomSeeker.CherryBlossomSeekerEntity;
-import com.github.x3rmination.solaris.common.item.WaterFlower.WaterFlowerAttackEntity;
+import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackEntity;
+import com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack.FireKatanaAttackEntity;
+import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackEntity;
+import com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker.CherryBlossomSeekerEntity;
+import com.github.x3rmination.solaris.common.entity.attack.WaterFlowerAttack.WaterFlowerAttackEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
