@@ -6,6 +6,7 @@ import com.github.x3rmination.solaris.common.item.AmberBlade.AmberBladeItem;
 import com.github.x3rmination.solaris.common.item.AstralDagger.AstralDaggerItem;
 import com.github.x3rmination.solaris.common.item.BloodyEclipse.BloodyEclipseItem;
 import com.github.x3rmination.solaris.common.item.BloodyFlamberge.BloodyFlambergeItem;
+import com.github.x3rmination.solaris.common.item.CentipedeScaleArmor.CentipedeScaleArmorItem;
 import com.github.x3rmination.solaris.common.item.CloudSplitter.CloudSplitterItem;
 import com.github.x3rmination.solaris.common.item.CometSpear.CometSpearItem;
 import com.github.x3rmination.solaris.common.item.DemonicKatana.DemonicKatana;
@@ -153,6 +154,18 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> DEMONIC_KATANA = ITEMS.register("demonic_katana",
             () -> new DemonicKatana((new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> CENTIPEDE_SCALE_HELMET = ITEMS.register("centipede_scale_helmet",
+            () -> new CentipedeScaleArmorItem(EquipmentSlot.HEAD, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> CENTIPEDE_SCALE_CHESTPLATE = ITEMS.register("centipede_scale_chestplate",
+            () -> new CentipedeScaleArmorItem(EquipmentSlot.CHEST, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> CENTIPEDE_SCALE_LEGGINGS = ITEMS.register("centipede_scale_leggings",
+            () -> new CentipedeScaleArmorItem(EquipmentSlot.LEGS, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> CENTIPEDE_SCALE_BOOTS = ITEMS.register("centipede_scale_boots",
+            () -> new CentipedeScaleArmorItem(EquipmentSlot.FEET, (new Item.Properties()).tab(ModItemTab.instance)));
 
     public static class ModItemTab extends CreativeModeTab {
         public static final ModItemTab instance = new ModItemTab(CreativeModeTab.TABS.length, Solaris.MOD_ID);

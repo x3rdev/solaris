@@ -2,7 +2,6 @@ package com.github.x3rmination.solaris.client.model.armor;
 
 import com.github.x3rmination.solaris.Solaris;
 import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
