@@ -11,7 +11,7 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class CentipedeScaleArmorModel extends HumanoidModel<LivingEntity> {
 
-    public static final ModelLayerLocation MAIN_LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Solaris.MOD_ID, "centipede_scale_armor"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(Solaris.MOD_ID, "centipede_scale_armor"), "main");
     public CentipedeScaleArmorModel(ModelPart root) {
         super(root);
     }
@@ -22,10 +22,9 @@ public class CentipedeScaleArmorModel extends HumanoidModel<LivingEntity> {
 
         PartDefinition hat = partdefinition.addOrReplaceChild("hat", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition head = partdefinition.addOrReplaceChild("head", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        PartDefinition armorHead = head.addOrReplaceChild("armorHead", CubeListBuilder.create().texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F))
-                .texOffs(50, 17).addBox(-5.0F, -12.25F, -4.25F, 10.0F, 6.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition armorHead = head.addOrReplaceChild("armorHead", CubeListBuilder.create().texOffs(50, 17).addBox(-5.0F, -12.25F, -4.25F, 10.0F, 6.0F, 0.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
         PartDefinition cube_r1 = armorHead.addOrReplaceChild("cube_r1", CubeListBuilder.create().texOffs(9, 58).addBox(-2.75F, 0.75F, 2.25F, 2.0F, 2.0F, 7.0F, new CubeDeformation(0.175F))
                 .texOffs(6, 69).addBox(-2.75F, 0.75F, 1.5F, 2.0F, 2.0F, 1.0F, new CubeDeformation(-0.25F)), PartPose.offsetAndRotation(0.0F, -9.25F, -6.5F, 0.0F, 0.0F, -0.7854F));
@@ -43,14 +42,13 @@ public class CentipedeScaleArmorModel extends HumanoidModel<LivingEntity> {
         PartDefinition cube_r5 = armorHead.addOrReplaceChild("cube_r5", CubeListBuilder.create().texOffs(26, 30).addBox(3.625F, 1.275F, 0.0F, 1.0F, 3.0F, 9.0F, new CubeDeformation(0.0F))
                 .texOffs(48, 49).addBox(3.625F, -0.725F, 0.5F, 1.0F, 2.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(4.4971F, -2.2906F, 0.0F, 1.5708F, -1.1781F, -1.5708F));
 
-        PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create(), PartPose.offset(0.0F, 0.0F, 0.0F));
+        PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(0, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
         PartDefinition armorBody = body.addOrReplaceChild("armorBody", CubeListBuilder.create().texOffs(24, 16).addBox(-4.0F, 1.0F, -2.5F, 8.0F, 6.0F, 5.0F, new CubeDeformation(0.025F))
                 .texOffs(9, 67).addBox(-4.0F, -1.0F, -2.5F, 2.0F, 2.0F, 5.0F, new CubeDeformation(0.025F))
                 .texOffs(32, 7).addBox(-3.5F, 7.0F, -2.5F, 7.0F, 3.0F, 5.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 62).addBox(2.0F, -1.0F, -2.5F, 2.0F, 2.0F, 5.0F, new CubeDeformation(0.025F))
-                .texOffs(24, 0).addBox(-4.5F, 10.0F, -2.475F, 9.0F, 2.0F, 5.0F, new CubeDeformation(0.0F))
-                .texOffs(0, 16).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
+                .texOffs(24, 0).addBox(-4.5F, 10.0F, -2.475F, 9.0F, 2.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
         PartDefinition bone11 = armorBody.addOrReplaceChild("bone11", CubeListBuilder.create(), PartPose.offset(5.4796F, 14.3588F, 0.0F));
 
@@ -151,10 +149,9 @@ public class CentipedeScaleArmorModel extends HumanoidModel<LivingEntity> {
 
         PartDefinition cube_r40 = bone12.addOrReplaceChild("cube_r40", CubeListBuilder.create().texOffs(0, 36).addBox(1.1F, -2.45F, -0.5F, 3.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(1.15F, -8.425F, -4.5F, 0.0F, 0.0F, -0.3927F));
 
-        PartDefinition right_arm = partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create(), PartPose.offset(-5.0F, 2.0F, 0.0F));
+        PartDefinition right_arm = partdefinition.addOrReplaceChild("right_arm", CubeListBuilder.create().texOffs(46, 23).addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-5.0F, 2.0F, 0.0F));
 
-        PartDefinition armorRightArm = right_arm.addOrReplaceChild("armorRightArm", CubeListBuilder.create().texOffs(46, 23).addBox(-4.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F))
-                .texOffs(73, 72).addBox(-3.5F, -1.5F, -1.5F, 2.0F, 3.0F, 3.0F, new CubeDeformation(0.75F)), PartPose.offset(1.0F, 0.0F, 0.0F));
+        PartDefinition armorRightArm = right_arm.addOrReplaceChild("armorRightArm", CubeListBuilder.create().texOffs(73, 72).addBox(-3.5F, -1.5F, -1.5F, 2.0F, 3.0F, 3.0F, new CubeDeformation(0.75F)), PartPose.offset(1.0F, 0.0F, 0.0F));
 
         PartDefinition bone = armorRightArm.addOrReplaceChild("bone", CubeListBuilder.create(), PartPose.offset(0.4889F, -1.2769F, -14.0F));
 
@@ -199,10 +196,9 @@ public class CentipedeScaleArmorModel extends HumanoidModel<LivingEntity> {
         PartDefinition cube_r53 = bone4.addOrReplaceChild("cube_r53", CubeListBuilder.create().texOffs(74, 41).addBox(3.6F, -2.0F, 0.0F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.15F))
                 .texOffs(74, 37).addBox(3.5F, -3.0F, 1.0F, 1.0F, 2.0F, 2.0F, new CubeDeformation(0.25F)), PartPose.offsetAndRotation(-12.0F, -13.5F, 0.0F, 0.7854F, 0.0F, 0.0F));
 
-        PartDefinition left_arm = partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create(), PartPose.offset(5.0F, 2.0F, 0.0F));
+        PartDefinition left_arm = partdefinition.addOrReplaceChild("left_arm", CubeListBuilder.create().texOffs(0, 44).addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(5.0F, 2.0F, 0.0F));
 
-        PartDefinition armorLeftArm = left_arm.addOrReplaceChild("armorLeftArm", CubeListBuilder.create().texOffs(0, 44).addBox(8.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F))
-                .texOffs(7, 74).addBox(9.5F, -1.5F, -1.5F, 2.0F, 3.0F, 3.0F, new CubeDeformation(0.75F))
+        PartDefinition armorLeftArm = left_arm.addOrReplaceChild("armorLeftArm", CubeListBuilder.create().texOffs(7, 74).addBox(9.5F, -1.5F, -1.5F, 2.0F, 3.0F, 3.0F, new CubeDeformation(0.75F))
                 .texOffs(26, 30).addBox(10.5F, 6.05F, -1.5F, 1.0F, 2.0F, 3.0F, new CubeDeformation(0.75F))
                 .texOffs(0, 32).addBox(10.5F, 4.5F, -1.5F, 1.0F, 1.0F, 3.0F, new CubeDeformation(0.9F)), PartPose.offset(-9.0F, 0.0F, 0.0F));
 
@@ -246,10 +242,9 @@ public class CentipedeScaleArmorModel extends HumanoidModel<LivingEntity> {
 
         PartDefinition cube_r66 = bone7.addOrReplaceChild("cube_r66", CubeListBuilder.create().texOffs(66, 45).addBox(-1.0908F, -0.9188F, 1.2063F, 6.0F, 1.0F, 2.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(0.0F, 0.0F, 0.0F, -0.7854F, 0.0F, 0.7854F));
 
-        PartDefinition right_leg = partdefinition.addOrReplaceChild("right_leg", CubeListBuilder.create(), PartPose.offset(-2.0F, 12.0F, 0.0F));
+        PartDefinition right_leg = partdefinition.addOrReplaceChild("right_leg", CubeListBuilder.create().texOffs(16, 42).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, 12.0F, 0.0F));
 
-        PartDefinition armorRightLeg = right_leg.addOrReplaceChild("armorRightLeg", CubeListBuilder.create().texOffs(58, 35).addBox(-6.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.4F))
-                .texOffs(16, 42).addBox(-6.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(4.0F, 0.0F, 0.0F));
+        PartDefinition armorRightLeg = right_leg.addOrReplaceChild("armorRightLeg", CubeListBuilder.create().texOffs(58, 35).addBox(-6.0F, 0.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.4F)), PartPose.offset(4.0F, 0.0F, 0.0F));
 
         PartDefinition cube_r67 = armorRightLeg.addOrReplaceChild("cube_r67", CubeListBuilder.create().texOffs(23, 68).addBox(-2.3F, -2.35F, -2.0F, 1.0F, 6.0F, 4.0F, new CubeDeformation(0.425F)), PartPose.offsetAndRotation(-4.0F, 3.0F, 0.0F, 0.0F, 0.0F, 0.3927F));
 
@@ -257,10 +252,9 @@ public class CentipedeScaleArmorModel extends HumanoidModel<LivingEntity> {
 
         PartDefinition cube_r68 = armorRightBoot.addOrReplaceChild("cube_r68", CubeListBuilder.create().texOffs(37, 30).addBox(-3.5F, -3.25F, -1.775F, 3.0F, 2.0F, 1.0F, new CubeDeformation(0.25F)), PartPose.offsetAndRotation(-2.0F, 9.475F, 0.0F, 0.3927F, 0.0F, 0.0F));
 
-        PartDefinition left_leg = partdefinition.addOrReplaceChild("left_leg", CubeListBuilder.create(), PartPose.offset(2.0F, 12.0F, 0.0F));
+        PartDefinition left_leg = partdefinition.addOrReplaceChild("left_leg", CubeListBuilder.create().texOffs(32, 42).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 12.0F, 0.0F));
 
-        PartDefinition armorLeftLeg = left_leg.addOrReplaceChild("armorLeftLeg", CubeListBuilder.create().texOffs(27, 58).addBox(-2.0F, -6.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.4F))
-                .texOffs(32, 42).addBox(-2.0F, -6.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 6.0F, 0.0F));
+        PartDefinition armorLeftLeg = left_leg.addOrReplaceChild("armorLeftLeg", CubeListBuilder.create().texOffs(27, 58).addBox(-2.0F, -6.0F, -2.0F, 4.0F, 6.0F, 4.0F, new CubeDeformation(0.4F)), PartPose.offset(0.0F, 6.0F, 0.0F));
 
         PartDefinition cube_r69 = armorLeftLeg.addOrReplaceChild("cube_r69", CubeListBuilder.create().texOffs(33, 68).addBox(1.35F, -2.35F, -2.0F, 1.0F, 6.0F, 4.0F, new CubeDeformation(0.425F)), PartPose.offsetAndRotation(0.0F, -3.0F, 0.0F, 0.0F, 0.0F, -0.3927F));
 
