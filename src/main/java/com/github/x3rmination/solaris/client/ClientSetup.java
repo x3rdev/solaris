@@ -89,7 +89,7 @@ public class ClientSetup {
         //Vanilla is 0.5F inner, 1.0F outer, some models may vary
         event.registerLayerDefinition(SolarArmorModel.INNER_LAYER_LOCATION, () -> SolarArmorModel.createBodyLayer(new CubeDeformation(0.1F), 0.0F));
         event.registerLayerDefinition(SolarArmorModel.OUTER_LAYER_LOCATION, () -> SolarArmorModel.createBodyLayer(new CubeDeformation(0.6F), 0.0F));
-        event.registerLayerDefinition(CentipedeScaleArmorModel.MAIN_LAYER_LOCATION, CentipedeScaleArmorModel::createBodyLayer);
+        event.registerLayerDefinition(CentipedeScaleArmorModel.LAYER_LOCATION, CentipedeScaleArmorModel::createBodyLayer);
     }
 
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {

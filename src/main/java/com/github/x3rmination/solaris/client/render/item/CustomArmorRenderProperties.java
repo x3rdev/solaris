@@ -42,6 +42,6 @@ public class CustomArmorRenderProperties implements IItemRenderProperties {
         init = true;
         SOLAR_ARMOR_MODEL_INNER = new SolarArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(SolarArmorModel.INNER_LAYER_LOCATION));
         SOLAR_ARMOR_MODEL_OUTER = new SolarArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(SolarArmorModel.OUTER_LAYER_LOCATION));
-        CENTIPEDE_SCALE_ARMOR_MODEL = new CentipedeScaleArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(CentipedeScaleArmorModel.MAIN_LAYER_LOCATION));
+        CENTIPEDE_SCALE_ARMOR_MODEL = new CentipedeScaleArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(CentipedeScaleArmorModel.LAYER_LOCATION));
     }
 }
