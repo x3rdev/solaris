@@ -5,6 +5,7 @@ import com.github.x3rmination.solaris.client.layer.BodyPartLayer;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.model.armor.CentipedeScaleArmorModel;
 import com.github.x3rmination.solaris.client.model.armor.SolarArmorModel;
+import com.github.x3rmination.solaris.client.model.armor.SolarisArmorModel;
 import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
 import com.github.x3rmination.solaris.client.particle.CherryBlossomParticle;
 import com.github.x3rmination.solaris.client.particle.Flame0Particle;
@@ -86,9 +87,9 @@ public class ClientSetup {
     }
 
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+
         //Vanilla is 0.5F inner, 1.0F outer, some models may vary
-        event.registerLayerDefinition(SolarArmorModel.INNER_LAYER_LOCATION, () -> SolarArmorModel.createBodyLayer(new CubeDeformation(0.1F), 0.0F));
-        event.registerLayerDefinition(SolarArmorModel.OUTER_LAYER_LOCATION, () -> SolarArmorModel.createBodyLayer(new CubeDeformation(0.6F), 0.0F));
+        event.registerLayerDefinition(SolarArmorModel.LAYER_LOCATION, SolarArmorModel::createBodyLayer);
         event.registerLayerDefinition(CentipedeScaleArmorModel.LAYER_LOCATION, CentipedeScaleArmorModel::createBodyLayer);
     }
 

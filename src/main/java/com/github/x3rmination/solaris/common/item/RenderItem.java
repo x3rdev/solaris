@@ -18,6 +18,7 @@ import java.util.List;
 /*
 All instances of this class should be used for rendering only
  */
+//TODO remove this
 public class RenderItem extends Item implements IAnimatable {
 
     public AnimationFactory factory = GeckoLibUtil.createFactory(this);

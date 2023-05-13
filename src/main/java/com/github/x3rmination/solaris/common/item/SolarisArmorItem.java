@@ -1,9 +1,7 @@
 package com.github.x3rmination.solaris.common.item;
 
 import com.github.x3rmination.solaris.Solaris;
-import com.github.x3rmination.solaris.client.render.item.CustomArmorRenderProperties;
-import com.github.x3rmination.solaris.common.item.CentipedeScaleArmor.CentipedeScaleArmorItem;
-import com.github.x3rmination.solaris.common.registry.ArmorMaterialRegistry;
+import com.github.x3rmination.solaris.client.render.item.SolarisArmorRenderProperties;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
@@ -22,17 +20,12 @@ public class SolarisArmorItem extends ArmorItem {
     @Override
     public void initializeClient(Consumer<IItemRenderProperties> consumer) {
         super.initializeClient(consumer);
-        consumer.accept(new CustomArmorRenderProperties());
+        consumer.accept(new SolarisArmorRenderProperties());
     }
 
     @Nullable
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-        int id = slot == EquipmentSlot.LEGS ? 2 : 1;
-        //TODO remove this part
-        if(stack.getItem() instanceof CentipedeScaleArmorItem) {
-            id = 1;
-        }
-        return String.format("%s:textures/armor/%s_layer_%d.png", Solaris.MOD_ID, this.material.getName().substring(this.material.getName().indexOf(':') + 1), id);
+        return String.format("%s:textures/armor/%s.png", Solaris.MOD_ID, this.material.getName().substring(this.material.getName().indexOf(':') + 1));
     }
 }
