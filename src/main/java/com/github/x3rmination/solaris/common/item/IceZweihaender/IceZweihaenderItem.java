@@ -16,7 +16,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.ForgeTier;
 import yesman.epicfight.skill.Skill;
 
-public class IceZweihaenderItem extends SwordItem implements SolarisParticleWeapon, SolarisWeapon {
+public class IceZweihaenderItem extends SwordItem implements SolarisParticleWeapon {
     public IceZweihaenderItem(Properties pProperties) {
         super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 9, -3F, pProperties);
     }
@@ -25,11 +25,6 @@ public class IceZweihaenderItem extends SwordItem implements SolarisParticleWeap
     public boolean hurtEnemy(ItemStack pStack, LivingEntity pTarget, LivingEntity pAttacker) {
         FrostbiteMobEffect.applyEffect(pTarget);
         return super.hurtEnemy(pStack, pTarget, pAttacker);
-    }
-
-    @Override
-    public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
-        SolarisWeapon.super.serverAttack(serverPlayer, skill);
     }
 
     @Override

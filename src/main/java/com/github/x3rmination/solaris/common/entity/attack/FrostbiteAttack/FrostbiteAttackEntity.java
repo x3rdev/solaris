@@ -49,7 +49,7 @@ public class FrostbiteAttackEntity extends AbstractHurtingProjectile {
         });
         Vec3 dm = this.getDeltaMovement();
         for(int i = 0; i < 2; i++) {
-            this.level.addParticle(ParticleRegistry.SNOW_TORNADO.get(), this.getX() + this.random.nextFloat() - 0.5, this.getY() + this.random.nextFloat() - 0.5, this.getZ() + this.random.nextFloat() - 0.5, dm.x, dm.y, dm.z);
+            this.level.addParticle(ParticleRegistry.SNOW_TORNADO.get(), this.getX() + 0.5 * (this.random.nextFloat() - 0.5), this.getY() + 0.5 * (this.random.nextFloat() - 0.5), this.getZ() + 0.5 * (this.random.nextFloat() - 0.5), dm.x, dm.y, dm.z);
         }
     }
 
