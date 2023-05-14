@@ -2,6 +2,7 @@ package com.github.x3rmination.solaris.common.registry;
 
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackEntity;
+import com.github.x3rmination.solaris.common.entity.attack.BlizzardAttack.BlizzardAttackEntity;
 import com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack.FireKatanaAttackEntity;
 import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackEntity;
 import com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker.CherryBlossomSeekerEntity;
@@ -52,4 +53,11 @@ public class EntityRegistry {
                     .clientTrackingRange(4)
                     .updateInterval(10)
                     .build(new ResourceLocation(Solaris.MOD_ID, "water_flower_attack").toString()));
+
+    public static final RegistryObject<EntityType<BlizzardAttackEntity>> BLIZZARD_ATTACK = ENTITIES.register("blizzard_attack",
+            () -> EntityType.Builder.<BlizzardAttackEntity>of(BlizzardAttackEntity::new, MobCategory.MISC)
+                    .sized(5F, 5F)
+                    .clientTrackingRange(4)
+                    .updateInterval(10)
+                    .build(new ResourceLocation(Solaris.MOD_ID, "blizzard_attack").toString()));
 }

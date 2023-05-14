@@ -12,6 +12,7 @@ import com.github.x3rmination.solaris.client.particle.Flame0Particle;
 import com.github.x3rmination.solaris.client.particle.SnowTornadoParticle;
 import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackRenderer;
+import com.github.x3rmination.solaris.common.entity.attack.BlizzardAttack.BlizzardAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack.FireKatanaAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackRenderer;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadRenderer;
@@ -52,6 +53,7 @@ public class ClientSetup {
         EntityRenderers.register(EntityRegistry.ABYSSAL_EDGE_ATTACK.get(), AbyssalEdgeAttackRenderer::new);
         EntityRenderers.register(EntityRegistry.CHERRY_BLOSSOM_SEEKER.get(), CherryBlossomSeekerRenderer::new);
         EntityRenderers.register(EntityRegistry.WATER_FLOWER_ATTACK.get(), WaterFlowerAttackRenderer::new);
+        EntityRenderers.register(EntityRegistry.BLIZZARD_ATTACK.get(), BlizzardAttackRenderer::new);
         event.enqueueWork(() -> {
             ItemProperties.register(ItemRegistry.PHOENIX_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
             ItemProperties.register(ItemRegistry.LIVING_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
