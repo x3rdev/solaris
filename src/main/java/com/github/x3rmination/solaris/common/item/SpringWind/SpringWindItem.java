@@ -1,9 +1,8 @@
 package com.github.x3rmination.solaris.common.item.SpringWind;
 
-import com.github.x3rmination.solaris.common.item.SolarisWeapon;
 import com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker.CherryBlossomSeekerEntity;
-import com.github.x3rmination.solaris.common.scheduler.Executable;
-import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
+import com.github.x3rmination.solaris.common.item.SolarisWeapon;
+import com.github.x3rmination.solaris.common.scheduler.Scheduler;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -56,31 +55,26 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
     }
 
     @Override
-    public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) {
         if (skill.equals(Skills.FATAL_DRAW)) {
-            ServerScheduler.schedule(new Executable(
-                    this,
-                    this.getClass().getDeclaredMethod("springWindServer", ServerPlayer.class),
-                    new Object[]{serverPlayer}, 35));
+            Scheduler.schedule(() -> {
+                CompoundTag tag = serverPlayer.getMainHandItem().getTag();
+                assert tag != null;
+                if(!tag.getBoolean(ACTIVE)) {
+                    int[] seekerArray = new int[SEEKER_COUNT];
+                    for (int i = 0; i < SEEKER_COUNT; i++) {
+                        seekerArray[i] = spawnSeeker(serverPlayer, 1.7F * i);
+                    }
+                    tag.putIntArray(SEEKER_LIST, seekerArray);
+                    setActive(serverPlayer);
+                }
+            }, 35);
         } else {
             startSeekerMovement(serverPlayer);
             CompoundTag tag = serverPlayer.getMainHandItem().getTag();
             if(tag.getBoolean(ACTIVE) && tag.getBoolean(FIRST_MODE)) {
                 setActive(serverPlayer);
             }
-        }
-    }
-
-    public void springWindServer(ServerPlayer serverPlayer) {
-        CompoundTag tag = serverPlayer.getMainHandItem().getTag();
-        assert tag != null;
-        if(!tag.getBoolean(ACTIVE)) {
-            int[] seekerArray = new int[SEEKER_COUNT];
-            for (int i = 0; i < SEEKER_COUNT; i++) {
-                seekerArray[i] = spawnSeeker(serverPlayer, 1.7F * i);
-            }
-            tag.putIntArray(SEEKER_LIST, seekerArray);
-            setActive(serverPlayer);
         }
     }
 

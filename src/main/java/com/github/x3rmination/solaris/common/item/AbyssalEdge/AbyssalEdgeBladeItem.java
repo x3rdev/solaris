@@ -2,8 +2,7 @@ package com.github.x3rmination.solaris.common.item.AbyssalEdge;
 
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackEntity;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
-import com.github.x3rmination.solaris.common.scheduler.Executable;
-import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
+import com.github.x3rmination.solaris.common.scheduler.Scheduler;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
@@ -50,20 +49,15 @@ public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable, Sola
     }
 
     @Override
-    public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) {
         if(skill.equals(Skills.FATAL_DRAW)) {
-            ServerScheduler.schedule(new Executable(
-                    this,
-                    this.getClass().getDeclaredMethod("abyssalEdgeServer", ServerPlayer.class),
-                    new Object[]{serverPlayer}, 35));
+            Scheduler.schedule(() -> {
+                AbyssalEdgeAttackEntity abyssalEdgeAttackEntity = new AbyssalEdgeAttackEntity(serverPlayer.level);
+                abyssalEdgeAttackEntity.setYRot(-serverPlayer.getYHeadRot());
+                abyssalEdgeAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(6, 0, 6)));
+                serverPlayer.level.addFreshEntity(abyssalEdgeAttackEntity);
+            }, 35);
         }
-    }
-
-    public void abyssalEdgeServer(ServerPlayer serverPlayer) {
-        AbyssalEdgeAttackEntity abyssalEdgeAttackEntity = new AbyssalEdgeAttackEntity(serverPlayer.level);
-        abyssalEdgeAttackEntity.setYRot(-serverPlayer.getYHeadRot());
-        abyssalEdgeAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(6, 0, 6)));
-        serverPlayer.level.addFreshEntity(abyssalEdgeAttackEntity);
     }
 
 }

@@ -3,13 +3,11 @@ package com.github.x3rmination.solaris.common.item.FlamingFlamberge;
 import com.github.x3rmination.solaris.common.helper.ParticleHelper;
 import com.github.x3rmination.solaris.common.item.SolarisParticleWeapon;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
-import com.github.x3rmination.solaris.common.registry.ItemRegistry;
-import com.github.x3rmination.solaris.common.scheduler.ClientScheduler;
-import com.github.x3rmination.solaris.common.scheduler.Executable;
+import com.github.x3rmination.solaris.common.scheduler.Scheduler;
 import com.mojang.math.Vector3f;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
@@ -33,21 +31,15 @@ public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, So
         pTarget.hurt(DamageSource.ON_FIRE, 1);
         return super.hurtEnemy(pStack, pTarget, pAttacker);
     }
-
     @Override
-    public void clientAttack(LocalPlayer localPlayer, Skill skill) throws NoSuchMethodException {
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) {
         if(skill.equals(Skills.GIANT_WHIRLWIND)) {
-            ClientScheduler.schedule(new Executable(
-                    this,
-                    this.getClass().getDeclaredMethod("flamingFlambergeClient", LocalPlayer.class),
-                    new Object[]{localPlayer}, 35));
-        }
-    }
-
-    public void flamingFlambergeClient(LocalPlayer localPlayer) {
-        ParticleHelper particleHelper = new ParticleHelper(localPlayer.level, ParticleTypes.FLAME, localPlayer.position().add(0, 1, 0));
-        for(int i = 0; i < 10; i++) {
-            particleHelper.spawnCircle(2 + (i * 0.1), (int) (32 + (Math.random() * 4)));
+            Scheduler.schedule(() -> {
+                ParticleHelper particleHelper = new ParticleHelper(serverPlayer.level, ParticleTypes.FLAME, serverPlayer.position().add(0, 1, 0));
+                for(int i = 0; i < 10; i++) {
+                    particleHelper.spawnCircle(2 + (i * 0.1), (int) (32 + (Math.random() * 4)));
+                }
+            }, 35);
         }
     }
 

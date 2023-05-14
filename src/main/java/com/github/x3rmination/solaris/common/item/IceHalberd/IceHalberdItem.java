@@ -35,7 +35,7 @@ public class IceHalberdItem extends SwordItem implements SolarisParticleWeapon, 
     }
 
     @Override
-    public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) {
         if(skill.equals(Skills.SLAUGHTER_STANCE)) {
             BlizzardAttackEntity blizzardAttackEntity = new BlizzardAttackEntity(serverPlayer, serverPlayer.getX(), serverPlayer.getY(), serverPlayer.getZ(), serverPlayer.level);
             serverPlayer.level.addFreshEntity(blizzardAttackEntity);

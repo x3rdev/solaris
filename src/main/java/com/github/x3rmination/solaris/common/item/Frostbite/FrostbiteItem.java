@@ -4,19 +4,13 @@ import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.Frost
 import com.github.x3rmination.solaris.common.item.SolarisParticleWeapon;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
 import com.github.x3rmination.solaris.common.mob_effect.FrostbiteMobEffect;
-import com.github.x3rmination.solaris.common.registry.MobEffectRegistry;
-import com.github.x3rmination.solaris.common.scheduler.Executable;
-import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
+import com.github.x3rmination.solaris.common.scheduler.Scheduler;
 import com.mojang.math.Vector3f;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
@@ -53,19 +47,15 @@ public class FrostbiteItem extends SwordItem implements SolarisParticleWeapon, S
     }
 
     @Override
-    public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) {
         if(skill.equals(Skills.FATAL_DRAW)) {
-            ServerScheduler.schedule(new Executable(
-                    this,
-                    this.getClass().getDeclaredMethod("frostbiteServer", ServerPlayer.class),
-                    new Object[]{serverPlayer}, 35));
+            Scheduler.schedule(() -> {
+                FrostbiteAttackEntity frostbiteAttackEntity = new FrostbiteAttackEntity(serverPlayer, serverPlayer.getLookAngle().x, 0, serverPlayer.getLookAngle().z, serverPlayer.level);
+                frostbiteAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(3, 0, 3)));
+                frostbiteAttackEntity.setDeltaMovement(serverPlayer.getLookAngle().scale(0.15).multiply(1,0,1));
+                serverPlayer.level.addFreshEntity(frostbiteAttackEntity);
+            }, 35);
         }
     }
 
-    public void frostbiteServer(ServerPlayer serverPlayer) {
-        FrostbiteAttackEntity frostbiteAttackEntity = new FrostbiteAttackEntity(serverPlayer, serverPlayer.getLookAngle().x, 0, serverPlayer.getLookAngle().z, serverPlayer.level);
-        frostbiteAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(3, 0, 3)));
-        frostbiteAttackEntity.setDeltaMovement(serverPlayer.getLookAngle().scale(0.15).multiply(1,0,1));
-        serverPlayer.level.addFreshEntity(frostbiteAttackEntity);
-    }
 }
