@@ -14,6 +14,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
@@ -39,13 +40,17 @@ public class FrostbiteAttackEntity extends AbstractHurtingProjectile {
         if(this.tickCount > 200) {
             this.kill();
         }
-        this.level.getEntities(this, this.getBoundingBox()).forEach(entity -> {
+        this.level.getEntities(this, this.getBoundingBox().inflate(2)).forEach(entity -> {
             if(entity instanceof LivingEntity livingEntity) {
                 FrostbiteMobEffect.applyEffect(livingEntity);
+                int age = this.tickCount;
+                livingEntity.push(0, 0.5, 0);
             }
         });
         Vec3 dm = this.getDeltaMovement();
-        this.level.addParticle(ParticleRegistry.SNOW_TORNADO.get(), this.getX(), this.getY(), this.getZ(), dm.x, dm.y, dm.z);
+        for(int i = 0; i < 2; i++) {
+            this.level.addParticle(ParticleRegistry.SNOW_TORNADO.get(), this.getX() + this.random.nextFloat() - 0.5, this.getY() + this.random.nextFloat() - 0.5, this.getZ() + this.random.nextFloat() - 0.5, dm.x, dm.y, dm.z);
+        }
     }
 
     @Override
@@ -60,6 +65,6 @@ public class FrostbiteAttackEntity extends AbstractHurtingProjectile {
 
     @Override
     protected ParticleOptions getTrailParticle() {
-        return ParticleTypes.POOF;
+        return ParticleTypes.SNOWFLAKE;
     }
 }
