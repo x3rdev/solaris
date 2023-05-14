@@ -9,6 +9,7 @@ import com.github.x3rmination.solaris.client.model.armor.SolarisArmorModel;
 import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
 import com.github.x3rmination.solaris.client.particle.CherryBlossomParticle;
 import com.github.x3rmination.solaris.client.particle.Flame0Particle;
+import com.github.x3rmination.solaris.client.particle.SnowTornadoParticle;
 import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack.FireKatanaAttackRenderer;
@@ -101,6 +102,7 @@ public class ClientSetup {
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.ANIMATED_SPARKS.get(), AnimatedSparksParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.FLAME_0.get(), Flame0Particle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SNOW_TORNADO.get(), SnowTornadoParticle.Provider::new);
     }
 
 //    public static void registerShaders(final RegisterShadersEvent event) {
