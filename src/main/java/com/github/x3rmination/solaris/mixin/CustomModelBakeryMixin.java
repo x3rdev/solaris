@@ -34,6 +34,8 @@ public abstract class CustomModelBakeryMixin {
             if(model instanceof SolarisArmorModel sModel) {
                 boxes.remove(boxes.size() - 1);
                 boxes.remove(boxes.size() - 1);
+                sModel.leftBoot.copyFrom(sModel.leftLeg);
+                sModel.rightBoot.copyFrom(sModel.rightLeg);
                 boxes.add(newModelPartition(newSimpleBaker(5), newSimpleBaker(5), sModel.leftBoot));
                 boxes.add(newModelPartition(newSimpleBaker(2), newSimpleBaker(2), sModel.rightBoot));
             }
