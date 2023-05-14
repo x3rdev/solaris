@@ -16,7 +16,7 @@ public class SnowTornadoParticle extends TextureSheetParticle {
         super(pLevel, pX, pY, pZ);
         this.deltaSpeed = new Vec3(pXSpeed, pYSpeed, pZSpeed);
         this.quadSize *= 0.75F;
-        this.lifetime = 120 + this.random.nextInt(12);
+        this.lifetime = 20;
         this.hasPhysics = false;
         this.friction = 1;
     }
@@ -25,10 +25,9 @@ public class SnowTornadoParticle extends TextureSheetParticle {
     public void tick() {
         this.onGround = false;
         super.tick();
-        this.yd = 0.025;
-        this.xd = (age * 0.5)*(Math.cos(0.5*age) - Math.cos(0.5*age + 0.01D));
-        this.zd = (age * 0.5)*(Math.sin(0.5*age) - Math.sin(0.5*age + 0.01D));
-
+        this.xd = (3 * age) * (Math.cos(age) - Math.cos(age + 0.01D));
+        this.zd = (3 * age) * (Math.sin(age) - Math.sin(age + 0.01D));
+        this.yd = 0.075*2;
         this.yd += deltaSpeed.y;
         this.xd += deltaSpeed.x;
         this.zd += deltaSpeed.z;
