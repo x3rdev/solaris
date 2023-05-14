@@ -1,25 +1,15 @@
 package com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack;
 
-import com.github.x3rmination.solaris.common.helper.ParticleHelper;
-import com.github.x3rmination.solaris.common.item.SolarisWeapon;
 import com.github.x3rmination.solaris.common.mob_effect.FrostbiteMobEffect;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
-import com.github.x3rmination.solaris.common.scheduler.ClientScheduler;
-import com.github.x3rmination.solaris.common.scheduler.Executable;
-import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
-import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import yesman.epicfight.gameasset.Skills;
-import yesman.epicfight.skill.Skill;
 
 public class FrostbiteAttackEntity extends AbstractHurtingProjectile {
 

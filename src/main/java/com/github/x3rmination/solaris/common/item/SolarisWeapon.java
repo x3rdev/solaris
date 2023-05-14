@@ -6,11 +6,11 @@ import yesman.epicfight.skill.Skill;
 
 public interface SolarisWeapon {
 
-    default void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
+    default void serverAttack(ServerPlayer serverPlayer, Skill skill) {
 
     }
 
-    default void clientAttack(LocalPlayer localPlayer, Skill skill) throws NoSuchMethodException {
+    default void clientAttack(LocalPlayer localPlayer, Skill skill) {
 
     }
 

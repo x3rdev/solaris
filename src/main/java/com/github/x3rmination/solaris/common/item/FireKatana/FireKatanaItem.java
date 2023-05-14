@@ -5,8 +5,7 @@ import com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack.Fire
 import com.github.x3rmination.solaris.common.helper.ParticleHelper;
 import com.github.x3rmination.solaris.common.item.SolarisParticleWeapon;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
-import com.github.x3rmination.solaris.common.scheduler.Executable;
-import com.github.x3rmination.solaris.common.scheduler.ServerScheduler;
+import com.github.x3rmination.solaris.common.scheduler.Scheduler;
 import com.mojang.math.Vector3f;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
@@ -62,19 +61,14 @@ public class FireKatanaItem extends SwordItem implements SolarisWeapon, SolarisP
     }
 
     @Override
-    public void serverAttack(ServerPlayer serverPlayer, Skill skill) throws NoSuchMethodException {
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) {
         if(skill.equals(Skills.FATAL_DRAW)) {
-            ServerScheduler.schedule(new Executable(
-                    this,
-                    this.getClass().getDeclaredMethod("fireKatanaServer", ServerPlayer.class),
-                    new Object[]{serverPlayer}, 35));
+            Scheduler.schedule(() -> {
+                FireKatanaAttackEntity fireKatanaAttack = new FireKatanaAttackEntity(serverPlayer);
+                fireKatanaAttack.shootFromRotation(serverPlayer, serverPlayer.getXRot(), serverPlayer.getYHeadRot() , 0.0F, 1.0F, 0);
+                serverPlayer.level.addFreshEntity(fireKatanaAttack);
+            }, 35);
         }
-    }
-
-    public void fireKatanaServer(ServerPlayer serverPlayer) {
-        FireKatanaAttackEntity fireKatanaAttack = new FireKatanaAttackEntity(serverPlayer);
-        fireKatanaAttack.shootFromRotation(serverPlayer, serverPlayer.getXRot(), serverPlayer.getYHeadRot() , 0.0F, 1.0F, 0);
-        serverPlayer.level.addFreshEntity(fireKatanaAttack);
     }
 
     @Override

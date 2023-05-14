@@ -17,14 +17,6 @@ import java.util.Set;
 @Mixin(SkillContainer.class)
 public abstract class SkillContainerMixin {
 
-    @Inject(method = "sendExecuteRequest", at = @At("HEAD"), remap = false)
-    public void clientExecute(LocalPlayerPatch executer, Set<Object> packetStorage, CallbackInfoReturnable<Boolean> cir) throws NoSuchMethodException {
-        SkillContainer skillContainer = ((SkillContainer) (Object) this);
-        LocalPlayer localPlayer = executer.getOriginal();
-        if(localPlayer.getMainHandItem().getItem() instanceof SolarisWeapon solarisWeapon) {
-            solarisWeapon.clientAttack(localPlayer, skillContainer.getSkill());
-        }
-    }
     @Inject(method = "requestExecute", at = @At("HEAD"), remap = false)
     public void serverExecute(ServerPlayerPatch executer, FriendlyByteBuf buf, CallbackInfoReturnable<Boolean> cir) throws NoSuchMethodException {
         SkillContainer skillContainer = ((SkillContainer) (Object) this);
