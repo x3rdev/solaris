@@ -56,7 +56,7 @@ public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable, Sola
                 abyssalEdgeAttackEntity.setYRot(-serverPlayer.getYHeadRot());
                 abyssalEdgeAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(6, 0, 6)));
                 serverPlayer.level.addFreshEntity(abyssalEdgeAttackEntity);
-            }, 35);
+            }, 10);
         }
     }
 

@@ -52,9 +52,9 @@ public class FrostbiteItem extends SwordItem implements SolarisParticleWeapon, S
             Scheduler.schedule(() -> {
                 FrostbiteAttackEntity frostbiteAttackEntity = new FrostbiteAttackEntity(serverPlayer, serverPlayer.getLookAngle().x, 0, serverPlayer.getLookAngle().z, serverPlayer.level);
                 frostbiteAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(3, 0, 3)));
-                frostbiteAttackEntity.setDeltaMovement(serverPlayer.getLookAngle().scale(0.15).multiply(1,0,1));
+                frostbiteAttackEntity.setDeltaMovement(serverPlayer.getLookAngle().scale(0.25).multiply(1,0,1));
                 serverPlayer.level.addFreshEntity(frostbiteAttackEntity);
-            }, 35);
+            }, 10);
         }
     }
 

@@ -39,7 +39,7 @@ public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, So
                 for(int i = 0; i < 10; i++) {
                     particleHelper.spawnCircle(2 + (i * 0.1), (int) (32 + (Math.random() * 4)));
                 }
-            }, 35);
+            }, 10);
         }
     }
 

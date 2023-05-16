@@ -28,7 +28,7 @@ public class WaterFlowerItem extends SwordItem implements SolarisWeapon {
                 waterFlowerAttack.shootFromRotation(serverPlayer, serverPlayer.getXRot(), serverPlayer.getYHeadRot() , 0.0F, 1.5F, 0);
                 waterFlowerAttack.move(MoverType.SELF, new Vec3(0, 1, 0));
                 serverPlayer.level.addFreshEntity(waterFlowerAttack);
-            }, 35);
+            }, 10);
         }
     }
 }
