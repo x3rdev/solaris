@@ -56,7 +56,7 @@ public class EntityRegistry {
 
     public static final RegistryObject<EntityType<BlizzardAttackEntity>> BLIZZARD_ATTACK = ENTITIES.register("blizzard_attack",
             () -> EntityType.Builder.<BlizzardAttackEntity>of(BlizzardAttackEntity::new, MobCategory.MISC)
-                    .sized(5F, 5F)
+                    .sized(0.5F, 0.5F)
                     .clientTrackingRange(4)
                     .updateInterval(10)
                     .build(new ResourceLocation(Solaris.MOD_ID, "blizzard_attack").toString()));

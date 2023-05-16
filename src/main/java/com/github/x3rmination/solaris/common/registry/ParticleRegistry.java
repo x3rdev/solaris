@@ -1,6 +1,11 @@
 package com.github.x3rmination.solaris.common.registry;
 
 import com.github.x3rmination.solaris.Solaris;
+import com.github.x3rmination.solaris.client.particle.BlizzardParticle;
+import com.github.x3rmination.solaris.client.particle.option.AirTornadoOption;
+import com.github.x3rmination.solaris.client.particle.option.BlizzardOption;
+import com.github.x3rmination.solaris.client.particle.option.SnowTornadoOption;
+import com.mojang.serialization.Codec;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraftforge.registries.DeferredRegister;
@@ -17,6 +22,28 @@ public class ParticleRegistry {
             () -> new SimpleParticleType(true));
     public static final RegistryObject<SimpleParticleType> FLAME_0 = PARTICLE_TYPES.register("flame_0",
             () -> new SimpleParticleType(true));
-    public static final RegistryObject<SimpleParticleType> SNOW_TORNADO = PARTICLE_TYPES.register("snow_tornado",
-            () -> new SimpleParticleType(true));
+    public static final RegistryObject<ParticleType> SNOW_TORNADO = PARTICLE_TYPES.register("snow_tornado",
+            () -> new ParticleType<>(false, SnowTornadoOption.DESERIALIZER) {
+                @Override
+                public Codec codec() {
+                    return SnowTornadoOption.CODEC;
+                }
+            });
+
+    public static final RegistryObject<ParticleType> AIR_TORNADO = PARTICLE_TYPES.register("air_tornado",
+            () -> new ParticleType<>(false, AirTornadoOption.DESERIALIZER) {
+                @Override
+                public Codec codec() {
+                    return AirTornadoOption.CODEC;
+                }
+            });
+
+    public static final RegistryObject<ParticleType> BLIZZARD = PARTICLE_TYPES.register("blizzard",
+            () -> new ParticleType<>(false, BlizzardOption.DESERIALIZER) {
+                @Override
+                public Codec codec() {
+                    return BlizzardOption.CODEC;
+                }
+            });
+
 }

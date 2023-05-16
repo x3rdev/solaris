@@ -67,7 +67,7 @@ public class FireKatanaItem extends SwordItem implements SolarisWeapon, SolarisP
                 FireKatanaAttackEntity fireKatanaAttack = new FireKatanaAttackEntity(serverPlayer);
                 fireKatanaAttack.shootFromRotation(serverPlayer, serverPlayer.getXRot(), serverPlayer.getYHeadRot() , 0.0F, 1.0F, 0);
                 serverPlayer.level.addFreshEntity(fireKatanaAttack);
-            }, 35);
+            }, 10);
         }
     }
 

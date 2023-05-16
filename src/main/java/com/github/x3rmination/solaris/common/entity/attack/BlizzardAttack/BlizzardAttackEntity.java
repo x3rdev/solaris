@@ -1,5 +1,6 @@
 package com.github.x3rmination.solaris.common.entity.attack.BlizzardAttack;
 
+import com.github.x3rmination.solaris.client.particle.option.BlizzardOption;
 import com.github.x3rmination.solaris.common.mob_effect.FrostbiteMobEffect;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import net.minecraft.core.particles.ParticleTypes;
@@ -23,24 +24,20 @@ public class BlizzardAttackEntity extends AbstractHurtingProjectile {
     public void tick() {
         this.setDeltaMovement(0,0,0);
         super.tick();
-        if(this.tickCount > 100) {
+        if(this.tickCount > 200) {
             this.kill();
         }
-        for(int i = 0; i < 10; i++) {
-            Vec3 pos = new Vec3(
-                    this.position().x + (this.random.nextFloat() - 0.5) * (this.getBoundingBox().getXsize()),
-                    this.position().y + 4 + this.random.nextFloat(),
-                    this.position().z + (this.random.nextFloat() - 0.5) * (this.getBoundingBox().getZsize())
-            );
-            Vec3 vel = new Vec3(0.5*(this.random.nextFloat() - 0.5), -0.5, this.random.nextFloat() - 0.5);
-            this.level.addParticle(ParticleTypes.SNOWFLAKE, pos.x, pos.y, pos.z, vel.x, vel.y, vel.z);
-        }
-        this.level.getEntities(this, this.getBoundingBox()).forEach(entity -> {
+        this.level.getEntities(this, this.getBoundingBox().inflate(3)).forEach(entity -> {
             if(entity instanceof LivingEntity livingEntity && !entity.equals(this.getOwner())) {
                 FrostbiteMobEffect.applyEffect(livingEntity);
-                livingEntity.setDeltaMovement(0.5*-(this.getX()-livingEntity.getX()), 0.25, 0.5*-(this.getZ()-livingEntity.getZ()));
+                livingEntity.push(Math.sin(tickCount) + Math.sin(tickCount + 0.01D), 0, Math.cos(tickCount) + Math.cos(tickCount + 0.01D));
             }
         });
+        if(this.tickCount <= 100) {
+            for (int i = 0; i < 10; i++) {
+                this.level.addParticle(new BlizzardOption(1), this.getX(), this.getY() + 0.1 + i / 2F, this.getZ(), 0, 0, 0);
+            }
+        }
     }
 
     @Override

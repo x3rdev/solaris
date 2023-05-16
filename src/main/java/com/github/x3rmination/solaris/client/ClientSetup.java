@@ -5,11 +5,7 @@ import com.github.x3rmination.solaris.client.layer.BodyPartLayer;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.model.armor.CentipedeScaleArmorModel;
 import com.github.x3rmination.solaris.client.model.armor.SolarArmorModel;
-import com.github.x3rmination.solaris.client.model.armor.SolarisArmorModel;
-import com.github.x3rmination.solaris.client.particle.AnimatedSparksParticle;
-import com.github.x3rmination.solaris.client.particle.CherryBlossomParticle;
-import com.github.x3rmination.solaris.client.particle.Flame0Particle;
-import com.github.x3rmination.solaris.client.particle.SnowTornadoParticle;
+import com.github.x3rmination.solaris.client.particle.*;
 import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.BlizzardAttack.BlizzardAttackRenderer;
@@ -25,7 +21,6 @@ import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
-import net.minecraft.client.model.geom.builders.CubeDeformation;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
@@ -104,7 +99,9 @@ public class ClientSetup {
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.ANIMATED_SPARKS.get(), AnimatedSparksParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.FLAME_0.get(), Flame0Particle.Provider::new);
-        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SNOW_TORNADO.get(), SnowTornadoParticle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SNOW_TORNADO.get(), TornadoParticle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ParticleRegistry.AIR_TORNADO.get(), TornadoParticle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ParticleRegistry.BLIZZARD.get(), BlizzardParticle.Provider::new);
     }
 
 //    public static void registerShaders(final RegisterShadersEvent event) {
