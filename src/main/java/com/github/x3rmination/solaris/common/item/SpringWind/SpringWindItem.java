@@ -68,7 +68,7 @@ public class SpringWindItem extends SwordItem implements IAnimatable, SolarisWea
                     tag.putIntArray(SEEKER_LIST, seekerArray);
                     setActive(serverPlayer);
                 }
-            }, 10);
+            }, 20);
         } else {
             startSeekerMovement(serverPlayer);
             CompoundTag tag = serverPlayer.getMainHandItem().getTag();

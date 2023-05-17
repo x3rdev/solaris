@@ -1,6 +1,6 @@
 package com.github.x3rmination.solaris.client.particle;
 
-import com.github.x3rmination.solaris.client.particle.option.AirTornadoOption;
+import com.github.x3rmination.solaris.client.particle.option.SnowTornadoOption;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
 import net.minecraft.world.phys.Vec3;
@@ -8,10 +8,10 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.Nullable;
 
-public class TornadoParticle extends TextureSheetParticle {
+public class SnowTornadoParticle extends TextureSheetParticle {
 
     protected Vec3 deltaSpeed;
-    public TornadoParticle(ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
+    public SnowTornadoParticle(ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
         super(pLevel, pX, pY, pZ);
         this.deltaSpeed = new Vec3(pXSpeed, pYSpeed, pZSpeed);
         this.quadSize *= 0.75F;
@@ -33,7 +33,7 @@ public class TornadoParticle extends TextureSheetParticle {
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static class Provider implements ParticleProvider<AirTornadoOption> {
+    public static class Provider implements ParticleProvider<SnowTornadoOption> {
 
         private final SpriteSet sprite;
         public Provider(SpriteSet pSprites) {
@@ -42,8 +42,8 @@ public class TornadoParticle extends TextureSheetParticle {
 
         @Nullable
         @Override
-        public Particle createParticle(AirTornadoOption pType, ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
-            TornadoParticle particle = new TornadoParticle(pLevel, pX, pY + 0.075 * pType.getAge(), pZ, pXSpeed, pYSpeed, pZSpeed);
+        public Particle createParticle(SnowTornadoOption pType, ClientLevel pLevel, double pX, double pY, double pZ, double pXSpeed, double pYSpeed, double pZSpeed) {
+            SnowTornadoParticle particle = new SnowTornadoParticle(pLevel, pX, pY + 0.075 * pType.getAge(), pZ, pXSpeed, pYSpeed, pZSpeed);
             particle.pickSprite(sprite);
             particle.age = pType.getAge();
             return particle;

@@ -9,6 +9,7 @@ import com.github.x3rmination.solaris.client.particle.*;
 import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.BlizzardAttack.BlizzardAttackRenderer;
+import com.github.x3rmination.solaris.common.entity.attack.CloudSplitterAttack.CloudSplitterAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack.FireKatanaAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackRenderer;
 import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadRenderer;
@@ -49,6 +50,7 @@ public class ClientSetup {
         EntityRenderers.register(EntityRegistry.CHERRY_BLOSSOM_SEEKER.get(), CherryBlossomSeekerRenderer::new);
         EntityRenderers.register(EntityRegistry.WATER_FLOWER_ATTACK.get(), WaterFlowerAttackRenderer::new);
         EntityRenderers.register(EntityRegistry.BLIZZARD_ATTACK.get(), BlizzardAttackRenderer::new);
+        EntityRenderers.register(EntityRegistry.CLOUD_SPLITTER_ATTACK.get(), CloudSplitterAttackRenderer::new);
         event.enqueueWork(() -> {
             ItemProperties.register(ItemRegistry.PHOENIX_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
             ItemProperties.register(ItemRegistry.LIVING_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
@@ -99,8 +101,8 @@ public class ClientSetup {
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.ANIMATED_SPARKS.get(), AnimatedSparksParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.FLAME_0.get(), Flame0Particle.Provider::new);
-        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SNOW_TORNADO.get(), TornadoParticle.Provider::new);
-        Minecraft.getInstance().particleEngine.register(ParticleRegistry.AIR_TORNADO.get(), TornadoParticle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ParticleRegistry.SNOW_TORNADO.get(), SnowTornadoParticle.Provider::new);
+        Minecraft.getInstance().particleEngine.register(ParticleRegistry.AIR_TORNADO.get(), AirTornadoParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.BLIZZARD.get(), BlizzardParticle.Provider::new);
     }
 

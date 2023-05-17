@@ -3,6 +3,7 @@ package com.github.x3rmination.solaris.common.registry;
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackEntity;
 import com.github.x3rmination.solaris.common.entity.attack.BlizzardAttack.BlizzardAttackEntity;
+import com.github.x3rmination.solaris.common.entity.attack.CloudSplitterAttack.CloudSplitterAttackEntity;
 import com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack.FireKatanaAttackEntity;
 import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackEntity;
 import com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker.CherryBlossomSeekerEntity;
@@ -60,4 +61,11 @@ public class EntityRegistry {
                     .clientTrackingRange(4)
                     .updateInterval(10)
                     .build(new ResourceLocation(Solaris.MOD_ID, "blizzard_attack").toString()));
+
+    public static final RegistryObject<EntityType<CloudSplitterAttackEntity>> CLOUD_SPLITTER_ATTACK = ENTITIES.register("cloud_splitter_attack",
+            () -> EntityType.Builder.<CloudSplitterAttackEntity>of(CloudSplitterAttackEntity::new, MobCategory.MISC)
+                    .sized(0.25F, 0.25F)
+                    .clientTrackingRange(4)
+                    .updateInterval(10)
+                    .build(new ResourceLocation(Solaris.MOD_ID, "cloud_splitter_attack").toString()));
 }

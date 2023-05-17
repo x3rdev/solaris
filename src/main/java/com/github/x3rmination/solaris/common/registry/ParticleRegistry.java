@@ -1,7 +1,6 @@
 package com.github.x3rmination.solaris.common.registry;
 
 import com.github.x3rmination.solaris.Solaris;
-import com.github.x3rmination.solaris.client.particle.BlizzardParticle;
 import com.github.x3rmination.solaris.client.particle.option.AirTornadoOption;
 import com.github.x3rmination.solaris.client.particle.option.BlizzardOption;
 import com.github.x3rmination.solaris.client.particle.option.SnowTornadoOption;
