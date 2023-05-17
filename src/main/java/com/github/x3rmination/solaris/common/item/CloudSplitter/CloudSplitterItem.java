@@ -1,11 +1,16 @@
 package com.github.x3rmination.solaris.common.item.CloudSplitter;
 
+import com.github.x3rmination.solaris.common.entity.attack.CloudSplitterAttack.CloudSplitterAttackEntity;
+import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackEntity;
 import com.github.x3rmination.solaris.common.item.PhoenixSpear.PhoenixSpearRenderer;
 import com.github.x3rmination.solaris.common.item.SolarisParticleWeapon;
+import com.github.x3rmination.solaris.common.item.SolarisWeapon;
+import com.github.x3rmination.solaris.common.scheduler.Scheduler;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.SwordItem;
@@ -16,10 +21,12 @@ import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
+import yesman.epicfight.gameasset.Skills;
+import yesman.epicfight.skill.Skill;
 
 import java.util.function.Consumer;
 
-public class CloudSplitterItem extends SwordItem implements SolarisParticleWeapon, IAnimatable {
+public class CloudSplitterItem extends SwordItem implements SolarisParticleWeapon, SolarisWeapon, IAnimatable {
 
     public AnimationFactory factory = GeckoLibUtil.createFactory(this);
 
@@ -64,5 +71,17 @@ public class CloudSplitterItem extends SwordItem implements SolarisParticleWeapo
                 return renderer;
             }
         });
+    }
+
+    @Override
+    public void serverAttack(ServerPlayer serverPlayer, Skill skill) {
+        if(skill.equals(Skills.FATAL_DRAW)) {
+            Scheduler.schedule(() -> {
+                CloudSplitterAttackEntity cloudSplitterAttack = new CloudSplitterAttackEntity(serverPlayer, serverPlayer.getLookAngle().x, 0, serverPlayer.getLookAngle().z, serverPlayer.level);
+                cloudSplitterAttack.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(3, 0, 3)));
+                cloudSplitterAttack.setDeltaMovement(serverPlayer.getLookAngle().scale(0.25).multiply(1,0,1));
+                serverPlayer.level.addFreshEntity(cloudSplitterAttack);
+            }, 20);
+        }
     }
 }

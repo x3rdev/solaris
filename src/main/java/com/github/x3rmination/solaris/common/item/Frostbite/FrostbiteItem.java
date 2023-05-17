@@ -54,7 +54,7 @@ public class FrostbiteItem extends SwordItem implements SolarisParticleWeapon, S
                 frostbiteAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(3, 0, 3)));
                 frostbiteAttackEntity.setDeltaMovement(serverPlayer.getLookAngle().scale(0.25).multiply(1,0,1));
                 serverPlayer.level.addFreshEntity(frostbiteAttackEntity);
-            }, 10);
+            }, 20);
         }
     }
 

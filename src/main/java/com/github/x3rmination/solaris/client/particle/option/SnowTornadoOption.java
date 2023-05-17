@@ -38,7 +38,7 @@ public class SnowTornadoOption implements ParticleOptions {
 
     @Override
     public ParticleType<?> getType() {
-        return ParticleRegistry.AIR_TORNADO.get();
+        return ParticleRegistry.SNOW_TORNADO.get();
     }
 
     @Override
