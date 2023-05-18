@@ -1,15 +1,9 @@
 package com.github.x3rmination.solaris.common.item.PhoenixShield;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.mojang.math.Quaternion;
-import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
-import net.minecraft.commands.arguments.item.ItemPredicateArgument;
 import net.minecraft.world.item.ItemStack;
-import software.bernie.geckolib3.geo.render.built.GeoBone;
-import software.bernie.geckolib3.geo.render.built.GeoModel;
 import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
 
 public class PhoenixShieldRenderer extends GeoItemRenderer<PhoenixShieldItem> {

@@ -5,7 +5,6 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.world.entity.LivingEntity;
-import yesman.epicfight.client.ClientEngine;
 
 public class SolarisArmorModel extends HumanoidModel<LivingEntity> {
 

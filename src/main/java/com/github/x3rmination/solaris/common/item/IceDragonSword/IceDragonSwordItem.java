@@ -1,6 +1,5 @@
 package com.github.x3rmination.solaris.common.item.IceDragonSword;
 
-import com.github.x3rmination.solaris.common.item.PhoenixSpear.PhoenixSpearRenderer;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;

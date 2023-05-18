@@ -1,6 +1,5 @@
 package com.github.x3rmination.solaris.common.entity.attack.BlizzardAttack;
 
-import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackEntity;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;

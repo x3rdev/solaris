@@ -1,8 +1,6 @@
 package com.github.x3rmination.solaris.common.item.CloudSplitter;
 
 import com.github.x3rmination.solaris.common.entity.attack.CloudSplitterAttack.CloudSplitterAttackEntity;
-import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackEntity;
-import com.github.x3rmination.solaris.common.item.PhoenixSpear.PhoenixSpearRenderer;
 import com.github.x3rmination.solaris.common.item.SolarisParticleWeapon;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
 import com.github.x3rmination.solaris.common.scheduler.Scheduler;

@@ -5,11 +5,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.Random;
-import java.util.function.Supplier;
 
 @SuppressWarnings("deprecated")
 public class PearlstoneSlabs extends SlabBlock {

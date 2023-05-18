@@ -19,7 +19,6 @@ import yesman.epicfight.client.renderer.patched.entity.PatchedLivingEntityRender
 import yesman.epicfight.gameasset.Models;
 import yesman.epicfight.world.capabilities.entitypatch.LivingEntityPatch;
 
-import java.util.Arrays;
 import java.util.Random;
 
 @Mixin(PatchedLivingEntityRenderer.class)

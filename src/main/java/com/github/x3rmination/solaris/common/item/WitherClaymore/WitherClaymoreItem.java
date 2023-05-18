@@ -1,6 +1,5 @@
 package com.github.x3rmination.solaris.common.item.WitherClaymore;
 
-import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.item.SolarisParticleWeapon;
 import com.mojang.math.Vector3f;
 import net.minecraft.core.particles.ParticleOptions;

@@ -1,12 +1,10 @@
 package com.github.x3rmination.solaris.common.network;
 
 import com.github.x3rmination.solaris.client.network.SendParticleClient;
-import com.github.x3rmination.solaris.common.item.SolarisWeapon;
 import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.network.NetworkEvent;
