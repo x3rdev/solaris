@@ -2,7 +2,6 @@ package com.github.x3rmination.solaris.common.entity.attack.WaterFlowerAttack;
 
 import com.github.x3rmination.solaris.common.helper.ParticleHelper;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
-import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
@@ -11,7 +10,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -24,7 +22,6 @@ import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 import software.bernie.geckolib3.util.GeckoLibUtil;
-import yesman.epicfight.api.utils.math.Vec3f;
 
 public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
 

@@ -3,7 +3,6 @@ package com.github.x3rmination.solaris.common.scheduler;
 
 import com.github.x3rmination.solaris.Solaris;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

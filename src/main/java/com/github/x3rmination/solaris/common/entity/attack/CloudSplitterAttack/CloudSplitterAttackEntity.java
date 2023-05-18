@@ -1,8 +1,6 @@
 package com.github.x3rmination.solaris.common.entity.attack.CloudSplitterAttack;
 
 import com.github.x3rmination.solaris.client.particle.option.AirTornadoOption;
-import com.github.x3rmination.solaris.client.particle.option.SnowTornadoOption;
-import com.github.x3rmination.solaris.common.mob_effect.FrostbiteMobEffect;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
