@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.world.item.ItemStack;
 import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
+import yesman.epicfight.client.ClientEngine;
 
 public class PhoenixShieldRenderer extends GeoItemRenderer<PhoenixShieldItem> {
 
@@ -23,6 +24,9 @@ public class PhoenixShieldRenderer extends GeoItemRenderer<PhoenixShieldItem> {
             setModel(mainHandModel);
         } else {
             setModel(offHandModel);
+            if(ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode()) {
+                poseStack.translate(1, 0, 0);
+            }
         }
         super.renderByItem(stack, transformType, poseStack, bufferSource, packedLight, packedOverlay);
     }
