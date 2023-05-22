@@ -1,6 +1,7 @@
 package com.github.x3rmination.solaris.common.item.PhoenixShield;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.world.item.ItemStack;
@@ -24,7 +25,7 @@ public class PhoenixShieldRenderer extends GeoItemRenderer<PhoenixShieldItem> {
             setModel(mainHandModel);
         } else {
             setModel(offHandModel);
-            if(ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode()) {
+            if(ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && Minecraft.getInstance().screen == null) {
                 poseStack.translate(1, 0, 0);
             }
         }
