@@ -1,6 +1,7 @@
 package com.github.x3rmination.solaris.common.item.LivingShield;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
 import net.minecraft.world.item.ItemStack;
@@ -15,8 +16,11 @@ public class LivingShieldRenderer extends GeoItemRenderer<LivingShieldItem> {
     @Override
     public void renderByItem(ItemStack stack, ItemTransforms.TransformType transformType, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight, int packedOverlay) {
         boolean left = transformType == ItemTransforms.TransformType.THIRD_PERSON_LEFT_HAND || transformType == ItemTransforms.TransformType.FIRST_PERSON_LEFT_HAND;
-        if(left && ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode()) {
-            poseStack.translate(1, 0, 0);
+        if(left && ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && Minecraft.getInstance().screen == null) {
+            poseStack.translate(0.75, 0, 0);
         }
+        super.renderByItem(stack, transformType, poseStack, bufferSource, packedLight, packedOverlay);
     }
+
+
 }
