@@ -22,5 +22,4 @@ public class LivingShieldRenderer extends GeoItemRenderer<LivingShieldItem> {
         super.renderByItem(stack, transformType, poseStack, bufferSource, packedLight, packedOverlay);
     }
 
-
 }
