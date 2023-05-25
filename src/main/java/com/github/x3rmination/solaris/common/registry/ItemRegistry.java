@@ -77,10 +77,6 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> SPRING_WIND = ITEMS.register("spring_wind",
             () -> new SpringWindItem((new Item.Properties().tab(ModItemTab.instance))));
-    public static final RegistryObject<Item> SPRING_WIND_HANDLE = ITEMS.register("spring_wind_handle",
-            RenderItem::new);
-    public static final RegistryObject<Item> SPRING_WIND_BLADE = ITEMS.register("spring_wind_blade",
-            RenderItem::new);
 
     public static final RegistryObject<Item> PHOENIX_SPEAR = ITEMS.register("phoenix_spear",
             () -> new PhoenixSpearItem((new Item.Properties().tab(ModItemTab.instance))));

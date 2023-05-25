@@ -13,11 +13,11 @@ public class SpringWindModel extends AnimatedGeoModel<SpringWindItem> {
 
     @Override
     public ResourceLocation getTextureLocation(SpringWindItem object) {
-        return new ResourceLocation(Solaris.MOD_ID, "textures/item/abyssal_edge/abyssal_edge_0.png");
+        return new ResourceLocation(Solaris.MOD_ID, "textures/item/spring_wind.png");
     }
 
     @Override
     public ResourceLocation getAnimationFileLocation(SpringWindItem animatable) {
-        return new ResourceLocation(Solaris.MOD_ID,"animations/abyssal_edge_blade.animation.json");
+        return null;
     }
 }
