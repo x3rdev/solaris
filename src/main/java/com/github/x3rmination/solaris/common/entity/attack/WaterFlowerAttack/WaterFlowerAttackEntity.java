@@ -3,6 +3,7 @@ package com.github.x3rmination.solaris.common.entity.attack.WaterFlowerAttack;
 import com.github.x3rmination.solaris.common.helper.ParticleHelper;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.protocol.Packet;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
@@ -13,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.network.NetworkHooks;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -46,14 +48,13 @@ public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
     @Override
     public void tick() {
         super.tick();
-
         this.setPos(this.position().add(this.getDeltaMovement()));
         HitResult hitresult = ProjectileUtil.getHitResult(this, this::canHitEntity);
         if (hitresult.getType() != HitResult.Type.MISS && !net.minecraftforge.event.ForgeEventFactory.onProjectileImpact(this, hitresult)) {
             this.onHit(hitresult);
         }
 
-        if(this.tickCount > 600) {
+        if(this.tickCount > 400) {
             this.kill();
         }
         this.level.getEntities(this, this.getBoundingBox().inflate(1.5)).forEach(entity -> {
@@ -78,11 +79,11 @@ public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
 
     @Override
     public void registerControllers(AnimationData data) {
-        data.addAnimationController(new AnimationController<>(this, "controller", 1, this::predicate));
+        data.addAnimationController(new AnimationController<>(this, "controller", 2, this::predicate));
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.water_flower_skill.idle", ILoopType.EDefaultLoopTypes.LOOP));
+//        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.water_flower_skill.idle", ILoopType.EDefaultLoopTypes.LOOP));
         return PlayState.CONTINUE;
     }
 

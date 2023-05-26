@@ -13,13 +13,12 @@ public class WaterFlowerAttackModel extends AnimatedGeoModel<WaterFlowerAttackEn
 
     @Override
     public ResourceLocation getTextureLocation(WaterFlowerAttackEntity object) {
-//        int count = (int) (object.getLevel().nextSubTickCount()/20 % 32);
         int count = 0;
         return new ResourceLocation(Solaris.MOD_ID, "textures/entity/water_flower_attack/water_attack" + count + ".png");
     }
 
     @Override
     public ResourceLocation getAnimationFileLocation(WaterFlowerAttackEntity animatable) {
-        return new ResourceLocation(Solaris.MOD_ID, "animations/water_flower_skill.animation.json");
+        return null;
     }
 }

@@ -28,7 +28,6 @@ public class BlizzardAttackEntity extends AbstractHurtingProjectile {
         this.level.getEntities(this, this.getBoundingBox().inflate(4)).forEach(entity -> {
             if(entity instanceof LivingEntity livingEntity && !entity.equals(this.getOwner())) {
                 FrostbiteMobEffect.applyEffect(livingEntity);
-                livingEntity.push(Math.sin(tickCount) + Math.sin(tickCount + 0.01D), 0, Math.cos(tickCount) + Math.cos(tickCount + 0.01D));
             }
         });
         if(this.tickCount <= 100) {
