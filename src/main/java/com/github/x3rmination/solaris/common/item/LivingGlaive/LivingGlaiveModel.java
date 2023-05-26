@@ -18,6 +18,6 @@ public class LivingGlaiveModel extends AnimatedGeoModel<LivingGlaiveItem> {
 
     @Override
     public ResourceLocation getAnimationFileLocation(LivingGlaiveItem animatable) {
-        return new ResourceLocation(Solaris.MOD_ID, "animations/living_glaive.animation.json");
+        return null;
     }
 }
