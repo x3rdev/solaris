@@ -18,16 +18,17 @@ public class WaterFlowerAttackRenderer extends GeoProjectilesRenderer<WaterFlowe
     public WaterFlowerAttackRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new WaterFlowerAttackModel());
     }
+
     @Override
-    public void render(WaterFlowerAttackEntity animatable, float yaw, float partialTick, PoseStack poseStack, MultiBufferSource bufferSource, int packedLight) {
+    public void renderLate(WaterFlowerAttackEntity animatable, PoseStack poseStack, float partialTick, MultiBufferSource bufferSource, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         poseStack.scale(7, 7, 7);
-        poseStack.mulPose(new Quaternion(new Vector3f(0, 1, 0), -((animatable.tickCount + partialTick)*20) % 360, true));
-        super.render(animatable, yaw, partialTick, poseStack, bufferSource, packedLight);
+        super.renderLate(animatable, poseStack, partialTick, bufferSource, buffer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
     @Override
     public RenderType getRenderType(WaterFlowerAttackEntity animatable, float partialTick, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, ResourceLocation texture) {
         return RenderType.entityTranslucent(texture);
     }
+
 
 }

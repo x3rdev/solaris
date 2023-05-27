@@ -10,24 +10,19 @@ import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.renderers.geo.GeoProjectilesRenderer;
 
-public class AbyssalEdgeAttackRenderer extends GeoProjectilesRenderer {
+public class AbyssalEdgeAttackRenderer extends GeoProjectilesRenderer<AbyssalEdgeAttackEntity> {
     public AbyssalEdgeAttackRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new AbyssalEdgeAttackModel());
     }
 
     @Override
-    public void render(Entity entityIn, float entityYaw, float partialTicks, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
-        super.render(entityIn, entityYaw, partialTicks, matrixStackIn, bufferIn, packedLightIn);
+    public void renderLate(AbyssalEdgeAttackEntity animatable, PoseStack poseStack, float partialTick, MultiBufferSource bufferSource, VertexConsumer buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+        poseStack.scale(30, 10, 1);
+        super.renderLate(animatable, poseStack, partialTick, bufferSource, buffer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 
     @Override
-    public void renderLate(Object animatable, PoseStack stackIn, float partialTicks, MultiBufferSource renderTypeBuffer, VertexConsumer bufferIn, int packedLightIn, int packedOverlayIn, float red, float green, float blue, float alpha) {
-        stackIn.scale(30, 10, 1);
-        super.renderLate(animatable, stackIn, partialTicks, renderTypeBuffer, bufferIn, packedLightIn, packedOverlayIn, red, green, blue, alpha);
-    }
-
-    @Override
-    public RenderType getRenderType(Object animatable, float partialTicks, PoseStack stack, @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
+    public RenderType getRenderType(AbyssalEdgeAttackEntity animatable, float partialTick, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, ResourceLocation texture) {
         return RenderType.endPortal();
     }
 }

@@ -32,7 +32,7 @@ public class AbyssalEdgeAttackEntity extends Entity implements IAnimatable {
     @Override
     public void tick() {
         super.tick();
-        if(this.tickCount > 100) {
+        if(this.tickCount > 200) {
             this.kill();
         }
     }
