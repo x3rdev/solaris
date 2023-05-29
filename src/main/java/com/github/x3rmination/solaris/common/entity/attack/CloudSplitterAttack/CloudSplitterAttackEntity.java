@@ -39,6 +39,11 @@ public class CloudSplitterAttackEntity extends AbstractHurtingProjectile {
         for(int i = 0; i < 60; i+=5) {
             this.level.addParticle(new AirTornadoOption(i), this.getX() + 0.5 * (this.random.nextFloat() - 0.5), this.getY() + 0.5 * (this.random.nextFloat() - 0.5), this.getZ() + 0.5 * (this.random.nextFloat() - 0.5), dm.x, dm.y, dm.z);
         }
+        for(int i = 0; i < 4; i++) {
+            if(this.random.nextFloat() < 0.1) {
+                this.level.addParticle(ParticleTypes.SWEEP_ATTACK, this.getX() + this.random.nextFloat() - 0.5, this.getY() + this.random.nextFloat() - 0.5 + i + 1, this.getZ() + this.random.nextFloat(), dm.x, dm.y, dm.z);
+            }
+        }
         if(this.isInWall()) {
             this.move(MoverType.SELF, new Vec3(0, 0.25, 0));
         } else {
