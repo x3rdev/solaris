@@ -11,9 +11,11 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.MoverType;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
@@ -106,6 +108,16 @@ public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
                 Vec3 speedVector = new Vec3(particleX, 0, particleZ).scale(0.25);
                 helper.spawnParticle(serverLevel, new Vec3(this.getX() + particleX, this.getY(), this.getZ() + particleZ), speedVector.add(this.getDeltaMovement()));
             }
+            AABB box = new AABB(this.getX() + this.getDeltaMovement().x - 5, this.getY() + this.getDeltaMovement().y - 0.1, this.getZ() + this.getDeltaMovement().z - 5,this.getX() + this.getDeltaMovement().x + 5, this.getY() + this.getDeltaMovement().y + 0.1, this.getZ() + this.getDeltaMovement().z + 5);
+            serverLevel.getEntities(this, box).forEach(entity -> {
+                if(!entity.equals(this.getOwner())) {
+                    entity.push(pushFunction(this.getX() - entity.getX()), pushFunction(this.getY() - entity.getY()), pushFunction(this.getZ() - entity.getZ()));
+                }
+            });
         }
+    }
+
+    private double pushFunction(double ds) {
+        return (0.5 - 1F/(1+Math.pow(1.25, ds)));
     }
 }
