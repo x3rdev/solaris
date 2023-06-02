@@ -108,10 +108,15 @@ public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
                 Vec3 speedVector = new Vec3(particleX, 0, particleZ).scale(0.25);
                 helper.spawnParticle(serverLevel, new Vec3(this.getX() + particleX, this.getY(), this.getZ() + particleZ), speedVector.add(this.getDeltaMovement()));
             }
-            AABB box = new AABB(this.getX() + this.getDeltaMovement().x - 5, this.getY() + this.getDeltaMovement().y - 0.1, this.getZ() + this.getDeltaMovement().z - 5,this.getX() + this.getDeltaMovement().x + 5, this.getY() + this.getDeltaMovement().y + 0.1, this.getZ() + this.getDeltaMovement().z + 5);
+            AABB box = new AABB(this.getX() + this.getDeltaMovement().x - 5, this.getY() + this.getDeltaMovement().y - 0.5, this.getZ() + this.getDeltaMovement().z - 5,this.getX() + this.getDeltaMovement().x + 5, this.getY() + this.getDeltaMovement().y + 0.5, this.getZ() + this.getDeltaMovement().z + 5);
             serverLevel.getEntities(this, box).forEach(entity -> {
                 if(!entity.equals(this.getOwner())) {
-                    entity.push(pushFunction(this.getX() - entity.getX()), pushFunction(this.getY() - entity.getY()), pushFunction(this.getZ() - entity.getZ()));
+                    if(this.distanceToSqr(entity) < 2) {
+                        entity.setDeltaMovement(this.getDeltaMovement());
+                        entity.setPos(this.getPosition(0).add(this.getDeltaMovement()));
+                    } else {
+                        entity.push(pushFunction(this.getX() - entity.getX()), pushFunction(this.getY() - entity.getY()), pushFunction(this.getZ() - entity.getZ()));
+                    }
                 }
             });
         }
