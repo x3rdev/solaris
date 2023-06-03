@@ -37,16 +37,26 @@ public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, So
     public void serverAttack(ServerPlayer serverPlayer, Skill skill) {
         if(skill.equals(Skills.GIANT_WHIRLWIND)) {
             Scheduler.schedule(() -> {
-                ParticleHelper particleHelper = new ParticleHelper(serverPlayer.level, ParticleTypes.FLAME, serverPlayer.position().add(0, 1, 0));
-                for(int i = 0; i < 90; i++) {
-                    particleHelper.spawnParticle(serverPlayer.getPosition(0).add(0, 1, 0).add(2*Math.cos(i * 4 * Math.PI/180F), 0.1*(Math.random() - 0.5), 2*Math.sin(i * 4 * Math.PI/180F)), new Vec3(0.2*Math.cos(i * 4 * Math.PI/180F), 0, 0.2*Math.sin(i * 4 * Math.PI/180F)));
-                }
-                AABB box = new AABB(serverPlayer.getX() - 5, serverPlayer.getY() - 0.5, serverPlayer.getZ() - 5,serverPlayer.getX() + 5, serverPlayer.getY() + 0.5, serverPlayer.getZ() + 5);
-                serverPlayer.level.getEntities(serverPlayer, box).forEach(entity -> {
-                    entity.setSecondsOnFire(4);
-                });
+                attack(serverPlayer);
             }, 20);
+            Scheduler.schedule(() -> {
+                attack(serverPlayer);
+            }, 30);
+            Scheduler.schedule(() -> {
+                attack(serverPlayer);
+            }, 45);
         }
+    }
+
+    private void attack(ServerPlayer serverPlayer) {
+        ParticleHelper particleHelper = new ParticleHelper(serverPlayer.level, ParticleTypes.FLAME, serverPlayer.position().add(0, 1, 0));
+        for(int i = 0; i < 90; i++) {
+            particleHelper.spawnParticle(serverPlayer.getPosition(0).add(0, 1, 0).add(2*Math.cos(i * 4 * Math.PI/180F), 0.1*(Math.random() - 0.5), 2*Math.sin(i * 4 * Math.PI/180F)), new Vec3(0.2*Math.cos(i * 4 * Math.PI/180F), 0, 0.2*Math.sin(i * 4 * Math.PI/180F)));
+        }
+        AABB box = new AABB(serverPlayer.getX() - 5, serverPlayer.getY() - 0.5, serverPlayer.getZ() - 5,serverPlayer.getX() + 5, serverPlayer.getY() + 0.5, serverPlayer.getZ() + 5);
+        serverPlayer.level.getEntities(serverPlayer, box).forEach(entity -> {
+            entity.setSecondsOnFire(4);
+        });
     }
 
     @Override
