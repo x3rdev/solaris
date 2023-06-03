@@ -4,6 +4,7 @@ import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.client.layer.BodyPartLayer;
 import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.model.armor.CentipedeScaleArmorModel;
+import com.github.x3rmination.solaris.client.model.armor.MonkArmorModel;
 import com.github.x3rmination.solaris.client.model.armor.SolarArmorModel;
 import com.github.x3rmination.solaris.client.particle.*;
 import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
@@ -91,6 +92,7 @@ public class ClientSetup {
         //Vanilla is 0.5F inner, 1.0F outer, some models may vary
         event.registerLayerDefinition(SolarArmorModel.LAYER_LOCATION, SolarArmorModel::createBodyLayer);
         event.registerLayerDefinition(CentipedeScaleArmorModel.LAYER_LOCATION, CentipedeScaleArmorModel::createBodyLayer);
+        event.registerLayerDefinition(MonkArmorModel.LAYER_LOCATION, MonkArmorModel::createBodyLayer);
     }
 
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {

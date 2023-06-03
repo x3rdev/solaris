@@ -25,6 +25,7 @@ import com.github.x3rmination.solaris.common.item.LivingGlaive.LivingGlaiveItem;
 import com.github.x3rmination.solaris.common.item.LivingGreatsword.LivingGreatswordItem;
 import com.github.x3rmination.solaris.common.item.LivingShield.LivingShieldItem;
 import com.github.x3rmination.solaris.common.item.MithrilChainsword.MithrilChainswordItem;
+import com.github.x3rmination.solaris.common.item.MonkArmor.MonkArmorItem;
 import com.github.x3rmination.solaris.common.item.PhoenixShield.PhoenixShieldItem;
 import com.github.x3rmination.solaris.common.item.PhoenixSpear.PhoenixSpearItem;
 import com.github.x3rmination.solaris.common.item.RavensBlade.RavensBladeItem;
@@ -162,6 +163,18 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> CENTIPEDE_SCALE_BOOTS = ITEMS.register("centipede_scale_boots",
             () -> new CentipedeScaleArmorItem(EquipmentSlot.FEET, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> MONK_HELMET = ITEMS.register("monk_helmet",
+            () -> new MonkArmorItem(EquipmentSlot.HEAD, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> MONK_CHESTPLATE = ITEMS.register("monk_chestplate",
+            () -> new MonkArmorItem(EquipmentSlot.CHEST, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> MONK_LEGGINGS = ITEMS.register("monk_leggings",
+            () -> new MonkArmorItem(EquipmentSlot.LEGS, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> MONK_BOOTS = ITEMS.register("monk_boots",
+            () -> new MonkArmorItem(EquipmentSlot.FEET, (new Item.Properties()).tab(ModItemTab.instance)));
 
     public static class ModItemTab extends CreativeModeTab {
         public static final ModItemTab instance = new ModItemTab(CreativeModeTab.TABS.length, Solaris.MOD_ID);
