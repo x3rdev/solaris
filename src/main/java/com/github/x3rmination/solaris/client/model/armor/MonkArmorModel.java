@@ -26,7 +26,7 @@ public class MonkArmorModel extends SolarisArmorModel{
                 .texOffs(21, 34).addBox(-2.0F, -6.75F, -4.75F, 4.0F, 2.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 0).addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 0.0F));
 
-        PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(26, 18).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.2F))
+        PartDefinition body = partdefinition.addOrReplaceChild("body", CubeListBuilder.create().texOffs(26, 18).addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, new CubeDeformation(0.0F))
                 .texOffs(41, 34).addBox(-3.0F, 10.484F, 1.7275F, 6.0F, 3.0F, 1.0F, new CubeDeformation(0.0F))
                 .texOffs(0, 16).addBox(-4.0F, 0.0F, -2.5F, 8.0F, 12.0F, 5.0F, new CubeDeformation(0.025F))
                 .texOffs(0, 33).addBox(-4.0F, 8.0F, -2.5F, 8.0F, 4.0F, 5.0F, new CubeDeformation(0.4F)), PartPose.offset(0.0F, 0.0F, 0.0F));
@@ -90,16 +90,16 @@ public class MonkArmorModel extends SolarisArmorModel{
         PartDefinition right_leg = partdefinition.addOrReplaceChild("right_leg", CubeListBuilder.create().texOffs(0, 42).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F))
                 .texOffs(41, 41).addBox(-2.5F, -0.05F, -2.5F, 5.0F, 7.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(-2.0F, 12.0F, 0.0F));
 
-        PartDefinition right_boot = partdefinition.addOrReplaceChild("right_boot", CubeListBuilder.create().texOffs(18, 62).addBox(-2.0F, -1.0F, -2.0F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.1F)), PartPose.offset(-2.0F, 21.0F, 0.0F));
+        PartDefinition right_boot = partdefinition.addOrReplaceChild("right_boot", CubeListBuilder.create().texOffs(18, 62).addBox(-2.0F, 4.0F, -2.0F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.1F)), PartPose.offset(-2.0F, 16.0F, 0.0F));
 
-        PartDefinition cube_r22 = right_boot.addOrReplaceChild("cube_r22", CubeListBuilder.create().texOffs(46, 38).addBox(-2.5F, 0.5F, -0.5F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.225F)), PartPose.offsetAndRotation(2.0F, -0.2299F, -1.4F, 0.2849F, -0.274F, 0.7459F));
+        PartDefinition cube_r22 = right_boot.addOrReplaceChild("cube_r22", CubeListBuilder.create().texOffs(46, 38).addBox(-2.5F, 0.5F, -0.5F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.225F)), PartPose.offsetAndRotation(2.0F, 4.7701F, -1.4F, 0.2849F, -0.274F, 0.7459F));
 
         PartDefinition left_leg = partdefinition.addOrReplaceChild("left_leg", CubeListBuilder.create().texOffs(16, 46).addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new CubeDeformation(0.0F))
                 .texOffs(26, 34).addBox(-2.5F, -0.05F, -2.5F, 5.0F, 7.0F, 5.0F, new CubeDeformation(0.0F)), PartPose.offset(2.0F, 12.0F, 0.0F));
 
-        PartDefinition left_boot = partdefinition.addOrReplaceChild("left_boot", CubeListBuilder.create().texOffs(34, 63).addBox(-2.0F, -1.0F, -2.0F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.1F)), PartPose.offset(2.0F, 21.0F, 0.0F));
+        PartDefinition left_boot = partdefinition.addOrReplaceChild("left_boot", CubeListBuilder.create().texOffs(34, 63).addBox(-2.0F, 8.0F, -2.0F, 4.0F, 4.0F, 4.0F, new CubeDeformation(0.1F)), PartPose.offset(2.0F, 12.0F, 0.0F));
 
-        PartDefinition cube_r23 = left_boot.addOrReplaceChild("cube_r23", CubeListBuilder.create().texOffs(0, 58).addBox(0.5F, 0.5F, -0.5F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.225F)), PartPose.offsetAndRotation(-2.0F, -0.2299F, -1.4F, 0.2849F, 0.274F, -0.7459F));
+        PartDefinition cube_r23 = left_boot.addOrReplaceChild("cube_r23", CubeListBuilder.create().texOffs(0, 58).addBox(0.5F, 0.5F, -0.5F, 2.0F, 2.0F, 1.0F, new CubeDeformation(0.225F)), PartPose.offsetAndRotation(-2.0F, 8.7701F, -1.4F, 0.2849F, 0.274F, -0.7459F));
 
         return LayerDefinition.create(meshdefinition, 128, 128);
     }

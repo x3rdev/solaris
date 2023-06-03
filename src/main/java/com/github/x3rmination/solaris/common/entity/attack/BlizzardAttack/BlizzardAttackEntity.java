@@ -3,6 +3,8 @@ package com.github.x3rmination.solaris.common.entity.attack.BlizzardAttack;
 import com.github.x3rmination.solaris.client.particle.option.BlizzardOption;
 import com.github.x3rmination.solaris.common.mob_effect.FrostbiteMobEffect;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
+import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
@@ -35,6 +37,11 @@ public class BlizzardAttackEntity extends AbstractHurtingProjectile {
                 this.level.addParticle(new BlizzardOption(1), this.getX(), this.getY() + 0.1 + i / 2F, this.getZ(), 0, 0, 0);
             }
         }
+    }
+
+    @Override
+    protected ParticleOptions getTrailParticle() {
+        return ParticleTypes.SNOWFLAKE;
     }
 
     @Override
