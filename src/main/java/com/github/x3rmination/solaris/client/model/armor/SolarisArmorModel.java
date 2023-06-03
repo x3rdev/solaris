@@ -6,6 +6,8 @@ import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.world.entity.LivingEntity;
 
+import java.util.List;
+
 public class SolarisArmorModel extends HumanoidModel<LivingEntity> {
 
     public final ModelPart rightBoot;
@@ -30,5 +32,9 @@ public class SolarisArmorModel extends HumanoidModel<LivingEntity> {
         leftBoot.copyFrom(leftLeg);
         rightBoot.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         leftBoot.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+    }
+
+    public List<ModelPart> getParts() {
+        return List.of(this.head, this.hat, this.body, this.rightArm, this.leftArm, this.rightLeg, this.leftLeg, this.rightBoot, this.leftBoot);
     }
 }

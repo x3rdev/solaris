@@ -6,6 +6,6 @@ import net.minecraft.world.entity.EquipmentSlot;
 
 public class SolarArmorItem extends SolarisArmorItem {
     public SolarArmorItem(EquipmentSlot slot, Properties builder) {
-        super(ArmorMaterialRegistry.SOLAR_ARMOR, slot, builder);
+        super(ArmorMaterialRegistry.SOLAR, slot, builder);
     }
 }
