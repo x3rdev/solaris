@@ -25,7 +25,7 @@ public class WaterFlowerItem extends SwordItem implements SolarisWeapon {
         if(skill.equals(Skills.FATAL_DRAW)) {
             Scheduler.schedule(() -> {
                 WaterFlowerAttackEntity waterFlowerAttack = new WaterFlowerAttackEntity(serverPlayer);
-                waterFlowerAttack.shootFromRotation(serverPlayer, serverPlayer.getXRot(), serverPlayer.getYHeadRot() , 0.0F, 1.5F, 0);
+                waterFlowerAttack.shootFromRotation(serverPlayer, serverPlayer.getXRot(), serverPlayer.getYHeadRot() , 0.0F, 1.0F, 0);
                 waterFlowerAttack.move(MoverType.SELF, new Vec3(0, 1, 0));
                 serverPlayer.level.addFreshEntity(waterFlowerAttack);
             }, 20);

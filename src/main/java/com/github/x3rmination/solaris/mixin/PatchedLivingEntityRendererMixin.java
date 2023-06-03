@@ -4,6 +4,7 @@ import com.github.x3rmination.solaris.common.item.SolarisParticleWeapon;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Quaternion;
 import com.mojang.math.Vector3f;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.core.particles.ParticleOptions;
@@ -26,7 +27,7 @@ public abstract class PatchedLivingEntityRendererMixin {
 
     @Inject(method = "render(Lnet/minecraft/world/entity/LivingEntity;Lyesman/epicfight/world/capabilities/entitypatch/LivingEntityPatch;Lnet/minecraft/client/renderer/entity/EntityRenderer;Lnet/minecraft/client/renderer/MultiBufferSource;Lcom/mojang/blaze3d/vertex/PoseStack;IF)V", at = @At("TAIL"), remap = false)
     private void render(LivingEntity livingEntity, LivingEntityPatch<? extends LivingEntity> entityPatch, EntityRenderer<? extends net.minecraft.world.entity.Entity> entityRenderer, MultiBufferSource bufferSource, PoseStack poseStack, int packedLight, float partialTicks, CallbackInfo ci) {
-        if(livingEntity.getMainHandItem().getItem() instanceof SolarisParticleWeapon particleWeapon) {
+        if(Minecraft.getInstance().isWindowActive() && livingEntity.getMainHandItem().getItem() instanceof SolarisParticleWeapon particleWeapon) {
             for(int i = 0; i < particleWeapon.getParticles().length; i++) {
                 if((livingEntity.tickCount + i*4) % particleWeapon.getParticleDelay() == 0) {
                     renderParticle(particleWeapon.getParticles()[i], particleWeapon.getParticleType(), livingEntity, entityPatch, partialTicks);

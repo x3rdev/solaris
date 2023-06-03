@@ -15,6 +15,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeTier;
 import yesman.epicfight.gameasset.Skills;
 import yesman.epicfight.skill.Skill;
@@ -36,9 +38,13 @@ public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, So
         if(skill.equals(Skills.GIANT_WHIRLWIND)) {
             Scheduler.schedule(() -> {
                 ParticleHelper particleHelper = new ParticleHelper(serverPlayer.level, ParticleTypes.FLAME, serverPlayer.position().add(0, 1, 0));
-                for(int i = 0; i < 10; i++) {
-                    particleHelper.spawnCircle(2 + (i * 0.1), (int) (32 + (Math.random() * 4)));
+                for(int i = 0; i < 90; i++) {
+                    particleHelper.spawnParticle(serverPlayer.getPosition(0).add(0, 1, 0).add(2*Math.cos(i * 4 * Math.PI/180F), 0.1*(Math.random() - 0.5), 2*Math.sin(i * 4 * Math.PI/180F)), new Vec3(0.2*Math.cos(i * 4 * Math.PI/180F), 0, 0.2*Math.sin(i * 4 * Math.PI/180F)));
                 }
+                AABB box = new AABB(serverPlayer.getX() - 5, serverPlayer.getY() - 0.5, serverPlayer.getZ() - 5,serverPlayer.getX() + 5, serverPlayer.getY() + 0.5, serverPlayer.getZ() + 5);
+                serverPlayer.level.getEntities(serverPlayer, box).forEach(entity -> {
+                    entity.setSecondsOnFire(4);
+                });
             }, 20);
         }
     }
