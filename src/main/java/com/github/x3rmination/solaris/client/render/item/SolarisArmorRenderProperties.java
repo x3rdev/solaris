@@ -2,10 +2,12 @@ package com.github.x3rmination.solaris.client.render.item;
 
 import com.github.x3rmination.solaris.client.model.armor.CentipedeScaleArmorModel;
 import com.github.x3rmination.solaris.client.model.armor.MonkArmorModel;
+import com.github.x3rmination.solaris.client.model.armor.WhitestoneArmorModel;
 import com.github.x3rmination.solaris.common.item.CentipedeScaleArmor.CentipedeScaleArmorItem;
 import com.github.x3rmination.solaris.common.item.MonkArmor.MonkArmorItem;
 import com.github.x3rmination.solaris.common.item.SolarArmor.SolarArmorItem;
 import com.github.x3rmination.solaris.client.model.armor.SolarArmorModel;
+import com.github.x3rmination.solaris.common.item.WhitestoneArmor.WhitestoneArmorItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -21,6 +23,7 @@ public class SolarisArmorRenderProperties implements IItemRenderProperties {
     public static SolarArmorModel SOLAR_ARMOR_MODEL;
     public static CentipedeScaleArmorModel CENTIPEDE_SCALE_ARMOR_MODEL;
     public static MonkArmorModel MONK_ARMOR_MODEL;
+    public static WhitestoneArmorModel WHITESTONE_ARMOR_MODEL;
 
     @Nullable
     @Override
@@ -38,6 +41,9 @@ public class SolarisArmorRenderProperties implements IItemRenderProperties {
         if(item instanceof MonkArmorItem) {
             return MONK_ARMOR_MODEL;
         }
+        if(item instanceof WhitestoneArmorItem) {
+            return WHITESTONE_ARMOR_MODEL;
+        }
         return _default;
     }
 
@@ -46,6 +52,6 @@ public class SolarisArmorRenderProperties implements IItemRenderProperties {
         SOLAR_ARMOR_MODEL = new SolarArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(SolarArmorModel.LAYER_LOCATION));
         CENTIPEDE_SCALE_ARMOR_MODEL = new CentipedeScaleArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(CentipedeScaleArmorModel.LAYER_LOCATION));
         MONK_ARMOR_MODEL = new MonkArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(MonkArmorModel.LAYER_LOCATION));
-
+        WHITESTONE_ARMOR_MODEL = new WhitestoneArmorModel(Minecraft.getInstance().getEntityModels().bakeLayer(WhitestoneArmorModel.LAYER_LOCATION));
     }
 }

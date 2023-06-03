@@ -6,6 +6,7 @@ import com.github.x3rmination.solaris.client.layer.FrostBiteLayer;
 import com.github.x3rmination.solaris.client.model.armor.CentipedeScaleArmorModel;
 import com.github.x3rmination.solaris.client.model.armor.MonkArmorModel;
 import com.github.x3rmination.solaris.client.model.armor.SolarArmorModel;
+import com.github.x3rmination.solaris.client.model.armor.WhitestoneArmorModel;
 import com.github.x3rmination.solaris.client.particle.*;
 import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackRenderer;
@@ -93,6 +94,7 @@ public class ClientSetup {
         event.registerLayerDefinition(SolarArmorModel.LAYER_LOCATION, SolarArmorModel::createBodyLayer);
         event.registerLayerDefinition(CentipedeScaleArmorModel.LAYER_LOCATION, CentipedeScaleArmorModel::createBodyLayer);
         event.registerLayerDefinition(MonkArmorModel.LAYER_LOCATION, MonkArmorModel::createBodyLayer);
+        event.registerLayerDefinition(WhitestoneArmorModel.LAYER_LOCATION, WhitestoneArmorModel::createBodyLayer);
     }
 
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {

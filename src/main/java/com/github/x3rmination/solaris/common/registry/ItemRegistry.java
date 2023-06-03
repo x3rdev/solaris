@@ -34,6 +34,7 @@ import com.github.x3rmination.solaris.common.item.RuinedBlade.RuinedBladeItem;
 import com.github.x3rmination.solaris.common.item.SolarArmor.SolarArmorItem;
 import com.github.x3rmination.solaris.common.item.SpringWind.SpringWindItem;
 import com.github.x3rmination.solaris.common.item.WaterFlower.WaterFlowerItem;
+import com.github.x3rmination.solaris.common.item.WhitestoneArmor.WhitestoneArmorItem;
 import com.github.x3rmination.solaris.common.item.WitherClaymore.WitherClaymoreItem;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.CreativeModeTab;
@@ -175,6 +176,18 @@ public class ItemRegistry {
 
     public static final RegistryObject<Item> MONK_BOOTS = ITEMS.register("monk_boots",
             () -> new MonkArmorItem(EquipmentSlot.FEET, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> WHITESTONE_HELMET = ITEMS.register("whitestone_helmet",
+            () -> new WhitestoneArmorItem(EquipmentSlot.HEAD, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> WHITESTONE_CHESTPLATE = ITEMS.register("whitestone_chestplate",
+            () -> new WhitestoneArmorItem(EquipmentSlot.CHEST, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> WHITESTONE_LEGGINGS = ITEMS.register("whitestone_leggings",
+            () -> new WhitestoneArmorItem(EquipmentSlot.LEGS, (new Item.Properties()).tab(ModItemTab.instance)));
+
+    public static final RegistryObject<Item> WHITESTONE_BOOTS = ITEMS.register("whitestone_boots",
+            () -> new WhitestoneArmorItem(EquipmentSlot.FEET, (new Item.Properties()).tab(ModItemTab.instance)));
 
     public static class ModItemTab extends CreativeModeTab {
         public static final ModItemTab instance = new ModItemTab(CreativeModeTab.TABS.length, Solaris.MOD_ID);
