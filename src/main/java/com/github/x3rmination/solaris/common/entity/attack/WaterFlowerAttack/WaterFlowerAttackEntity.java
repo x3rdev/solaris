@@ -60,12 +60,14 @@ public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
             this.onHit(hitresult);
         }
 
-        if(this.tickCount > 400) {
+        if(this.tickCount > 200) {
             this.kill();
         }
-        this.level.getEntities(this, this.getBoundingBox().inflate(1.5)).forEach(entity -> {
-            entity.hurt(DamageSource.GENERIC, 4);
-        });
+        if(this.tickCount % 20 == 0) {
+            this.level.getEntities(this, this.getBoundingBox().inflate(1.5)).forEach(entity -> {
+                entity.hurt(DamageSource.GENERIC, 2);
+            });
+        }
         createParticles();
     }
 
@@ -112,8 +114,7 @@ public class WaterFlowerAttackEntity extends Projectile implements IAnimatable {
             serverLevel.getEntities(this, box).forEach(entity -> {
                 if(!entity.equals(this.getOwner())) {
                     if(this.distanceToSqr(entity) < 2) {
-                        entity.setDeltaMovement(this.getDeltaMovement());
-                        entity.setPos(this.getPosition(0).add(this.getDeltaMovement()));
+                        entity.setPos(this.getPosition(0).add(0, -1, 0).add(this.getDeltaMovement().scale(1.5)));
                     } else {
                         entity.push(pushFunction(this.getX() - entity.getX()), pushFunction(this.getY() - entity.getY()), pushFunction(this.getZ() - entity.getZ()));
                     }
