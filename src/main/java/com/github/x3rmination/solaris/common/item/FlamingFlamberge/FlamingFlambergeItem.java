@@ -24,7 +24,7 @@ import yesman.epicfight.skill.Skill;
 public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, SolarisParticleWeapon {
 
     public FlamingFlambergeItem(Properties pProperties) {
-        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 9, -3F, pProperties);
+        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 9, -3.4F, pProperties);
     }
 
     @Override

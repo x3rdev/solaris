@@ -1,4 +1,4 @@
-package com.github.x3rmination.solaris.common.item.DemonsBlade.gui;
+package com.github.x3rmination.solaris.client.gui;
 
 import com.github.x3rmination.solaris.Solaris;
 import com.github.x3rmination.solaris.common.solaris.player_race.PlayerRace;

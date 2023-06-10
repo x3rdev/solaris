@@ -1,6 +1,7 @@
 package com.github.x3rmination.solaris.common.item.AbyssalEdge;
 
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackEntity;
+import com.github.x3rmination.solaris.common.helper.physics.RBB;
 import com.github.x3rmination.solaris.common.item.SolarisWeapon;
 import com.github.x3rmination.solaris.common.scheduler.Scheduler;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
@@ -23,7 +24,7 @@ import java.util.function.Consumer;
 public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable, SolarisWeapon {
     public AnimationFactory factory = GeckoLibUtil.createFactory(this);
     public AbyssalEdgeBladeItem(Properties pProperties) {
-        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -2F, pProperties);
+        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 9, -2F, pProperties);
     }
 
     @Override
@@ -58,6 +59,10 @@ public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable, Sola
                 serverPlayer.level.addFreshEntity(abyssalEdgeAttackEntity);
             }, 20);
         }
+
+        RBB rbb = new RBB(serverPlayer.getBoundingBox(), Math.PI/2);
+        boolean f = rbb.collidesWith(serverPlayer.getBoundingBox());
+        System.out.println(f);
     }
 
 }

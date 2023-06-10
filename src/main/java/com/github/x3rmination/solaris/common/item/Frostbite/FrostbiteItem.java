@@ -43,7 +43,7 @@ public class FrostbiteItem extends SwordItem implements SolarisParticleWeapon, S
 
     @Override
     public int getParticleDelay() {
-        return 6;
+        return 15;
     }
 
     @Override
