@@ -59,10 +59,6 @@ public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable, Sola
                 serverPlayer.level.addFreshEntity(abyssalEdgeAttackEntity);
             }, 20);
         }
-
-        RBB rbb = new RBB(serverPlayer.getBoundingBox(), Math.PI/2);
-        boolean f = rbb.collidesWith(serverPlayer.getBoundingBox());
-        System.out.println(f);
     }
 
 }
