@@ -57,9 +57,8 @@ public abstract class PatchedLivingEntityRendererMixin {
             toolPos.setX((float) (vector[0] * Math.cos(bodyRot) - vector[2] * Math.sin(bodyRot)));
             toolPos.setZ((float) (vector[0] * Math.sin(bodyRot) + vector[2] * Math.cos(bodyRot)));
 
-
             Random random = livingEntity.getRandom();
-            livingEntity.level.addParticle(particleType, toolPos.x() + handX + livingEntity.position().x + (0.2 * (random.nextDouble() - 0.5)), toolPos.y() + handY + livingEntity.position().y + (0.2 * (random.nextDouble() - 0.5)), toolPos.z() + handZ + livingEntity.position().z + (0.2 * (random.nextDouble() - 0.5)), 0, 0, 0);
+            livingEntity.level.addParticle(particleType, toolPos.x() + handX + livingEntity.position().x + (0.1 * (random.nextDouble() - 0.5)) + livingEntity.getDeltaMovement().x, toolPos.y() + handY + livingEntity.position().y + (0.1 * (random.nextDouble() - 0.5)) + livingEntity.getDeltaMovement().y, toolPos.z() + handZ + livingEntity.position().z + (0.1 * (random.nextDouble() - 0.5)) + livingEntity.getDeltaMovement().z, 0, 0, 0);
         }
     }
 }

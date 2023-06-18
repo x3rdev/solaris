@@ -8,6 +8,6 @@ import net.minecraftforge.common.ForgeTier;
 
 public class BloodyEclipseItem extends SwordItem {
     public BloodyEclipseItem(Properties pProperties) {
-        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 6, -3F, pProperties);
+        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 15, -3.08F, pProperties);
     }
 }

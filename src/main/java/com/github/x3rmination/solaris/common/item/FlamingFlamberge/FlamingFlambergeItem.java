@@ -24,7 +24,7 @@ import yesman.epicfight.skill.Skill;
 public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, SolarisParticleWeapon {
 
     public FlamingFlambergeItem(Properties pProperties) {
-        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 9, -3F, pProperties);
+        super(new ForgeTier(0, 1000, 2.0F, 0.0F, 10, BlockTags.NEEDS_DIAMOND_TOOL, () -> Ingredient.of(ItemTags.STONE_TOOL_MATERIALS)), 9, -3.4F, pProperties);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, So
     private void attack(ServerPlayer serverPlayer) {
         ParticleHelper particleHelper = new ParticleHelper(serverPlayer.level, ParticleTypes.FLAME, serverPlayer.position().add(0, 1, 0));
         for(int i = 0; i < 90; i++) {
-            particleHelper.spawnParticle(serverPlayer.getPosition(0).add(0, 1, 0).add(2*Math.cos(i * 4 * Math.PI/180F), 0.1*(Math.random() - 0.5), 2*Math.sin(i * 4 * Math.PI/180F)), new Vec3(0.2*Math.cos(i * 4 * Math.PI/180F), 0, 0.2*Math.sin(i * 4 * Math.PI/180F)));
+            particleHelper.spawnParticle(new Vec3(0, 1, 0).add(2*Math.cos(i * 4 * Math.PI/180F), 0.1*(Math.random() - 0.5), 2*Math.sin(i * 4 * Math.PI/180F)), new Vec3(0.2*Math.cos(i * 4 * Math.PI/180F), 0, 0.2*Math.sin(i * 4 * Math.PI/180F)));
         }
         AABB box = new AABB(serverPlayer.getX() - 5, serverPlayer.getY() - 0.5, serverPlayer.getZ() - 5,serverPlayer.getX() + 5, serverPlayer.getY() + 0.5, serverPlayer.getZ() + 5);
         serverPlayer.level.getEntities(serverPlayer, box).forEach(entity -> {

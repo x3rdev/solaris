@@ -143,6 +143,7 @@ repositories {
 
 dependencies {
 
+    testImplementation 'junit:junit:4.13.1'
     minecraft "net.minecraftforge:forge:1.18.2-40.1.80"
     implementation fg.deobf("curse.maven:epic-fight-mod-405076:4018756")
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.9.0")
