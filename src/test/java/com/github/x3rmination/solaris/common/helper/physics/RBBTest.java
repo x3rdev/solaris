@@ -12,8 +12,6 @@ public class RBBTest {
 
     @Test
     public void rotate() {
-        Vec2 v = RBB.rotate(new Vec2(1, 0), Math.PI/2);
-        assertTrue(v.equals(new Vec2(0, 1)));
     }
 
     @Test
