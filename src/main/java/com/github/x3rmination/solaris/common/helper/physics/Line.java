@@ -42,13 +42,14 @@ public class Line {
         return new Vec2(this.origin.x + lambda * this.direction.x, this.origin.y + lambda * this.direction.y);
     }
 
-    //TODO check if != is too strict in this case
-    public float lambda(Vec2 point) {
-        float c = point.add(this.origin.negated()).x / this.direction.x;
-        if(direction.y * c + origin.y != point.y) {
-            return Float.NaN;
-        }
-        return c;
+    //xo+t(xd) = xp
+    //(xp-xo)/xd
+    public float parameter(Vec2 point) {
+        float a = (point.x-this.origin.x)/this.direction.x;
+        float b = (point.y-this.origin.y)/this.direction.y;
+        if(Float.isNaN(a) || Float.isInfinite(a)) return b;
+        if(Float.isNaN(b) || Float.isInfinite(b)) return a;
+        return ((int) a * 1000) == ((int) b * 1000) ? a : Float.NaN;
     }
 
     public Vec2 getDirection() {

@@ -23,7 +23,7 @@ public class LineTest {
     @Test
     public void lambda() {
         Line l1 = new Line(new Vec2(0, 0), new Vec2(2, 1));
-        assertEquals(2, l1.lambda(new Vec2(4, 2)), 0.0);
+        assertEquals(2, l1.parameter(new Vec2(4, 2)), 0.0);
     }
 
     @Test

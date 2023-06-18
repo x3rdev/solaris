@@ -55,7 +55,7 @@ public class AbyssalEdgeBladeItem extends SwordItem implements IAnimatable, Sola
             Scheduler.schedule(() -> {
                 AbyssalEdgeAttackEntity abyssalEdgeAttackEntity = new AbyssalEdgeAttackEntity(serverPlayer.level);
                 abyssalEdgeAttackEntity.setYRot(-serverPlayer.getYHeadRot());
-                abyssalEdgeAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(6, 0, 6)));
+                abyssalEdgeAttackEntity.setPos(serverPlayer.position().add(serverPlayer.getLookAngle().multiply(16, 0, 16)));
                 serverPlayer.level.addFreshEntity(abyssalEdgeAttackEntity);
             }, 20);
         }

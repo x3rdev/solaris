@@ -27,7 +27,7 @@ public class ParticleHelper {
     public void spawnCircle(double radius, int quality, Vec3 speed) {
         for(int i = 0; i < quality; i++) {
             double rad = Math.PI * 2;
-            Vec3 newPos = new Vec3(pos.x + Math.cos(rad * i / quality) * radius, pos.y, pos.z + Math.sin(rad * i / quality) * radius);
+            Vec3 newPos = new Vec3(Math.cos(rad * i / quality) * radius, 0, Math.sin(rad * i / quality) * radius);
             spawnParticle(newPos, speed);
         }
     }
@@ -44,8 +44,8 @@ public class ParticleHelper {
 //        spawnParticle(new Vec3(pos.x + (Math.cos(radianRot) * radius), pos.y - Math.sin(radianXRot) * radius, pos.z + (Math.sin(radianRot) * radius)), speed);
         for(int i = 0; i < quality; i++) {
             float radianMod = (float) ((mod * i / quality) * Math.PI / 180);
-            spawnParticle(new Vec3(pos.x + (Math.cos(radianRot + radianMod) * radius), pos.y + Math.sin(radianXRot) * radius * ((float) i / quality) * 2, pos.z + (Math.sin(radianRot + radianMod) * radius)), speed);
-            spawnParticle(new Vec3(pos.x + (Math.cos(radianRot - radianMod) * radius), pos.y + Math.sin(radianXRot) * radius * ((float) i / quality) * 2, pos.z + (Math.sin(radianRot - radianMod) * radius)), speed);
+            spawnParticle(new Vec3(Math.cos(radianRot + radianMod) * radius, Math.sin(radianXRot) * radius * ((float) i / quality) * 2, Math.sin(radianRot + radianMod) * radius), speed);
+            spawnParticle(new Vec3(Math.cos(radianRot - radianMod) * radius, Math.sin(radianXRot) * radius * ((float) i / quality) * 2, Math.sin(radianRot - radianMod) * radius), speed);
         }
     }
 
@@ -58,12 +58,12 @@ public class ParticleHelper {
         }
     }
 
-    public void spawnParticle(ClientLevel clientLevel, Vec3 pos, Vec3 speed) {
-        clientLevel.addParticle(particleOptions, pos.x, pos.y, pos.z, speed.x, speed.y, speed.z);
+    public void spawnParticle(ClientLevel clientLevel, Vec3 vec3, Vec3 speed) {
+        clientLevel.addParticle(particleOptions, pos.x + vec3.x, pos.y + vec3.y, pos.z + vec3.z, speed.x, speed.y, speed.z);
     }
 
-    public void spawnParticle(ServerLevel serverLevel, Vec3 pos, Vec3 speed) {
-        SolarisPacketHandler.INSTANCE.send(PacketDistributor.TRACKING_CHUNK.with(() -> (LevelChunk) serverLevel.getChunk(new BlockPos(pos))), new SendParticleMessage(particleOptions, pos.x, pos.y, pos.z, speed.x, speed.y, speed.z));
+    public void spawnParticle(ServerLevel serverLevel, Vec3 vec3, Vec3 speed) {
+        SolarisPacketHandler.INSTANCE.send(PacketDistributor.TRACKING_CHUNK.with(() -> (LevelChunk) serverLevel.getChunk(new BlockPos(pos))), new SendParticleMessage(particleOptions, pos.x + vec3.x, pos.y + vec3.y, pos.z + vec3.z, speed.x, speed.y, speed.z));
     }
 
     public Vec3 getPos() {
