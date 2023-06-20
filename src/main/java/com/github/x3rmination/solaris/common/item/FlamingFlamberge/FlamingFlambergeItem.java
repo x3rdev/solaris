@@ -12,6 +12,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -35,23 +36,25 @@ public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, So
     }
     @Override
     public void serverAttack(ServerPlayer serverPlayer, Skill skill) {
+
         if(skill.equals(Skills.GIANT_WHIRLWIND)) {
+            double f = serverPlayer.getAttribute(Attributes.ATTACK_SPEED).getValue();
             Scheduler.schedule(() -> {
                 attack(serverPlayer);
-            }, 20);
+            }, (int) (14/f));
             Scheduler.schedule(() -> {
                 attack(serverPlayer);
-            }, 30);
+            }, (int) (24/f));
             Scheduler.schedule(() -> {
                 attack(serverPlayer);
-            }, 45);
+            }, (int) (39/f));
         }
     }
 
     private void attack(ServerPlayer serverPlayer) {
         ParticleHelper particleHelper = new ParticleHelper(serverPlayer.level, ParticleTypes.FLAME, serverPlayer.position().add(0, 1, 0));
         for(int i = 0; i < 90; i++) {
-            particleHelper.spawnParticle(new Vec3(0, 1, 0).add(2*Math.cos(i * 4 * Math.PI/180F), 0.1*(Math.random() - 0.5), 2*Math.sin(i * 4 * Math.PI/180F)), new Vec3(0.2*Math.cos(i * 4 * Math.PI/180F), 0, 0.2*Math.sin(i * 4 * Math.PI/180F)));
+            particleHelper.spawnParticle(new Vec3(2*Math.cos(i * 4 * Math.PI/180F), 0.1*(Math.random() - 0.5), 2*Math.sin(i * 4 * Math.PI/180F)), new Vec3(0.2*Math.cos(i * 4 * Math.PI/180F), 0, 0.2*Math.sin(i * 4 * Math.PI/180F)));
         }
         AABB box = new AABB(serverPlayer.getX() - 5, serverPlayer.getY() - 0.5, serverPlayer.getZ() - 5,serverPlayer.getX() + 5, serverPlayer.getY() + 0.5, serverPlayer.getZ() + 5);
         serverPlayer.level.getEntities(serverPlayer, box).forEach(entity -> {

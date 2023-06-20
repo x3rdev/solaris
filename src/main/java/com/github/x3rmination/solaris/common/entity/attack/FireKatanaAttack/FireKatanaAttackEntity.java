@@ -49,7 +49,7 @@ public class FireKatanaAttackEntity extends Projectile implements IAnimatable {
             this.kill();
         }
         this.level.getEntities(this, this.getBoundingBox().inflate(1.5)).forEach(entity -> {
-            entity.setRemainingFireTicks(10);
+            entity.setRemainingFireTicks(120);
             entity.hurt(DamageSource.GENERIC, 4);
         });
     }
