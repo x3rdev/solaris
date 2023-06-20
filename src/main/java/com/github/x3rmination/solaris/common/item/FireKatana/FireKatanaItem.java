@@ -55,7 +55,7 @@ public class FireKatanaItem extends SwordItem implements SolarisWeapon, SolarisP
             AABB hitBox = new AABB(pos.x - 10, pos.y - 1, pos.z - 10, pos.x + 10, pos.y + 1, pos.z + 10);
             for(Entity toHit : entity.level.getEntities(entity, hitBox)) {
                 toHit.hurt(DamageSource.ON_FIRE, 2);
-                toHit.setRemainingFireTicks(Math.max(toHit.getRemainingFireTicks(), 20));
+                toHit.setRemainingFireTicks(120);
             }
         }
     }
