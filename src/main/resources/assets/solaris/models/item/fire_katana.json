@@ -1,11 +1,11 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"0": "solaris:/item/fire_katana/fire_blade",
-		"1": "solaris:/item/fire_katana/fire_edge",
-		"3": "solaris:/item/fire_katana/obsidian_guard",
-		"4": "solaris:/item/fire_katana/katana_handle",
-		"particle": "solaris:/item/fire_katana/fire_blade"
+		"0": "solaris:item/fire_katana/fire_blade",
+		"1": "solaris:item/fire_katana/fire_edge",
+		"3": "solaris:item/fire_katana/obsidian_guard",
+		"4": "solaris:item/fire_katana/katana_handle",
+		"particle": "solaris:item/fire_katana/fire_blade"
 	},
 	"elements": [
 		{

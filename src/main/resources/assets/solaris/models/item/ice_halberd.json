@@ -3,11 +3,11 @@
 	"texture_size": [32, 32],
 	"gui_light": "front",
 	"textures": {
-		"1": "solaris:/item/ice_halberd/ice0",
-		"2": "solaris:/item/ice_halberd/ice1",
-		"3": "solaris:/item/ice_halberd/ice_rod",
-		"5": "solaris:/item/ice_halberd/ice_blade",
-		"particle": "solaris:/item/ice_halberd/ice1"
+		"1": "solaris:item/ice_halberd/ice0",
+		"2": "solaris:item/ice_halberd/ice1",
+		"3": "solaris:item/ice_halberd/ice_rod",
+		"5": "solaris:item/ice_halberd/ice_blade",
+		"particle": "solaris:item/ice_halberd/ice1"
 	},
 	"elements": [
 		{

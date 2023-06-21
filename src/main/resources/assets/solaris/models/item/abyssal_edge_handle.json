@@ -1,8 +1,8 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"3": "solaris:/item/abyssal_edge/abyssal_edge_1",
-		"4": "solaris:/item/abyssal_edge/abyssal_edge_0"
+		"3": "solaris:item/abyssal_edge/abyssal_edge_1",
+		"4": "solaris:item/abyssal_edge/abyssal_edge_0"
 	},
 	"elements": [
 		{

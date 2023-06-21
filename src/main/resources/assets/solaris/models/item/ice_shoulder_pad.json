@@ -1,12 +1,12 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "solaris:/item/ice_shoulder_pad/flat_ice",
-		"1": "solaris:/item/ice_shoulder_pad/main_pad",
-		"2": "solaris:/item/ice_shoulder_pad/border",
-		"3": "solaris:/item/ice_shoulder_pad/underwear",
-		"4": "solaris:/item/ice_shoulder_pad/3d_ice",
-		"particle": "solaris:/item/ice_shoulder_pad/flat_ice"
+		"0": "solaris:item/ice_shoulder_pad/flat_ice",
+		"1": "solaris:item/ice_shoulder_pad/main_pad",
+		"2": "solaris:item/ice_shoulder_pad/border",
+		"3": "solaris:item/ice_shoulder_pad/underwear",
+		"4": "solaris:item/ice_shoulder_pad/3d_ice",
+		"particle": "solaris:item/ice_shoulder_pad/flat_ice"
 	},
 	"elements": [
 		{

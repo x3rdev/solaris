@@ -3,12 +3,12 @@
 	"ambientocclusion": false,
 	"gui_light": "front",
 	"textures": {
-		"0": "solaris:/item/frostbite/ice_blade",
-		"1": "solaris:/item/frostbite/ice_edge",
-		"2": "solaris:/item/frostbite/ice_spike",
-		"3": "solaris:/item/frostbite/ice_guard",
-		"4": "solaris:/item/frostbite/katana_handle",
-		"particle": "solaris:/item/frostbite/ice_blade"
+		"0": "solaris:item/frostbite/ice_blade",
+		"1": "solaris:item/frostbite/ice_edge",
+		"2": "solaris:item/frostbite/ice_spike",
+		"3": "solaris:item/frostbite/ice_guard",
+		"4": "solaris:item/frostbite/katana_handle",
+		"particle": "solaris:item/frostbite/ice_blade"
 	},
 	"elements": [
 		{
