@@ -2,15 +2,15 @@
 	"ambientocclusion": false,
 	"texture_size": [8, 8],
 	"textures": {
-		"1": "solaris:/item/mithril_chainsword/iron_halo",
-		"2": "solaris:/item/mithril_chainsword/spikes",
-		"4": "solaris:/item/mithril_chainsword/chain",
-		"5": "solaris:/item/mithril_chainsword/small_cross",
-		"6": "solaris:/item/mithril_chainsword/metal_parts",
-		"7": "solaris:/item/mithril_chainsword/big_cross",
-		"8": "solaris:/item/mithril_chainsword/main_part",
-		"9": "solaris:/item/mithril_chainsword/handle",
-		"particle": "solaris:/item/mithril_chainsword/iron_halo"
+		"1": "solaris:item/mithril_chainsword/iron_halo",
+		"2": "solaris:item/mithril_chainsword/spikes",
+		"4": "solaris:item/mithril_chainsword/chain",
+		"5": "solaris:item/mithril_chainsword/small_cross",
+		"6": "solaris:item/mithril_chainsword/metal_parts",
+		"7": "solaris:item/mithril_chainsword/big_cross",
+		"8": "solaris:item/mithril_chainsword/main_part",
+		"9": "solaris:item/mithril_chainsword/handle",
+		"particle": "solaris:item/mithril_chainsword/iron_halo"
 	},
 	"elements": [
 		{

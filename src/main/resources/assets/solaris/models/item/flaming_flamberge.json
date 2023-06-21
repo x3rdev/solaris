@@ -1,12 +1,12 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"0": "solaris:/item/flaming_flamberge/flam_edge",
-		"4": "solaris:/item/flaming_flamberge/line",
-		"5": "solaris:/item/flaming_flamberge/flat",
-		"6": "solaris:/item/flaming_flamberge/fire_gem",
-		"7": "solaris:/item/flaming_flamberge/flam_blade",
-		"8": "solaris:/item/flaming_flamberge/flam_guard",
+		"0": "solaris:item/flaming_flamberge/flam_edge",
+		"4": "solaris:item/flaming_flamberge/line",
+		"5": "solaris:item/flaming_flamberge/flat",
+		"6": "solaris:item/flaming_flamberge/fire_gem",
+		"7": "solaris:item/flaming_flamberge/flam_blade",
+		"8": "solaris:item/flaming_flamberge/flam_guard",
 		"particle": "solaris:item/flaming_flamberge/flam_edge"
 	},
 	"elements": [

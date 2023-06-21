@@ -1,14 +1,14 @@
 {
 	"textures": {
-		"0": "solaris:/item/bloody_eclipse/spikes",
-		"1": "solaris:/item/bloody_eclipse/iron_halo",
-		"2": "solaris:/item/bloody_eclipse/eclipse_blade_edge",
-		"3": "solaris:/item/bloody_eclipse/eclipse_blade",
-		"4": "solaris:/item/bloody_eclipse/gold_things",
-		"5": "solaris:/item/bloody_eclipse/bloody_gem",
-		"6": "solaris:/item/bloody_eclipse/spikes_other",
-		"7": "solaris:/item/bloody_eclipse/gold_rings",
-		"particle": "solaris:/item/bloody_eclipse/spikes"
+		"0": "solaris:item/bloody_eclipse/spikes",
+		"1": "solaris:item/bloody_eclipse/iron_halo",
+		"2": "solaris:item/bloody_eclipse/eclipse_blade_edge",
+		"3": "solaris:item/bloody_eclipse/eclipse_blade",
+		"4": "solaris:item/bloody_eclipse/gold_things",
+		"5": "solaris:item/bloody_eclipse/bloody_gem",
+		"6": "solaris:item/bloody_eclipse/spikes_other",
+		"7": "solaris:item/bloody_eclipse/gold_rings",
+		"particle": "solaris:item/bloody_eclipse/spikes"
 	},
 	"elements": [
 		{
