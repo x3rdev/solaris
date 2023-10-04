@@ -1,9 +1,54 @@
-<mxfile host="app.diagrams.net" modified="2023-10-04T18:22:13.980Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="iT49FwERJ1vXtCfcEEiB" version="22.0.2" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-04T18:28:50.396Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="k8f-159FDn7nEGcAzuOo" version="22.0.2" type="github">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-1" target="4_ZdhrXCmcMcNxDkdZX3-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-1" value="Tanks" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-2" target="4_ZdhrXCmcMcNxDkdZX3-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-2" target="4_ZdhrXCmcMcNxDkdZX3-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-2" value="Damage dealers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="354" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-3" target="4_ZdhrXCmcMcNxDkdZX3-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-3" value="Mages" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="110" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-4" target="4_ZdhrXCmcMcNxDkdZX3-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-4" value="Melee" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-5" target="4_ZdhrXCmcMcNxDkdZX3-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-5" value="Ranged" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-6" value="Paladin&lt;br&gt;Dark knight&lt;br&gt;Druid" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-10" value="Vampire&lt;br&gt;Assassin&lt;br&gt;Valkyria" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-11" value="Ranger&lt;br&gt;Valkyria" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-12" value="Cleric&lt;br&gt;Necromancer&lt;br&gt;Elementalist" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
