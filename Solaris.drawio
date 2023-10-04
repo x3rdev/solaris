@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-04T19:32:28.652Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="YZXd11lOQacXDdHu9Fte" version="22.0.2" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-10-04T20:45:12.386Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="OGfeNYWFlcCDcsMJtW5F" version="22.0.2" type="github" pages="3">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -102,7 +102,7 @@
         <mxCell id="Qk41WG01Jv99zR6Wr-Cs-17" value="Target of the &lt;b&gt;Provocation &lt;/b&gt;will be weakened" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="445" y="390" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-18" value="Increases incoming shields" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-18" value="Empowers incoming shields" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="445" y="480" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="Qk41WG01Jv99zR6Wr-Cs-19" value="&lt;b&gt;Heal &lt;/b&gt;spell also dispells weak debuffs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -110,6 +110,65 @@
         </mxCell>
         <mxCell id="Qk41WG01Jv99zR6Wr-Cs-20" value="&lt;b&gt;Provocation&lt;/b&gt;&amp;nbsp;spells becomes AOE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="445" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="QYnWQv4ALkoKMBw9s8Qj" name="Dark knight skills">
+    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="PnilBw7m1zBQXXPj9QeK-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PnilBw7m1zBQXXPj9QeK-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="PnilBw7m1zBQXXPj9QeK-3" value="&lt;b&gt;Wither skull&lt;/b&gt;&lt;br&gt;Caster shots wither skull" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PnilBw7m1zBQXXPj9QeK-4" value="&lt;b&gt;AOE debuff&lt;/b&gt;&lt;br&gt;Applies weakness and slowness in area" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PnilBw7m1zBQXXPj9QeK-5" value="&lt;b&gt;Debuff consuming&lt;/b&gt;&lt;br&gt;Converts weak debuffs into random buffs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="330" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PnilBw7m1zBQXXPj9QeK-6" value="&lt;b&gt;Sphere of darkness&lt;br&gt;&lt;/b&gt;Traps the target in a sphere of darkness which pulls it helplessly upwards and continually damages it&lt;b&gt;&lt;br&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="410" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="X_YfPTtkQYmcb06juHa1-1" value="&lt;b&gt;Provocation&lt;/b&gt;&lt;br&gt;Forces an enemy to target caster&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X_YfPTtkQYmcb06juHa1-2" value="&lt;b&gt;Dark mark&lt;/b&gt;&lt;br&gt;Applies on enemy mark that will deal damage overtime and heal caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="620" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="X_YfPTtkQYmcb06juHa1-3" value="&lt;b&gt;???&lt;/b&gt;&lt;br&gt;All incoming damage will heal caster for 6 seconds" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="720" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="dL89rpgIEAMhsnDjsFOg-1" value="&lt;b&gt;Defence buff&lt;/b&gt;&lt;br&gt;Increases caster defence" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dL89rpgIEAMhsnDjsFOg-2" value="&lt;b&gt;Dark flame aura&lt;/b&gt;&lt;br&gt;Applies aura on caster. Any enemy attacking caster in melee will be set on dark fire" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="890" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="dL89rpgIEAMhsnDjsFOg-3" value="&lt;b&gt;Corrosion&amp;nbsp;&lt;/b&gt;&lt;br&gt;Decreses defence of target" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="1010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gsC32pd3UEvuBwT5Xu2q-1" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Increases damage of depending on the caster&#39;s missing health&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="170" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="aMhE6VZin-dWv_1qIQqr-1" value="Empowers incoming shields" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="aMhE6VZin-dWv_1qIQqr-2" value="Increases critical attack chance to targets of &lt;b&gt;Provocation&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="350" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ISmS6HPA0FQe5Dg5BB33-1" value="&lt;b&gt;Provocation&lt;/b&gt;&amp;nbsp;spells becomes AOE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="430" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ISmS6HPA0FQe5Dg5BB33-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="510" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
