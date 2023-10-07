@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T13:48:00.269Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="tg7w41HTw_nVwbyVk9e_" version="22.0.4" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2023-10-07T14:34:50.147Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="I4KOZVHOnzAR6sgc1iNl" version="22.0.4" type="github" pages="8">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -406,14 +406,14 @@
         <mxCell id="NvKarkFe3GAmfJbbfenJ-13" value="Toxic blood&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;10% chance to apply poison on enemies hit by your spells&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="445" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="445" y="420" width="120" height="60" as="geometry" />
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-14" value="&lt;b&gt;Bloody carnival&lt;/b&gt;&lt;br&gt;Afteh each kill u restore 40% of your missing health" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="420" width="120" height="70" as="geometry" />
         </mxCell>
         <mxCell id="NvKarkFe3GAmfJbbfenJ-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="445" y="500" width="120" height="60" as="geometry" />
+          <mxGeometry x="445" y="510" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="NvKarkFe3GAmfJbbfenJ-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="445" y="580" width="120" height="60" as="geometry" />
+          <mxGeometry x="445" y="590" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="0fZNMt18DoIWZco6Bfdc-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="140" y="900" width="120" height="60" as="geometry" />
@@ -434,6 +434,54 @@
         </mxCell>
         <mxCell id="1KfGxyG6ZBc5NcKoDfNy-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-1" value="&lt;b&gt;Backstab&lt;/b&gt;&lt;br&gt;Back attacks deal 30% more damage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-2" value="Smokescreen&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Creates big black cloud which provides invisibility to caster while he&#39;s inside&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="170" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-3" value="&lt;b&gt;Blink&lt;/b&gt;&lt;br&gt;Teleports caster to the point of sight in small range" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="270" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-4" value="Shadow blades&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Shots few blade-shaped projectiles&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-5" value="Sharp blade&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Your next attack will apply bleeding to the target&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="440" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-6" value="Illusion&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Creates 2 clones of the caster&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="530" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-7" value="Move speed and attack speedd buff" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="140" y="610" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-8" value="Mark&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Decreases armor of the target&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="690" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-9" value="Evasion&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Provides chance to ignore incoming attack&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="770" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="USWbsnkk4JVkf76gfJl3-1" value="Sneaky blow&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Your next attack will apply blindness to the targeet&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="860" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="USWbsnkk4JVkf76gfJl3-2" value="Critical chance buff" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" vertex="1" parent="1">
+          <mxGeometry x="140" y="950" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="USWbsnkk4JVkf76gfJl3-3" value="&lt;b&gt;Hide in the shadows&lt;/b&gt;&lt;br&gt;While invisible you restore up to 50% damage you got in last 10 seconds" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="250" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="USWbsnkk4JVkf76gfJl3-4" value="&lt;b&gt;Dark blade&amp;nbsp;&lt;/b&gt;&lt;br&gt;Melee attack dispell your invisibility but deals 50% more damage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="360" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="USWbsnkk4JVkf76gfJl3-5" value="&lt;b&gt;Bloodloss&lt;/b&gt;&lt;br&gt;Sharp blade also applies weakness and slowness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="460" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="USWbsnkk4JVkf76gfJl3-6" value="&lt;b&gt;Trick&lt;br&gt;&lt;/b&gt;Illusion spawns 3 clones and gives invisibility to caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="550" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="USWbsnkk4JVkf76gfJl3-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="640" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
