@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T18:57:51.599Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="eDpVhUdIStWS2W4rZGPW" version="22.0.4" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2023-10-07T19:32:51.825Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="d8ZMf0KnmyuCfzz7Tl-K" version="22.0.4" type="github" pages="9">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -527,7 +527,7 @@
         <mxCell id="XwkRGiE0azrhQFcPs6Sw-12" value="Chains of light&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Traps target with chains of light preventing it from moving&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="140" y="930" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-13" value="Ressurection&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Revives dead ally&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-13" value="Ressurection&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Revives dead ally with 20% HP&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="140" y="1030" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="XwkRGiE0azrhQFcPs6Sw-14" value="You restore 2 mana for every killed undead" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
@@ -536,8 +536,14 @@
         <mxCell id="XwkRGiE0azrhQFcPs6Sw-15" value="Ray of light can aslo heal allies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="445" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-16" value="Healing effectiveness incresed for targets with low HP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="445" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-17" value="Ressurection also gives shield and regeneration to revived player" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="500" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="590" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
