@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T16:18:45.572Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="8f1kpsSB_SNOb6Uym-Ly" version="22.0.4" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2023-10-07T17:09:47.989Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="a335Bv9m1qs3j7EVD_LK" version="22.0.4" type="github" pages="9">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -482,6 +482,53 @@
         </mxCell>
         <mxCell id="USWbsnkk4JVkf76gfJl3-7" value="Dissapearing&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Caster becomes invisible for 3 seconds after using blink&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="445" y="640" width="120" height="80" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="oyAUQzfAHBXcLEYsmyXv" name="Cleric skills">
+    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-3" value="Purification also gives regeneration if more than 2 debuffs were dispelled" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="170" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-4" value="Flash&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;AOE skill heaing allies and damaging enemies&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="170" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-5" value="&lt;b&gt;Lesser healing&lt;/b&gt;&lt;br&gt;Heals target or caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-6" value="&lt;b&gt;Greater healing&lt;/b&gt;&lt;br&gt;Heal all allies and gives them regeneration" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="340" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-7" value="Holy lights&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Homing projectiles dealing damage to target&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="430" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-8" value="Purification&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Group debuff dispelling&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-9" value="Holy defence&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Creates dome protecting from any incoming projectiles and spells&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="600" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-10" value="&lt;b&gt;Ray of light&lt;/b&gt;&lt;br&gt;Caster fires beam of light healing allies and damaging enemies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="710" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-11" value="&lt;b&gt;Holy Sun&lt;/b&gt;&lt;br&gt;Creates sphere of light above caster that will shots rays of light to all nearby enemies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="820" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-12" value="Chains of light&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Traps target with chains of light preventing it from moving&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="930" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-13" value="Ressurection&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Revives dead ally&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="1030" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
