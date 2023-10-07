@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T14:36:15.468Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="cel28Cq8oqaYDkoGv4FL" version="22.0.4" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2023-10-07T15:15:18.343Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="e6ZeXXMM3vguUYKbI6os" version="22.0.4" type="github" pages="8">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -409,11 +409,11 @@
         <mxCell id="NvKarkFe3GAmfJbbfenJ-14" value="&lt;b&gt;Bloody carnival&lt;/b&gt;&lt;br&gt;Afteh each kill u restore 40% of your missing health" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="445" y="420" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="445" y="510" width="120" height="60" as="geometry" />
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-15" value="Smell of blood&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Caster gets attack damage and move speed buff if there are low health enemies around&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="445" y="510" width="120" height="100" as="geometry" />
         </mxCell>
         <mxCell id="NvKarkFe3GAmfJbbfenJ-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="445" y="590" width="120" height="60" as="geometry" />
+          <mxGeometry x="445" y="630" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="0fZNMt18DoIWZco6Bfdc-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="140" y="900" width="120" height="60" as="geometry" />
