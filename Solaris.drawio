@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T12:14:35.671Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="Wx4gDqyXINokORnwm7I9" version="22.0.4" type="github" pages="6">
+<mxfile host="app.diagrams.net" modified="2023-10-07T13:04:12.147Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="t1YH7oY1mdIrfyR_MabE" version="22.0.4" type="github" pages="7">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -358,6 +358,62 @@
         </mxCell>
         <mxCell id="bXzIat0_mMu8iVZzuMcC-19" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="445" y="584.5" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="Pn5ui4PiQjrbvh2nuYPf" name="Vampire skills">
+    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-3" value="&lt;b&gt;Vampire nature&lt;/b&gt;&lt;br&gt;Melee attacks heals for % of damage dealt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-4" value="&lt;b&gt;Bloody bats&lt;/b&gt;&lt;br&gt;Summons magical bloody bats attacking the target and healing caster after returning" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="160" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-5" value="&lt;b&gt;Debuff conversion&lt;/b&gt;&lt;br&gt;Converts weak debuffs into random weak buffs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="260" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-6" value="Bloody vision&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Allows caster to see nearby living creatures&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="350" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-7" value="Blood rage&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Buffs attack and move speed, consumes 1 health per 2 ticks&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="440" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-8" value="&lt;b&gt;Life drain&lt;/b&gt;&lt;br&gt;Deals damage to target, applies slowness and heals cater for % of damage dealt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="540" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-9" value="&lt;b&gt;Blood explosion&lt;/b&gt;&lt;br&gt;AOE damage around player" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-10" value="&lt;b&gt;Crimson lightning&lt;/b&gt;&lt;br&gt;Strikes target with red lightning stunning him" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="740" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-11" value="&lt;b&gt;Crimson blink&lt;/b&gt;&lt;br&gt;Teleports caster to the point of sight" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-12" value="Insatiable hunger&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Effectiveness of incoming heal increases with missing healt&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="445" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-13" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-15" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="580" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
