@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T10:48:07.839Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="huIle7eLxjQNTQrHhioi" version="22.0.4" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2023-10-07T11:07:54.110Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="RoCnqyNEqOIuqYAAmRpy" version="22.0.4" type="github" pages="5">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -234,6 +234,68 @@
         </mxCell>
         <mxCell id="grjGnfIvpwvRAxUywPeM-19" value="Spiritual resonance&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Empowers summoned spirit wolves&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="445" y="610" width="120" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="5Hvm088P5u3thkRrEjVC" name="Ranger skills">
+    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="apMFGJzaOHh0xMqJPkod-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-3" value="&lt;b&gt;Poisonous edge&lt;/b&gt;&lt;br&gt;Your next attack applies poison&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-4" value="Arrow rain applies slowness on affected enemies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="180" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-5" value="&lt;b&gt;Tame creature&lt;/b&gt;&lt;br&gt;Taming living creature to help caster in fight" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-6" value="Life vision&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Allows to see nearby living cratures&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-7" value="Evasion&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Provides chance to ignore incoming attack&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="420" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-8" value="Agility buff&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Move speed and jump boost buff&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-9" value="Arrow rain&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;AOE attack summoning rain of arrows (only with ranged weapons)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="590" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-10" value="Armor break&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Your next attack decreases target armor for 6 seconds&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="690" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-11" value="Mark&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Mark enemy. Tamed creatures will attack marked enemy&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="780" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-12" value="Attack speed buff&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="870" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-13" value="Piercing shot&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Empowers your next attack to deal additional damage and come though enemies&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="140" y="950" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-14" value="Tamed creature buff" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-15" value="Piercing shot heals caster for % of damage dealt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-16" value="Heal sharing&lt;br&gt;Your heal also affects tamed creature" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-17" value="Sniper&lt;br&gt;Gravity doesnt affects your shots" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="500" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="apMFGJzaOHh0xMqJPkod-18" value="Mark increase attack crit chance to marked enemy" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="445" y="585" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
