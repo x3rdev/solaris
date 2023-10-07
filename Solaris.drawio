@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T19:32:51.825Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="d8ZMf0KnmyuCfzz7Tl-K" version="22.0.4" type="github" pages="9">
+<mxfile host="app.diagrams.net" modified="2023-10-07T21:20:09.150Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="S_aEgXFR3zdEaGOjuoKU" version="22.0.4" type="github" pages="10">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -544,6 +544,62 @@
         </mxCell>
         <mxCell id="XwkRGiE0azrhQFcPs6Sw-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="445" y="590" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="u6eZzDpzETuO1KO_T4KS" name="Necromancer skills">
+    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="w6Zx_8psm31y9MN0reM4-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="580" y="45" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="565" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-4" value="&lt;b&gt;Summon zombie warrior&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-5" value="Summon skeleton archer" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-6" value="Summon lich guard" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-7" value="Summon dead golem" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="400" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-8" value="Summon dead knight" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-9" value="Summon zombie horde" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="30" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-11" value="Commands&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Commands for summoned undead (attack selected target, go to the point, follow caster)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="170" y="160" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-12" value="Corpse bomb&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Explodes selected undead minion dealing damage to nearby creatures&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="170" y="280" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-13" value="Summons buff&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Temporary increases power of summoned undead&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="170" y="380" width="120" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-14" value="&lt;b&gt;Bone cage&lt;/b&gt;&lt;br&gt;Creates bone cage trapping enemies inside" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-15" value="Dark curse&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Applies curse on target dealing periodical damage and redusing healing&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="310" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-17" value="Dark vision&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Applies blindness on caster but allows to see nearby creatures through the walls&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="310" y="340" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="w6Zx_8psm31y9MN0reM4-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="440" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
