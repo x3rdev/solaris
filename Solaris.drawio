@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T14:34:50.147Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="I4KOZVHOnzAR6sgc1iNl" version="22.0.4" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2023-10-07T14:36:15.468Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="cel28Cq8oqaYDkoGv4FL" version="22.0.4" type="github" pages="8">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -480,8 +480,8 @@
         <mxCell id="USWbsnkk4JVkf76gfJl3-6" value="&lt;b&gt;Trick&lt;br&gt;&lt;/b&gt;Illusion spawns 3 clones and gives invisibility to caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="445" y="550" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="USWbsnkk4JVkf76gfJl3-7" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="445" y="640" width="120" height="60" as="geometry" />
+        <mxCell id="USWbsnkk4JVkf76gfJl3-7" value="Dissapearing&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Caster becomes invisible for 3 seconds after using blink&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="445" y="640" width="120" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
