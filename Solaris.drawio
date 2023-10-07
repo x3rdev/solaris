@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-07T16:17:02.588Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="PHP57gnkaX9dIor8tBd5" version="22.0.4" type="github" pages="8">
+<mxfile host="app.diagrams.net" modified="2023-10-07T16:18:45.572Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="8f1kpsSB_SNOb6Uym-Ly" version="22.0.4" type="github" pages="8">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -57,58 +57,58 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-1" value="&lt;b&gt;Defence buff&lt;/b&gt;&lt;br&gt;Increases caster defence" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-1" value="&lt;b&gt;Defence buff&lt;/b&gt;&lt;br&gt;Increases caster defence" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="190" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-2" value="&lt;b&gt;Provocation&lt;/b&gt;&lt;br&gt;Forces an enemy to target caster&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-2" value="&lt;b&gt;Provocation&lt;/b&gt;&lt;br&gt;Forces an enemy to target caster&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="270" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-3" value="&lt;b&gt;Heal&lt;/b&gt;&lt;br&gt;Heals caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-3" value="&lt;b&gt;Heal&lt;/b&gt;&lt;br&gt;Heals caster" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="350" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-4" value="&lt;b&gt;Shield strike&lt;/b&gt;&lt;br&gt;Caster strikes enemy with shield dealing damage and stunning him" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-4" value="&lt;b&gt;Shield strike&lt;/b&gt;&lt;br&gt;Caster strikes enemy with shield dealing damage and stunning him" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="430" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-5" value="&lt;b&gt;Smite&lt;/b&gt;&lt;br&gt;Strikes enemy within skill range with lightning dealing damage and stunning him" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-5" value="&lt;b&gt;Smite&lt;/b&gt;&lt;br&gt;Strikes enemy within skill range with lightning dealing damage and stunning him" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="530" width="120" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-6" value="&lt;b&gt;Sacred blade&lt;/b&gt;&lt;br&gt;Empowers caster&#39;s weapon with holy power and makes it deal additional holy damage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-6" value="&lt;b&gt;Sacred blade&lt;/b&gt;&lt;br&gt;Empowers caster&#39;s weapon with holy power and makes it deal additional holy damage" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="640" width="120" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-7" value="&lt;b&gt;Holy ground&lt;/b&gt;&lt;br&gt;Creates holy ring of light. Withing the range ot the spell 60% of damage dealt to allies will be redirected to caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-7" value="&lt;b&gt;Holy ground&lt;/b&gt;&lt;br&gt;Creates holy ring of light. Withing the range ot the spell 60% of damage dealt to allies will be redirected to caster" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="750" width="120" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-8" value="&lt;b&gt;Guardian angel&lt;/b&gt;&lt;br&gt;Makes caster immune to any damage for 6 seconds" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-8" value="&lt;b&gt;Guardian angel&lt;/b&gt;&lt;br&gt;Makes caster immune to any damage for 6 seconds" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="880" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-9" value="&lt;b&gt;Flash of light&lt;/b&gt;&lt;br&gt;Deals holy damage around caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-9" value="&lt;b&gt;Flash of light&lt;/b&gt;&lt;br&gt;Deals holy damage around caster" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="970" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-10" value="&lt;b&gt;Group shield&lt;/b&gt;&lt;br&gt;Puts shield on caster and his allies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-10" value="&lt;b&gt;Group shield&lt;/b&gt;&lt;br&gt;Puts shield on caster and his allies" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="1050" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-11" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-11" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-13" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-13" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-15" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Increases defence up to 30% depending on the number of enemies around&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-15" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;Increases defence up to 30% depending on the number of enemies around&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="190" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-16" value="Healing efficiency increases depending on missing health" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-16" value="Healing efficiency increases depending on missing health" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="300" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-17" value="Target of the &lt;b&gt;Provocation &lt;/b&gt;will be weakened" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-17" value="Target of the &lt;b&gt;Provocation &lt;/b&gt;will be weakened" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="390" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-18" value="Empowers incoming shields" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-18" value="Empowers incoming shields" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="480" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-19" value="&lt;b&gt;Heal &lt;/b&gt;spell also dispells weak debuffs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-19" value="&lt;b&gt;Heal &lt;/b&gt;spell also dispells weak debuffs" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="570" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-20" value="&lt;b&gt;Provocation&lt;/b&gt;&amp;nbsp;spells becomes AOE" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Qk41WG01Jv99zR6Wr-Cs-20" value="&lt;b&gt;Provocation&lt;/b&gt;&amp;nbsp;spell becomes AOE" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="660" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
@@ -164,7 +164,7 @@
         <mxCell id="aMhE6VZin-dWv_1qIQqr-2" value="Increases critical attack chance to targets of &lt;b&gt;Provocation&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="350" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="ISmS6HPA0FQe5Dg5BB33-1" value="&lt;b&gt;Provocation&lt;/b&gt;&amp;nbsp;spells becomes AOE" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+        <mxCell id="ISmS6HPA0FQe5Dg5BB33-1" value="&lt;b&gt;Provocation&lt;/b&gt;&amp;nbsp;spell becomes AOE" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="430" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="ISmS6HPA0FQe5Dg5BB33-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
