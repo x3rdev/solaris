@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-08T18:01:57.660Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="WO-uvkf_bpBw_RgbIrBt" version="22.0.4" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2023-10-08T18:05:37.786Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="yL9KPxU6ToCB4bh7NwRQ" version="22.0.4" type="github" pages="11">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -675,7 +675,7 @@
         <mxCell id="hB-A3Xv5MWQsTzdf6RFn-18" value="Fire wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="10" y="310" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-19" value="Cloud wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-19" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="530" y="310" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="hB-A3Xv5MWQsTzdf6RFn-20" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
