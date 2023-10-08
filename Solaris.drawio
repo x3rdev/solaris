@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-08T12:45:30.966Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="m3biy185unzEeauQFBzI" version="22.0.4" type="github" pages="10">
+<mxfile host="app.diagrams.net" modified="2023-10-08T14:33:57.560Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="bSgxA0RrpX_MUR2VUSGc" version="22.0.4" type="github" pages="11">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
     <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -615,6 +615,128 @@
         </mxCell>
         <mxCell id="OhA7uA9UcngbJx-3dLri-9" value="&lt;b&gt;Summon ghost&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="30" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="OuHHKSM5ToEk54xhC_DL" name="Elementalist skills">
+    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="60" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="710" y="45" width="90" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="700" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-4" value="Fireball" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="10" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-5" value="Ice lance" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-6" value="Vines wave" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-8" value="Stone wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-9" value="Lightning blot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="530" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-10" value="Poisonous thorn" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-11" value="Stone shard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-12" value="Frost ray" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-13" value="Solar beam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="10" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-15" value="Lightning ray" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="530" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-16" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-17" value="Ice wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-18" value="Fire wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="10" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-19" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="530" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-20" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="10" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-21" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-22" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-23" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-24" value="Homing sparks" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="530" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-25" value="Firestorm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="10" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-26" value="Blizzard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-27" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="310" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-28" value="Tornado" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-29" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="530" y="450" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-30" value="Meteor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="10" y="525" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-31" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="525" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-32" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="525" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-33" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="525" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-34" value="Lightning strike" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="530" y="525" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-35" value="Summon wasps" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="270" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-36" value="Ice spikes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="140" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-37" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="10" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-38" value="Shockwave" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="530" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-39" value="Tsunami" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="400" y="600" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
