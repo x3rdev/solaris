@@ -1,59 +1,59 @@
-<mxfile host="app.diagrams.net" modified="2023-10-08T14:33:57.560Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36" etag="bSgxA0RrpX_MUR2VUSGc" version="22.0.4" type="github" pages="11">
+<mxfile host="app.diagrams.net" modified="2023-10-08T18:01:57.660Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/118.0" etag="WO-uvkf_bpBw_RgbIrBt" version="22.0.4" type="github" pages="11">
   <diagram name="Classes" id="5YO92Rt61V_yBTOGh588">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-1" target="4_ZdhrXCmcMcNxDkdZX3-6">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-1" target="4_ZdhrXCmcMcNxDkdZX3-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-1" value="Tanks" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-1" value="Tanks" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="110" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-2" target="4_ZdhrXCmcMcNxDkdZX3-4">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-2" target="4_ZdhrXCmcMcNxDkdZX3-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-2" target="4_ZdhrXCmcMcNxDkdZX3-5">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-2" target="4_ZdhrXCmcMcNxDkdZX3-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-2" value="Damage dealers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-2" value="Damage dealers" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="354" y="110" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-3" target="4_ZdhrXCmcMcNxDkdZX3-12">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-3" target="4_ZdhrXCmcMcNxDkdZX3-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-3" value="Mages" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-3" value="Mages" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="680" y="110" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-4" target="4_ZdhrXCmcMcNxDkdZX3-10">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-4" target="4_ZdhrXCmcMcNxDkdZX3-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-4" value="Melee" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-4" value="Melee" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="250" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-5" target="4_ZdhrXCmcMcNxDkdZX3-11">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="4_ZdhrXCmcMcNxDkdZX3-5" target="4_ZdhrXCmcMcNxDkdZX3-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-5" value="Ranged" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-5" value="Ranged" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-6" value="Paladin&lt;br&gt;Dark knight&lt;br&gt;Druid" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-6" value="Paladin&lt;br&gt;Dark knight&lt;br&gt;Druid" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-10" value="Vampire&lt;br&gt;Assassin&lt;br&gt;Valkyria" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-10" value="Vampire&lt;br&gt;Assassin&lt;br&gt;Valkyria" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="250" y="370" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-11" value="Ranger&lt;br&gt;Valkyria" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-11" value="Ranger&lt;br&gt;Valkyria" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="370" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-12" value="Cleric&lt;br&gt;Necromancer&lt;br&gt;Elementalist" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="4_ZdhrXCmcMcNxDkdZX3-12" value="Cleric&lt;br&gt;Necromancer&lt;br&gt;Elementalist" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="680" y="240" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="a_ZkbWQH3GBXtU9xHnOO" name="Paladin skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -115,7 +115,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="QYnWQv4ALkoKMBw9s8Qj" name="Dark knight skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -177,379 +177,379 @@
     </mxGraphModel>
   </diagram>
   <diagram id="JCaLJom1tjjlSRkD2pwC" name="Druid skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="grjGnfIvpwvRAxUywPeM-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-3" value="&lt;b&gt;Thorns&lt;/b&gt;&lt;br&gt;spikes grow on the armor and deal damage to melee attackers" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-3" value="&lt;b&gt;Thorns&lt;/b&gt;&lt;br&gt;spikes grow on the armor and deal damage to melee attackers" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="160" width="120" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-4" value="AOE root&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Vines wrap enemies aroung, preventing em from moving&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-4" value="AOE root&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Vines wrap enemies aroung, preventing em from moving&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="270" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-5" value="&lt;b&gt;Turtle stance&lt;/b&gt;&lt;br&gt;Armor and healh regen buff" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-5" value="&lt;b&gt;Turtle stance&lt;/b&gt;&lt;br&gt;Armor and healh regen buff" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="360" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-6" value="&lt;b&gt;Tiger stance&lt;/b&gt;&lt;br&gt;Attack damage and attack speed buff" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-6" value="&lt;b&gt;Tiger stance&lt;/b&gt;&lt;br&gt;Attack damage and attack speed buff" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="440" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-7" value="Deer stance&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Moving speed and jump height buff&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-7" value="Deer stance&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Moving speed and jump height buff&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="520" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-8" value="&lt;b&gt;Sandstorm&lt;/b&gt;&lt;br&gt;AOE damage and slowness around caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-8" value="&lt;b&gt;Sandstorm&lt;/b&gt;&lt;br&gt;AOE damage and slowness around caster" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="600" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-9" value="Wild shape&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Transform caster into powerfull beast&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-9" value="Wild shape&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Transform caster into powerfull beast&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="690" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-11" value="&lt;b&gt;Summon spirit wolves&lt;/b&gt;&lt;br&gt;Summons 2 spirit wolves to help caster in fight" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-11" value="&lt;b&gt;Summon spirit wolves&lt;/b&gt;&lt;br&gt;Summons 2 spirit wolves to help caster in fight" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="770" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-12" value="Wisp&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Summons glowing wisp following caster and dispelling debuffs&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-12" value="Wisp&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Summons glowing wisp following caster and dispelling debuffs&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="870" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-13" value="Heal&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Heals caster&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-13" value="Heal&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Heals caster&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="960" width="120" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-14" value="&lt;b&gt;Poisonous cloud&lt;/b&gt;&lt;br&gt;Sandstorm tusns into could of poison and applies stacks of poison instead of slowness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-14" value="&lt;b&gt;Poisonous cloud&lt;/b&gt;&lt;br&gt;Sandstorm tusns into could of poison and applies stacks of poison instead of slowness" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="160" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-15" value="Owlbear&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Empowers wild shape form&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-15" value="Owlbear&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Empowers wild shape form&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="445" y="280" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-16" value="Healing aura&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Enchance healing of nearby allies&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-16" value="Healing aura&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Enchance healing of nearby allies&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="445" y="360" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-17" value="Poisonous thorns&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Thorns applies poison on damaged attackers&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-17" value="Poisonous thorns&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Thorns applies poison on damaged attackers&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="445" y="440" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-18" value="&lt;b&gt;Stance master&lt;/b&gt;&lt;br&gt;Getting small buff after changing stance" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-18" value="&lt;b&gt;Stance master&lt;/b&gt;&lt;br&gt;Getting small buff after changing stance" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="530" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="grjGnfIvpwvRAxUywPeM-19" value="Spiritual resonance&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Empowers summoned spirit wolves&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="grjGnfIvpwvRAxUywPeM-19" value="Spiritual resonance&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Empowers summoned spirit wolves&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="445" y="610" width="120" height="70" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="5Hvm088P5u3thkRrEjVC" name="Ranger skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="apMFGJzaOHh0xMqJPkod-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-3" value="&lt;b&gt;Poisonous edge&lt;/b&gt;&lt;br&gt;Your next attack applies poison&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-3" value="&lt;b&gt;Poisonous edge&lt;/b&gt;&lt;br&gt;Your next attack applies poison&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="180" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-4" value="Arrow rain applies slowness on affected enemies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-4" value="Arrow rain applies slowness on affected enemies" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="180" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-5" value="&lt;b&gt;Tame creature&lt;/b&gt;&lt;br&gt;Taming living creature to help caster in fight" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-5" value="&lt;b&gt;Tame creature&lt;/b&gt;&lt;br&gt;Taming living creature to help caster in fight" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-6" value="Life vision&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Allows to see nearby living cratures&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-6" value="Life vision&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Allows to see nearby living cratures&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-7" value="Evasion&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Provides chance to ignore incoming attack&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-7" value="Evasion&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Provides chance to ignore incoming attack&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="420" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-8" value="Agility buff&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Move speed and jump boost buff&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-8" value="Agility buff&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Move speed and jump boost buff&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="510" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-9" value="Arrow rain&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;AOE attack summoning rain of arrows (only with ranged weapons)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-9" value="Arrow rain&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;AOE attack summoning rain of arrows (only with ranged weapons)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="590" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-10" value="Armor break&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Your next attack decreases target armor for 6 seconds&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-10" value="Armor break&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Your next attack decreases target armor for 6 seconds&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="690" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-11" value="Mark&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Mark enemy. Tamed creatures will attack marked enemy&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-11" value="Mark&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Mark enemy. Tamed creatures will attack marked enemy&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="780" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-12" value="Attack speed buff&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-12" value="Attack speed buff&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="870" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-13" value="Piercing shot&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Empowers your next attack to deal additional damage and come though enemies&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-13" value="Piercing shot&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Empowers your next attack to deal additional damage and come though enemies&lt;br&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="950" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-14" value="Tamed creature buff" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-14" value="Tamed creature buff" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-15" value="Piercing shot heals caster for % of damage dealt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-15" value="Piercing shot heals caster for % of damage dealt" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-16" value="Heal sharing&lt;br&gt;Your heal also affects tamed creature" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-16" value="Heal sharing&lt;br&gt;Your heal also affects tamed creature" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="420" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-17" value="Sniper&lt;br&gt;Gravity doesnt affects your shots" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-17" value="Sniper&lt;br&gt;Gravity doesnt affects your shots" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="500" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="apMFGJzaOHh0xMqJPkod-18" value="Mark increase attack crit chance to marked enemy" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="apMFGJzaOHh0xMqJPkod-18" value="Mark increase attack crit chance to marked enemy" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="585" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="5XWuso9PIzkloQBPBJv2" name="Valkyrie skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-3" value="Valhalla warrior&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Attack speed increaces depending on missing health&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-3" value="Valhalla warrior&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Attack speed increaces depending on missing health&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="445" y="160" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-4" value="&lt;b&gt;Unbreakable will&lt;/b&gt;&lt;br&gt;Does not allow caster&#39;s health points fall below zero for 6 seconds" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-4" value="&lt;b&gt;Unbreakable will&lt;/b&gt;&lt;br&gt;Does not allow caster&#39;s health points fall below zero for 6 seconds" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="160" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-5" value="Vakyrie step&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Allows caster to walk in the air&amp;nbsp;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-5" value="Vakyrie step&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Allows caster to walk in the air&amp;nbsp;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-6" value="Fury&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Attack speed and vampirism buff&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-6" value="Fury&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Attack speed and vampirism buff&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-7" value="Heroic ascention&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Caster jumps high in the sky&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-7" value="Heroic ascention&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Caster jumps high in the sky&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="420" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-8" value="Move speed and jump height buff" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-8" value="Move speed and jump height buff" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="500" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-9" value="&lt;b&gt;Descending&lt;/b&gt;&lt;br&gt;Caster falls to the ground dealing damage around and getting shield" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-9" value="&lt;b&gt;Descending&lt;/b&gt;&lt;br&gt;Caster falls to the ground dealing damage around and getting shield" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="584.5" width="120" height="85" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-11" value="Caster jumps to the ally healing him and giving shield" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-11" value="Caster jumps to the ally healing him and giving shield" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="690" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-12" value="Multishot&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Shots creates additional projectile dealing 70% of damage (ranged weapons only)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-12" value="Multishot&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Shots creates additional projectile dealing 70% of damage (ranged weapons only)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="770" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-13" value="&lt;b&gt;Blinding shot&lt;/b&gt;&lt;br&gt;Next shot creates explosion applying blindness in some range" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-13" value="&lt;b&gt;Blinding shot&lt;/b&gt;&lt;br&gt;Next shot creates explosion applying blindness in some range" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="890" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="990" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-15" value="Unbreakable will can be used on an ally" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-15" value="Unbreakable will can be used on an ally" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="445" y="250" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-16" value="Descending also gives shield to allies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-16" value="Descending also gives shield to allies" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="330" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-17" value="Unbreakable will will be activated automaticaly on taking lethal damage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-17" value="Unbreakable will will be activated automaticaly on taking lethal damage" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="410" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="500" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="bXzIat0_mMu8iVZzuMcC-19" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="bXzIat0_mMu8iVZzuMcC-19" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="584.5" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="Pn5ui4PiQjrbvh2nuYPf" name="Vampire skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-3" value="&lt;b&gt;Vampire nature&lt;/b&gt;&lt;br&gt;Melee attacks heals for % of damage dealt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-3" value="&lt;b&gt;Vampire nature&lt;/b&gt;&lt;br&gt;Melee attacks heals for % of damage dealt" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="160" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-4" value="&lt;b&gt;Bloody bats&lt;/b&gt;&lt;br&gt;Summons swarn of magical bloody bats attacking the target and healing caster after returning" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-4" value="&lt;b&gt;Bloody bats&lt;/b&gt;&lt;br&gt;Summons swarn of magical bloody bats attacking the target and healing caster after returning" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="160" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-5" value="&lt;b&gt;Debuff conversion&lt;/b&gt;&lt;br&gt;Converts weak debuffs into random weak buffs" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-5" value="&lt;b&gt;Debuff conversion&lt;/b&gt;&lt;br&gt;Converts weak debuffs into random weak buffs" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="280" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-6" value="Bloody vision&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Allows caster to see nearby living creatures&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-6" value="Bloody vision&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Allows caster to see nearby living creatures&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="370" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-7" value="Blood rage&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Buffs attack and move speed, consumes 1 health per 2 ticks&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-7" value="Blood rage&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Buffs attack and move speed, consumes 1 health per 2 ticks&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="460" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-8" value="&lt;b&gt;Life drain&lt;/b&gt;&lt;br&gt;Deals damage to target, applies slowness and heals cater for % of damage dealt" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-8" value="&lt;b&gt;Life drain&lt;/b&gt;&lt;br&gt;Deals damage to target, applies slowness and heals cater for % of damage dealt" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="560" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-9" value="&lt;b&gt;Blood explosion&lt;/b&gt;&lt;br&gt;AOE damage around player" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-9" value="&lt;b&gt;Blood explosion&lt;/b&gt;&lt;br&gt;AOE damage around player" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="680" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-10" value="&lt;b&gt;Crimson lightning&lt;/b&gt;&lt;br&gt;Strikes target with red lightning stunning him" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-10" value="&lt;b&gt;Crimson lightning&lt;/b&gt;&lt;br&gt;Strikes target with red lightning stunning him" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="760" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-11" value="&lt;b&gt;Crimson blink&lt;/b&gt;&lt;br&gt;Teleports caster to the point of sight" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-11" value="&lt;b&gt;Crimson blink&lt;/b&gt;&lt;br&gt;Teleports caster to the point of sight" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="840" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-12" value="Insatiable hunger&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Effectiveness of incoming heal increases with missing healt&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-12" value="Insatiable hunger&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Effectiveness of incoming heal increases with missing healt&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="445" y="240" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-13" value="Toxic blood&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;10% chance to apply poison on enemies hit by your spells&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-13" value="Toxic blood&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;10% chance to apply poison on enemies hit by your spells&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="445" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-14" value="&lt;b&gt;Bloody carnival&lt;/b&gt;&lt;br&gt;Afteh each kill u restore 40% of your missing health" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-14" value="&lt;b&gt;Bloody carnival&lt;/b&gt;&lt;br&gt;Afteh each kill u restore 40% of your missing health" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="420" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-15" value="Smell of blood&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Caster gets attack damage and move speed buff if there are low health enemies around&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-15" value="Smell of blood&lt;br&gt;&lt;span style=&quot;font-weight: 400;&quot;&gt;Caster gets attack damage and move speed buff if there are low health enemies around&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="445" y="510" width="120" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="NvKarkFe3GAmfJbbfenJ-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="NvKarkFe3GAmfJbbfenJ-16" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="630" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="0fZNMt18DoIWZco6Bfdc-1" value="Bloody feast&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Explode target and heals hearby allies for % of damage dealt&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="0fZNMt18DoIWZco6Bfdc-1" value="Bloody feast&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Explode target and heals hearby allies for % of damage dealt&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="920" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="0fZNMt18DoIWZco6Bfdc-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="0fZNMt18DoIWZco6Bfdc-2" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="1010" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="BbOnZ3K1egGUW8fEwQB-" name="Shadow skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="1KfGxyG6ZBc5NcKoDfNy-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="1KfGxyG6ZBc5NcKoDfNy-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="1KfGxyG6ZBc5NcKoDfNy-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="1KfGxyG6ZBc5NcKoDfNy-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-1" value="&lt;b&gt;Backstab&lt;/b&gt;&lt;br&gt;Back attacks deal 30% more damage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-1" value="&lt;b&gt;Backstab&lt;/b&gt;&lt;br&gt;Back attacks deal 30% more damage" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="170" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-2" value="Smokescreen&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Creates big black cloud which provides invisibility to caster while he&#39;s inside&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-2" value="Smokescreen&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Creates big black cloud which provides invisibility to caster while he&#39;s inside&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="170" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-3" value="&lt;b&gt;Blink&lt;/b&gt;&lt;br&gt;Teleports caster to the point of sight in small range" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-3" value="&lt;b&gt;Blink&lt;/b&gt;&lt;br&gt;Teleports caster to the point of sight in small range" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="270" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-4" value="Shadow blades&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Shots few blade-shaped projectiles&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-4" value="Shadow blades&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Shots few blade-shaped projectiles&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="360" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-5" value="Sharp blade&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Your next attack will apply bleeding to the target&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-5" value="Sharp blade&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Your next attack will apply bleeding to the target&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="440" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-6" value="Illusion&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Creates 2 clones of the caster&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-6" value="Illusion&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Creates 2 clones of the caster&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="530" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-7" value="Move speed and attack speedd buff" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" vertex="1" parent="1">
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-7" value="Move speed and attack speedd buff" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="140" y="610" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-8" value="Mark&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Decreases armor of the target&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-8" value="Mark&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Decreases armor of the target&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="690" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-9" value="Evasion&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Provides chance to ignore incoming attack&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="Mcr3_gtbjjSz4Pd42Ums-9" value="Evasion&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Provides chance to ignore incoming attack&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="770" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="USWbsnkk4JVkf76gfJl3-1" value="Sneaky blow&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Your next attack will apply blindness to the targeet&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="USWbsnkk4JVkf76gfJl3-1" value="Sneaky blow&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Your next attack will apply blindness to the targeet&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="860" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="USWbsnkk4JVkf76gfJl3-2" value="Critical chance buff" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" vertex="1" parent="1">
+        <mxCell id="USWbsnkk4JVkf76gfJl3-2" value="Critical chance buff" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=0" parent="1" vertex="1">
           <mxGeometry x="140" y="950" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="USWbsnkk4JVkf76gfJl3-3" value="&lt;b&gt;Hide in the shadows&lt;/b&gt;&lt;br&gt;While invisible you restore up to 50% damage you got in last 10 seconds" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="USWbsnkk4JVkf76gfJl3-3" value="&lt;b&gt;Hide in the shadows&lt;/b&gt;&lt;br&gt;While invisible you restore up to 50% damage you got in last 10 seconds" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="250" width="120" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="USWbsnkk4JVkf76gfJl3-4" value="&lt;b&gt;Dark blade&amp;nbsp;&lt;/b&gt;&lt;br&gt;Melee attack dispell your invisibility but deals 50% more damage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="USWbsnkk4JVkf76gfJl3-4" value="&lt;b&gt;Dark blade&amp;nbsp;&lt;/b&gt;&lt;br&gt;Melee attack dispell your invisibility but deals 50% more damage" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="360" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="USWbsnkk4JVkf76gfJl3-5" value="&lt;b&gt;Bloodloss&lt;/b&gt;&lt;br&gt;Sharp blade also applies weakness and slowness" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="USWbsnkk4JVkf76gfJl3-5" value="&lt;b&gt;Bloodloss&lt;/b&gt;&lt;br&gt;Sharp blade also applies weakness and slowness" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="460" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="USWbsnkk4JVkf76gfJl3-6" value="&lt;b&gt;Trick&lt;br&gt;&lt;/b&gt;Illusion spawns 3 clones and gives invisibility to caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="USWbsnkk4JVkf76gfJl3-6" value="&lt;b&gt;Trick&lt;br&gt;&lt;/b&gt;Illusion spawns 3 clones and gives invisibility to caster" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="550" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="USWbsnkk4JVkf76gfJl3-7" value="Dissapearing&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Caster becomes invisible for 3 seconds after using blink&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="USWbsnkk4JVkf76gfJl3-7" value="Dissapearing&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Caster becomes invisible for 3 seconds after using blink&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="445" y="640" width="120" height="80" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="oyAUQzfAHBXcLEYsmyXv" name="Cleric skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="460" y="45" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-3" value="Purification also gives regeneration if more than 2 debuffs were dispelled" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-3" value="Purification also gives regeneration if more than 2 debuffs were dispelled" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="170" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-4" value="Flash&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;AOE skill heaing allies and damaging enemies&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-4" value="Flash&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;AOE skill heaing allies and damaging enemies&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="170" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-5" value="&lt;b&gt;Lesser healing&lt;/b&gt;&lt;br&gt;Heals target or caster" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-5" value="&lt;b&gt;Lesser healing&lt;/b&gt;&lt;br&gt;Heals target or caster" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-6" value="&lt;b&gt;Greater healing&lt;/b&gt;&lt;br&gt;Heal all allies and gives them regeneration" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-6" value="&lt;b&gt;Greater healing&lt;/b&gt;&lt;br&gt;Heal all allies and gives them regeneration" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="340" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-7" value="Holy lights&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Homing projectiles dealing damage to target&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-7" value="Holy lights&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Homing projectiles dealing damage to target&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="430" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-8" value="Purification&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Group debuff dispelling&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-8" value="Purification&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Group debuff dispelling&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="520" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-9" value="Holy defence&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Creates dome protecting from any incoming projectiles and spells&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-9" value="Holy defence&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Creates dome protecting from any incoming projectiles and spells&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="600" width="120" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-10" value="&lt;b&gt;Ray of light&lt;/b&gt;&lt;br&gt;Caster fires beam of light damaging enemies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-10" value="&lt;b&gt;Ray of light&lt;/b&gt;&lt;br&gt;Caster fires beam of light damaging enemies" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="710" width="120" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-11" value="&lt;b&gt;Holy Sun&lt;/b&gt;&lt;br&gt;Creates sphere of light above caster that will shots rays of light to all nearby enemies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-11" value="&lt;b&gt;Holy Sun&lt;/b&gt;&lt;br&gt;Creates sphere of light above caster that will shots rays of light to all nearby enemies" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="140" y="820" width="120" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-12" value="Chains of light&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Traps target with chains of light preventing it from moving&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-12" value="Chains of light&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Traps target with chains of light preventing it from moving&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="930" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-13" value="Ressurection&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Revives dead ally with 20% HP&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-13" value="Ressurection&lt;br&gt;&lt;span style=&quot;font-weight: normal;&quot;&gt;Revives dead ally with 20% HP&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="140" y="1030" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-14" value="You restore 2 mana for every killed undead" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-14" value="You restore 2 mana for every killed undead" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-15" value="Ray of light can aslo heal allies" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-15" value="Ray of light can aslo heal allies" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="340" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-16" value="Healing effectiveness incresed for targets with low HP" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-16" value="Healing effectiveness incresed for targets with low HP" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="420" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-17" value="Ressurection also gives shield and regeneration to revived player" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-17" value="Ressurection also gives shield and regeneration to revived player" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="500" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="XwkRGiE0azrhQFcPs6Sw-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="XwkRGiE0azrhQFcPs6Sw-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="445" y="590" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="u6eZzDpzETuO1KO_T4KS" name="Necromancer skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -601,141 +601,141 @@
         <mxCell id="w6Zx_8psm31y9MN0reM4-18" value="&lt;b&gt;Toxic skull&lt;/b&gt;&lt;br&gt;Shots skull-shaped projectile applying poison on target" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="310" y="440" width="120" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="OhA7uA9UcngbJx-3dLri-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OhA7uA9UcngbJx-3dLri-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="309" y="533" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="OhA7uA9UcngbJx-3dLri-5" value="After getting lethal damage you will be revived with 20% health and stunned for 5 seconds" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OhA7uA9UcngbJx-3dLri-5" value="After getting lethal damage you will be revived with 20% health and stunned for 5 seconds" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="565" y="250" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="OhA7uA9UcngbJx-3dLri-6" value="Summoned lich guard takes 50% of damage taken by summoner" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OhA7uA9UcngbJx-3dLri-6" value="Summoned lich guard takes 50% of damage taken by summoner" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="565" y="350" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="OhA7uA9UcngbJx-3dLri-8" value="You can use bones and meat to improve defence and damage of summoned dead golem" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OhA7uA9UcngbJx-3dLri-8" value="You can use bones and meat to improve defence and damage of summoned dead golem" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="565" y="430" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="OhA7uA9UcngbJx-3dLri-9" value="&lt;b&gt;Summon ghost&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="OhA7uA9UcngbJx-3dLri-9" value="&lt;b&gt;Summon ghost&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="30" y="320" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
   <diagram id="OuHHKSM5ToEk54xhC_DL" name="Elementalist skills">
-    <mxGraphModel dx="1194" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1194" dy="724" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-1" value="Active skills" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="270" y="60" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-2" value="Passive skills" style="rhombus;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="710" y="45" width="90" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-3" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="700" y="160" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-4" value="Fireball" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-4" value="Fireball" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="10" y="170" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-5" value="Ice lance" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-5" value="Ice lance" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="140" y="170" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-6" value="Vines wave" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-6" value="Vines wave" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="270" y="600" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-8" value="Stone wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-8" value="Stone wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="400" y="310" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-9" value="Lightning blot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-9" value="Lightning blot" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="530" y="170" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-10" value="Poisonous thorn" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-10" value="Poisonous thorn" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="270" y="170" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-11" value="Stone shard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-11" value="Stone shard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="400" y="170" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-12" value="Frost ray" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-12" value="Frost ray" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="140" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-13" value="Solar beam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-13" value="Solar beam" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="10" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="400" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-15" value="Lightning ray" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-15" value="Lightning ray" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="530" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-16" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-16" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="270" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-17" value="Ice wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-17" value="Ice wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="140" y="310" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-18" value="Fire wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-18" value="Fire wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="10" y="310" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-19" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-19" value="Cloud wall" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="530" y="310" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-20" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-20" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="10" y="380" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-21" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-21" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="140" y="380" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-22" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-22" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="270" y="450" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-23" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-23" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="400" y="380" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-24" value="Homing sparks" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-24" value="Homing sparks" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="530" y="380" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-25" value="Firestorm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-25" value="Firestorm" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="10" y="450" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-26" value="Blizzard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-26" value="Blizzard" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="140" y="450" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-27" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-27" value="&lt;div&gt;Thorn wall&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="270" y="310" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-28" value="Tornado" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-28" value="Tornado" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="400" y="450" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-29" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-29" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="530" y="450" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-30" value="Meteor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-30" value="Meteor" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="10" y="525" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-31" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-31" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="140" y="525" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-32" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-32" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="270" y="525" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-33" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-33" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="400" y="525" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-34" value="Lightning strike" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-34" value="Lightning strike" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="530" y="525" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-35" value="Summon wasps" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-35" value="Summon wasps" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="270" y="380" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-36" value="Ice spikes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-36" value="Ice spikes" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#C5F8FC;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="140" y="600" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-37" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-37" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
           <mxGeometry x="10" y="600" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-38" value="Shockwave" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-38" value="Shockwave" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="530" y="600" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-39" value="Tsunami" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+        <mxCell id="hB-A3Xv5MWQsTzdf6RFn-39" value="Tsunami" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" parent="1" vertex="1">
           <mxGeometry x="400" y="600" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
