@@ -39,15 +39,9 @@ public class FlamingFlambergeItem extends SwordItem implements SolarisWeapon, So
 
         if(skill.equals(Skills.GIANT_WHIRLWIND)) {
             double f = serverPlayer.getAttribute(Attributes.ATTACK_SPEED).getValue();
-            Scheduler.schedule(() -> {
-                attack(serverPlayer);
-            }, (int) (14/f));
-            Scheduler.schedule(() -> {
-                attack(serverPlayer);
-            }, (int) (24/f));
-            Scheduler.schedule(() -> {
-                attack(serverPlayer);
-            }, (int) (39/f));
+            Scheduler.schedule(() -> attack(serverPlayer), (int) (15/f));
+            Scheduler.schedule(() -> attack(serverPlayer), (int) (25/f));
+            Scheduler.schedule(() -> attack(serverPlayer), (int) (39/f));
         }
     }
 

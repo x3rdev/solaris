@@ -2,12 +2,9 @@ package com.github.x3rmination.solaris.client.render;
 
 import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import com.mojang.blaze3d.vertex.VertexFormat;
-import net.minecraft.Util;
 import net.minecraft.client.renderer.RenderStateShard;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.resources.ResourceLocation;
-
-import java.util.function.Function;
+import net.minecraft.client.renderer.blockentity.TheEndPortalRenderer;
 
 public class SolarisRenderTypes extends RenderType {
 
@@ -15,12 +12,15 @@ public class SolarisRenderTypes extends RenderType {
         super(pName, pFormat, pMode, pBufferSize, pAffectsCrumbling, pSortOnUpload, pSetupState, pClearState);
     }
 
-    private static final Function<ResourceLocation, RenderType> EMISSIVE = Util.memoize((p_173255_) -> {
-        RenderStateShard.TextureStateShard renderstateshard$texturestateshard = new RenderStateShard.TextureStateShard(p_173255_, false, false);
-        return create("emissive", DefaultVertexFormat.NEW_ENTITY, VertexFormat.Mode.QUADS, 256, false, true, RenderType.CompositeState.builder().setShaderState(RENDERTYPE_EYES_SHADER).setTextureState(renderstateshard$texturestateshard).setTransparencyState(ADDITIVE_TRANSPARENCY).setWriteMaskState(COLOR_WRITE).createCompositeState(false));
-    });
+    private static final RenderType ABYSSAL_EDGE = create("abyssal_edge", DefaultVertexFormat.POSITION, VertexFormat.Mode.QUADS, 256, false, false,
+            RenderType.CompositeState.builder().setShaderState(SolarisRenderShards.RENDERTYPE_ABYSSAL_EDGE_SHADER)
+                    .setTextureState(RenderStateShard.MultiTextureStateShard.builder()
+                            .add(TheEndPortalRenderer.END_SKY_LOCATION, false, false)
+                            .add(TheEndPortalRenderer.END_PORTAL_LOCATION, false, false)
+                            .build())
+                    .createCompositeState(false));
 
-    public static RenderType emissive(ResourceLocation pLocation) {
-        return EMISSIVE.apply(pLocation);
+    public static RenderType abyssalBlade() {
+        return ABYSSAL_EDGE;
     }
 }

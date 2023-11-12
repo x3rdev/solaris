@@ -1,5 +1,6 @@
 package com.github.x3rmination.solaris.common.item.AbyssalEdge;
 
+import com.github.x3rmination.solaris.client.render.SolarisRenderTypes;
 import com.github.x3rmination.solaris.common.registry.ItemRegistry;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -35,6 +36,7 @@ public class AbyssalEdgeBladeRenderer extends GeoItemRenderer {
 
     @Override
     public RenderType getRenderType(Object animatable, float partialTicks, PoseStack stack, @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
-        return RenderType.endPortal();
+        return SolarisRenderTypes.abyssalBlade();
+//        return RenderType.eyes(this.modelProvider.getModelLocation(animatable));
     }
 }

@@ -35,6 +35,7 @@ import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.client.gui.OverlayRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
@@ -57,7 +58,14 @@ public class ClientSetup {
             ItemProperties.register(ItemRegistry.PHOENIX_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
             ItemProperties.register(ItemRegistry.LIVING_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
         });
+        OverlayRegistry.registerOverlayTop("ClassIcon", (gui, poseStack, partialTick, screenWidth, screenHeight) -> {
+//            if(!Minecraft.getInstance().options.hideGui) {
+//                gui.setupOverlayRenderState(true, false);
+//                ClassOverlay.renderClassIcon(gui, poseStack, screenWidth, screenHeight);
+//            }
+        });
     }
+
 
     @SuppressWarnings({"rawtypes", "unchecked"})
     public static void addLayers(EntityRenderersEvent.AddLayers event) {
@@ -102,6 +110,7 @@ public class ClientSetup {
     }
 
     public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
+
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.ANIMATED_SPARKS.get(), AnimatedSparksParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.FLAME_0.get(), Flame0Particle.Provider::new);
@@ -109,9 +118,5 @@ public class ClientSetup {
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.AIR_TORNADO.get(), AirTornadoParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.BLIZZARD.get(), BlizzardParticle.Provider::new);
     }
-
-//    public static void registerShaders(final RegisterShadersEvent event) {
-//        event.registerShader();
-//    }
 
 }
