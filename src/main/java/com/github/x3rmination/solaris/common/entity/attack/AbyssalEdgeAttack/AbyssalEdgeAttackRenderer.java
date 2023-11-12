@@ -1,5 +1,6 @@
 package com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack;
 
+import com.github.x3rmination.solaris.client.render.SolarisRenderTypes;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.renderer.MultiBufferSource;
@@ -24,7 +25,7 @@ public class AbyssalEdgeAttackRenderer extends GeoProjectilesRenderer<AbyssalEdg
 
     @Override
     public RenderType getRenderType(AbyssalEdgeAttackEntity animatable, float partialTick, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, ResourceLocation texture) {
-        return RenderType.endPortal();
+        return SolarisRenderTypes.abyssalBlade();
     }
 
     @Override

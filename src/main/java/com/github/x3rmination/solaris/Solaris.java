@@ -1,10 +1,8 @@
 package com.github.x3rmination.solaris;
 
-import com.github.x3rmination.solaris.client.KeyEvents;
 import com.github.x3rmination.solaris.client.ClientSetup;
+import com.github.x3rmination.solaris.client.KeyEvents;
 import com.github.x3rmination.solaris.common.CommonSetup;
-import com.github.x3rmination.solaris.common.capability.CapabilityEvents;
-import com.github.x3rmination.solaris.common.capability.race.RaceCapabilityAttacher;
 import com.github.x3rmination.solaris.common.registry.*;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,13 +34,11 @@ public class Solaris {
         modEventBus.addListener(ClientSetup::registerLayerDefinitions);
         modEventBus.addListener(ClientSetup::registerRenderers);
         modEventBus.addListener(ClientSetup::registerParticleFactories);
-        forgeBus.register(KeyEvents.class);
+        modEventBus.addListener(ShaderRegistry::registerShaders);
+        forgeBus.addListener(KeyEvents::keyPressed);
 
         modEventBus.addListener(CommonSetup::setup);
         modEventBus.addListener(CommonSetup::registerEFMWeaponCaps);
-        modEventBus.addListener(CapabilityEvents::registerCaps);
-        forgeBus.register(CapabilityEvents.class);
-        forgeBus.register(RaceCapabilityAttacher.class);
 
         BiomeRegistry.BIOMES.register(modEventBus);
         BlockRegistry.BLOCKS.register(modEventBus);

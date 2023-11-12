@@ -7,6 +7,7 @@ import com.github.x3rmination.solaris.common.item.AstralDagger.AstralDaggerItem;
 import com.github.x3rmination.solaris.common.item.BloodyEclipse.BloodyEclipseItem;
 import com.github.x3rmination.solaris.common.item.BloodyFlamberge.BloodyFlambergeItem;
 import com.github.x3rmination.solaris.common.item.CentipedeScaleArmor.CentipedeScaleArmorItem;
+import com.github.x3rmination.solaris.common.item.ClassPickerItem;
 import com.github.x3rmination.solaris.common.item.CloudSplitter.CloudSplitterItem;
 import com.github.x3rmination.solaris.common.item.CometSpear.CometSpearItem;
 import com.github.x3rmination.solaris.common.item.DemonicKatana.DemonicKatana;
@@ -189,7 +190,11 @@ public class ItemRegistry {
     public static final RegistryObject<Item> WHITESTONE_BOOTS = ITEMS.register("whitestone_boots",
             () -> new WhitestoneArmorItem(EquipmentSlot.FEET, (new Item.Properties()).tab(ModItemTab.instance)));
 
+    public static final RegistryObject<Item> CLASS_PICKER = ITEMS.register("class_picker",
+            () -> new ClassPickerItem((new Item.Properties()).tab(ModItemTab.instance)));
+
     public static class ModItemTab extends CreativeModeTab {
+
         public static final ModItemTab instance = new ModItemTab(CreativeModeTab.TABS.length, Solaris.MOD_ID);
         private ModItemTab(int index, String tabName) {
             super(index, tabName);
