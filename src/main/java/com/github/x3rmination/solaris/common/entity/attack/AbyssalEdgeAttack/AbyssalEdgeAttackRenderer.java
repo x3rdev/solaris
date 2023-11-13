@@ -8,7 +8,6 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.culling.Frustum;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.renderers.geo.GeoProjectilesRenderer;
 
@@ -25,7 +24,7 @@ public class AbyssalEdgeAttackRenderer extends GeoProjectilesRenderer<AbyssalEdg
 
     @Override
     public RenderType getRenderType(AbyssalEdgeAttackEntity animatable, float partialTick, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, ResourceLocation texture) {
-        return SolarisRenderTypes.abyssalBlade();
+        return SolarisRenderTypes.abyssalEdge(texture);
     }
 
     @Override

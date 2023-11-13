@@ -15,14 +15,14 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
 
-public class AbyssalEdgeBladeRenderer extends GeoItemRenderer {
+public class AbyssalEdgeBladeRenderer extends GeoItemRenderer<AbyssalEdgeBladeItem> {
 
     public AbyssalEdgeBladeRenderer() {
         super(new AbyssalEdgeBladeModel());
     }
 
     @Override
-    public void render(Item animatable, PoseStack stack, MultiBufferSource bufferIn, int packedLightIn, ItemStack itemStack) {
+    public void render(AbyssalEdgeBladeItem animatable, PoseStack stack, MultiBufferSource bufferIn, int packedLightIn, ItemStack itemStack) {
         Minecraft.getInstance().getItemRenderer().renderStatic(
                 new ItemStack(ItemRegistry.ABYSSAL_EDGE_HANDLE.get(), 1),
                 ItemTransforms.TransformType.NONE,
@@ -35,8 +35,7 @@ public class AbyssalEdgeBladeRenderer extends GeoItemRenderer {
     }
 
     @Override
-    public RenderType getRenderType(Object animatable, float partialTicks, PoseStack stack, @Nullable MultiBufferSource renderTypeBuffer, @Nullable VertexConsumer vertexBuilder, int packedLightIn, ResourceLocation textureLocation) {
-        return SolarisRenderTypes.abyssalBlade();
-//        return RenderType.eyes(this.modelProvider.getModelLocation(animatable));
+    public RenderType getRenderType(AbyssalEdgeBladeItem animatable, float partialTick, PoseStack poseStack, @Nullable MultiBufferSource bufferSource, @Nullable VertexConsumer buffer, int packedLight, ResourceLocation texture) {
+        return SolarisRenderTypes.abyssalEdge(texture);
     }
 }

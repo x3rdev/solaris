@@ -22,28 +22,38 @@ import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ItemRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
 import com.google.common.collect.ImmutableList;
+import com.mojang.blaze3d.vertex.DefaultVertexFormat;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.renderer.ShaderInstance;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ResourceProvider;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.DefaultAttributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.client.event.RegisterShadersEvent;
 import net.minecraftforge.client.gui.OverlayRegistry;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
+import org.jetbrains.annotations.Nullable;
 import top.theillusivec4.curios.api.client.CuriosRendererRegistry;
 import yesman.epicfight.client.ClientEngine;
 
+import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 
 public class ClientSetup {
+
+    @Nullable
+    private static ShaderInstance rendertypeAbyssalEdge;
 
     public static void setup(final FMLClientSetupEvent event) {
         CuriosRendererRegistry.register(ItemRegistry.ICE_SHOULDER_PAD.get(), IceShoulderPadRenderer::new);
@@ -119,4 +129,18 @@ public class ClientSetup {
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.BLIZZARD.get(), BlizzardParticle.Provider::new);
     }
 
+    public static void registerShaders(RegisterShadersEvent event) {
+        ResourceProvider provider = event.getResourceManager();
+        try {
+            event.registerShader(new ShaderInstance(provider, new ResourceLocation(Solaris.MOD_ID, "abyssal_edge"), DefaultVertexFormat.POSITION), shaderInstance -> {
+                rendertypeAbyssalEdge = shaderInstance;
+            });
+        } catch (IOException e) {
+            Solaris.LOGGER.warn("Failed to load shader", e);
+        }
+    }
+
+    public static ShaderInstance getAbyssalBladeShader() {
+        return Objects.requireNonNull(rendertypeAbyssalEdge, "Attempted to call getAbyssalBladeShader before shaders have finished loading.");
+    }
 }

@@ -34,7 +34,7 @@ public class Solaris {
         modEventBus.addListener(ClientSetup::registerLayerDefinitions);
         modEventBus.addListener(ClientSetup::registerRenderers);
         modEventBus.addListener(ClientSetup::registerParticleFactories);
-        modEventBus.addListener(ShaderRegistry::registerShaders);
+        modEventBus.addListener(ClientSetup::registerShaders);
         forgeBus.addListener(KeyEvents::keyPressed);
 
         modEventBus.addListener(CommonSetup::setup);

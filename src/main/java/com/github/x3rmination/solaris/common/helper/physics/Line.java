@@ -14,8 +14,6 @@ public class Line {
 
     public Vec2 intersection(Line other) {
 
-        //Cramer's law
-
         float a1 = this.direction.y;
         float b1 = -this.direction.x;
         float c1 = (a1*this.origin.x+b1*this.origin.y);
@@ -42,8 +40,6 @@ public class Line {
         return new Vec2(this.origin.x + lambda * this.direction.x, this.origin.y + lambda * this.direction.y);
     }
 
-    //xo+t(xd) = xp
-    //(xp-xo)/xd
     public float parameter(Vec2 point) {
         float a = (point.x-this.origin.x)/this.direction.x;
         float b = (point.y-this.origin.y)/this.direction.y;
