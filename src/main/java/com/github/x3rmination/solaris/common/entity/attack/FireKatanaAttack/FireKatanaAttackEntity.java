@@ -4,6 +4,7 @@ import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ParticleRegistry;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
@@ -11,14 +12,14 @@ import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
-import software.bernie.geckolib3.core.IAnimatable;
-import software.bernie.geckolib3.core.manager.AnimationData;
-import software.bernie.geckolib3.core.manager.AnimationFactory;
-import software.bernie.geckolib3.util.GeckoLibUtil;
+import software.bernie.geckolib.core.animatable.GeoAnimatable;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.util.GeckoLibUtil;
 
-public class FireKatanaAttackEntity extends Projectile implements IAnimatable {
+public class FireKatanaAttackEntity extends Projectile implements GeoAnimatable {
 
-    private AnimationFactory factory = GeckoLibUtil.createFactory(this);
+    private AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     public FireKatanaAttackEntity(EntityType<? extends Projectile> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
         this.noCulling = true;
@@ -48,9 +49,9 @@ public class FireKatanaAttackEntity extends Projectile implements IAnimatable {
         if(this.tickCount > 600) {
             this.kill();
         }
-        this.level.getEntities(this, this.getBoundingBox().inflate(1.5)).forEach(entity -> {
+        this.level().getEntities(this, this.getBoundingBox().inflate(1.5)).forEach(entity -> {
             entity.setRemainingFireTicks(120);
-            entity.hurt(DamageSource.GENERIC, 4);
+            entity.hurt(damageSources().generic(), 4);
         });
     }
 
@@ -61,19 +62,24 @@ public class FireKatanaAttackEntity extends Projectile implements IAnimatable {
 
     @Override
     protected void onHitBlock(BlockHitResult pResult) {
-        if(this.level instanceof ServerLevel serverLevel) {
+        if(this.level() instanceof ServerLevel serverLevel) {
             serverLevel.sendParticles(ParticleRegistry.FLAME_0.get(), this.getX(), this.getY(), this.getZ(), 100, 0, 0.5, 0, 0.25);
         }
         this.kill();
     }
 
     @Override
-    public void registerControllers(AnimationData data) {
+    public void registerControllers(AnimatableManager.ControllerRegistrar controllers) {
 
     }
 
     @Override
-    public AnimationFactory getFactory() {
-        return this.factory;
+    public AnimatableInstanceCache getAnimatableInstanceCache() {
+        return null;
+    }
+
+    @Override
+    public double getTick(Object object) {
+        return 0;
     }
 }

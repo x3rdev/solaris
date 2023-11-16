@@ -11,12 +11,12 @@ import com.github.x3rmination.solaris.client.particle.*;
 import com.github.x3rmination.solaris.common.block.SolarisSun.SolarisSunBlockRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.AbyssalEdgeAttack.AbyssalEdgeAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.BlizzardAttack.BlizzardAttackRenderer;
+import com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker.CherryBlossomSeekerRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.CloudSplitterAttack.CloudSplitterAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.FireKatanaAttack.FireKatanaAttackRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.FrostbiteAttack.FrostbiteAttackRenderer;
-import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadRenderer;
-import com.github.x3rmination.solaris.common.entity.attack.CherryBlossomSeeker.CherryBlossomSeekerRenderer;
 import com.github.x3rmination.solaris.common.entity.attack.WaterFlowerAttack.WaterFlowerAttackRenderer;
+import com.github.x3rmination.solaris.common.item.IceShoulderPad.IceShoulderPadRenderer;
 import com.github.x3rmination.solaris.common.registry.BlockEntityRegistry;
 import com.github.x3rmination.solaris.common.registry.EntityRegistry;
 import com.github.x3rmination.solaris.common.registry.ItemRegistry;
@@ -67,12 +67,6 @@ public class ClientSetup {
         event.enqueueWork(() -> {
             ItemProperties.register(ItemRegistry.PHOENIX_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
             ItemProperties.register(ItemRegistry.LIVING_SHIELD.get(), new ResourceLocation("blocking"), (itemStack, level, livingEntity, i) -> !ClientEngine.instance.controllEngine.getPlayerPatch().isBattleMode() && livingEntity != null && livingEntity.isUsingItem() && livingEntity.getUseItem() == itemStack ? 1.0F : 0.0F);
-        });
-        OverlayRegistry.registerOverlayTop("ClassIcon", (gui, poseStack, partialTick, screenWidth, screenHeight) -> {
-//            if(!Minecraft.getInstance().options.hideGui) {
-//                gui.setupOverlayRenderState(true, false);
-//                ClassOverlay.renderClassIcon(gui, poseStack, screenWidth, screenHeight);
-//            }
         });
     }
 

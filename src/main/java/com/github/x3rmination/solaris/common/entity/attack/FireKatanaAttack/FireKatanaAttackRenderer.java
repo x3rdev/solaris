@@ -7,9 +7,10 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.renderer.GeoEntityRenderer;
 import software.bernie.geckolib3.renderers.geo.GeoProjectilesRenderer;
 
-public class FireKatanaAttackRenderer extends GeoProjectilesRenderer<FireKatanaAttackEntity> {
+public class FireKatanaAttackRenderer extends GeoEntityRenderer<FireKatanaAttackEntity> {
 
     public FireKatanaAttackRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new FireKatanaAttackModel());
