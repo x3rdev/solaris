@@ -1,40 +1,33 @@
 modLoader = "javafml"
-loaderVersion = "${loader_version_range}"
-license = "${mod_license}"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
 [[mods]]
-modId = "solaris"
-version = "${mod_version}"
-displayName = "${display_name}"
-authors = "${authors}"
-description = "${description}"
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.solaris]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="${mod_authors}"
+description='''${mod_description}'''
+[[dependencies.${mod_id}]]
     modId = "forge"
     mandatory = true
-    versionRange = "[40,)"
+    versionRange = "${forge_version_range}"
     ordering = "NONE"
     side = "BOTH"
-[[dependencies.solaris]]
+[[dependencies.${mod_id}]]
     modId = "minecraft"
     mandatory = true
-    versionRange = "[1.18.2,1.19)"
+    versionRange = "[1.20.1,)"
     ordering = "NONE"
     side = "BOTH"
-[[dependencies.solaris]]
+[[dependencies.${mod_id}]]
     modId = "epicfight"
     mandatory = true
-    versionRange = "[18.3.6,)"
+    versionRange = "[20.6.3,)"
     ordering = "NONE"
     side = "BOTH"
-[[dependencies.solaris]]
-    modId = "curios"
-    mandatory = true
-    versionRange = "[1.18.2-5.0.9.0,)"
-    ordering = "NONE"
-    side = "BOTH"
-[[dependencies.solaris]]
+[[dependencies.${mod_id}]]
     modId = "geckolib"
     mandatory = true
-    versionRange = "[3.0.57,)"
+    versionRange = "[4.2.2,)"
     ordering = "NONE"
     side = "BOTH"

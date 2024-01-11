@@ -1,0 +1,20 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.github.x3r.solaris.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.solaris.refmap.json",
+  "mixins": [
+    "BiomeSourcesMixin",
+    "CustomModelBakeryMixin",
+    "DensityFunctionsMixin",
+    "HumanoidArmorLayerMixin",
+    "PatchedLivingEntityRendererMixin",
+    "SkillContainerMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
