@@ -6,20 +6,19 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.KeyDispatchDataCodec;
+import net.minecraft.util.Mth;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.LegacyRandomSource;
 import net.minecraft.world.level.levelgen.XoroshiroRandomSource;
+import net.minecraft.world.level.levelgen.synth.PerlinNoise;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 
 import java.util.List;
 
 public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
 
-    private final PerlinSimplexNoise waterIslandsNoise;
-    private final PerlinSimplexNoise fireIslandsNoise;
-    private final PerlinSimplexNoise natureIslandsNoise;
-    private final PerlinSimplexNoise lightningIslandsNoise;
-    private final PerlinSimplexNoise lightIslandsNoise;
+    private final PerlinSimplexNoise islandNoise;
+    private final PerlinSimplexNoise biomeNoise;
 
     public static final ResourceKey<DensityFunction> SOLARIS_DENSITY = ResourceKey.create(Registries.DENSITY_FUNCTION,
             new ResourceLocation(Solaris.MOD_ID, "solaris_density"));
@@ -29,59 +28,22 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
     public SolarisDensityFunction(long pSeed) {
         XoroshiroRandomSource source = new XoroshiroRandomSource(pSeed);
         source.consumeCount(15234);
-        this.waterIslandsNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1, 0, 1, 0, -2));
-        this.fireIslandsNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1, 0, 1, 0, -2));
-        this.natureIslandsNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1, 0, 1, 0, -2));
-        this.lightningIslandsNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1, 0, 1, 0, -2));
-        this.lightIslandsNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1, 0, 1, 0, -2));
+        this.islandNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1, 0, 0, 1));
+        this.biomeNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-10, -1));
     }
 
     @Override
     public double compute(FunctionContext context) {
-        int x = context.blockX();
-        int z = context.blockZ();
-        double n1 = noiseValue(waterIslandsNoise, x, z);
-        double n2 = noiseValue(fireIslandsNoise, x, z);
-        double n3 = noiseValue(natureIslandsNoise, x, z);
-        double n4 = noiseValue(lightningIslandsNoise, x, z);
-        double n5 = noiseValue(lightIslandsNoise, x, z);
-        List<Double> doubles = List.of(n1, n2, n3, n4, n5);
-        double val = -1;
-        int it = 0;
-        for (int i = 0; i < doubles.size(); i++) {
-            if(doubles.get(i) > val) {
-                val = doubles.get(i);
-                if(++it > 1) {
-                    return -1;
-                }
-            }
-        }
-        if(context.blockY() < 30 || context.blockY() > 50) {
-            return -1;
-        }
-        return val;
+        return 1;
     }
 
     public byte biomeCompute(int x, int z) {
-        double n1 = noiseValue(waterIslandsNoise, x, z);
-        double n2 = noiseValue(fireIslandsNoise, x, z);
-        double n3 = noiseValue(natureIslandsNoise, x, z);
-        double n4 = noiseValue(lightningIslandsNoise, x, z);
-        double n5 = noiseValue(lightIslandsNoise, x, z);
-        List<Double> doubles = List.of(n1, n2, n3, n4, n5);
-        double val = -1;
-        byte biomeIndex = -1;
-        int it = 0;
-        for (int i = 0; i < doubles.size(); i++) {
-            if(doubles.get(i) > val) {
-                val = doubles.get(i);
-                biomeIndex = (byte) i;
-                if(++it > 1) {
-                    return -1;
-                }
-            }
+        double a = -noiseValue(islandNoise, x, z);
+        if(a > 0.05) {
+            double b = Mth.clamp(Math.abs(noiseValue(biomeNoise, x, z)), 0, 1);
+            return (byte) (1+(b*4));
         }
-        return biomeIndex;
+        return 0;
     }
 
     public double noiseValue(PerlinSimplexNoise noise, int x, int z) {

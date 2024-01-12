@@ -81,29 +81,31 @@ public class SolarisBiomeSource extends BiomeSource {
         int l = SectionPos.blockToSectionCoord(i);
         int i1 = SectionPos.blockToSectionCoord(k);
         long dist = (long)l * (long)l + (long)i1 * (long)i1;
-        if(dist < 200) {
-            return this.scorchedPlains;
-        }
         byte bIndex = densityFunction.biomeCompute(i, k);
-        if(dist < 2000) {
-            if(bIndex == 0) {
-                return waterIslands;
+        if(bIndex != 0) {
+            if (dist < 200) {
+                return scorchedPlains;
             }
-            if(bIndex == 1) {
-                return fireIslands;
+            if (dist < 2000) {
+                if (bIndex == 1) {
+                    return waterIslands;
+                }
+                if (bIndex == 2) {
+                    return fireIslands;
+                }
+                if (bIndex == 3) {
+                    return natureIslands;
+                }
+                if (bIndex == 4) {
+                    return lightningIslands;
+                }
+                if (bIndex == 5) {
+                    return lightIslands;
+                }
             }
-            if(bIndex == 2) {
-                return natureIslands;
+            if (dist > 2000) {
+                return darkIslands;
             }
-            if(bIndex == 3) {
-                return lightningIslands;
-            }
-            if(bIndex == 4) {
-                return lightIslands;
-            }
-        }
-        if(dist > 2000 && bIndex >= 0) {
-            return darkIslands;
         }
         return voidBiome;
     }
