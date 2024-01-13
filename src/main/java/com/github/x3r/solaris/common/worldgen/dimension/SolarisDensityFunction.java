@@ -19,6 +19,8 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
 
     private final PerlinSimplexNoise islandNoise;
     private final PerlinSimplexNoise biomeNoise;
+    private final PerlinSimplexNoise hillNoise;
+    private final PerlinSimplexNoise undersideNoise;
 
     public static final ResourceKey<DensityFunction> SOLARIS_DENSITY = ResourceKey.create(Registries.DENSITY_FUNCTION,
             new ResourceLocation(Solaris.MOD_ID, "solaris_density"));
@@ -28,32 +30,41 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
     public SolarisDensityFunction(long pSeed) {
         XoroshiroRandomSource source = new XoroshiroRandomSource(pSeed);
         source.consumeCount(15234);
-        this.islandNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1, 0, 0, 1));
-        this.biomeNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-10, -1));
+        this.islandNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1));
+        this.biomeNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-10, 1));
+        this.hillNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-4, 1, 1));
+        this.undersideNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-3, 1, 2));
     }
 
     @Override
     public double compute(FunctionContext context) {
+        byte biome = biomeCompute(context.blockX(), context.blockZ());
+        int heightMin = (int) (biome * 20 - 5 - (8*undersideNoise.getValue(context.blockX(), context.blockZ(), false)));
+        int heightMax = (int) (biome * 20 + 5 + (4*hillNoise.getValue(context.blockX(), context.blockZ(), false)));
+        if(context.blockY() < heightMin || context.blockY() > heightMax || context.blockY() <= 10) {
+            return 0;
+        }
         return 1;
     }
 
     public byte biomeCompute(int x, int z) {
         double a = -noiseValue(islandNoise, x, z);
-        if(a > 0.05) {
-            double b = Mth.clamp(Math.abs(noiseValue(biomeNoise, x, z)), 0, 1);
+        if(a > 0.15) {
+            double b = Mth.clamp(Math.abs(noiseValue(biomeNoise, x, z)*2), 0, 1);
             return (byte) (1+(b*4));
         }
         return 0;
     }
 
     public double noiseValue(PerlinSimplexNoise noise, int x, int z) {
+        int size = 4;
         double v = 0;
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < 1; j++) {
-                v += noise.getValue(x, z, false);
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                v += noise.getValue((double) x+i, (double) z+j, false);
             }
         }
-        return v/4;
+        return v/(size*size);
     }
 
     @Override
