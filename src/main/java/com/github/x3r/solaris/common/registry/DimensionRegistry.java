@@ -3,6 +3,7 @@ package com.github.x3r.solaris.common.registry;
 import com.github.x3r.solaris.Solaris;
 import com.github.x3r.solaris.common.worldgen.biome.SolarisBiomeSource;
 import com.github.x3r.solaris.common.worldgen.dimension.SolarisDensityFunction;
+import com.github.x3r.solaris.common.worldgen.dimension.SolarisSurfaceRules;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.Registry;
@@ -19,7 +20,9 @@ import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
+import net.minecraft.world.level.levelgen.synth.BlendedNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
+import net.minecraft.world.level.levelgen.synth.SimplexNoise;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -58,7 +61,7 @@ public class DimensionRegistry {
     public static void bootstrapStem(BootstapContext<LevelStem> context) {
         HolderGetter<Biome> biomeRegistry = context.lookup(Registries.BIOME);
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
-        HolderGetter<NoiseGeneratorSettings> noiseGenSettings = context.lookup(Registries.NOISE_SETTINGS);
+        HolderGetter<NormalNoise.NoiseParameters> noiseParameters = context.lookup(Registries.NOISE);
 
         NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
                 SolarisBiomeSource.create(biomeRegistry),
@@ -67,7 +70,7 @@ public class DimensionRegistry {
                             new NoiseSettings(0, 128, 1, 1),
                             Blocks.EMERALD_BLOCK.defaultBlockState(),
                             Blocks.AIR.defaultBlockState(),
-                            router(),
+                            router(noiseParameters),
                             ruleSource(),
                             List.of(),
                             0,
@@ -83,19 +86,19 @@ public class DimensionRegistry {
         context.register(SOLARIS_KEY, stem);
     }
 
-    private static NoiseRouter router() {
+    private static NoiseRouter router(HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
         return new NoiseRouter(
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
-                DensityFunctions.constant(0.0),
+                DensityFunctions.constant(1.0),
+                solarisFluidLevelFloodednessFunction(noiseParameters),
+                solarisFluidLevelSpreadFunction(noiseParameters),
+                DensityFunctions.constant(-1.0),
+                solarisTempFunction(noiseParameters),
+                solarisVegetationFunction(noiseParameters),
+                solarisContinentsFunction(),
+                solarisErosionFunction(noiseParameters),
+                solarisDepthFunction(noiseParameters),
+                solarisRidgesFunction(noiseParameters),
+                new SolarisDensityFunction(0L),
                 new SolarisDensityFunction(0L),
                 DensityFunctions.constant(0.0),
                 DensityFunctions.constant(0.0),
@@ -103,16 +106,75 @@ public class DimensionRegistry {
         );
     }
 
+    private static DensityFunction solarisFluidLevelFloodednessFunction(HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
+        return DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_FLOODEDNESS), 1, 1);
+    }
+
+    private static DensityFunction solarisFluidLevelSpreadFunction(HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
+        return DensityFunctions.noise(noiseParameters.getOrThrow(Noises.AQUIFER_FLUID_LEVEL_SPREAD), 1, 1);
+    }
+
+    private static DensityFunction solarisTempFunction(HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
+        return DensityFunctions.noise(noiseParameters.getOrThrow(Noises.TEMPERATURE), 1, 1);
+    }
+
+    private static DensityFunction solarisVegetationFunction(HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
+        return DensityFunctions.noise(noiseParameters.getOrThrow(Noises.VEGETATION), 1, 1);
+    }
+
+    private static DensityFunction solarisContinentsFunction() {
+        return new SolarisDensityFunction(0L);
+    }
+
+    private static DensityFunction solarisErosionFunction(HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
+        return DensityFunctions.noise(noiseParameters.getOrThrow(Noises.EROSION), 1, 1);
+    }
+
+    private static DensityFunction solarisDepthFunction(HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
+        return DensityFunctions.noise(noiseParameters.getOrThrow(Noises.GRAVEL), 1, 1);
+    }
+
+    private static DensityFunction solarisRidgesFunction(HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {
+        return DensityFunctions.noise(noiseParameters.getOrThrow(Noises.GRAVEL), 1, 1);
+    }
+
     private static SurfaceRules.RuleSource ruleSource() {
+//        SurfaceRules.state(BlockRegistry.BRIMSTONE.get().defaultBlockState())
         return SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.SCORCHED_PLAINS), SurfaceRules.state(BlockRegistry.BRIMSTONE.get().defaultBlockState())),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.WATER_ISLANDS), SurfaceRules.state(Blocks.WET_SPONGE.defaultBlockState())),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.FIRE_ISLANDS), SurfaceRules.state(Blocks.MAGMA_BLOCK.defaultBlockState())),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.NATURE_ISLANDS), SurfaceRules.state(Blocks.MOSSY_COBBLESTONE.defaultBlockState())),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.LIGHTNING_ISLANDS), SurfaceRules.state(Blocks.COPPER_BLOCK.defaultBlockState())),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.DARK_ISLANDS), SurfaceRules.state(Blocks.OBSIDIAN.defaultBlockState())),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.LIGHT_ISLANDS), SurfaceRules.state(Blocks.GLOWSTONE.defaultBlockState())),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.SOLARIS_VOID), SurfaceRules.state(Blocks.AIR.defaultBlockState()))
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.SCORCHED_PLAINS),
+                        SurfaceRules.sequence(
+                                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+                                        SurfaceRules.sequence(
+                                                SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(0),
+                                                        SurfaceRules.state(BlockRegistry.SCORCHED_GRASS_BLOCK.get().defaultBlockState())
+                                                ),
+                                                SurfaceRules.state(BlockRegistry.SCORCHED_DIRT.get().defaultBlockState())
+                                        )
+                                ),
+                                SurfaceRules.state(BlockRegistry.BRIMSTONE.get().defaultBlockState())
+                        )
+                ),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.WATER_ISLANDS),
+                        SurfaceRules.state(Blocks.WET_SPONGE.defaultBlockState())
+                ),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.FIRE_ISLANDS),
+                        SurfaceRules.state(Blocks.MAGMA_BLOCK.defaultBlockState())
+                ),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.NATURE_ISLANDS),
+                        SurfaceRules.state(Blocks.MOSSY_COBBLESTONE.defaultBlockState())
+                ),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.LIGHTNING_ISLANDS),
+                        SurfaceRules.state(Blocks.COPPER_BLOCK.defaultBlockState())
+                ),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.DARK_ISLANDS),
+                        SurfaceRules.state(Blocks.OBSIDIAN.defaultBlockState())
+                ),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.LIGHT_ISLANDS),
+                        SurfaceRules.state(Blocks.GLOWSTONE.defaultBlockState())
+                ),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.SOLARIS_VOID),
+                        SurfaceRules.state(Blocks.AIR.defaultBlockState())
+                )
         );
     }
 }

@@ -4,6 +4,7 @@ import com.github.x3r.solaris.Solaris;
 import com.github.x3r.solaris.client.DimensionEffects;
 import com.github.x3r.solaris.common.network.SolarisPacketHandler;
 import com.github.x3r.solaris.common.worldgen.dimension.SolarisDensityFunction;
+import com.github.x3r.solaris.common.worldgen.dimension.SolarisSurfaceRules;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;

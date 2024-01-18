@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "solaris:block/pearlstone_bricks",
-    "top": "solaris:block/pearlstone_bricks",
-    "side": "solaris:block/pearlstone_bricks"
-  }
-}

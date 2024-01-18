@@ -5,6 +5,7 @@ import com.github.x3r.solaris.client.KeyEvents;
 import com.github.x3r.solaris.common.CommonSetup;
 import com.github.x3r.solaris.common.registry.*;
 import com.github.x3r.solaris.common.worldgen.dimension.SolarisDensityFunction;
+import com.github.x3r.solaris.common.worldgen.dimension.SolarisSurfaceRules;
 import com.mojang.logging.LogUtils;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -49,17 +50,19 @@ public class Solaris {
         MobEffectRegistry.POTIONS.register(modEventBus);
         ParticleRegistry.PARTICLE_TYPES.register(modEventBus);
         SoundRegistry.SOUND_EVENTS.register(modEventBus);
-        //        Registry.register(pRegistry, new ResourceLocation(Solaris.MOD_ID, "solaris_density"), SolarisDensityFunction.CODEC.codec());
+        SurfaceRuleRegistry.SURFACE_RULES.register(modEventBus);
 
         forgeBus.register(this);
     }
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
+
     }
 
     @SubscribeEvent
     public void onInterModEnqueueEvent(final InterModEnqueueEvent event) {
+
     }
 
 }

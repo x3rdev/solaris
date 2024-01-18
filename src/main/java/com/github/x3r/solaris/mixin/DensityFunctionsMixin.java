@@ -4,8 +4,6 @@ import com.github.x3r.solaris.Solaris;
 import com.github.x3r.solaris.common.worldgen.dimension.SolarisDensityFunction;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.Registry;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.DensityFunctions;

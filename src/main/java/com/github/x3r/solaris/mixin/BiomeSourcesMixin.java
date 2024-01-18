@@ -15,7 +15,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(BiomeSources.class)
 public abstract class BiomeSourcesMixin {
-
     @Inject(method = "bootstrap(Lnet/minecraft/core/Registry;)Lcom/mojang/serialization/Codec;", at = @At("HEAD"))
     private static void bootstrap(Registry<Codec<? extends BiomeSource>> pRegistry, CallbackInfoReturnable<Codec<? extends BiomeSource>> cir) {
         Registry.register(pRegistry, new ResourceLocation(Solaris.MOD_ID, "solaris"), SolarisBiomeSource.CODEC);

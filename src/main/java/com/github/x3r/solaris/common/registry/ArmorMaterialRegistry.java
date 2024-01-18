@@ -16,8 +16,7 @@ public enum ArmorMaterialRegistry implements ArmorMaterial {
 
     SOLAR("solar_armor", 4, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(Items.STRING)),
     CENTIPEDE_SCALE("centipede_scale_armor", 4, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(Items.STRING)),
-    MONK("monk_armor", 4, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(Items.STRING)),
-    WHITESTONE("whitestone_armor", 4, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(Items.STRING));
+    MONK("monk_armor", 4, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(Items.STRING));
 
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
@@ -28,7 +27,7 @@ public enum ArmorMaterialRegistry implements ArmorMaterial {
     private final SoundEvent soundEvent;
     private final float toughness;
     private final float knockbackResistance;
-    private final LazyLoadedValue<Ingredient> repairMaterial;
+    private final Ingredient repairMaterial;
 
     private ArmorMaterialRegistry(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountsIn, int enchantabilityIn,
                                     SoundEvent equipSoundIn, float toughness, float knockbackResistance, Supplier<Ingredient> repairMaterialSupplier) {
@@ -39,7 +38,7 @@ public enum ArmorMaterialRegistry implements ArmorMaterial {
         this.soundEvent = equipSoundIn;
         this.toughness = toughness;
         this.knockbackResistance = knockbackResistance;
-        this.repairMaterial = new LazyLoadedValue<>(repairMaterialSupplier);
+        this.repairMaterial = repairMaterialSupplier.get();
     }
 
     @Override
@@ -79,6 +78,6 @@ public enum ArmorMaterialRegistry implements ArmorMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return this.repairMaterial.get();
+        return this.repairMaterial;
     }
 }

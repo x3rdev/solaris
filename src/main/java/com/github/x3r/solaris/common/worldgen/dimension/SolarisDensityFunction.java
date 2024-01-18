@@ -39,8 +39,10 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
     @Override
     public double compute(FunctionContext context) {
         byte biome = biomeCompute(context.blockX(), context.blockZ());
-        int heightMin = (int) (biome * 20 - 5 - (8*undersideNoise.getValue(context.blockX(), context.blockZ(), false)));
-        int heightMax = (int) (biome * 20 + 5 + (4*hillNoise.getValue(context.blockX(), context.blockZ(), false)));
+//        int heightMin = (int) (biome * 20 - 5 - (8*undersideNoise.getValue(context.blockX(), context.blockZ(), false)));
+//        int heightMax = (int) (biome * 20 + 5 + (4*hillNoise.getValue(context.blockX(), context.blockZ(), false)));
+        int heightMin = (int) (50 - 5 - (8*undersideNoise.getValue(context.blockX(), context.blockZ(), false)));
+        int heightMax = (int) (50 + 5 + (4*hillNoise.getValue(context.blockX(), context.blockZ(), false)));
         if(context.blockY() < heightMin || context.blockY() > heightMax || context.blockY() <= 10) {
             return 0;
         }
