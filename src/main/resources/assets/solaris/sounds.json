@@ -1,8 +1,0 @@
-{
-  "entity.hit.chainsaw":
-  {
-    "category":"entity",
-    "subtitle":"entity.hit.chainsaw",
-    "sounds":[{"name":"solaris:entity/chainsaw/swing1", "stream":true}, {"name":"solaris:entity/chainsaw/swing2", "stream":true}]
-  }
-}

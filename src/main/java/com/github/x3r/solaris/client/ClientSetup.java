@@ -1,6 +1,8 @@
 package com.github.x3r.solaris.client;
 
 import com.github.x3r.solaris.client.particle.*;
+import com.github.x3r.solaris.client.renderer.ScorchedBugRenderer;
+import com.github.x3r.solaris.common.registry.EntityRegistry;
 import com.github.x3r.solaris.common.registry.ParticleRegistry;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -22,7 +24,7 @@ public class ClientSetup {
     }
 
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
-
+        event.registerEntityRenderer(EntityRegistry.SCORCHED_BUG.get(), ScorchedBugRenderer::new);
     }
 
     public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {

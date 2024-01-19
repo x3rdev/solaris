@@ -40,6 +40,7 @@ public class Solaris {
         forgeBus.addListener(KeyEvents::keyPressed);
 
         modEventBus.addListener(CommonSetup::setup);
+        modEventBus.addListener(CommonSetup::attributeSetup);
 
         BlockRegistry.BLOCKS.register(modEventBus);
         BlockItemRegistry.BLOCK_ITEMS.register(modEventBus);

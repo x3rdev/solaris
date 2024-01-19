@@ -22,5 +22,6 @@ public final class DataGenerators {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeServer(), new SolarisWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeClient(), new SolarisSoundGenProvider(packOutput, existingFileHelper));
     }
 }

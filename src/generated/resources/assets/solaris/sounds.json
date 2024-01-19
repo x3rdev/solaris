@@ -1,0 +1,32 @@
+{
+  "scorched_bug_death": {
+    "sounds": [
+      "solaris:entity/scorched_bug_death"
+    ],
+    "subtitle": "solaris.subtitle.scorched_bug_death"
+  },
+  "scorched_bug_enter_ball": {
+    "sounds": [
+      "solaris:entity/scorched_bug_enter_ball"
+    ],
+    "subtitle": "solaris.subtitle.scorched_bug_enter_ball"
+  },
+  "scorched_bug_exit_ball": {
+    "sounds": [
+      "solaris:entity/scorched_bug_exit_ball"
+    ],
+    "subtitle": "solaris.subtitle.scorched_bug_exit_ball"
+  },
+  "scorched_bug_hurt": {
+    "sounds": [
+      "solaris:entity/scorched_bug_hurt"
+    ],
+    "subtitle": "solaris.subtitle.scorched_bug_hurt"
+  },
+  "scorched_bug_step": {
+    "sounds": [
+      "solaris:entity/scorched_bug_step"
+    ],
+    "subtitle": "solaris.subtitle.scorched_bug_step"
+  }
+}
