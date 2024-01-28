@@ -3,6 +3,7 @@ package com.github.x3r.solaris.common.registry;
 import com.github.x3r.solaris.Solaris;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -22,4 +23,6 @@ public class BlockRegistry {
     public static final RegistryObject<Block> SCORCHED_IRON_ORE = BLOCKS.register("scorched_iron_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F)));
 
+    public static final RegistryObject<Block> SCORCHED_LOG = BLOCKS.register("scorched_log",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
 }

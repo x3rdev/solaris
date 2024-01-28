@@ -23,5 +23,6 @@ public final class DataGenerators {
 
         generator.addProvider(event.includeServer(), new SolarisWorldGenProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeClient(), new SolarisSoundGenProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new SolarisItemModelGenProvider(packOutput, existingFileHelper));
     }
 }

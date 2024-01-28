@@ -19,4 +19,6 @@ public class BlockItemRegistry {
             () -> new BlockItem(BlockRegistry.SCORCHED_GRASS_BLOCK.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> SCORCHED_IRON_ORE = BLOCK_ITEMS.register("scorched_iron_ore",
             () -> new BlockItem(BlockRegistry.SCORCHED_IRON_ORE.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> SCORCHED_LOG = BLOCK_ITEMS.register("scorched_log",
+            () -> new BlockItem(BlockRegistry.SCORCHED_LOG.get(), new Item.Properties()));
 }

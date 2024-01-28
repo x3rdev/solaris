@@ -1,6 +1,8 @@
-// 1.20.1	2024-01-14T21:58:21.3230263	Registries
+// 1.20.1	2024-01-27T16:24:01.3771935	Registries
 ac233a7defdaec366d116dd164564e85b8fffea9 data/solaris/dimension/solaris.json
 982b9bd735e1307ffafaa08ae1a7ca8b2fd034cc data/solaris/dimension_type/solaris_type.json
+40ff1ba1bf0e3926f0d2c23252632e313e51d083 data/solaris/forge/biome_modifier/add_scorched_iron_ore.json
+f7899650411625c6ace846bb31cdef4f2818e898 data/solaris/forge/biome_modifier/add_scorched_tree.json
 a61b8375bac5097118913c3da5b1b0357d6c5875 data/solaris/worldgen/biome/dark_islands.json
 a61b8375bac5097118913c3da5b1b0357d6c5875 data/solaris/worldgen/biome/fire_islands.json
 13929c23e448b3aa35a78e8e9e11de9cbb60cf2e data/solaris/worldgen/biome/ice_islands.json
@@ -10,3 +12,7 @@ a61b8375bac5097118913c3da5b1b0357d6c5875 data/solaris/worldgen/biome/nature_isla
 f5b8738193c3b14d13731f6a9c1389b908995c11 data/solaris/worldgen/biome/scorched_plains.json
 e6b0db43bdcb533e6284e1c7cda0304a6e97c4ce data/solaris/worldgen/biome/solaris_void.json
 13929c23e448b3aa35a78e8e9e11de9cbb60cf2e data/solaris/worldgen/biome/water_islands.json
+dd1d1ffcace4a2197fa3c84d12ccd9746ac176ff data/solaris/worldgen/configured_feature/scorched_iron_ore.json
+5319bcdf1f3f3876a8237b3233d11432bdb8f202 data/solaris/worldgen/configured_feature/scorched_tree.json
+6b5cffe49f78a279eed211e782b017d2070e30ce data/solaris/worldgen/placed_feature/scorched_iron_ore_placed.json
+1147283344f2011d365c5ce91d1f5301a43b178b data/solaris/worldgen/placed_feature/scorched_tree_placed.json

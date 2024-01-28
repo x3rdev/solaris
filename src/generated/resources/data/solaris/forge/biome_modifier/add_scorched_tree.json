@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "solaris:scorched_plains",
+  "features": "solaris:scorched_tree_placed",
+  "step": "vegetal_decoration"
+}

@@ -6,6 +6,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -13,6 +14,9 @@ import net.minecraftforge.registries.RegistryObject;
 public class ItemRegistry {
 
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Solaris.MOD_ID);
+
+    public static final RegistryObject<ForgeSpawnEggItem> SCORCHED_BUG_SPAWN_EGG = ITEMS.register("scorched_bug_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityRegistry.SCORCHED_BUG, 0x342d2d, 0xdf3e23, new Item.Properties()));
 
     public static class ModItemTab {
 

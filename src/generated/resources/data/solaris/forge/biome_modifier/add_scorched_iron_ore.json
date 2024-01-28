@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "solaris:scorched_plains",
+  "features": "solaris:scorched_iron_ore_placed",
+  "step": "underground_ores"
+}

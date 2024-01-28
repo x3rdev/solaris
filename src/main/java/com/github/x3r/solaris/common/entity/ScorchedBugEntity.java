@@ -2,9 +2,11 @@ package com.github.x3r.solaris.common.entity;
 
 import com.github.x3r.solaris.common.registry.SoundRegistry;
 import net.minecraft.core.BlockPos;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.ai.Brain;
@@ -83,7 +85,12 @@ public class ScorchedBugEntity extends PathfinderMob implements SmartBrainOwner<
 
     @Override
     public boolean hurt(DamageSource pSource, float pAmount) {
-        return super.hurt(pSource, inBall ? pAmount * 0.5F : pAmount);
+        boolean b = super.hurt(pSource, inBall ? pAmount * 0.5F : pAmount);
+        if(isDeadOrDying() && inBall) {
+            triggerAnim("controller", "exit_ball");
+            inBall = false;
+        }
+        return b;
     }
 
     @Override
