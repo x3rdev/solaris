@@ -1,4 +1,4 @@
-// 1.20.1	2024-01-27T21:47:11.1578832	Registries
+// 1.20.1	2024-01-29T13:29:55.0341273	Registries
 ac233a7defdaec366d116dd164564e85b8fffea9 data/solaris/dimension/solaris.json
 982b9bd735e1307ffafaa08ae1a7ca8b2fd034cc data/solaris/dimension_type/solaris_type.json
 ad7d4eec71beabc1b9cdc6cba5a2d58c88315809 data/solaris/forge/biome_modifier/add_scorched_grass.json
@@ -10,7 +10,7 @@ a61b8375bac5097118913c3da5b1b0357d6c5875 data/solaris/worldgen/biome/fire_island
 a61b8375bac5097118913c3da5b1b0357d6c5875 data/solaris/worldgen/biome/lightning_islands.json
 a61b8375bac5097118913c3da5b1b0357d6c5875 data/solaris/worldgen/biome/light_islands.json
 a61b8375bac5097118913c3da5b1b0357d6c5875 data/solaris/worldgen/biome/nature_islands.json
-a8dd22d1db099b3ed1a5ec1d80045bbd5e06205e data/solaris/worldgen/biome/scorched_plains.json
+6fe391a96bc5e99c583e3f4b64d2bb72c37256c8 data/solaris/worldgen/biome/scorched_plains.json
 e6b0db43bdcb533e6284e1c7cda0304a6e97c4ce data/solaris/worldgen/biome/solaris_void.json
 13929c23e448b3aa35a78e8e9e11de9cbb60cf2e data/solaris/worldgen/biome/water_islands.json
 10696615eebd366ff41846829263da81761dab41 data/solaris/worldgen/configured_feature/scorched_grass.json

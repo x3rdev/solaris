@@ -11,6 +11,12 @@
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000
     },
+    "particle": {
+      "options": {
+        "type": "minecraft:ash"
+      },
+      "probability": 0.05
+    },
     "sky_color": 15587356,
     "water_color": 13866561,
     "water_fog_color": 14403179
@@ -22,8 +28,8 @@
     "ambient": [
       {
         "type": "solaris:scorched_bug",
-        "maxCount": 10,
-        "minCount": 10,
+        "maxCount": 5,
+        "minCount": 2,
         "weight": 1
       }
     ],

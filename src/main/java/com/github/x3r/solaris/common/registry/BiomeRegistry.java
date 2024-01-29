@@ -1,6 +1,8 @@
 package com.github.x3r.solaris.common.registry;
 
 import com.github.x3r.solaris.Solaris;
+import net.minecraft.client.particle.Particle;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -63,7 +65,8 @@ public class BiomeRegistry {
                         .grassColorOverride(14063159)
                         .foliageColorOverride(14063159)
                         .fogColor(13854489)
-                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build())
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS)
+                        .ambientParticle(new AmbientParticleSettings(ParticleTypes.ASH, 0.05F)).build())
                 .build();
     }
 
