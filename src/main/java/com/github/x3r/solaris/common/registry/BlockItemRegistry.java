@@ -21,4 +21,6 @@ public class BlockItemRegistry {
             () -> new BlockItem(BlockRegistry.SCORCHED_IRON_ORE.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> SCORCHED_LOG = BLOCK_ITEMS.register("scorched_log",
             () -> new BlockItem(BlockRegistry.SCORCHED_LOG.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> SCORCHED_GRASS = BLOCK_ITEMS.register("scorched_grass",
+            () -> new BlockItem(BlockRegistry.SCORCHED_GRASS.get(), new Item.Properties()));
 }

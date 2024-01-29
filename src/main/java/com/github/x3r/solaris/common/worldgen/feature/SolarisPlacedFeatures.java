@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
+import net.minecraft.world.level.levelgen.placement.NoiseThresholdCountPlacement;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 
@@ -24,15 +25,17 @@ public class SolarisPlacedFeatures {
 
     public static final ResourceKey<PlacedFeature> SCORCHED_IRON_ORE_PLACED = registerKey("scorched_iron_ore_placed");
     public static final ResourceKey<PlacedFeature> SCORCHED_TREE_PLACED = registerKey("scorched_tree_placed");
+    public static final ResourceKey<PlacedFeature> SCORCHED_GRASS_PLACED = registerKey("scorched_grass_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, SCORCHED_IRON_ORE_PLACED, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SCORCHED_IRON_ORE),
-                OrePlacements.commonOrePlacement(12, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top())));
-
+                OrePlacements.commonOrePlacement(24, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(32))));
         register(context, SCORCHED_TREE_PLACED, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SCORCHED_TREE),
                 SolarisFeaturePlacements.treePlacement(PlacementUtils.countExtra(3, 0.1F, 2)));
+        register(context, SCORCHED_GRASS_PLACED, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SCORCHED_GRASS),
+                SolarisFeaturePlacements.grassPlacement(NoiseThresholdCountPlacement.of(-0.8D, 5, 10)));
 
     }
     private static ResourceKey<PlacedFeature> registerKey(String name) {

@@ -14,10 +14,10 @@ public class EntityRegistry {
 
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Solaris.MOD_ID);
 
-    public static final RegistryObject<EntityType<ScorchedBugEntity>> SCORCHED_BUG = registerMob("scorched_bug", ScorchedBugEntity::new, 0.75F, 0.5F);
+    public static final RegistryObject<EntityType<ScorchedBugEntity>> SCORCHED_BUG = registerMob("scorched_bug", ScorchedBugEntity::new, MobCategory.AMBIENT, 0.75F, 0.5F);
 
-    public static <T extends Entity> RegistryObject<EntityType<T>> registerMob(String name, EntityType.EntityFactory<T> entity, float width, float height) {
+    public static <T extends Entity> RegistryObject<EntityType<T>> registerMob(String name, EntityType.EntityFactory<T> entity, MobCategory mobCategory, float width, float height) {
         return ENTITIES.register(name,
-                () -> EntityType.Builder.of(entity, MobCategory.CREATURE).sized(width, height).build(name));
+                () -> EntityType.Builder.of(entity, mobCategory).sized(width, height).build(name));
     }
 }

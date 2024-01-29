@@ -41,6 +41,7 @@ public class Solaris {
 
         modEventBus.addListener(CommonSetup::setup);
         modEventBus.addListener(CommonSetup::attributeSetup);
+        modEventBus.addListener(CommonSetup::spawnPlacementSetup);
 
         BlockRegistry.BLOCKS.register(modEventBus);
         BlockItemRegistry.BLOCK_ITEMS.register(modEventBus);

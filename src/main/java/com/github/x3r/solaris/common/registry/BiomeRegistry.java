@@ -5,6 +5,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 
 public class BiomeRegistry {
@@ -41,7 +42,10 @@ public class BiomeRegistry {
     }
 
     private static Biome scorchedPlains(BootstapContext<Biome> context) {
-        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        MobSpawnSettings.Builder spawnBuilder =
+                new MobSpawnSettings.Builder()
+                        .addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(EntityRegistry.SCORCHED_BUG.get(), 1, 2, 5));
 
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
