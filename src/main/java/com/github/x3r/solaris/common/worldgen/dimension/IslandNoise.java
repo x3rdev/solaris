@@ -1,6 +1,7 @@
 package com.github.x3r.solaris.common.worldgen.dimension;
 
 import it.unimi.dsi.fastutil.Pair;
+import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 import net.minecraft.world.phys.Vec2;
@@ -44,8 +45,11 @@ public class IslandNoise {
                 closestCenter = cellCenter;
             }
         }
-
-        return 1-(((double)(closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize*0.75));
+        double theta = Math.atan2(closestCenter.y-y, closestCenter.x-x);
+        double phase = 0;
+        double scale = Mth.clamp((Math.cos(theta*5)+1)/2, 0.2, 0.5);
+        double dist = (double)((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize*scale);
+        return 1-dist;
 //        return x==centerX&&z==centerZ?0:1;
     }
 

@@ -11,11 +11,11 @@ import java.io.IOException;
 
 public class IslandNoiseTest {
 
-    static IslandNoise noise = new IslandNoise(RandomSource.create(), 16);
+    static IslandNoise noise = new IslandNoise(RandomSource.create(0), 16);
 
     @org.junit.Test
     public void createTexture() {
-        int size = 512;
+        int size = 256;
         BufferedImage image = new BufferedImage(size, size, BufferedImage.TYPE_BYTE_GRAY);
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
