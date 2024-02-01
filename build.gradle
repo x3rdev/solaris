@@ -74,6 +74,7 @@ repositories {
 
 dependencies {
 
+    testImplementation 'junit:junit:4.13.1'
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     implementation fg.deobf("curse.maven:epic-fight-mod-405076:4945239")
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-${minecraft_version}:${geckolib_version}")

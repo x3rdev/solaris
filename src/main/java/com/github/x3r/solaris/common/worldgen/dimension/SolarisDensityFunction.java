@@ -10,7 +10,6 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.levelgen.LegacyRandomSource;
 import net.minecraft.world.level.levelgen.XoroshiroRandomSource;
-import net.minecraft.world.level.levelgen.synth.PerlinNoise;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 
 import java.util.List;
@@ -19,6 +18,7 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
 
     private final PerlinSimplexNoise islandNoise;
     private final PerlinSimplexNoise biomeNoise;
+    private final PerlinSimplexNoise subBiomeNoise;
     private final PerlinSimplexNoise hillNoise;
     private final PerlinSimplexNoise undersideNoise;
 
@@ -30,15 +30,16 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
     public SolarisDensityFunction(long pSeed) {
         XoroshiroRandomSource source = new XoroshiroRandomSource(pSeed);
         source.consumeCount(15234);
-        this.islandNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1));
+        this.islandNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-7, 1, 2));
         this.biomeNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-10, 1));
+        this.subBiomeNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-8, 1));
         this.hillNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-4, 1, 1));
         this.undersideNoise = new PerlinSimplexNoise(new LegacyRandomSource(source.nextInt()), List.of(-3, 1, 2));
     }
 
     @Override
     public double compute(FunctionContext context) {
-        int heightMin = (int) (50 - 5 - (8*undersideNoise.getValue(context.blockX(), context.blockZ(), false)));
+        int heightMin = (int) (50 - 10 - (8*undersideNoise.getValue(context.blockX(), context.blockZ(), false)));
         int heightMax = (int) (50 + 5 + (4*hillNoise.getValue(context.blockX(), context.blockZ(), false)));
         if(context.blockY() < heightMin || context.blockY() > heightMax || context.blockY() <= 10) {
             return 0;
@@ -46,21 +47,24 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
         return 1;
     }
 
-    public byte biomeCompute(int x, int z) {
+    public double biomeCompute(int x, int z) {
         double a = -noiseValue(islandNoise, x, z);
         if(a > 0.15) {
-            double b = Mth.clamp(Math.abs(noiseValue(biomeNoise, x, z)*2), 0, 1);
-            return (byte) (1+(b*4));
+            return Mth.clamp(Math.abs(noiseValue(biomeNoise, x, z)*2), 0, 1);
         }
         return 0;
     }
 
+    public double subBiomeCompute(int x, int z) {
+        return Mth.clamp(Math.abs(noiseValue(subBiomeNoise, x, z)), 0, 1);
+    }
+
     public double noiseValue(PerlinSimplexNoise noise, int x, int z) {
-        int size = 4;
+        int size = 2;
         double v = 0;
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                v += noise.getValue((double) x+i, (double) z+j, false);
+                v += noise.getValue((double) x+i, (double) z+j, true);
             }
         }
         return v/(size*size);

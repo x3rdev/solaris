@@ -74,7 +74,7 @@ public class DimensionRegistry {
                             ruleSource(),
                             List.of(),
                             0,
-                            true,
+                            false,
                             false,
                             false,
                             false
@@ -154,14 +154,51 @@ public class DimensionRegistry {
                                 SurfaceRules.state(BlockRegistry.BRIMSTONE.get().defaultBlockState())
                         )
                 ),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.WATER_ISLANDS),
-                        SurfaceRules.state(Blocks.WET_SPONGE.defaultBlockState())
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.SWAMP_ISLANDS),
+                        SurfaceRules.sequence(
+                                SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(4),
+                                        SurfaceRules.sequence(
+                                                SurfaceRules.state(Blocks.MUD.defaultBlockState())
+                                        )
+                                ),
+                                SurfaceRules.state(Blocks.PACKED_MUD.defaultBlockState())
+                        )
+                ),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.ICE_ISLANDS),
+                        SurfaceRules.sequence(
+                                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+                                        SurfaceRules.sequence(
+                                                SurfaceRules.state(Blocks.SNOW_BLOCK.defaultBlockState())
+                                        )
+                                ),
+                                SurfaceRules.state(Blocks.ICE.defaultBlockState())
+                        )
+                ),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.BEACH_ISLANDS),
+                        SurfaceRules.sequence(
+                                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+                                        SurfaceRules.sequence(
+                                                SurfaceRules.state(Blocks.SAND.defaultBlockState())
+                                        )
+                                ),
+                                SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())
+                        )
                 ),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.FIRE_ISLANDS),
                         SurfaceRules.state(Blocks.MAGMA_BLOCK.defaultBlockState())
                 ),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.NATURE_ISLANDS),
-                        SurfaceRules.state(Blocks.MOSSY_COBBLESTONE.defaultBlockState())
+                        SurfaceRules.sequence(
+                                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+                                        SurfaceRules.sequence(
+                                                SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(0),
+                                                        SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState())
+                                                ),
+                                                SurfaceRules.state(Blocks.DIRT.defaultBlockState())
+                                        )
+                                ),
+                                SurfaceRules.state(Blocks.STONE.defaultBlockState())
+                        )
                 ),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.LIGHTNING_ISLANDS),
                         SurfaceRules.state(Blocks.COPPER_BLOCK.defaultBlockState())

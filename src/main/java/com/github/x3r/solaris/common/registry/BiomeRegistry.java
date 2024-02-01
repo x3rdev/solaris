@@ -14,10 +14,12 @@ public class BiomeRegistry {
 
     public static final ResourceKey<Biome> SCORCHED_PLAINS = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(Solaris.MOD_ID, "scorched_plains"));
-    public static final ResourceKey<Biome> WATER_ISLANDS = ResourceKey.create(Registries.BIOME,
-            new ResourceLocation(Solaris.MOD_ID, "water_islands"));
+    public static final ResourceKey<Biome> SWAMP_ISLANDS = ResourceKey.create(Registries.BIOME,
+            new ResourceLocation(Solaris.MOD_ID, "swamp_islands"));
     public static final ResourceKey<Biome> ICE_ISLANDS = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(Solaris.MOD_ID, "ice_islands"));
+    public static final ResourceKey<Biome> BEACH_ISLANDS = ResourceKey.create(Registries.BIOME,
+            new ResourceLocation(Solaris.MOD_ID, "beach_islands"));
     public static final ResourceKey<Biome> FIRE_ISLANDS = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(Solaris.MOD_ID, "fire_islands"));
     public static final ResourceKey<Biome> NATURE_ISLANDS = ResourceKey.create(Registries.BIOME,
@@ -33,21 +35,26 @@ public class BiomeRegistry {
 
     public static void bootstrap(BootstapContext<Biome> context) {
         context.register(SCORCHED_PLAINS, scorchedPlains(context));
-        context.register(WATER_ISLANDS, waterIslands(context));
+
+        context.register(SWAMP_ISLANDS, waterIslands(context));
         context.register(ICE_ISLANDS, waterIslands(context));
-        context.register(FIRE_ISLANDS, testBiome(context));
-        context.register(NATURE_ISLANDS, testBiome(context));
+        context.register(BEACH_ISLANDS, waterIslands(context));
+
+        context.register(FIRE_ISLANDS, fireIslands(context));
+
+        context.register(NATURE_ISLANDS, natureIslands(context));
+
         context.register(LIGHTNING_ISLANDS, testBiome(context));
         context.register(DARK_ISLANDS, testBiome(context));
         context.register(LIGHT_ISLANDS, testBiome(context));
+
         context.register(SOLARIS_VOID, solarisVoid(context));
     }
 
     private static Biome scorchedPlains(BootstapContext<Biome> context) {
-
         MobSpawnSettings.Builder spawnBuilder =
                 new MobSpawnSettings.Builder()
-                        .addSpawn(MobCategory.AMBIENT, new MobSpawnSettings.SpawnerData(EntityRegistry.SCORCHED_BUG.get(), 1, 2, 5));
+                        .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityRegistry.SCORCHED_BUG.get(), 1, 2, 5));
 
         BiomeGenerationSettings.Builder biomeBuilder =
                 new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
@@ -89,6 +96,52 @@ public class BiomeRegistry {
                         .grassColorOverride(0x507859)
                         .foliageColorOverride(0x507859)
                         .fogColor(0x99b7c4)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build())
+                .build();
+    }
+
+    private static Biome fireIslands(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(false)
+                .downfall(0.0f)
+                .temperature(2.0f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects(new BiomeSpecialEffects.Builder()
+                        .waterColor(0xf58a42)
+                        .waterFogColor(0xf58a42)
+                        .skyColor(0xf57e42)
+                        .grassColorOverride(0xde5331)
+                        .foliageColorOverride(0xde5331)
+                        .fogColor(0xde8831)
+                        .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build())
+                .build();
+    }
+
+    private static Biome natureIslands(BootstapContext<Biome> context) {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+
+        BiomeGenerationSettings.Builder biomeBuilder =
+                new BiomeGenerationSettings.Builder(context.lookup(Registries.PLACED_FEATURE), context.lookup(Registries.CONFIGURED_CARVER));
+
+        return new Biome.BiomeBuilder()
+                .hasPrecipitation(false)
+                .downfall(0.0f)
+                .temperature(2.0f)
+                .generationSettings(biomeBuilder.build())
+                .mobSpawnSettings(spawnBuilder.build())
+                .specialEffects(new BiomeSpecialEffects.Builder()
+                        .waterColor(0x3480ba)
+                        .waterFogColor(0x3480ba)
+                        .skyColor(0x7fbceb)
+                        .grassColorOverride(0x54cf3a)
+                        .foliageColorOverride(0x54cf3a)
+                        .fogColor(0x82d96f)
                         .ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).build())
                 .build();
     }
