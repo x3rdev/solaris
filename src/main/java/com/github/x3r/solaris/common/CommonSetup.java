@@ -18,7 +18,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 public class CommonSetup {
 
     public static void setup(final FMLCommonSetupEvent event) {
-        DimensionSpecialEffects.EFFECTS.put(new ResourceLocation(Solaris.MOD_ID, "solaris"), new DimensionEffects.SolarisEffects());
         SolarisPacketHandler.registerPackets();
     }
 
