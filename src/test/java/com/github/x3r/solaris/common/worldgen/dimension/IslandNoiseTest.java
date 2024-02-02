@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class IslandNoiseTest {
 
-    static IslandNoise noise = new IslandNoise(RandomSource.create(0), 16);
+    static IslandNoise noise = new IslandNoise(RandomSource.create(0), 32);
 
     @org.junit.Test
     public void createTexture() {

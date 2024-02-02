@@ -46,8 +46,8 @@ public class IslandNoise {
             }
         }
         double theta = Math.atan2(closestCenter.y-y, closestCenter.x-x);
-        double phase = 0;
-        double scale = Mth.clamp((Math.cos(theta*5)+1)/2, 0.2, 0.5);
+        double phase = 4;
+        double scale = Mth.clamp((Math.cos(theta*4+phase)), 0.1, 0.2);
         double dist = (double)((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize*scale);
         return 1-dist;
 //        return x==centerX&&z==centerZ?0:1;
