@@ -25,28 +25,28 @@ public class ClientSetup {
     public static void setup(final FMLClientSetupEvent event) {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-        modEventBus.addListener(ClientSetup::addLayers);
-        modEventBus.addListener(ClientSetup::registerLayerDefinitions);
-        modEventBus.addListener(ClientSetup::registerRenderers);
-        modEventBus.addListener(ClientSetup::registerParticleFactories);
         forgeBus.addListener(KeyEvents::keyPressed);
 
         DimensionSpecialEffects.EFFECTS.put(new ResourceLocation(Solaris.MOD_ID, "solaris"), new DimensionEffects.SolarisEffects());
 
     }
 
+    @SubscribeEvent
     public static void addLayers(EntityRenderersEvent.AddLayers event) {
 
     }
 
+    @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 
     }
 
+    @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityRegistry.SCORCHED_BUG.get(), ScorchedBugRenderer::new);
     }
 
+    @SubscribeEvent
     public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.ANIMATED_SPARKS.get(), AnimatedSparksParticle.Provider::new);
         Minecraft.getInstance().particleEngine.register(ParticleRegistry.CHERRY_BLOSSOM.get(), CherryBlossomParticle.Provider::new);
