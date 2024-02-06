@@ -42,10 +42,10 @@ public class IslandNoise {
             }
         }
         double theta = Math.atan2(closestCenter.y-y, closestCenter.x-x);
-        double freq = (noise.getValue(closestCenter.x, closestCenter.y, true)*1.7+2.6)/
-                (noise.getValue(closestCenter.y, closestCenter.x, false)+1.4);
-        double phase = noise.getValue(x, y, false)*1.1;
-        double scale = islandSineFunction(theta, freq, phase);
+        double freq = (noise.getValue(closestCenter.x, closestCenter.y, true)*2.7+2.6)/
+                (noise.getValue(closestCenter.x+theta, closestCenter.y+theta, false)+1.4)   ;
+        double phase = noise.getValue(x, y, false)*1.3;
+        double scale = islandRandomSize(cellX, cellY) * islandSineFunction(theta, freq, phase);
         double dist = Mth.clamp(((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize*scale), 0, 1);
         return 1-dist;
     }
@@ -57,9 +57,14 @@ public class IslandNoise {
         return new Vec2(centerX, centerZ);
     }
 
+    private double islandRandomSize(int cellX, int cellY) {
+        double n = Mth.clamp((noise.getValue(cellX, cellY, false)+1)/2, 0, 1);
+        return n * 3.5;
+    }
+
     private double islandSineFunction(double theta, double freq, double phase) {
         double d = theta*freq+phase;
-        double r = (Math.sin(d)+Math.cos(3*d+2))/1.22;
-        return ((r+1)/2)*0.09+0.075;
+        double r = (Math.sin(d)+Math.cos(3*d+2))/1.991;
+        return ((r+1)/2)*0.15+0.055;
     }
 }
