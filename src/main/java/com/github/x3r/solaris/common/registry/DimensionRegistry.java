@@ -143,7 +143,7 @@ public class DimensionRegistry {
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.SCORCHED_PLAINS),
                         SurfaceRules.sequence(
-                                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+                                SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(5),
                                         SurfaceRules.sequence(
                                                 SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(0),
                                                         SurfaceRules.state(BlockRegistry.SCORCHED_GRASS_BLOCK.get().defaultBlockState())

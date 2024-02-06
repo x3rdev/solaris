@@ -99,7 +99,8 @@
                 {
                   "type": "minecraft:condition",
                   "if_true": {
-                    "type": "minecraft:above_preliminary_surface"
+                    "type": "solaris:",
+                    "depth": 5
                   },
                   "then_run": {
                     "type": "minecraft:sequence",
@@ -149,7 +150,8 @@
                 {
                   "type": "minecraft:condition",
                   "if_true": {
-                    "type": "minecraft:above_preliminary_surface"
+                    "type": "solaris:",
+                    "depth": 4
                   },
                   "then_run": {
                     "type": "minecraft:sequence",

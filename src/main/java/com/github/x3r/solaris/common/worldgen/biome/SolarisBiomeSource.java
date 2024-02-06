@@ -88,31 +88,32 @@ public class SolarisBiomeSource extends BiomeSource {
         int i1 = SectionPos.blockToSectionCoord(i);
         int k1 = SectionPos.blockToSectionCoord(k);
         long dist = (long)i1 * (long)i1 + (long)k1 * (long)k1;
-        double biomeCompute = densityFunction.biomeCompute(i, k);
-        if(biomeCompute > 0) {
-            if (dist < 200) {
-                return scorchedPlains;
-            }
-            double subBiomeCompute = densityFunction.subBiomeCompute(i, k);
-            if (dist < 2000) {
-                switch ((int) Math.round(1+(biomeCompute*3))) {
-                    case 1: {
-                        return switch ((int) Math.round(subBiomeCompute * 2)) {
-                            case 0 -> swampIslands;
-                            case 1 -> iceIslands;
-                            default -> beachIslands;
-                        };
-                    }
-                    case 2: return fireIslands;
-                    case 3: return natureIslands;
-                    case 4: return lightningIslands;
-                    default: return lightIslands;
-                }
-            }
-            if (dist > 2500) {
-                return darkIslands;
-            }
-        }
-        return voidBiome;
+//        double biomeCompute = densityFunction.biomeCompute(i, k);
+//        if(biomeCompute > 0) {
+//            if (dist < 200) {
+//                return scorchedPlains;
+//            }
+//            double subBiomeCompute = densityFunction.subBiomeCompute(i, k);
+//            if (dist < 2000) {
+//                switch ((int) Math.round(1+(biomeCompute*3))) {
+//                    case 1: {
+//                        return switch ((int) Math.round(subBiomeCompute * 2)) {
+//                            case 0 -> swampIslands;
+//                            case 1 -> iceIslands;
+//                            default -> beachIslands;
+//                        };
+//                    }
+//                    case 2: return fireIslands;
+//                    case 3: return natureIslands;
+//                    case 4: return lightningIslands;
+//                    default: return lightIslands;
+//                }
+//            }
+//            if (dist > 2500) {
+//                return darkIslands;
+//            }
+//        }
+//        return voidBiome;
+        return scorchedPlains;
     }
 }

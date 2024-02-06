@@ -1,6 +1,5 @@
 package com.github.x3r.solaris.common.worldgen.dimension;
 
-import it.unimi.dsi.fastutil.Pair;
 import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
@@ -9,8 +8,6 @@ import net.minecraft.world.phys.Vec2;
 import java.util.List;
 
 public class IslandNoise {
-
-    private final RandomSource randomSource;
     private final int cellSize;
 
     private final PerlinSimplexNoise noise;
@@ -20,9 +17,8 @@ public class IslandNoise {
     }
 
     public IslandNoise(RandomSource randomSource, int cellSize) {
-        this.randomSource = randomSource;
         this.cellSize = cellSize;
-        this.noise = new PerlinSimplexNoise(randomSource, List.of(5, 1));
+        this.noise = new PerlinSimplexNoise(randomSource, List.of(-2, 1));
     }
 
     public double getValue(int x, int y) {
@@ -46,17 +42,24 @@ public class IslandNoise {
             }
         }
         double theta = Math.atan2(closestCenter.y-y, closestCenter.x-x);
-        double phase = 4;
-        double scale = Mth.clamp((Math.cos(theta*4+phase)), 0.1, 0.2);
-        double dist = (double)((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize*scale);
+        double freq = (noise.getValue(closestCenter.x, closestCenter.y, true)*1.7+2.6)/
+                (noise.getValue(closestCenter.y, closestCenter.x, false)+1.4);
+        double phase = noise.getValue(x, y, false)*1.1;
+        double scale = islandSineFunction(theta, freq, phase);
+        double dist = Mth.clamp(((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize*scale), 0, 1);
         return 1-dist;
-//        return x==centerX&&z==centerZ?0:1;
     }
 
     private Vec2 getCellCenter(int cellX, int cellY) {
         double theta = Math.PI*noise.getValue(cellX, cellY, false);
-        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*cellSize/(2));
-        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*cellSize/(2));
+        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*cellSize/(3)*0);
+        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*cellSize/(3)*0);
         return new Vec2(centerX, centerZ);
+    }
+
+    private double islandSineFunction(double theta, double freq, double phase) {
+        double d = theta*freq+phase;
+        double r = (Math.sin(d)+Math.cos(3*d+2))/1.22;
+        return ((r+1)/2)*0.09+0.075;
     }
 }
