@@ -24,15 +24,13 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
             KeyDispatchDataCodec.of(MapCodec.unit(new SolarisDensityFunction(0L)));
 
     public SolarisDensityFunction(long pSeed) {
-        XoroshiroRandomSource source = new XoroshiroRandomSource(pSeed);
-        source.consumeCount(43);
-        this.islandNoise = new IslandNoise(new LegacyRandomSource(source.nextInt()), 100);
+        this.islandNoise = new IslandNoise(new LegacyRandomSource(pSeed), 128);
     }
 
     @Override
     public double compute(FunctionContext context) {
         double d = islandNoise.getValue(context.blockX(), context.blockZ());
-        return d > 0.7 ? 1 : -1;
+        return d > 0.6 ? 1 : -1;
     }
 
     @Override
