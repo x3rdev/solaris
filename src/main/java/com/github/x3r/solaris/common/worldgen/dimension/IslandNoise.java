@@ -51,7 +51,7 @@ public class IslandNoise {
     }
 
     private Vec2 getCellCenter(int cellX, int cellY) {
-        double theta = Math.PI*noise.getValue(cellX, cellY, false);
+        double theta = 3*Math.PI*noise.getValue(cellX, cellY, false);
         int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*cellSize/(2.5));
         int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*cellSize/(2.5));
         return new Vec2(centerX, centerZ);
