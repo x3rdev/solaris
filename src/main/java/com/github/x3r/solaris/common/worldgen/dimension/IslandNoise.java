@@ -44,22 +44,22 @@ public class IslandNoise {
         double theta = Math.atan2(closestCenter.y-y, closestCenter.x-x);
         double freq = (noise.getValue(closestCenter.x, closestCenter.y, true)*2.7+2.6)/
                 (noise.getValue(closestCenter.x+theta, closestCenter.y+theta, false)+1.4)   ;
-        double phase = noise.getValue(x, y, false)*1.3;
-        double scale = islandRandomSize(cellX, cellY) * islandSineFunction(theta, freq, phase);
-        double dist = Mth.clamp(((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize*scale), 0, 1);
-        return 1-dist;
+        double phase = noise.getValue(x, y, false);
+        double dist = ((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize);
+        double scale = islandRandomSize(cellX, cellY) * islandSineFunction(theta, freq, phase)*(1-dist);
+        return 1-Mth.clamp(dist/scale, 0, 1);
     }
 
     private Vec2 getCellCenter(int cellX, int cellY) {
         double theta = Math.PI*noise.getValue(cellX, cellY, false);
-        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*cellSize/(3)*0);
-        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*cellSize/(3)*0);
+        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*cellSize/(2.5));
+        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*cellSize/(2.5));
         return new Vec2(centerX, centerZ);
     }
 
     private double islandRandomSize(int cellX, int cellY) {
         double n = Mth.clamp((noise.getValue(cellX, cellY, false)+1)/2, 0, 1);
-        return n * 3.5;
+        return n * 4;
     }
 
     private double islandSineFunction(double theta, double freq, double phase) {
