@@ -35,7 +35,7 @@ public class IslandNoise {
     }
 
     public double getIslandValue(int islandX, int islandY) {
-        return Mth.clamp((Math.sin(Math.PI*islandNoise.getValue(islandX, islandY, false))+1)/2, 0, 1);
+        return normalizedNoiseValue(islandNoise, islandX, islandY, false);
     }
 
     private Vector2i getCellCenter(int cellX, int cellY) {
@@ -70,29 +70,18 @@ public class IslandNoise {
     }
 
     private double islandRandomSize(int islandX, int islandY) {
-        double n = (Math.sin(Math.PI*islandNoise.getValue(islandX, islandY, false))+1)/2;
+        double n = normalizedNoiseValue(islandNoise, islandX, islandY, false);
         return Mth.clamp(n*0.5+0.7, 0.7, 1.2);
     }
 
     private double islandScaleFunction(int islandX, int islandY, double angle) {
-        double[] angles = islandBiasAngles(islandX, islandY);
-        double closestBias = angles[0];
-        for (double v : angles) {
-            if(Mth.degreesDifferenceAbs((float) angle, (float) v) < Mth.degreesDifferenceAbs((float) angle, (float) closestBias)) {
-                closestBias = v;
-            }
-        }
-        return Math.abs((closestBias-angle)/closestBias);
+        double n = normalizedNoiseValue(islandNoise, islandX, islandY, true);
+                
+        return 1;
     }
 
-    private double[] islandBiasAngles(int islandX, int islandY) {
-        double n = (Math.sin(Math.PI*islandNoise.getValue(islandX, islandY, false))+1)/2;
-        int size = (int) (Math.round(n * 2) + 2); // 2 - 4 spikes
-        double[] array = new double[size];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = Math.PI*noise.getValue(randomizeNumber(islandX), randomizeNumber(islandY), false);
-        }
-        return array;
+    private double normalizedNoiseValue(PerlinSimplexNoise noise, int x, int y, boolean useNoiseOffsets) {
+        return Mth.clamp((Math.sin(Math.PI*islandNoise.getValue(x, y, useNoiseOffsets))+1)/2, 0, 1);
     }
 
     private int randomizeNumber(int i) {
