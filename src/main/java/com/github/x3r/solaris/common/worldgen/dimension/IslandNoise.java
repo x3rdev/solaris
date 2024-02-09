@@ -5,6 +5,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 import org.joml.Vector2i;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class IslandNoise {
@@ -25,10 +26,8 @@ public class IslandNoise {
         Vector2i closestCenter = getIslandPos(x, y);
         int islandX = closestCenter.x/cellSize;
         int islandY = closestCenter.y/cellSize;
-        double theta = Math.atan2(closestCenter.y-y, closestCenter.x-x);
-        double freq = 2;
-        double phase = getIslandValue(islandX, islandY)*2*Math.PI;
-        double scale = islandSineFunction(theta, freq, phase);
+        double angle = Math.atan2(closestCenter.y-y, closestCenter.x-x);
+        double scale = islandScaleFunction(islandX, islandY, angle);
         double size = islandRandomSize(islandX, islandY);
         double dist = ((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize/4F);
         double val = dist/(size*scale);
@@ -75,10 +74,25 @@ public class IslandNoise {
         return Mth.clamp(n*0.5+0.7, 0.7, 1.2);
     }
 
-    private double islandSineFunction(double theta, double freq, double phase) {
-        double d = theta*freq+phase;
-        double r1 = Math.sin(d);
-        return (r1+1)/2;
+    private double islandScaleFunction(int islandX, int islandY, double angle) {
+        double[] angles = islandBiasAngles(islandX, islandY);
+        double closestBias = angles[0];
+        for (double v : angles) {
+            if(Mth.degreesDifferenceAbs((float) angle, (float) v) < Mth.degreesDifferenceAbs((float) angle, (float) closestBias)) {
+                closestBias = v;
+            }
+        }
+        return Math.abs((closestBias-angle)/closestBias);
+    }
+
+    private double[] islandBiasAngles(int islandX, int islandY) {
+        double n = (Math.sin(Math.PI*islandNoise.getValue(islandX, islandY, false))+1)/2;
+        int size = (int) (Math.round(n * 2) + 2); // 2 - 4 spikes
+        double[] array = new double[size];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Math.PI*noise.getValue(randomizeNumber(islandX), randomizeNumber(islandY), false);
+        }
+        return array;
     }
 
     private int randomizeNumber(int i) {
