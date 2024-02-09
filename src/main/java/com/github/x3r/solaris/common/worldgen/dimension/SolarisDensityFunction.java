@@ -30,7 +30,7 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
     @Override
     public double compute(FunctionContext context) {
         double d = islandNoise.getValue(context.blockX(), context.blockZ());
-        return d > 0.6 ? 1 : -1;
+        return d > 0.5 ? 1 : -1;
     }
 
     @Override

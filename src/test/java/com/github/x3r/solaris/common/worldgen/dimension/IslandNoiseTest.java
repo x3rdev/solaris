@@ -36,6 +36,6 @@ public class IslandNoiseTest {
     }
 
     private static double getValue(int x, int z) {
-        return noise.getValue(x, z) > 0.6 ? 1 : 0;
+        return noise.getValue(x, z) > 0.5 ? 1 : 0;
     }
 }

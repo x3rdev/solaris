@@ -18,20 +18,21 @@ public class IslandNoise {
     public IslandNoise(RandomSource randomSource, int cellSize) {
         this.cellSize = cellSize;
         this.noise = new PerlinSimplexNoise(randomSource, List.of(-2, 1));
-        this.islandNoise = new PerlinSimplexNoise(randomSource, List.of(4, 1));
+        this.islandNoise = new PerlinSimplexNoise(randomSource, List.of(3, 1));
     }
 
     public double getValue(int x, int y) {
-        int cellX = x/cellSize;
-        int cellY = y/cellSize;
         Vector2i closestCenter = getIslandPos(x, y);
+        int islandX = closestCenter.x/cellSize;
+        int islandY = closestCenter.y/cellSize;
         double theta = Math.atan2(closestCenter.y-y, closestCenter.x-x);
-        double freq = 1;
-        double phase = 0;
+        double freq = 2;
+        double phase = getIslandValue(islandX, islandY)*2*Math.PI;
         double scale = islandSineFunction(theta, freq, phase);
-        double size = 1;
-        double dist = ((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/((float)cellSize*cellSize);
-        return 1-Mth.clamp(dist*size*scale, 0, 1);
+        double size = islandRandomSize(islandX, islandY);
+        double dist = ((closestCenter.x-x)*(closestCenter.x-x) + (closestCenter.y-y)*(closestCenter.y-y))/(cellSize*cellSize/4F);
+        double val = dist/(size*scale);
+        return 1-Mth.clamp(val, 0, 1);
     }
 
     public double getIslandValue(int islandX, int islandY) {
@@ -40,8 +41,9 @@ public class IslandNoise {
 
     private Vector2i getCellCenter(int cellX, int cellY) {
         double theta = Math.PI*noise.getValue(cellX, cellY, false);
-        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*cellSize/(3));
-        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*cellSize/(3));
+        double dist = cellSize/3F;
+        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*dist);
+        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*dist);
         return new Vector2i(centerX, centerZ);
     }
 
@@ -69,14 +71,14 @@ public class IslandNoise {
     }
 
     private double islandRandomSize(int islandX, int islandY) {
-        double n = Mth.clamp((Math.sin(Math.PI*islandNoise.getValue(islandX, islandY, false))+1)/2, 0.5, 1.5);
-        return n * 10;
+        double n = (Math.sin(Math.PI*islandNoise.getValue(islandX, islandY, false))+1)/2;
+        return Mth.clamp(n*0.5+0.7, 0.7, 1.2);
     }
 
     private double islandSineFunction(double theta, double freq, double phase) {
         double d = theta*freq+phase;
-        double r = (Math.sin(d));
-        return ((r+1)/2);
+        double r1 = Math.sin(d);
+        return (r1+1)/2;
     }
 
     private int randomizeNumber(int i) {
