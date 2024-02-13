@@ -14,7 +14,7 @@ public class IslandNoiseTest {
 
     @org.junit.Test
     public void createTexture() {
-        int size = 128;
+        int size = 1280;
         BufferedImage image = new BufferedImage(size, size, BufferedImage.TYPE_3BYTE_BGR);
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {

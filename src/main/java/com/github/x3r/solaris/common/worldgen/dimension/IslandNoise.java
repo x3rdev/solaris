@@ -18,18 +18,18 @@ public class IslandNoise {
     public IslandNoise(RandomSource randomSource, int cellSize) {
         this.cellSize = cellSize;
         this.noise = new PerlinSimplexNoise(randomSource, List.of(-2, 1));
-        this.islandNoise = new PerlinSimplexNoise(randomSource, List.of(1, 1, 1));
+        this.islandNoise = new PerlinSimplexNoise(randomSource, List.of(1, 2, 1));
     }
 
     public double getValue(int blockX, int blockY) {
         Vector2i closestCenter = getClosestCenter(blockX, blockY);
         int islandX = closestCenter.x/cellSize;
         int islandY = closestCenter.y/cellSize;
-        float angle = (float) Mth.atan2(closestCenter.y-blockY, closestCenter.x-blockX);
+        float angle = (float) Math.atan2(closestCenter.y-blockY, closestCenter.x-blockX);
         double distSquared = (closestCenter.x-blockX)*(closestCenter.x-blockX) + (closestCenter.y-blockY)*(closestCenter.y-blockY);
-        double radius = cellSize * 0.03 * islandRadiusFunction(islandX, islandY, angle);
-        double maxDist = cellSize * 0.25 + radius;
-        return distSquared < maxDist*maxDist ? 1 : 0;
+        double radius = cellSize * 0.2 * islandRadiusFunction(islandX, islandY, normalizedNoiseValue(noise, blockX, blockY, true), angle);
+        double maxDist = cellSize * 0.3 + radius;
+        return 1 - distSquared/(maxDist*maxDist);
     }
 
     public double getIslandValue(int islandX, int islandY) {
@@ -69,34 +69,22 @@ public class IslandNoise {
     private Vector2i getCellCenter(int cellX, int cellY) {
         double theta = Math.PI*noise.getValue(cellX, cellY, false);
         double dist = cellSize/3F;
-        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*dist*0);
-        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*dist*0);
+        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*dist);
+        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*dist);
         return new Vector2i(centerX, centerZ);
     }
 
-    private double islandRadiusFunction(int islandX, int islandY, float angle) {
-//        double freq = normalizedNoiseValue(islandNoise, islandX, islandY, false);
-//        double phase = normalizedNoiseValue(islandNoise, randomizeNumber(islandX), islandY, false)*Math.PI;
-//        float d = (float) (angle/2*freq+phase);
-//        double r = Mth.abs(Mth.sin(d)*Mth.sin(5*d)*Mth.sin(3*d)*Mth.sin(2*d));
-        int sineCount = 2;
-        double r = 0;
-        for (int i = 0; i < sineCount; i++) {
-            double frequency = 10 * normalizedNoiseValue(islandNoise, randomizeNumber(islandX+i), randomizeNumber(islandY+i), true);
-            double phase = 4*angle;
-            r+=Math.sin((frequency)*angle+(phase));
-        }
-        return r;
+    private double islandRadiusFunction(int islandX, int islandY, float noise, float angle) {
+        float n = normalizedNoiseValue(islandNoise, islandX, islandY, false);
+        float freq = 2*n+2+(0.1F*noise);
+        float phase = (float) (2*Math.PI*n+angle)+noise*0.5F;
+        float d = freq*angle+phase;
+        float b1 = 5*(Mth.sin(3*d)/50*Mth.sin(15*d-2)*Mth.sin(32*d-5));
+        float b2 = ((Mth.sin(d)+Mth.cos(2.5F*d))*0.125F);
+        return b1+b2;
     }
 
-    private double normalizedNoiseValue(PerlinSimplexNoise noise, int x, int y, boolean useNoiseOffsets) {
-        return Mth.clamp((Mth.sin((float) (Math.PI*islandNoise.getValue(x, y, useNoiseOffsets)))+1)/2, 0, 1);
-    }
-
-    private int randomizeNumber(int i) {
-        final long multiplier = 0x5DEECE66DL;
-        final long addend = 0xBL;
-        final long mask = (1L << 48) - 1;
-        return (int) ((i * multiplier + addend) & mask);
+    private float normalizedNoiseValue(PerlinSimplexNoise noise, int x, int y, boolean useNoiseOffsets) {
+        return Mth.clamp((Mth.sin((float) (10*noise.getValue(x, y, useNoiseOffsets)))+1)/2, 0, 1);
     }
 }
