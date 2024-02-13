@@ -1,11 +1,9 @@
 package com.github.x3r.solaris.common.worldgen.dimension;
 
-import net.minecraft.util.Mth;
 import net.minecraft.util.RandomSource;
 import org.joml.Vector2i;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.FileOutputStream;
 import java.io.IOException;
