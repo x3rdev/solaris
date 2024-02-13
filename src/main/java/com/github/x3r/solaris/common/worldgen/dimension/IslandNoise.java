@@ -27,8 +27,8 @@ public class IslandNoise {
         int islandY = closestCenter.y/cellSize;
         float angle = (float) Mth.atan2(closestCenter.y-blockY, closestCenter.x-blockX);
         double distSquared = (closestCenter.x-blockX)*(closestCenter.x-blockX) + (closestCenter.y-blockY)*(closestCenter.y-blockY);
-        double scale = cellSize * islandScaleFunction(islandX, islandY, angle);
-        double maxDist = cellSize * 0.25 + scale;
+        double radius = cellSize * 0.03 * islandRadiusFunction(islandX, islandY, angle);
+        double maxDist = cellSize * 0.25 + radius;
         return distSquared < maxDist*maxDist ? 1 : 0;
     }
 
@@ -69,17 +69,24 @@ public class IslandNoise {
     private Vector2i getCellCenter(int cellX, int cellY) {
         double theta = Math.PI*noise.getValue(cellX, cellY, false);
         double dist = cellSize/3F;
-        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*dist);
-        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*dist);
+        int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*dist*0);
+        int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*dist*0);
         return new Vector2i(centerX, centerZ);
     }
 
-    private double islandScaleFunction(int islandX, int islandY, float angle) {
-        double freq = (normalizedNoiseValue(islandNoise, islandX, islandY, false));
-        double phase = normalizedNoiseValue(islandNoise, randomizeNumber(islandX), islandY, false)*Math.PI;
-        float d = (float) (angle/2*freq+phase);
-        double r = Mth.abs(Mth.sin(d)*Mth.sin(5*d)*Mth.sin(3*d)*Mth.sin(2*d));
-        return r*0.15;
+    private double islandRadiusFunction(int islandX, int islandY, float angle) {
+//        double freq = normalizedNoiseValue(islandNoise, islandX, islandY, false);
+//        double phase = normalizedNoiseValue(islandNoise, randomizeNumber(islandX), islandY, false)*Math.PI;
+//        float d = (float) (angle/2*freq+phase);
+//        double r = Mth.abs(Mth.sin(d)*Mth.sin(5*d)*Mth.sin(3*d)*Mth.sin(2*d));
+        int sineCount = 2;
+        double r = 0;
+        for (int i = 0; i < sineCount; i++) {
+            double frequency = 10 * normalizedNoiseValue(islandNoise, randomizeNumber(islandX+i), randomizeNumber(islandY+i), true);
+            double phase = 4*angle;
+            r+=Math.sin((frequency)*angle+(phase));
+        }
+        return r;
     }
 
     private double normalizedNoiseValue(PerlinSimplexNoise noise, int x, int y, boolean useNoiseOffsets) {
