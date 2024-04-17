@@ -1,6 +1,7 @@
 package com.github.x3r.solaris.common.registry;
 
 import com.github.x3r.solaris.Solaris;
+import com.github.x3r.solaris.common.entity.ElementalEntity;
 import com.github.x3r.solaris.common.entity.ScorchedBugEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -15,6 +16,9 @@ public class EntityRegistry {
     public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Solaris.MOD_ID);
 
     public static final RegistryObject<EntityType<ScorchedBugEntity>> SCORCHED_BUG = registerMob("scorched_bug", ScorchedBugEntity::new, MobCategory.CREATURE, 0.75F, 0.5F);
+
+    public static final RegistryObject<EntityType<ElementalEntity>> ELEMENTAL = registerMob("elemental", ElementalEntity::new, MobCategory.MONSTER, 1.5F, 2F);
+
 
     public static <T extends Entity> RegistryObject<EntityType<T>> registerMob(String name, EntityType.EntityFactory<T> entity, MobCategory mobCategory, float width, float height) {
         return ENTITIES.register(name,

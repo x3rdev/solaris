@@ -79,7 +79,7 @@ public class IslandNoise {
         float freq = 2*n+2+(0.1F*noise);
         float phase = (float) (2*Math.PI*n+angle)+noise*0.5F;
         float d = freq*angle+phase;
-        float b1 = 5*(Mth.sin(3*d)/50*Mth.sin(15*d-2)*Mth.sin(32*d-5));
+        float b1 = 6*(Mth.sin(3*d)/50*Mth.sin(15*d-2)*Mth.sin(32*d-5));
         float b2 = ((Mth.sin(d)+Mth.cos(2.5F*d))*0.125F);
         return b1+b2;
     }

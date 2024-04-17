@@ -29,6 +29,8 @@ public class Solaris {
         modEventBus.addListener(CommonSetup::setup);
         modEventBus.addListener(CommonSetup::attributeSetup);
         modEventBus.addListener(CommonSetup::spawnPlacementSetup);
+        modEventBus.addListener(AnimationRegistry::registerAnimations);
+        modEventBus.addListener(WeaponCapabilityRegistry::registerWeaponCapabilities);
 
         BlockRegistry.BLOCKS.register(modEventBus);
         BlockItemRegistry.BLOCK_ITEMS.register(modEventBus);
@@ -42,6 +44,7 @@ public class Solaris {
         SurfaceRuleRegistry.SURFACE_RULES.register(modEventBus);
 
         forgeBus.register(this);
+        forgeBus.addListener(SkillsRegistry::buildSkills);
     }
 
     @SubscribeEvent

@@ -29,7 +29,7 @@ public enum ArmorMaterialRegistry implements ArmorMaterial {
     private final float knockbackResistance;
     private final Ingredient repairMaterial;
 
-    private ArmorMaterialRegistry(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountsIn, int enchantabilityIn,
+    ArmorMaterialRegistry(String nameIn, int maxDamageFactorIn, int[] damageReductionAmountsIn, int enchantabilityIn,
                                     SoundEvent equipSoundIn, float toughness, float knockbackResistance, Supplier<Ingredient> repairMaterialSupplier) {
         this.name = nameIn;
         this.durabilityMultiplier = maxDamageFactorIn;
