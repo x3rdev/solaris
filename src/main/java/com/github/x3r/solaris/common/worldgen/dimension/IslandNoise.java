@@ -5,6 +5,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 import org.joml.Vector2i;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class IslandNoise {
@@ -23,17 +24,16 @@ public class IslandNoise {
 
     public double getValue(int blockX, int blockY) {
         Vector2i closestCenter = getClosestCenter(blockX, blockY);
-        int islandX = closestCenter.x/cellSize;
-        int islandY = closestCenter.y/cellSize;
+        Vector2i islandPos = getIslandPos(blockX, blockY);
         float angle = (float) Math.atan2(closestCenter.y-blockY, closestCenter.x-blockX);
         double distSquared = (closestCenter.x-blockX)*(closestCenter.x-blockX) + (closestCenter.y-blockY)*(closestCenter.y-blockY);
-        double radius = cellSize * 0.2 * islandRadiusFunction(islandX, islandY, normalizedNoiseValue(noise, blockX, blockY, true), angle);
-        double maxDist = cellSize * 0.3 + radius;
-        return 1 - distSquared/(maxDist*maxDist);
+        double radius = cellSize * 0.2 * islandRadiusFunction(islandPos.x, islandPos.y, normalizedNoiseValue(noise, blockX, blockY), angle);
+        double maxDist = cellSize;
+        return 1-Math.sqrt(distSquared)/maxDist;
     }
 
     public double getIslandValue(int islandX, int islandY) {
-        return normalizedNoiseValue(islandNoise, islandX, islandY, false);
+        return normalizedNoiseValue(islandNoise, islandX, islandY);
     }
 
     public Vector2i getIslandPos(int blockX, int blockY) {
@@ -66,8 +66,26 @@ public class IslandNoise {
         return closestCenter;
     }
 
+    private Vector2i[] getOrderedAdjacentCenters(int blockX, int blockY) {
+        int cellX = blockX / cellSize;
+        int cellY = blockY / cellSize;
+        Vector2i vec = new Vector2i(blockX, blockY);
+        Vector2i[] cellCenters = {
+                getCellCenter(cellX, cellY),
+                getCellCenter(cellX + 1, cellY),
+                getCellCenter(cellX - 1, cellY),
+                getCellCenter(cellX, cellY + 1),
+                getCellCenter(cellX, cellY - 1),
+                getCellCenter(cellX + 1, cellY + 1),
+                getCellCenter(cellX - 1, cellY + 1),
+                getCellCenter(cellX + 1, cellY - 1),
+                getCellCenter(cellX - 1, cellY - 1)
+        };
+        return Arrays.stream(cellCenters).sorted((o1, o2) -> (int) (o1.distanceSquared(vec) - o2.distanceSquared(vec))).toArray(Vector2i[]::new);
+    }
+
     private Vector2i getCellCenter(int cellX, int cellY) {
-        double theta = Math.PI*noise.getValue(cellX, cellY, false);
+        double theta = Math.PI*normalizedNoiseValue(noise, cellX, cellY);
         double dist = cellSize/3F;
         int centerX = (int) (cellX * cellSize + cellSize/2F + Math.cos(theta)*dist);
         int centerZ = (int) (cellY * cellSize + cellSize/2F + Math.sin(theta)*dist);
@@ -75,7 +93,7 @@ public class IslandNoise {
     }
 
     private double islandRadiusFunction(int islandX, int islandY, float noise, float angle) {
-        float n = normalizedNoiseValue(islandNoise, islandX, islandY, false);
+        float n = normalizedNoiseValue(islandNoise, islandX, islandY);
         float freq = 2*n+2+(0.1F*noise);
         float phase = (float) (2*Math.PI*n+angle)+noise*0.5F;
         float d = freq*angle+phase;
@@ -84,7 +102,7 @@ public class IslandNoise {
         return b1+b2;
     }
 
-    private float normalizedNoiseValue(PerlinSimplexNoise noise, int x, int y, boolean useNoiseOffsets) {
-        return Mth.clamp((Mth.sin((float) (10*noise.getValue(x, y, useNoiseOffsets)))+1)/2, 0, 1);
+    private float normalizedNoiseValue(PerlinSimplexNoise noise, int x, int y) {
+        return (Mth.sin((float) (10*noise.getValue(x, y, false)))+1)/2;
     }
 }
