@@ -27,7 +27,7 @@ public class IslandNoise {
         int islandY = closestCenter.y/cellSize;
         float angle = (float) Math.atan2(closestCenter.y-blockY, closestCenter.x-blockX);
         double distSquared = (closestCenter.x-blockX)*(closestCenter.x-blockX) + (closestCenter.y-blockY)*(closestCenter.y-blockY);
-        double radius = cellSize * 0.4 * islandRadiusFunction(islandX, islandY, normalizedNoiseValue(noise, blockX, blockY), angle);
+        double radius = cellSize * 0.4 * islandRadiusFunction(islandX, islandY, normalizedNoiseValue(noise, blockX, blockX), angle);
         double maxDist = cellSize * 0.75;
         return 1 - Mth.sqrt((float) distSquared)/(maxDist + radius);
     }
