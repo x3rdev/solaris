@@ -8,9 +8,9 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.common.data.SoundDefinition;
 import net.minecraftforge.common.data.SoundDefinitionsProvider;
 
-public class SolarisSoundGenProvider extends SoundDefinitionsProvider {
+public class SolarisSoundDefProvider extends SoundDefinitionsProvider {
 
-    protected SolarisSoundGenProvider(PackOutput output, ExistingFileHelper helper) {
+    protected SolarisSoundDefProvider(PackOutput output, ExistingFileHelper helper) {
         super(output, Solaris.MOD_ID, helper);
     }
 

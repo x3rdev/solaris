@@ -20,9 +20,10 @@ public class ItemRegistry {
 
     public static final RegistryObject<ForgeSpawnEggItem> SCORCHED_BUG_SPAWN_EGG = ITEMS.register("scorched_bug_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityRegistry.SCORCHED_BUG, 0x342d2d, 0xdf3e23, new Item.Properties()));
-
     public static final RegistryObject<ForgeSpawnEggItem> ELEMENTAL_SPAWN_EGG = ITEMS.register("elemental_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityRegistry.ELEMENTAL, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> SNOW_TROLL_SPAWN_EGG = ITEMS.register("snow_troll_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityRegistry.SNOW_TROLL, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
 
     public static class ModItemTab {
 

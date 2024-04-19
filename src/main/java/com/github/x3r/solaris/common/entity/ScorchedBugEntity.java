@@ -30,6 +30,7 @@ import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetPlayerLookTar
 import net.tslat.smartbrainlib.api.core.behaviour.custom.target.SetRandomLookTarget;
 import net.tslat.smartbrainlib.api.core.sensor.ExtendedSensor;
 import net.tslat.smartbrainlib.api.core.sensor.vanilla.NearbyPlayersSensor;
+import net.tslat.smartbrainlib.example.SBLSkeleton;
 import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
@@ -104,42 +105,38 @@ public class ScorchedBugEntity extends PathfinderMob implements SmartBrainOwner<
     }
 
     @Override
-    public List<ExtendedSensor<ScorchedBugEntity>> getSensors() {
-        NearbyPlayersSensor<ScorchedBugEntity> s1 = new NearbyPlayersSensor<>();
-        s1.setScanRate(scorchedBugEntity -> 17+Math.round(3*this.random.nextFloat()));
-        s1.setRadius(4);
+    public List<? extends ExtendedSensor<? extends ScorchedBugEntity>> getSensors() {
         return List.of(
-                s1
+                new NearbyPlayersSensor<ScorchedBugEntity>()
+                        .setRadius(4)
+                        .setScanRate(scorchedBugEntity -> 17+Math.round(3*this.random.nextFloat()))
         );
     }
 
     @Override
     public BrainActivityGroup<? extends ScorchedBugEntity> getCoreTasks() {
-        LookAtTarget<ScorchedBugEntity> a1 = new LookAtTarget<>();
-        a1.stopIf(scorchedBugEntity -> scorchedBugEntity.inBall);
-        MoveToWalkTarget<ScorchedBugEntity> a2 = new MoveToWalkTarget<>();
-        a2.stopIf(scorchedBugEntity -> scorchedBugEntity.inBall);
         return BrainActivityGroup.coreTasks(
-                a1,
-                a2
+                new LookAtTarget<ScorchedBugEntity>()
+                        .stopIf(scorchedBugEntity -> scorchedBugEntity.inBall),
+                new MoveToWalkTarget<ScorchedBugEntity>()
+                        .stopIf(scorchedBugEntity -> scorchedBugEntity.inBall)
         );
     }
 
     @Override
     public BrainActivityGroup<ScorchedBugEntity> getIdleTasks() {
-        SetPlayerLookTarget<ScorchedBugEntity> a1 = new SetPlayerLookTarget<>();
-        a1.predicate(player -> player.distanceToSqr(this) < 40);
-        SetRandomWalkTarget<ScorchedBugEntity> a3 = new SetRandomWalkTarget<>();
-        a3.setRadius(6);
-        a3.speedModifier(1.3F);
-        a3.stopIf(scorchedBugEntity -> scorchedBugEntity.inBall);
         return BrainActivityGroup.idleTasks(
                 new FirstApplicableBehaviour<>(
-                        a1,
-                        new SetRandomLookTarget<>()
+                        new SetPlayerLookTarget<ScorchedBugEntity>()
+                                .predicate(player -> player.distanceToSqr(this) < 40),
+                        new SetRandomLookTarget<ScorchedBugEntity>()
+                                .stopIf(scorchedBugEntity -> scorchedBugEntity.inBall)
                 ),
                 new OneRandomBehaviour<>(
-                        a3,
+                        new SetRandomWalkTarget<ScorchedBugEntity>()
+                                .setRadius(6)
+                                .speedModifier(1.3F)
+                                .stopIf(scorchedBugEntity -> scorchedBugEntity.inBall),
                         new Idle<>().runFor(livingEntity -> livingEntity.getRandom().nextInt(30, 60))
                 )
         );

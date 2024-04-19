@@ -12,9 +12,9 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.stream.Stream;
 
-public class SolarisItemModelGenProvider extends ItemModelProvider {
+public class SolarisItemModelProvider extends ItemModelProvider {
 
-    public SolarisItemModelGenProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+    public SolarisItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, Solaris.MOD_ID, existingFileHelper);
     }
 
