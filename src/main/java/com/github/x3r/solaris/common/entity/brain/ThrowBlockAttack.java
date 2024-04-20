@@ -2,20 +2,11 @@ package com.github.x3r.solaris.common.entity.brain;
 
 import com.github.x3r.solaris.common.datagen.SolarisBlockTagsProvider;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Vec3i;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.behavior.BehaviorUtils;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
-import net.minecraft.world.entity.item.FallingBlockEntity;
 import net.minecraft.world.entity.monster.RangedAttackMob;
-import net.minecraft.world.entity.projectile.ProjectileUtil;
-import net.minecraft.world.item.BowItem;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.FallingBlock;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.attack.AnimatableRangedAttack;
 import net.tslat.smartbrainlib.util.BrainUtils;
@@ -38,7 +29,6 @@ public class ThrowBlockAttack <E extends LivingEntity & RangedAttackMob> extends
         BlockPos pos1 = new BlockPos((int) pickupOffset.x, (int) pickupOffset.y, (int) pickupOffset.z);
         boolean b = false;
         if(level.getBlockState(pos1).is(SolarisBlockTagsProvider.SNOW_TROLL_THROWABLE)) {
-            level.setBlockAndUpdate(pos1, Blocks.AIR.defaultBlockState());
             b = true;
         }
         return b && super.checkExtraStartConditions(level, entity);

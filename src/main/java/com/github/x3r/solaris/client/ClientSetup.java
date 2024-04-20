@@ -5,7 +5,9 @@ import com.github.x3r.solaris.client.particle.*;
 import com.github.x3r.solaris.client.renderer.entity.ElementalRenderer;
 import com.github.x3r.solaris.client.renderer.entity.ScorchedBugRenderer;
 import com.github.x3r.solaris.client.renderer.entity.SnowTrollRenderer;
+import com.github.x3r.solaris.client.renderer.entity.ThrownBlockRenderer;
 import com.github.x3r.solaris.common.entity.SnowTrollEntity;
+import com.github.x3r.solaris.common.entity.ThrownBlockEntity;
 import com.github.x3r.solaris.common.registry.EntityRegistry;
 import com.github.x3r.solaris.common.registry.ParticleRegistry;
 import net.minecraft.client.Minecraft;
@@ -49,6 +51,7 @@ public class ClientSetup {
         event.registerEntityRenderer(EntityRegistry.SCORCHED_BUG.get(), ScorchedBugRenderer::new);
         event.registerEntityRenderer(EntityRegistry.ELEMENTAL.get(), ElementalRenderer::new);
         event.registerEntityRenderer(EntityRegistry.SNOW_TROLL.get(), SnowTrollRenderer::new);
+        event.registerEntityRenderer(EntityRegistry.THROWN_BLOCK.get(), ThrownBlockRenderer::new);
     }
 
     @SubscribeEvent
