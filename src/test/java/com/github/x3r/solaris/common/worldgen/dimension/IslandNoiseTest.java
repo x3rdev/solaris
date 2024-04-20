@@ -14,7 +14,7 @@ import java.util.stream.IntStream;
 
 public class IslandNoiseTest {
 
-    static IslandNoise noise = new IslandNoise(RandomSource.create(0), 96);
+    static IslandNoise noise = new IslandNoise(RandomSource.create(0), 128, 0F,  0.5F);
 
     @org.junit.Test
     public void createTexture() {

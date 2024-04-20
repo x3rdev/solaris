@@ -8,17 +8,25 @@ import org.joml.Vector2i;
 import java.util.List;
 
 public class IslandNoise {
-    public final int cellSize;
     private final PerlinSimplexNoise noise;
     private final PerlinSimplexNoise islandNoise;
-    public IslandNoise(long seed, int cellSize) {
-        this(RandomSource.create(seed), cellSize);
-    }
-
-    public IslandNoise(RandomSource randomSource, int cellSize) {
-        this.cellSize = cellSize;
+    private final int cellSize;
+    private final float centerOffset;
+    private final float islandSize;
+    
+    
+    /*
+        * @param randomSource The random source to use for noise generation
+        * @param cellSize The size of the cells in the grid
+        * @param centerOffset The offset of the center of the cell from the corner, as a fraction of the cell size
+        * @param islandSize The diameter of the island, as a fraction of the cell size
+     */
+    public IslandNoise(RandomSource randomSource, int cellSize, float centerOffset, float islandSize) {
         this.noise = new PerlinSimplexNoise(randomSource, List.of(-2, 1));
         this.islandNoise = new PerlinSimplexNoise(randomSource, List.of(1, 2, 1));
+        this.cellSize = cellSize;
+        this.centerOffset = centerOffset;
+        this.islandSize = islandSize;
     }
 
     public double getValue(int blockX, int blockY) {
@@ -28,7 +36,7 @@ public class IslandNoise {
         float angle = (float) Math.atan2(closestCenter.y-blockY, closestCenter.x-blockX);
         double distSquared = (closestCenter.x-blockX)*(closestCenter.x-blockX) + (closestCenter.y-blockY)*(closestCenter.y-blockY);
         double radius = cellSize * 0.4 * islandRadiusFunction(islandX, islandY, normalizedNoiseValue(noise, blockX, blockX), angle);
-        double maxDist = cellSize * 0.75;
+        double maxDist = cellSize * islandSize;
         return 1 - Mth.sqrt((float) distSquared)/(maxDist + radius);
     }
 
@@ -69,8 +77,8 @@ public class IslandNoise {
     private Vector2i getCellCenter(int cellX, int cellY) {
         double theta = Math.PI*noise.getValue(cellX, cellY, false);
         double dist = cellSize * 0.15F;
-        int centerX = (int) (cellX * cellSize + cellSize/2F + dist * Math.cos(theta));
-        int centerZ = (int) (cellY * cellSize + cellSize/2F + dist * Math.sin(theta));
+        int centerX = (int) (cellX * cellSize + cellSize*centerOffset + dist * Math.cos(theta));
+        int centerZ = (int) (cellY * cellSize + cellSize*centerOffset + dist * Math.sin(theta));
         return new Vector2i(centerX, centerZ);
     }
 

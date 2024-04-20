@@ -16,7 +16,8 @@ import java.util.List;
 
 public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
 
-    private final IslandNoise islandNoise;
+    private final IslandNoise islandNoise1;
+    private final IslandNoise islandNoise2;
 
     public static final ResourceKey<DensityFunction> SOLARIS_DENSITY = ResourceKey.create(Registries.DENSITY_FUNCTION,
             new ResourceLocation(Solaris.MOD_ID, "solaris_density"));
@@ -24,12 +25,13 @@ public class SolarisDensityFunction implements DensityFunction.SimpleFunction {
             KeyDispatchDataCodec.of(MapCodec.unit(new SolarisDensityFunction(0L)));
 
     public SolarisDensityFunction(long pSeed) {
-        this.islandNoise = new IslandNoise(new LegacyRandomSource(pSeed), 128);
+        this.islandNoise1 = new IslandNoise(new LegacyRandomSource(pSeed), 128, 0F, 0.5F);
+        this.islandNoise2 = new IslandNoise(new LegacyRandomSource(pSeed), 128, 0.5F, 0.25F);
     }
 
     @Override
     public double compute(FunctionContext context) {
-        double d = islandNoise.getValue(context.blockX(), context.blockZ());
+        double d = Math.max(islandNoise1.getValue(context.blockX(), context.blockZ()), islandNoise2.getValue(context.blockX(), context.blockZ()));
         return d > 0.6 ? 1 : -1;
     }
 
