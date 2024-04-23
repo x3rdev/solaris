@@ -3,6 +3,7 @@ package com.github.x3r.solaris.common;
 import com.github.x3r.solaris.common.entity.ElementalEntity;
 import com.github.x3r.solaris.common.entity.ScorchedBugEntity;
 import com.github.x3r.solaris.common.entity.SnowTrollEntity;
+import com.github.x3r.solaris.common.entity.UrborosEntity;
 import com.github.x3r.solaris.common.network.SolarisPacketHandler;
 import com.github.x3r.solaris.common.registry.EntityRegistry;
 import com.github.x3r.solaris.common.registry.SkillsRegistry;
@@ -24,6 +25,7 @@ public class CommonSetup {
         event.put(EntityRegistry.SCORCHED_BUG.get(), ScorchedBugEntity.createAttributes());
         event.put(EntityRegistry.ELEMENTAL.get(), ElementalEntity.createAttributes());
         event.put(EntityRegistry.SNOW_TROLL.get(), SnowTrollEntity.createAttributes());
+        event.put(EntityRegistry.URBOROS.get(), UrborosEntity.createAttributes());
     }
 
     public static void spawnPlacementSetup(SpawnPlacementRegisterEvent event) {

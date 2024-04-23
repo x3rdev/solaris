@@ -6,7 +6,6 @@ import com.github.x3r.solaris.common.worldgen.dimension.SolarisDensityFunction;
 import com.github.x3r.solaris.common.worldgen.dimension.SolarisSurfaceRules;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
-import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.resources.ResourceKey;
@@ -20,12 +19,8 @@ import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
 import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.dimension.LevelStem;
 import net.minecraft.world.level.levelgen.*;
-import net.minecraft.world.level.levelgen.synth.BlendedNoise;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
-import net.minecraft.world.level.levelgen.synth.SimplexNoise;
 
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalLong;
 
@@ -48,9 +43,9 @@ public class DimensionRegistry {
                 1.0,
                 false,
                 false,
-                -64,
-                320,
-                320,
+                0,
+                256,
+                256,
                 BlockTags.INFINIBURN_OVERWORLD,
                 BuiltinDimensionTypes.OVERWORLD_EFFECTS,
                 1.0F,
@@ -67,7 +62,7 @@ public class DimensionRegistry {
                 SolarisBiomeSource.create(biomeRegistry),
                 Holder.direct(
                         new NoiseGeneratorSettings(
-                            new NoiseSettings(0, 128, 1, 1),
+                            new NoiseSettings(0, 256, 1, 1),
                             Blocks.EMERALD_BLOCK.defaultBlockState(),
                             Blocks.AIR.defaultBlockState(),
                             router(noiseParameters),
@@ -154,17 +149,7 @@ public class DimensionRegistry {
                                 SurfaceRules.state(BlockRegistry.BRIMSTONE.get().defaultBlockState())
                         )
                 ),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.SWAMP_ISLANDS),
-                        SurfaceRules.sequence(
-                                SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(4),
-                                        SurfaceRules.sequence(
-                                                SurfaceRules.state(Blocks.MUD.defaultBlockState())
-                                        )
-                                ),
-                                SurfaceRules.state(Blocks.PACKED_MUD.defaultBlockState())
-                        )
-                ),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.ICE_ISLANDS),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.WATER_ISLANDS),
                         SurfaceRules.sequence(
                                 SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
                                         SurfaceRules.sequence(
@@ -172,16 +157,6 @@ public class DimensionRegistry {
                                         )
                                 ),
                                 SurfaceRules.state(Blocks.ICE.defaultBlockState())
-                        )
-                ),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.BEACH_ISLANDS),
-                        SurfaceRules.sequence(
-                                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
-                                        SurfaceRules.sequence(
-                                                SurfaceRules.state(Blocks.SAND.defaultBlockState())
-                                        )
-                                ),
-                                SurfaceRules.state(Blocks.SANDSTONE.defaultBlockState())
                         )
                 ),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.FIRE_ISLANDS),

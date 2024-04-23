@@ -31,7 +31,7 @@ public class SolarisPlacedFeatures {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
         register(context, SCORCHED_IRON_ORE_PLACED, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SCORCHED_IRON_ORE),
-                OrePlacements.commonOrePlacement(24, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.aboveBottom(32))));
+                OrePlacements.commonOrePlacement(24, HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.top())));
         register(context, SCORCHED_TREE_PLACED, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SCORCHED_TREE),
                 SolarisFeaturePlacements.treePlacement(PlacementUtils.countExtra(3, 0.1F, 2)));
         register(context, SCORCHED_GRASS_PLACED, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SCORCHED_GRASS),

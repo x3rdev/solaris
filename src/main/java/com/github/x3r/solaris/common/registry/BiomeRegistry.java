@@ -1,7 +1,6 @@
 package com.github.x3r.solaris.common.registry;
 
 import com.github.x3r.solaris.Solaris;
-import net.minecraft.client.particle.Particle;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
@@ -14,12 +13,8 @@ public class BiomeRegistry {
 
     public static final ResourceKey<Biome> SCORCHED_PLAINS = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(Solaris.MOD_ID, "scorched_plains"));
-    public static final ResourceKey<Biome> SWAMP_ISLANDS = ResourceKey.create(Registries.BIOME,
-            new ResourceLocation(Solaris.MOD_ID, "swamp_islands"));
-    public static final ResourceKey<Biome> ICE_ISLANDS = ResourceKey.create(Registries.BIOME,
-            new ResourceLocation(Solaris.MOD_ID, "ice_islands"));
-    public static final ResourceKey<Biome> BEACH_ISLANDS = ResourceKey.create(Registries.BIOME,
-            new ResourceLocation(Solaris.MOD_ID, "beach_islands"));
+    public static final ResourceKey<Biome> WATER_ISLANDS = ResourceKey.create(Registries.BIOME,
+            new ResourceLocation(Solaris.MOD_ID, "water_islands"));
     public static final ResourceKey<Biome> FIRE_ISLANDS = ResourceKey.create(Registries.BIOME,
             new ResourceLocation(Solaris.MOD_ID, "fire_islands"));
     public static final ResourceKey<Biome> NATURE_ISLANDS = ResourceKey.create(Registries.BIOME,
@@ -36,9 +31,7 @@ public class BiomeRegistry {
     public static void bootstrap(BootstapContext<Biome> context) {
         context.register(SCORCHED_PLAINS, scorchedPlains(context));
 
-        context.register(SWAMP_ISLANDS, waterIslands(context));
-        context.register(ICE_ISLANDS, waterIslands(context));
-        context.register(BEACH_ISLANDS, waterIslands(context));
+        context.register(WATER_ISLANDS, waterIslands(context));
 
         context.register(FIRE_ISLANDS, fireIslands(context));
 

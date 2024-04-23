@@ -1,10 +1,7 @@
 package com.github.x3r.solaris.common.registry;
 
 import com.github.x3r.solaris.Solaris;
-import com.github.x3r.solaris.common.entity.ElementalEntity;
-import com.github.x3r.solaris.common.entity.ScorchedBugEntity;
-import com.github.x3r.solaris.common.entity.SnowTrollEntity;
-import com.github.x3r.solaris.common.entity.ThrownBlockEntity;
+import com.github.x3r.solaris.common.entity.*;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Mob;
@@ -21,6 +18,7 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<ElementalEntity>> ELEMENTAL = registerMob("elemental", ElementalEntity::new, MobCategory.MONSTER, 1.5F, 2F);
     public static final RegistryObject<EntityType<SnowTrollEntity>> SNOW_TROLL = registerMob("snow_troll", SnowTrollEntity::new, MobCategory.MONSTER, 1.75F, 3F);
     public static final RegistryObject<EntityType<ThrownBlockEntity>> THROWN_BLOCK = registerMob("thrown_block", ThrownBlockEntity::new, MobCategory.MISC, 1F, 1F);
+    public static final RegistryObject<EntityType<UrborosEntity>> URBOROS = registerMob("urboros", UrborosEntity::new, MobCategory.MONSTER, 2.5F, 2.5F);
 
 
     public static <T extends Entity> RegistryObject<EntityType<T>> registerMob(String name, EntityType.EntityFactory<T> entity, MobCategory mobCategory, float width, float height) {

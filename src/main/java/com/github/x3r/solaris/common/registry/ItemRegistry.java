@@ -2,6 +2,7 @@ package com.github.x3r.solaris.common.registry;
 
 import com.github.x3r.solaris.Solaris;
 import com.github.x3r.solaris.common.item.DemonicAxe;
+import com.github.x3r.solaris.common.item.StaffItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -24,7 +25,11 @@ public class ItemRegistry {
             () -> new ForgeSpawnEggItem(EntityRegistry.ELEMENTAL, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
     public static final RegistryObject<ForgeSpawnEggItem> SNOW_TROLL_SPAWN_EGG = ITEMS.register("snow_troll_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityRegistry.SNOW_TROLL, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> URBOROS_SPAWN_EGG = ITEMS.register("urboros_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityRegistry.URBOROS, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
 
+    public static final RegistryObject<StaffItem> ELYRIUM_STAFF = ITEMS.register("elyrium_staff",
+            () -> new StaffItem(new Item.Properties()));
     public static class ModItemTab {
 
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Solaris.MOD_ID);

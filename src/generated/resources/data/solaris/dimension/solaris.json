@@ -16,7 +16,7 @@
       "disable_mob_generation": false,
       "legacy_random_source": false,
       "noise": {
-        "height": 128,
+        "height": 256,
         "min_y": 0,
         "size_horizontal": 1,
         "size_vertical": 1
@@ -141,45 +141,7 @@
             "if_true": {
               "type": "minecraft:biome",
               "biome_is": [
-                "solaris:swamp_islands"
-              ]
-            },
-            "then_run": {
-              "type": "minecraft:sequence",
-              "sequence": [
-                {
-                  "type": "minecraft:condition",
-                  "if_true": {
-                    "type": "solaris:",
-                    "depth": 4
-                  },
-                  "then_run": {
-                    "type": "minecraft:sequence",
-                    "sequence": [
-                      {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:mud"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:packed_mud"
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "type": "minecraft:condition",
-            "if_true": {
-              "type": "minecraft:biome",
-              "biome_is": [
-                "solaris:ice_islands"
+                "solaris:water_islands"
               ]
             },
             "then_run": {
@@ -206,43 +168,6 @@
                   "type": "minecraft:block",
                   "result_state": {
                     "Name": "minecraft:ice"
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "type": "minecraft:condition",
-            "if_true": {
-              "type": "minecraft:biome",
-              "biome_is": [
-                "solaris:beach_islands"
-              ]
-            },
-            "then_run": {
-              "type": "minecraft:sequence",
-              "sequence": [
-                {
-                  "type": "minecraft:condition",
-                  "if_true": {
-                    "type": "minecraft:above_preliminary_surface"
-                  },
-                  "then_run": {
-                    "type": "minecraft:sequence",
-                    "sequence": [
-                      {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:sand"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "type": "minecraft:block",
-                  "result_state": {
-                    "Name": "minecraft:sandstone"
                   }
                 }
               ]

@@ -52,7 +52,6 @@ import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
 
 import java.util.List;
-import java.util.Optional;
 
 public class SnowTrollEntity extends Monster implements SmartBrainOwner<SnowTrollEntity>, GeoEntity, RangedAttackMob {
 

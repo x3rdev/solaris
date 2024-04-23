@@ -14,11 +14,11 @@ import java.util.stream.IntStream;
 
 public class IslandNoiseTest {
 
-    static IslandNoise noise = new IslandNoise(RandomSource.create(0), 128, 0F,  0.5F);
+    static IslandNoise noise = new IslandNoise(RandomSource.create(0), 128, 0F, 0.5F, 0);
 
     @org.junit.Test
     public void createTexture() {
-        int size = 1280;
+        int size = 128*2;
         BufferedImage image = new BufferedImage(size, size, BufferedImage.TYPE_3BYTE_BGR);
         for (int i = -size/2; i < size/2; i++) {
             for (int j = -size/2; j < size/2; j++) {
