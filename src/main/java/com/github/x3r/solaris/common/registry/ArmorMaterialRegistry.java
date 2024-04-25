@@ -14,9 +14,7 @@ import java.util.function.Supplier;
 
 public enum ArmorMaterialRegistry implements ArmorMaterial {
 
-    SOLAR("solar_armor", 4, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(Items.STRING)),
-    CENTIPEDE_SCALE("centipede_scale_armor", 4, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(Items.STRING)),
-    MONK("monk_armor", 4, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(Items.STRING));
+    DEMONIC("demonic_armor", 4, new int[]{1, 2, 3, 1}, 15, SoundEvents.ARMOR_EQUIP_IRON, 0.0F, 0.0F, () -> Ingredient.of(Items.STRING));
 
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};

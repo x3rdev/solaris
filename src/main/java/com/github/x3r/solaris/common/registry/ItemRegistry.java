@@ -1,10 +1,12 @@
 package com.github.x3r.solaris.common.registry;
 
 import com.github.x3r.solaris.Solaris;
+import com.github.x3r.solaris.common.item.DemonicArmorItem;
 import com.github.x3r.solaris.common.item.DemonicAxe;
 import com.github.x3r.solaris.common.item.StaffItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -30,6 +32,15 @@ public class ItemRegistry {
 
     public static final RegistryObject<StaffItem> ELYRIUM_STAFF = ITEMS.register("elyrium_staff",
             () -> new StaffItem(new Item.Properties()));
+    public static final RegistryObject<DemonicArmorItem> DEMONIC_HELMET = ITEMS.register("demonic_helmet",
+            () -> new DemonicArmorItem(ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<DemonicArmorItem> DEMONIC_CHESTPLATE = ITEMS.register("demonic_chestplate",
+            () -> new DemonicArmorItem(ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<DemonicArmorItem> DEMONIC_LEGGINGS = ITEMS.register("demonic_leggings",
+            () -> new DemonicArmorItem(ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<DemonicArmorItem> DEMONIC_BOOTS = ITEMS.register("demonic_boots",
+            () -> new DemonicArmorItem(ArmorItem.Type.BOOTS, new Item.Properties()));
+
     public static class ModItemTab {
 
         public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Solaris.MOD_ID);

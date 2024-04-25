@@ -2,6 +2,9 @@ package com.github.x3r.solaris.common.registry;
 
 import com.github.x3r.solaris.Solaris;
 import com.github.x3r.solaris.common.block.ScorchedDirtBlock;
+import com.github.x3r.solaris.common.block.UrborosEggsBlock;
+import com.github.x3r.solaris.common.block.UrborosPolypBlock;
+import com.github.x3r.solaris.common.block.UrborosStrobilaBlock;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -26,4 +29,10 @@ public class BlockRegistry {
             () -> new RotatedPillarBlock(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()));
     public static final RegistryObject<Block> SCORCHED_GRASS = BLOCKS.register("scorched_grass",
             () -> new TallGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> URBOROS_EGGS = BLOCKS.register("urboros_eggs",
+            () -> new UrborosEggsBlock(BlockBehaviour.Properties.of().strength(2.0F, 0.2F).sound(SoundType.FROGSPAWN).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> URBOROS_POLYP = BLOCKS.register("urboros_polyp",
+            () -> new UrborosPolypBlock(BlockBehaviour.Properties.of().strength(2.0F, 0.2F).sound(SoundType.FROGLIGHT).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> URBOROS_STROBILA = BLOCKS.register("urboros_strobila",
+            () -> new UrborosStrobilaBlock(BlockBehaviour.Properties.of().strength(2.0F, 0.2F).sound(SoundType.FROGLIGHT).pushReaction(PushReaction.DESTROY)));
 }

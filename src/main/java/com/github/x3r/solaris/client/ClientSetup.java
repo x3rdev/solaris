@@ -1,13 +1,18 @@
 package com.github.x3r.solaris.client;
 
 import com.github.x3r.solaris.Solaris;
+import com.github.x3r.solaris.client.model.armor.DemonicArmorModel;
 import com.github.x3r.solaris.client.particle.*;
+import com.github.x3r.solaris.client.renderer.block.UrborosPolypRenderer;
+import com.github.x3r.solaris.client.renderer.block.UrborosStrobilaRenderer;
 import com.github.x3r.solaris.client.renderer.entity.*;
 import com.github.x3r.solaris.common.entity.SnowTrollEntity;
 import com.github.x3r.solaris.common.entity.ThrownBlockEntity;
+import com.github.x3r.solaris.common.registry.BlockEntityRegistry;
 import com.github.x3r.solaris.common.registry.EntityRegistry;
 import com.github.x3r.solaris.common.registry.ParticleRegistry;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.model.geom.LayerDefinitions;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -40,17 +45,22 @@ public class ClientSetup {
 
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
-
+        event.registerLayerDefinition(DemonicArmorModel.DEMONIC_ARMOR_INNER, () -> DemonicArmorModel.createLayer(LayerDefinitions.INNER_ARMOR_DEFORMATION));
+        event.registerLayerDefinition(DemonicArmorModel.DEMONIC_ARMOR_OUTER, () -> DemonicArmorModel.createLayer(LayerDefinitions.OUTER_ARMOR_DEFORMATION));
     }
 
     @SubscribeEvent
     public static void registerRenderers(final EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(BlockEntityRegistry.URBOROS_POLYP.get(), pContext -> new UrborosPolypRenderer());
+        event.registerBlockEntityRenderer(BlockEntityRegistry.URBOROS_STROBILA.get(), pContext -> new UrborosStrobilaRenderer());
+
         event.registerEntityRenderer(EntityRegistry.SCORCHED_BUG.get(), ScorchedBugRenderer::new);
         event.registerEntityRenderer(EntityRegistry.ELEMENTAL.get(), ElementalRenderer::new);
         event.registerEntityRenderer(EntityRegistry.SNOW_TROLL.get(), SnowTrollRenderer::new);
         event.registerEntityRenderer(EntityRegistry.THROWN_BLOCK.get(), ThrownBlockRenderer::new);
         event.registerEntityRenderer(EntityRegistry.URBOROS.get(), UrborosRenderer::new);
     }
+
 
     @SubscribeEvent
     public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {

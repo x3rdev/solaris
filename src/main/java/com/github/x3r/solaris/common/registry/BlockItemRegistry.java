@@ -1,6 +1,7 @@
 package com.github.x3r.solaris.common.registry;
 
 import com.github.x3r.solaris.Solaris;
+import com.github.x3r.solaris.common.item.GeckoBlockItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,4 +24,10 @@ public class BlockItemRegistry {
             () -> new BlockItem(BlockRegistry.SCORCHED_LOG.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> SCORCHED_GRASS = BLOCK_ITEMS.register("scorched_grass",
             () -> new BlockItem(BlockRegistry.SCORCHED_GRASS.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> URBOROS_EGGS = BLOCK_ITEMS.register("urboros_eggs",
+            () -> new BlockItem(BlockRegistry.URBOROS_EGGS.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> URBOROS_POLYP = BLOCK_ITEMS.register("urboros_polyp",
+            () -> new GeckoBlockItem(BlockRegistry.URBOROS_POLYP.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> URBOROS_STROBILA = BLOCK_ITEMS.register("urboros_strobila",
+            () -> new GeckoBlockItem(BlockRegistry.URBOROS_STROBILA.get(), new Item.Properties()));
 }
