@@ -19,6 +19,8 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<SnowTrollEntity>> SNOW_TROLL = registerMob("snow_troll", SnowTrollEntity::new, MobCategory.MONSTER, 1.75F, 3F);
     public static final RegistryObject<EntityType<ThrownBlockEntity>> THROWN_BLOCK = registerMob("thrown_block", ThrownBlockEntity::new, MobCategory.MISC, 1F, 1F);
     public static final RegistryObject<EntityType<UrborosEntity>> URBOROS = registerMob("urboros", UrborosEntity::new, MobCategory.MONSTER, 2.5F, 2.5F);
+    public static final RegistryObject<EntityType<UrborosEphyraEntity>> URBOROS_EPHYRA = registerMob("urboros_ephyra", UrborosEphyraEntity::new, MobCategory.MONSTER, 1F, 1F);
+
 
 
     public static <T extends Entity> RegistryObject<EntityType<T>> registerMob(String name, EntityType.EntityFactory<T> entity, MobCategory mobCategory, float width, float height) {

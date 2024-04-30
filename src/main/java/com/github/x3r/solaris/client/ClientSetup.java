@@ -59,6 +59,7 @@ public class ClientSetup {
         event.registerEntityRenderer(EntityRegistry.SNOW_TROLL.get(), SnowTrollRenderer::new);
         event.registerEntityRenderer(EntityRegistry.THROWN_BLOCK.get(), ThrownBlockRenderer::new);
         event.registerEntityRenderer(EntityRegistry.URBOROS.get(), UrborosRenderer::new);
+        event.registerEntityRenderer(EntityRegistry.URBOROS_EPHYRA.get(), UrborosEphyraRenderer::new);
     }
 
 

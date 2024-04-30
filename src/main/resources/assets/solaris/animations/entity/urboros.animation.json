@@ -6,72 +6,72 @@
 			"bones": {
 				"bone3": {
 					"rotation": {
-						"vector": ["10*math.cos(time*150)", "7*math.sin(time*75)", "7*math.cos(time*150)"]
+						"vector": ["10*math.cos(query.anim_time*150)", "7*math.sin(query.anim_time*75)", "7*math.cos(query.anim_time*150)"]
 					}
 				},
 				"bone2": {
 					"rotation": {
-						"vector": ["12*math.sin((time*150)+5)", "3*math.sin(time*150)", "3*math.sin(time*150)"]
+						"vector": ["12*math.sin((query.anim_time*150)+5)", "3*math.sin(query.anim_time*150)", "3*math.sin(query.anim_time*150)"]
 					}
 				},
 				"bone4": {
 					"rotation": {
-						"vector": ["14*math.sin((time*150)+10)", "3*math.sin(time*150)", 0]
+						"vector": ["14*math.sin((query.anim_time*150)+10)", "3*math.sin(query.anim_time*150)", 0]
 					}
 				},
 				"bone5": {
 					"rotation": {
-						"vector": ["16*math.sin((time*150)+15)", "3*math.sin(time*150)", 0]
+						"vector": ["16*math.sin((query.anim_time*150)+15)", "3*math.sin(query.anim_time*150)", 0]
 					}
 				},
 				"bone6": {
 					"rotation": {
-						"vector": ["10+math.sin(time*150)", "10*math.sin(time*150)-1", "20*math.cos(time*150)"]
+						"vector": ["10+math.sin(query.anim_time*150)", "10*math.sin(query.anim_time*150)-1", "20*math.cos(query.anim_time*150)"]
 					}
 				},
 				"bone7": {
 					"rotation": {
-						"vector": ["-(10+math.sin(time*150))", "-(10*math.sin(time*150)-1)", "-(20*math.cos(time*150)-20)"]
+						"vector": ["-(10+math.sin(query.anim_time*150))", "-(10*math.sin(query.anim_time*150)-1)", "-(20*math.cos(query.anim_time*150)-20)"]
 					}
 				},
 				"bone8": {
 					"rotation": {
-						"vector": ["10*math.sin((time*150)+30)", "7*math.cos((time*75)+30)", "7*math.sin((time*150)+30)"]
+						"vector": ["10*math.sin((query.anim_time*150)+30)", "7*math.cos((query.anim_time*75)+30)", "7*math.sin((query.anim_time*150)+30)"]
 					}
 				},
 				"bone9": {
 					"rotation": {
-						"vector": ["12*math.cos((time*150)+30)", "3*math.sin((time*150)+30)", "3*math.sin((time*150)+30)"]
+						"vector": ["12*math.cos((query.anim_time*150)+30)", "3*math.sin((query.anim_time*150)+30)", "3*math.sin((query.anim_time*150)+30)"]
 					}
 				},
 				"bone10": {
 					"rotation": {
-						"vector": ["14*math.sin((time*150)+40)", "3*math.sin((time*150)+30)", 0]
+						"vector": ["14*math.sin((query.anim_time*150)+40)", "3*math.sin((query.anim_time*150)+30)", 0]
 					}
 				},
 				"bone11": {
 					"rotation": {
-						"vector": ["16*math.sin((time*150)+45)", "3*math.sin((time*150)+30)", 0]
+						"vector": ["16*math.sin((query.anim_time*150)+45)", "3*math.sin((query.anim_time*150)+30)", 0]
 					}
 				},
 				"bone12": {
 					"rotation": {
-						"vector": ["10*math.sin((time*150)+80)", "7*math.sin((time*75)+80)", "7*math.cos((time*150)+80)"]
+						"vector": ["10*math.sin((query.anim_time*150)+80)", "7*math.sin((query.anim_time*75)+80)", "7*math.cos((query.anim_time*150)+80)"]
 					}
 				},
 				"bone13": {
 					"rotation": {
-						"vector": ["12*math.cos((time*150)+80)", "3*math.sin((time*150)+80)", "3*math.sin((time*150)+80)"]
+						"vector": ["12*math.cos((query.anim_time*150)+80)", "3*math.sin((query.anim_time*150)+80)", "3*math.sin((query.anim_time*150)+80)"]
 					}
 				},
 				"bone14": {
 					"rotation": {
-						"vector": ["14*math.sin((time*150)+90)", "3*math.sin((time*150)+80)", 0]
+						"vector": ["14*math.sin((query.anim_time*150)+90)", "3*math.sin((query.anim_time*150)+80)", 0]
 					}
 				},
 				"bone15": {
 					"rotation": {
-						"vector": ["16*math.sin((time*150)+95)", "3*math.sin((time*150)+80)", 0]
+						"vector": ["16*math.sin((query.anim_time*150)+95)", "3*math.sin((query.anim_time*150)+80)", 0]
 					}
 				}
 			}
@@ -81,15 +81,15 @@
 			"bones": {
 				"bone": {
 					"rotation": {
-						"vector": ["12*-math.cos(time*100)", 0, 0]
+						"vector": ["12*-math.cos(query.anim_time*100)", 0, 0]
 					},
 					"position": {
-						"vector": [0, 0, "-math.cos(time*100)"]
+						"vector": [0, 0, "-math.cos(query.anim_time*100)"]
 					}
 				},
 				"bone16": {
 					"scale": {
-						"vector": [1, "0.5+0.1*-(math.cos(time*100))", 1]
+						"vector": [1, "0.5+0.1*-(math.cos(query.anim_time*100))", 1]
 					}
 				}
 			}
@@ -160,7 +160,7 @@
 			"bones": {
 				"body": {
 					"rotation": {
-						"vector": ["10*math.cos(time*150)", "10*math.cos(time*75)", "5*math.sin(time*75)"]
+						"vector": ["10*math.cos(query.anim_time*150)", "10*math.cos(query.anim_time*75)", "5*math.sin(query.anim_time*75)"]
 					}
 				}
 			}
@@ -359,7 +359,7 @@
 			"bones": {
 				"body": {
 					"rotation": {
-						"vector": ["-17.5+5*-math.sin(time*1000)", 0, 0],
+						"vector": ["-17.5+5*-math.sin(query.anim_time*1000)", 0, 0],
 						"easing": "easeOutElastic"
 					}
 				},
@@ -370,7 +370,7 @@
 				},
 				"bone": {
 					"rotation": {
-						"vector": ["30+5*math.sin(time*1000)", 0, 0],
+						"vector": ["30+5*math.sin(query.anim_time*1000)", 0, 0],
 						"easing": "easeOutElastic"
 					}
 				}

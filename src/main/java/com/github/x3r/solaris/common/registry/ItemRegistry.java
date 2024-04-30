@@ -29,6 +29,8 @@ public class ItemRegistry {
             () -> new ForgeSpawnEggItem(EntityRegistry.SNOW_TROLL, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
     public static final RegistryObject<ForgeSpawnEggItem> URBOROS_SPAWN_EGG = ITEMS.register("urboros_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityRegistry.URBOROS, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> URBOROS_EPHYRA_SPAWN_EGG = ITEMS.register("urboros_ephyra_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityRegistry.URBOROS_EPHYRA, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
 
     public static final RegistryObject<StaffItem> ELYRIUM_STAFF = ITEMS.register("elyrium_staff",
             () -> new StaffItem(new Item.Properties()));
