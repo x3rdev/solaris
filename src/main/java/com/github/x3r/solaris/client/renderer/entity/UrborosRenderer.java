@@ -10,6 +10,7 @@ import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.cache.texture.AnimatableTexture;
 import software.bernie.geckolib.model.DefaultedEntityGeoModel;
 import software.bernie.geckolib.renderer.DynamicGeoEntityRenderer;
+import software.bernie.geckolib.util.RenderUtils;
 
 public class UrborosRenderer extends DynamicGeoEntityRenderer<UrborosEntity> {
 
@@ -22,7 +23,7 @@ public class UrborosRenderer extends DynamicGeoEntityRenderer<UrborosEntity> {
     @Override
     protected ResourceLocation getTextureOverrideForBone(GeoBone bone, UrborosEntity animatable, float partialTick) {
         if(bone.getName().equals("eyelid")) {
-            AnimatableTexture.setAndUpdate(EYELID_TEXTURE, animatable.getId() + (int)animatable.getTick(animatable));
+            AnimatableTexture.setAndUpdate(EYELID_TEXTURE);
             return EYELID_TEXTURE;
         }
         return super.getTextureOverrideForBone(bone, animatable, partialTick);
