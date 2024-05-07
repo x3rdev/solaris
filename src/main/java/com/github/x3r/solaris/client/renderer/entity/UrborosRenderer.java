@@ -2,10 +2,16 @@ package com.github.x3r.solaris.client.renderer.entity;
 
 import com.github.x3r.solaris.Solaris;
 import com.github.x3r.solaris.common.entity.UrborosEntity;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Axis;
 import it.unimi.dsi.fastutil.ints.IntIntPair;
+import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
+import software.bernie.geckolib.cache.object.BakedGeoModel;
 import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.cache.texture.AnimatableTexture;
 import software.bernie.geckolib.model.DefaultedEntityGeoModel;

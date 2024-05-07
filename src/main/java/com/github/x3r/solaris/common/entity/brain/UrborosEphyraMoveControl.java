@@ -18,7 +18,7 @@ public class UrborosEphyraMoveControl extends MoveControl {
             double yDist = this.wantedY - this.mob.getY();
             double zDist = this.wantedZ - this.mob.getZ();
             double dist = Mth.square(xDist) + Mth.square(yDist) + Mth.square(zDist);
-            if (dist < 0.001F) {
+            if (dist < 0.25F) {
                 this.mob.setYya(0.0F);
                 this.mob.setZza(0.0F);
                 return;
@@ -34,7 +34,7 @@ public class UrborosEphyraMoveControl extends MoveControl {
             if(Math.abs(yDist) > 1.0E-5F || Math.abs(hDist) > 1.0E-5F) {
                 float pitchToTarget = (float)(-(Mth.atan2(yDist, hDist * (180F / (float)Math.PI))));
                 this.mob.setXRot(this.rotlerp(this.mob.getXRot(), pitchToTarget, 10F));
-                float ySpeed = Mth.abs((float) yDist)/(Mth.abs((float) yDist)+1);
+                float ySpeed = Mth.abs((float) (2*yDist))/(Mth.abs((float) yDist)+1);
                 this.mob.setYya(yDist > 0.0D ? ySpeed : -ySpeed);
             }
         } else {

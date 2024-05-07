@@ -1,9 +1,14 @@
 package com.github.x3r.solaris.common.entity;
 
-import com.github.x3r.solaris.common.entity.brain.UrborosEphyraMoveControl;
+import com.github.x3r.solaris.common.entity.brain.UrborosMoveControl;
+import com.github.x3r.solaris.common.helper.ParticleHelper;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -17,13 +22,17 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.monster.ZombifiedPiglin;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.SmallFireball;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 import net.tslat.smartbrainlib.api.SmartBrainOwner;
 import net.tslat.smartbrainlib.api.core.BrainActivityGroup;
 import net.tslat.smartbrainlib.api.core.SmartBrainProvider;
 import net.tslat.smartbrainlib.api.core.behaviour.FirstApplicableBehaviour;
 import net.tslat.smartbrainlib.api.core.behaviour.OneRandomBehaviour;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.attack.AnimatableMeleeAttack;
+import net.tslat.smartbrainlib.api.core.behaviour.custom.attack.AnimatableRangedAttack;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.look.LookAtTarget;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.misc.Idle;
 import net.tslat.smartbrainlib.api.core.behaviour.custom.move.MoveToWalkTarget;
@@ -40,7 +49,6 @@ import software.bernie.geckolib.animatable.GeoEntity;
 import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
 import software.bernie.geckolib.core.animation.AnimatableManager;
 import software.bernie.geckolib.core.animation.AnimationController;
-import software.bernie.geckolib.core.animation.AnimationState;
 import software.bernie.geckolib.core.animation.RawAnimation;
 import software.bernie.geckolib.core.object.PlayState;
 import software.bernie.geckolib.util.GeckoLibUtil;
@@ -57,14 +65,14 @@ public class UrborosEntity extends Monster implements SmartBrainOwner<UrborosEnt
     protected static final RawAnimation FLY = RawAnimation.begin().thenPlay("fly");
     protected static final RawAnimation BITE_1 = RawAnimation.begin().thenPlay("bite1");
     protected static final RawAnimation BITE_2 = RawAnimation.begin().thenPlay("bite2");
-    protected static final RawAnimation FIRE_BREATH = RawAnimation.begin().thenPlay("fire_breath");
     protected static final RawAnimation FIREBALL = RawAnimation.begin().thenPlay("fireball");
+    protected static final RawAnimation EMPTY = RawAnimation.begin().thenPlay("empty");
 
     protected final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 
     public UrborosEntity(EntityType<? extends Monster> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
-        this.moveControl = new UrborosEphyraMoveControl(this);
+        this.moveControl = new UrborosMoveControl(this);
         this.setNoGravity(true);
     }
 
@@ -77,8 +85,23 @@ public class UrborosEntity extends Monster implements SmartBrainOwner<UrborosEnt
     }
 
     @Override
+    public double getMeleeAttackRangeSqr(LivingEntity pEntity) {
+        return Mth.square(4.5F);
+    }
+
+    @Override
+    protected PathNavigation createNavigation(Level pLevel) {
+        return new FlyingPathNavigation(this, pLevel);
+    }
+
+    @Override
     protected void customServerAiStep() {
         tickBrain(this);
+    }
+
+    @Override
+    protected void checkFallDamage(double pY, boolean pOnGround, BlockState pState, BlockPos pPos) {
+
     }
 
     public void setAttackState(byte state) {
@@ -96,13 +119,16 @@ public class UrborosEntity extends Monster implements SmartBrainOwner<UrborosEnt
     }
 
     @Override
-    protected PathNavigation createNavigation(Level pLevel) {
-        return new FlyingPathNavigation(this, pLevel);
+    public void performRangedAttack(LivingEntity pTarget, float pVelocity) {
+        Vec3 vec = getLookAngle().normalize().scale(2);
+        SmallFireball fireball = new SmallFireball(level(), this, vec.x, vec.y+1.5, vec.z);
+        fireball.setDeltaMovement(position().vectorTo(pTarget.position()).normalize().scale(0.5));
+        level().addFreshEntity(fireball);
     }
 
     @Override
-    public void performRangedAttack(LivingEntity pTarget, float pVelocity) {
-
+    public boolean fireImmune() {
+        return true;
     }
 
     @Override
@@ -128,15 +154,15 @@ public class UrborosEntity extends Monster implements SmartBrainOwner<UrborosEnt
         return BrainActivityGroup.coreTasks(
                 new LookAtTarget<>(),
                 new MoveToWalkTarget<UrborosEntity>()
-                        .startCondition(entity ->
-                                entity.getTarget() != null &&
-                                        !entity.getTarget().isDeadOrDying() &&
-                                        !entity.isDeadOrDying()
+                        .startCondition(urborosEntity ->
+                                urborosEntity.getTarget() != null &&
+                                        !urborosEntity.getTarget().isDeadOrDying() &&
+                                        !urborosEntity.isDeadOrDying()
                         )
-                        .stopIf(entity ->
-                                entity.getTarget() == null ||
-                                        entity.getTarget().isDeadOrDying() ||
-                                        entity.isDeadOrDying()
+                        .stopIf(urborosEntity ->
+                                urborosEntity.getTarget() == null ||
+                                        urborosEntity.getTarget().isDeadOrDying() ||
+                                        urborosEntity.isDeadOrDying()
                         )
         );
     }
@@ -154,7 +180,7 @@ public class UrborosEntity extends Monster implements SmartBrainOwner<UrborosEnt
                 ),
                 new OneRandomBehaviour<>(
                         new SetRandomFlyingTarget<UrborosEntity>()
-                                .setRadius(5),
+                                .setRadius(7),
                         new Idle<UrborosEntity>()
                                 .runFor(livingEntity -> livingEntity.getRandom().nextInt(40, 60)),
                         new Idle<UrborosEntity>()
@@ -174,15 +200,30 @@ public class UrborosEntity extends Monster implements SmartBrainOwner<UrborosEnt
                         new AnimatableMeleeAttack<UrborosEntity>(4) {
                             @Override
                             protected void start(UrborosEntity entity) {
-                                BehaviorUtils.lookAtEntity(entity, entity.getTarget());
-                                entity.triggerAnim("jaw_controller", "bite_"+entity.random.nextInt(2));
+                                entity.lookAt(EntityAnchorArgument.Anchor.EYES, entity.getTarget().position());
+                                entity.triggerAnim("jaw_controller", "bite_"+entity.random.nextInt(3));
                             }
                         }
-                                .attackInterval(entity -> 10)
-                                .runFor(entity -> 10)
+                                .startCondition(urborosEntity -> urborosEntity.getAttackState() == 0)
+                                .runFor(entity -> 30)
                                 .whenStarting(entity -> entity.setAttackState((byte) 1))
                                 .whenStopping(entity -> entity.setAttackState((byte) 0))
-                )
+                                .cooldownFor(entity -> 25)),
+                        new AnimatableRangedAttack<UrborosEntity>(10) {
+                            @Override
+                            protected void start(UrborosEntity entity) {
+                                entity.lookAt(EntityAnchorArgument.Anchor.EYES, entity.getTarget().position());
+                                entity.triggerAnim("jaw_controller", "fire_breath");
+                            }
+                        }
+                                .startCondition(urborosEntity -> urborosEntity.getAttackState() == 0)
+                                .runFor(entity -> 40)
+                                .whenStarting(entity -> entity.setAttackState((byte) 2))
+                                .whenStopping(entity -> {
+                                    entity.setAttackState((byte) 0);
+                                    entity.triggerAnim("jaw_controller", "empty");
+                                })
+                                .cooldownFor(entity -> 120)
         );
     }
 
@@ -191,13 +232,12 @@ public class UrborosEntity extends Monster implements SmartBrainOwner<UrborosEnt
         controllers.add(new AnimationController<>(this, "jaw_controller", 1, state -> state.setAndContinue(JAW_IDLE))
                 .triggerableAnim("bite_1", BITE_1)
                 .triggerableAnim("bite_2", BITE_2)
-                .triggerableAnim("fire_breath", FIRE_BREATH)
-                .triggerableAnim("fireball", FIREBALL));
+                .triggerableAnim("fireball", FIREBALL)
+                .triggerableAnim("empty", EMPTY));
         controllers.add(new AnimationController<>(this, "tentacle_controller", 1, state -> state.setAndContinue(TENTACLES)));
         controllers.add(new AnimationController<>(this, "eye_controller", 1, state -> PlayState.CONTINUE)
                 .triggerableAnim("eye", EYE));
-        controllers.add(new AnimationController<>(this, "fly_controller", 1, state -> PlayState.CONTINUE)
-                .triggerableAnim("fly", FLY));
+        controllers.add(new AnimationController<>(this, "fly_controller", 1, state -> state.setAndContinue(FLY)));
     }
 
     @Override
