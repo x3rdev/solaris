@@ -24,6 +24,7 @@ public class CommonSetup {
         event.put(EntityRegistry.SNOW_TROLL.get(), SnowTrollEntity.createAttributes());
         event.put(EntityRegistry.URBOROS.get(), UrborosEntity.createAttributes());
         event.put(EntityRegistry.URBOROS_EPHYRA.get(), UrborosEphyraEntity.createAttributes());
+        event.put(EntityRegistry.ANCIENT_MECH_BOSS.get(), AncientMechBossEntity.createAttributes());
     }
 
     public static void spawnPlacementSetup(SpawnPlacementRegisterEvent event) {

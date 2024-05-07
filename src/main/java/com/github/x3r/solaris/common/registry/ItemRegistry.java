@@ -31,6 +31,8 @@ public class ItemRegistry {
             () -> new ForgeSpawnEggItem(EntityRegistry.URBOROS, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
     public static final RegistryObject<ForgeSpawnEggItem> URBOROS_EPHYRA_SPAWN_EGG = ITEMS.register("urboros_ephyra_spawn_egg",
             () -> new ForgeSpawnEggItem(EntityRegistry.URBOROS_EPHYRA, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
+    public static final RegistryObject<ForgeSpawnEggItem> ANCIENT_MECH_BOSS_SPAWN_EGG = ITEMS.register("ancient_mech_boss_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntityRegistry.ANCIENT_MECH_BOSS, 0xFFFFFF, 0xFFFFFF, new Item.Properties()));
 
     public static final RegistryObject<StaffItem> ELYRIUM_STAFF = ITEMS.register("elyrium_staff",
             () -> new StaffItem(new Item.Properties()));

@@ -20,8 +20,7 @@ public class EntityRegistry {
     public static final RegistryObject<EntityType<ThrownBlockEntity>> THROWN_BLOCK = registerMob("thrown_block", ThrownBlockEntity::new, MobCategory.MISC, 1F, 1F);
     public static final RegistryObject<EntityType<UrborosEntity>> URBOROS = registerMob("urboros", UrborosEntity::new, MobCategory.MONSTER, 2.5F, 2.5F);
     public static final RegistryObject<EntityType<UrborosEphyraEntity>> URBOROS_EPHYRA = registerMob("urboros_ephyra", UrborosEphyraEntity::new, MobCategory.MONSTER, 1F, 1F);
-
-
+    public static final RegistryObject<EntityType<AncientMechBossEntity>> ANCIENT_MECH_BOSS = registerMob("ancient_mech_boss", AncientMechBossEntity::new, MobCategory.MONSTER, 2F, 4F);
 
     public static <T extends Entity> RegistryObject<EntityType<T>> registerMob(String name, EntityType.EntityFactory<T> entity, MobCategory mobCategory, float width, float height) {
         return ENTITIES.register(name,
