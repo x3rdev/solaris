@@ -1,0 +1,6 @@
+{
+  "parent": "solaris:block/ancient_glowing_bricks_base",
+  "textures": {
+    "front": "solaris:block/ancient_glowing_bricks/ancient_glowing_bricks_i_3_180"
+  }
+}

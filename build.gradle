@@ -36,6 +36,7 @@ minecraft {
 
         client {
             property 'forge.enabledGameTestNamespaces', mod_id
+            jvmArgs "-Xmx3000M"
         }
 
         server {

@@ -4,6 +4,7 @@ import com.github.x3r.solaris.Solaris;
 import com.github.x3r.solaris.common.item.DemonicArmorItem;
 import com.github.x3r.solaris.common.item.DemonicAxe;
 import com.github.x3r.solaris.common.item.StaffItem;
+import com.github.x3r.solaris.common.item.WrenchItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ArmorItem;
@@ -36,6 +37,8 @@ public class ItemRegistry {
 
     public static final RegistryObject<StaffItem> ELYRIUM_STAFF = ITEMS.register("elyrium_staff",
             () -> new StaffItem(new Item.Properties()));
+    public static final RegistryObject<WrenchItem> WRENCH = ITEMS.register("wrench",
+            () -> new WrenchItem(new Item.Properties()));
     public static final RegistryObject<DemonicArmorItem> DEMONIC_HELMET = ITEMS.register("demonic_helmet",
             () -> new DemonicArmorItem(ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<DemonicArmorItem> DEMONIC_CHESTPLATE = ITEMS.register("demonic_chestplate",

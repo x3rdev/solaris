@@ -1,10 +1,7 @@
 package com.github.x3r.solaris.common.registry;
 
 import com.github.x3r.solaris.Solaris;
-import com.github.x3r.solaris.common.block.ScorchedDirtBlock;
-import com.github.x3r.solaris.common.block.UrborosEggsBlock;
-import com.github.x3r.solaris.common.block.UrborosPolypBlock;
-import com.github.x3r.solaris.common.block.UrborosStrobilaBlock;
+import com.github.x3r.solaris.common.block.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -35,4 +32,6 @@ public class BlockRegistry {
             () -> new UrborosPolypBlock(BlockBehaviour.Properties.of().strength(2.0F, 0.2F).sound(SoundType.FROGLIGHT).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> URBOROS_STROBILA = BLOCKS.register("urboros_strobila",
             () -> new UrborosStrobilaBlock(BlockBehaviour.Properties.of().strength(2.0F, 0.2F).sound(SoundType.FROGLIGHT).pushReaction(PushReaction.DESTROY)));
+    public static final RegistryObject<Block> ANCIENT_GLOWING_BRICKS = BLOCKS.register("ancient_glowing_bricks",
+            () -> new AncientGlowingBricksBlock(BlockBehaviour.Properties.of().strength(1.5F, 6F)));
 }

@@ -30,4 +30,6 @@ public class BlockItemRegistry {
             () -> new GeckoBlockItem(BlockRegistry.URBOROS_POLYP.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> URBOROS_STROBILA = BLOCK_ITEMS.register("urboros_strobila",
             () -> new GeckoBlockItem(BlockRegistry.URBOROS_STROBILA.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> ANCIENT_GLOWING_BRICKS = BLOCK_ITEMS.register("ancient_glowing_bricks",
+            () -> new GeckoBlockItem(BlockRegistry.ANCIENT_GLOWING_BRICKS.get(), new Item.Properties()));
 }

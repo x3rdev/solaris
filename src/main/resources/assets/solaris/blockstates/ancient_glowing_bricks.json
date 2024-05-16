@@ -1,0 +1,849 @@
+{
+  "variants": {
+    "right=false,facing=down,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_0_0",
+      "x": 180
+    },
+    "right=true,facing=down,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_270",
+      "x": 180
+    },
+    "right=false,facing=down,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_180",
+      "x": 180
+    },
+    "right=false,facing=down,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_0",
+      "x": 180
+    },
+    "right=false,facing=down,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_90",
+      "x": 180
+    },
+    "right=false,facing=down,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0",
+      "x": 180
+    },
+    "right=true,facing=down,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90",
+      "x": 180
+    },
+    "right=true,facing=down,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0_shoulder",
+      "x": 180
+    },
+    "right=true,facing=down,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90_shoulder",
+      "x": 180
+    },
+    "right=false,facing=down,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_180_shoulder",
+      "x": 180
+    },
+    "right=false,facing=down,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_270_shoulder",
+      "x": 180
+    },
+    "right=false,facing=down,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_0",
+      "x": 180
+    },
+    "right=true,facing=down,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_90",
+      "x": 180
+    },
+    "right=true,facing=down,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_180",
+      "x": 180
+    },
+    "right=true,facing=down,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_270",
+      "x": 180
+    },
+    "right=true,facing=down,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_4_0",
+      "x": 180
+    },
+    "right=false,facing=down,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_0_0",
+      "x": 180
+    },
+    "right=true,facing=down,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_270",
+      "x": 180
+    },
+    "right=false,facing=down,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_180",
+      "x": 180
+    },
+    "right=false,facing=down,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_0",
+      "x": 180
+    },
+    "right=false,facing=down,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_90",
+      "x": 180
+    },
+    "right=false,facing=down,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0",
+      "x": 180
+    },
+    "right=true,facing=down,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90",
+      "x": 180
+    },
+    "right=true,facing=down,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0_shoulder",
+      "x": 180
+    },
+    "right=true,facing=down,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90_shoulder",
+      "x": 180
+    },
+    "right=false,facing=down,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_180_shoulder",
+      "x": 180
+    },
+    "right=false,facing=down,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_270_shoulder",
+      "x": 180
+    },
+    "right=false,facing=down,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_0",
+      "x": 180
+    },
+    "right=true,facing=down,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_90",
+      "x": 180
+    },
+    "right=true,facing=down,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_180",
+      "x": 180
+    },
+    "right=true,facing=down,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_270",
+      "x": 180
+    },
+    "right=true,facing=down,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_4_0",
+      "x": 180
+    },
+    
+    "right=false,facing=east,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_0_0",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_270",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_180",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_0",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_90",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0_shoulder",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90_shoulder",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_180_shoulder",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_270_shoulder",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_0",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_90",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_180",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_270",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_4_0",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_0_0",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_270",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_180",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_0",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_90",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0_shoulder",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90_shoulder",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_180_shoulder",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_270_shoulder",
+      "x": 90,
+      "y": 90
+    },
+    "right=false,facing=east,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_0",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_90",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_180",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_270",
+      "x": 90,
+      "y": 90
+    },
+    "right=true,facing=east,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_4_0",
+      "x": 90,
+      "y": 90
+    },
+
+    "right=false,facing=north,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_0_0",
+      "x": 90,
+      "z": 90
+    },
+    "right=true,facing=north,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_270",
+      "x": 90,
+      "z": 90
+    },
+    "right=false,facing=north,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_180",
+      "x": 90,
+      "z": 90
+    },
+    "right=false,facing=north,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_0",
+      "x": 90,
+      "z": 90
+    },
+    "right=false,facing=north,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_90",
+      "x": 90
+    },
+    "right=false,facing=north,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0",
+      "x": 90
+    },
+    "right=true,facing=north,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90",
+      "x": 90
+    },
+    "right=true,facing=north,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0_shoulder",
+      "x": 90
+    },
+    "right=true,facing=north,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90_shoulder",
+      "x": 90
+    },
+    "right=false,facing=north,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_180_shoulder",
+      "x": 90
+    },
+    "right=false,facing=north,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_270_shoulder",
+      "x": 90
+    },
+    "right=false,facing=north,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_0",
+      "x": 90
+    },
+    "right=true,facing=north,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_90",
+      "x": 90
+    },
+    "right=true,facing=north,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_180",
+      "x": 90
+    },
+    "right=true,facing=north,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_270",
+      "x": 90
+    },
+    "right=true,facing=north,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_4_0",
+      "x": 90
+    },
+    "right=false,facing=north,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_0_0",
+      "x": 90,
+      "z": 90
+    },
+    "right=true,facing=north,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_270",
+      "x": 90,
+      "z": 90
+    },
+    "right=false,facing=north,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_180",
+      "x": 90,
+      "z": 90
+    },
+    "right=false,facing=north,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_0",
+      "x": 90,
+      "z": 90
+    },
+    "right=false,facing=north,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_90",
+      "x": 90
+    },
+    "right=false,facing=north,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0",
+      "x": 90
+    },
+    "right=true,facing=north,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90",
+      "x": 90
+    },
+    "right=true,facing=north,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0_shoulder",
+      "x": 90
+    },
+    "right=true,facing=north,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90_shoulder",
+      "x": 90
+    },
+    "right=false,facing=north,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_180_shoulder",
+      "x": 90
+    },
+    "right=false,facing=north,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_270_shoulder",
+      "x": 90
+    },
+    "right=false,facing=north,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_0",
+      "x": 90
+    },
+    "right=true,facing=north,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_90",
+      "x": 90
+    },
+    "right=true,facing=north,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_180",
+      "x": 90
+    },
+    "right=true,facing=north,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_270",
+      "x": 90
+    },
+    "right=true,facing=north,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_4_0",
+      "x": 90
+    },
+
+    "right=false,facing=south,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_0_0",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_270",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_180",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_0",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_90",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0_shoulder",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90_shoulder",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_180_shoulder",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_270_shoulder",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_0",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_90",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_180",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_270",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_4_0",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_0_0",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_270",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_180",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_0",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_90",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0_shoulder",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90_shoulder",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_180_shoulder",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_270_shoulder",
+      "x": 90,
+      "y": 180
+    },
+    "right=false,facing=south,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_0",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_90",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_180",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_270",
+      "x": 90,
+      "y": 180
+    },
+    "right=true,facing=south,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_4_0",
+      "x": 90,
+      "y": 180
+    },
+
+    "right=false,facing=up,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_0_0"
+    },
+    "right=true,facing=up,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_270"
+    },
+    "right=false,facing=up,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_180"
+    },
+    "right=false,facing=up,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_0"
+    },
+    "right=false,facing=up,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_90"
+    },
+    "right=false,facing=up,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0"
+    },
+    "right=true,facing=up,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90"
+    },
+    "right=true,facing=up,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0_shoulder"
+    },
+    "right=true,facing=up,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90_shoulder"
+    },
+    "right=false,facing=up,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_180_shoulder"
+    },
+    "right=false,facing=up,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_270_shoulder"
+    },
+    "right=false,facing=up,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_0"
+    },
+    "right=true,facing=up,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_90"
+    },
+    "right=true,facing=up,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_180"
+    },
+    "right=true,facing=up,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_270"
+    },
+    "right=true,facing=up,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_4_0"
+    },
+    "right=false,facing=up,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_0_0"
+    },
+    "right=true,facing=up,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_270"
+    },
+    "right=false,facing=up,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_180"
+    },
+    "right=false,facing=up,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_0"
+    },
+    "right=false,facing=up,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_90"
+    },
+    "right=false,facing=up,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0"
+    },
+    "right=true,facing=up,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90"
+    },
+    "right=true,facing=up,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0_shoulder"
+    },
+    "right=true,facing=up,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90_shoulder"
+    },
+    "right=false,facing=up,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_180_shoulder"
+    },
+    "right=false,facing=up,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_270_shoulder"
+    },
+    "right=false,facing=up,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_0"
+    },
+    "right=true,facing=up,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_90"
+    },
+    "right=true,facing=up,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_180"
+    },
+    "right=true,facing=up,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_270"
+    },
+    "right=true,facing=up,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_4_0"
+    },
+
+    "right=false,facing=west,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_0_0",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=false,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_270",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_180",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_0",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_1_90",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=false,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=false,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_0_shoulder",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=false,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_90_shoulder",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_180_shoulder",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_2_270_shoulder",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_0",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=false,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_90",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=false,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_180",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=false,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_3_270",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=false,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_i_4_0",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_i_0_0",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=true,up=false,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_270",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_180",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_0",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_1_90",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=true,up=false,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=true,up=true,down=false,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_0_shoulder",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=true,up=false,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_90_shoulder",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_180_shoulder",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_2_270_shoulder",
+      "x": 90,
+      "y": 270
+    },
+    "right=false,facing=west,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_0",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=true,up=true,down=false,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_90",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=true,up=true,down=true,left=false": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_180",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=true,up=false,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_3_270",
+      "x": 90,
+      "y": 270
+    },
+    "right=true,facing=west,powered=true,up=true,down=true,left=true": {
+      "model": "solaris:block/ancient_glowing_bricks_a_4_0",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

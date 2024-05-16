@@ -14,7 +14,7 @@ public class BlockEntityRegistry {
 
     public static final RegistryObject<BlockEntityType<UrborosPolypBlockEntity>> URBOROS_POLYP = BLOCK_ENTITIES.register("urboros_polyp",
             () -> BlockEntityType.Builder.of(UrborosPolypBlockEntity::new, BlockRegistry.URBOROS_POLYP.get()).build(null));
-
     public static final RegistryObject<BlockEntityType<UrborosStrobilaBlockEntity>> URBOROS_STROBILA = BLOCK_ENTITIES.register("urboros_strobila",
             () -> BlockEntityType.Builder.of(UrborosStrobilaBlockEntity::new, BlockRegistry.URBOROS_STROBILA.get()).build(null));
+
 }

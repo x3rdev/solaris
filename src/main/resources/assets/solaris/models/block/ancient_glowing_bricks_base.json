@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "solaris:block/ancient_glowing_bricks/ancient_glowing_bricks_end",
+    "side": "solaris:block/ancient_glowing_bricks/ancient_glowing_bricks",
+    "particle": "#side",
+    "down": "#end",
+    "up": "#front",
+    "north": "#side",
+    "east": "#side",
+    "south": "#side",
+    "west": "#side"
+  }
+}
