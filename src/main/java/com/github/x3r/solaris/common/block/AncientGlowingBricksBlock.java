@@ -72,7 +72,7 @@ public class AncientGlowingBricksBlock extends DirectionalBlock {
         }
     }
 
-    public List<Direction> getConnectionDirections(Level level, BlockState state) {
+    public List<Direction> getConnectionDirections(BlockState state) {
         Direction direction = state.getValue(FACING);
         boolean up = state.getValue(UP);
         boolean right = state.getValue(RIGHT);
@@ -167,12 +167,12 @@ public class AncientGlowingBricksBlock extends DirectionalBlock {
         return l;
     }
 
-    private boolean canConnect(Level level, BlockState state, Direction direction) {
-        return getConnectionDirections(level, state).contains(direction);
+    private boolean canConnect(BlockState state, Direction direction) {
+        return getConnectionDirections(state).contains(direction);
     }
 
     private boolean hasNeighborSignal(BlockState state, Level level, BlockPos pos, @Nullable Direction blackListDir) {
-        for (Direction direction : getConnectionDirections(level, state)) {
+        for (Direction direction : getConnectionDirections(state)) {
             if(blackListDir != null && direction == blackListDir) {
                 continue;
             }
@@ -187,7 +187,7 @@ public class AncientGlowingBricksBlock extends DirectionalBlock {
         BlockPos neighborPos = pos.relative(direction);
         BlockState state = level.getBlockState(neighborPos);
         if(state.is(this)) {
-            return canConnect(level, state, direction.getOpposite()) && hasNeighborSignal(state, level, neighborPos, direction.getOpposite());
+            return canConnect(state, direction.getOpposite()) && hasNeighborSignal(state, level, neighborPos, direction.getOpposite());
         }
         return level.hasSignal(neighborPos, direction.getOpposite());
     }

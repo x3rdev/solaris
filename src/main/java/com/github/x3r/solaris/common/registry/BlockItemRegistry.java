@@ -26,6 +26,14 @@ public class BlockItemRegistry {
             () -> new BlockItem(BlockRegistry.SCORCHED_GRASS.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> URBOROS_EGGS = BLOCK_ITEMS.register("urboros_eggs",
             () -> new BlockItem(BlockRegistry.URBOROS_EGGS.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> SNOWY_STONE = BLOCK_ITEMS.register("snowy_stone",
+            () -> new BlockItem(BlockRegistry.SNOWY_STONE.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> SNOWY_STONE_BRICKS = BLOCK_ITEMS.register("snowy_stone_bricks",
+            () -> new BlockItem(BlockRegistry.SNOWY_STONE_BRICKS.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> PERMAFROST = BLOCK_ITEMS.register("permafrost",
+            () -> new BlockItem(BlockRegistry.PERMAFROST.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> GRASSY_PERMAFROST = BLOCK_ITEMS.register("grassy_permafrost",
+            () -> new BlockItem(BlockRegistry.GRASSY_PERMAFROST.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> URBOROS_POLYP = BLOCK_ITEMS.register("urboros_polyp",
             () -> new GeckoBlockItem(BlockRegistry.URBOROS_POLYP.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> URBOROS_STROBILA = BLOCK_ITEMS.register("urboros_strobila",
