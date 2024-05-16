@@ -31,6 +31,7 @@ public class SolarisConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> SCORCHED_IRON_ORE = registerKey("scorched_iron_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SCORCHED_TREE = registerKey("scorched_tree");
     public static final ResourceKey<ConfiguredFeature<?, ?>> SCORCHED_GRASS = registerKey("scorched_grass");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> SNOWY_GRASS = registerKey("snowy_grass");
 
     public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest brimstoneReplaceable = new BlockMatchTest(BlockRegistry.BRIMSTONE.get());
@@ -48,6 +49,8 @@ public class SolarisConfiguredFeatures {
                 .dirt(BlockStateProvider.simple(BlockRegistry.SCORCHED_DIRT.get())).build());
         register(context, SCORCHED_GRASS, Feature.RANDOM_PATCH, VegetationFeatures.grassPatch(
                 BlockStateProvider.simple(BlockRegistry.SCORCHED_GRASS.get()), 32));
+        register(context, SNOWY_GRASS, Feature.RANDOM_PATCH, VegetationFeatures.grassPatch(
+                BlockStateProvider.simple(BlockRegistry.SNOWY_GRASS.get()), 32));
     }
 
     private static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name) {

@@ -9,6 +9,7 @@ import net.minecraft.core.HolderGetter;
 import net.minecraft.core.QuartPos;
 import net.minecraft.core.SectionPos;
 import net.minecraft.resources.RegistryOps;
+import net.minecraft.util.Mth;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import org.joml.Vector2i;
@@ -77,24 +78,24 @@ public class SolarisBiomeSource extends BiomeSource {
         int i = QuartPos.toBlock(pX);
         int k = QuartPos.toBlock(pZ);
         Vector2i islandPos = densityFunction.biomeCompute(new DensityFunction.SinglePointContext(i, 0, k));
-
-        if(islandPos.x*islandPos.x+islandPos.y*islandPos.y > 1200*1200) {
-            return darkIslands;
+        float angle = (float) Math.atan2(islandPos.y, islandPos.x) + Mth.PI;
+        if(angle >= 0 && angle <= Mth.PI/3) {
+            return waterIslands;
         }
-        if(islandPos.x*islandPos.x+islandPos.y*islandPos.y > 1000*1000) {
-            return lightIslands;
-        }
-        if(islandPos.x*islandPos.x+islandPos.y*islandPos.y > 800*800) {
-            return lightningIslands;
-        }
-        if(islandPos.x*islandPos.x+islandPos.y*islandPos.y > 600*600) {
-            return natureIslands;
-        }
-        if(islandPos.x*islandPos.x+islandPos.y*islandPos.y > 400*400) {
+        if(angle > Mth.PI/3 && angle <= 2*Mth.PI/3) {
             return fireIslands;
         }
-        if(islandPos.x*islandPos.x+islandPos.y*islandPos.y > 200*200) {
-            return waterIslands;
+        if(angle > 2*Mth.PI/3 && angle <= Mth.PI) {
+            return natureIslands;
+        }
+        if(angle > Mth.PI && angle <= 4*Mth.PI/3) {
+            return lightningIslands;
+        }
+        if(angle > 4*Mth.PI/3 && angle <= 5*Mth.PI/3) {
+            return darkIslands;
+        }
+        if(angle > 5*Mth.PI/3 && angle <= 2*Mth.PI) {
+            return lightIslands;
         }
         return scorchedPlains;
     }

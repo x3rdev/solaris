@@ -134,7 +134,6 @@ public class DimensionRegistry {
     }
 
     private static SurfaceRules.RuleSource ruleSource() {
-//        SurfaceRules.state(BlockRegistry.BRIMSTONE.get().defaultBlockState())
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.SCORCHED_PLAINS),
                         SurfaceRules.sequence(
@@ -151,12 +150,15 @@ public class DimensionRegistry {
                 ),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.WATER_ISLANDS),
                         SurfaceRules.sequence(
-                                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+                                SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(5),
                                         SurfaceRules.sequence(
-                                                SurfaceRules.state(Blocks.SNOW_BLOCK.defaultBlockState())
+                                                SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(0),
+                                                        SurfaceRules.state(BlockRegistry.GRASSY_PERMAFROST.get().defaultBlockState())
+                                                ),
+                                                SurfaceRules.state(BlockRegistry.PERMAFROST.get().defaultBlockState())
                                         )
                                 ),
-                                SurfaceRules.state(Blocks.ICE.defaultBlockState())
+                                SurfaceRules.state(BlockRegistry.SNOWY_STONE.get().defaultBlockState())
                         )
                 ),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.FIRE_ISLANDS),
@@ -164,7 +166,7 @@ public class DimensionRegistry {
                 ),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(BiomeRegistry.NATURE_ISLANDS),
                         SurfaceRules.sequence(
-                                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
+                                SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(5),
                                         SurfaceRules.sequence(
                                                 SurfaceRules.ifTrue(SolarisSurfaceRules.topOfWorldCheck(0),
                                                         SurfaceRules.state(Blocks.GRASS_BLOCK.defaultBlockState())

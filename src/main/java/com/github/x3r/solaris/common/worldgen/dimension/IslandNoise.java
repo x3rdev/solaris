@@ -44,15 +44,14 @@ public class IslandNoise {
         int closestCenterZ = getClosestCenter(blockX, blockZ).y;
         int islandX = closestCenterX/cellSize;
         int islandZ = closestCenterZ/cellSize;
-        float angle = (float) Math.atan2(closestCenterZ-blockZ, closestCenterX-blockX);
-        double distSquared = (closestCenterX-blockX)*(closestCenterX-blockX) + (closestCenterZ-blockZ)*(closestCenterZ-blockZ);
+        float angle = (float) Mth.atan2(closestCenterZ-blockZ, closestCenterX-blockX);
+        float distSquared = (closestCenterX-blockX)*(closestCenterX-blockX) + (closestCenterZ-blockZ)*(closestCenterZ-blockZ);
         double radius = cellSize * 0.75 * islandSize * islandRadiusFunction(islandX, islandZ, normalizedNoiseValue(noise, blockX, blockX), angle);
         double maxDist = cellSize * islandSize;
         return 1 - (float) (distSquared/Mth.square(maxDist + radius));
     }
     public double getValue(int blockX, int blockY, int blockZ) {
-        double value = getValue(blockX, blockZ);
-        return blockY > height-(4+bottomNoise.getValue(blockX, blockZ, false)*6) && blockY < height+(5+topNoise.getValue(blockX, blockZ, false)*4) ? value : -1;
+        return blockY > height-(4+bottomNoise.getValue(blockX, blockZ, false)*6) && blockY < height+(5+topNoise.getValue(blockX, blockZ, false)*4) ? getValue(blockX, blockZ) : -1;
     }
 
     public double getIslandValue(int islandX, int islandZ) {
@@ -90,10 +89,10 @@ public class IslandNoise {
     }
 
     private Vector2i getCellCenter(int cellX, int cellZ) {
-        double theta = Math.PI*noise.getValue(cellX, cellZ, false);
+        float theta = (float) (Math.PI*noise.getValue(cellX, cellZ, false));
         double dist = cellSize * 0.15F*0;
-        int centerX = (int) (cellX * cellSize + cellSize*centerOffset + dist * Math.cos(theta));
-        int centerZ = (int) (cellZ * cellSize + cellSize*centerOffset + dist * Math.sin(theta));
+        int centerX = (int) (cellX * cellSize + cellSize*centerOffset + dist * Mth.cos(theta));
+        int centerZ = (int) (cellZ * cellSize + cellSize*centerOffset + dist * Mth.sin(theta));
         return new Vector2i(centerX, centerZ);
     }
 

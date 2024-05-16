@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "solaris:water_islands",
+  "features": "solaris:snowy_grass_placed",
+  "step": "vegetal_decoration"
+}

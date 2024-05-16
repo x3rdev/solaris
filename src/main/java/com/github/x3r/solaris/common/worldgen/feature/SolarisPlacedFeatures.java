@@ -26,6 +26,7 @@ public class SolarisPlacedFeatures {
     public static final ResourceKey<PlacedFeature> SCORCHED_IRON_ORE_PLACED = registerKey("scorched_iron_ore_placed");
     public static final ResourceKey<PlacedFeature> SCORCHED_TREE_PLACED = registerKey("scorched_tree_placed");
     public static final ResourceKey<PlacedFeature> SCORCHED_GRASS_PLACED = registerKey("scorched_grass_placed");
+    public static final ResourceKey<PlacedFeature> SNOWY_GRASS_PLACED = registerKey("snowy_grass_placed");
 
     public static void bootstrap(BootstapContext<PlacedFeature> context) {
         HolderGetter<ConfiguredFeature<?, ?>> configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -35,6 +36,8 @@ public class SolarisPlacedFeatures {
         register(context, SCORCHED_TREE_PLACED, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SCORCHED_TREE),
                 SolarisFeaturePlacements.treePlacement(PlacementUtils.countExtra(3, 0.1F, 2)));
         register(context, SCORCHED_GRASS_PLACED, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SCORCHED_GRASS),
+                SolarisFeaturePlacements.grassPlacement(NoiseThresholdCountPlacement.of(-0.8D, 5, 10)));
+        register(context, SNOWY_GRASS_PLACED, configuredFeatures.getOrThrow(SolarisConfiguredFeatures.SNOWY_GRASS),
                 SolarisFeaturePlacements.grassPlacement(NoiseThresholdCountPlacement.of(-0.8D, 5, 10)));
 
     }

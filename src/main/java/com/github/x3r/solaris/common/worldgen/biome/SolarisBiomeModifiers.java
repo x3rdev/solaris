@@ -25,6 +25,7 @@ public class SolarisBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_SCORCHED_IRON_ORE = registerKey("add_scorched_iron_ore");
     public static final ResourceKey<BiomeModifier> ADD_SCORCHED_TREE = registerKey("add_scorched_tree");
     public static final ResourceKey<BiomeModifier> ADD_SCORCHED_GRASS = registerKey("add_scorched_grass");
+    public static final ResourceKey<BiomeModifier> ADD_SNOWY_GRASS = registerKey("add_snowy_grass");
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -43,6 +44,11 @@ public class SolarisBiomeModifiers {
         context.register(ADD_SCORCHED_GRASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(BiomeRegistry.SCORCHED_PLAINS)),
                 HolderSet.direct(placedFeatures.getOrThrow(SolarisPlacedFeatures.SCORCHED_GRASS_PLACED)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_SNOWY_GRASS, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(BiomeRegistry.WATER_ISLANDS)),
+                HolderSet.direct(placedFeatures.getOrThrow(SolarisPlacedFeatures.SNOWY_GRASS_PLACED)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
     }

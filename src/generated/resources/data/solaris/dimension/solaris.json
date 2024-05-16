@@ -150,15 +150,29 @@
                 {
                   "type": "minecraft:condition",
                   "if_true": {
-                    "type": "minecraft:above_preliminary_surface"
+                    "type": "solaris:",
+                    "depth": 5
                   },
                   "then_run": {
                     "type": "minecraft:sequence",
                     "sequence": [
                       {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "solaris:",
+                          "depth": 0
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "solaris:grassy_permafrost"
+                          }
+                        }
+                      },
+                      {
                         "type": "minecraft:block",
                         "result_state": {
-                          "Name": "minecraft:snow_block"
+                          "Name": "solaris:permafrost"
                         }
                       }
                     ]
@@ -167,7 +181,7 @@
                 {
                   "type": "minecraft:block",
                   "result_state": {
-                    "Name": "minecraft:ice"
+                    "Name": "solaris:snowy_stone"
                   }
                 }
               ]
@@ -202,7 +216,8 @@
                 {
                   "type": "minecraft:condition",
                   "if_true": {
-                    "type": "minecraft:above_preliminary_surface"
+                    "type": "solaris:",
+                    "depth": 5
                   },
                   "then_run": {
                     "type": "minecraft:sequence",
