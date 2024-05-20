@@ -4,6 +4,7 @@ import com.github.x3r.solaris.Solaris;
 import com.github.x3r.solaris.common.block.*;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -28,6 +29,12 @@ public class BlockRegistry {
             () -> new TallGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).replaceable().noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XYZ).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> SNOWY_STONE = BLOCKS.register("snowy_stone",
             () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SNOWY_STONE_STAIRS = BLOCKS.register("snowy_stone_stairs",
+            () -> new StairBlock(() -> SNOWY_STONE.get().defaultBlockState(), BlockBehaviour.Properties.copy(SNOWY_STONE.get())));
+    public static final RegistryObject<Block> SNOWY_STONE_SLAB = BLOCKS.register("snowy_stone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(SNOWY_STONE.get())));
+    public static final RegistryObject<Block> SNOWY_STONE_PRESSURE_PLATE = BLOCKS.register("snowy_stone_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.copy(SNOWY_STONE.get()), BlockSetType.STONE));
     public static final RegistryObject<Block> SNOWY_STONE_BRICKS = BLOCKS.register("snowy_stone_bricks",
             () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 6.0F).sound(SoundType.STONE)));
     public static final RegistryObject<Block> PERMAFROST = BLOCKS.register("permafrost",

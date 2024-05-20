@@ -30,6 +30,12 @@ public class BlockItemRegistry {
             () -> new BlockItem(BlockRegistry.SNOWY_STONE.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> SNOWY_STONE_BRICKS = BLOCK_ITEMS.register("snowy_stone_bricks",
             () -> new BlockItem(BlockRegistry.SNOWY_STONE_BRICKS.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> SNOWY_STONE_STAIRS = BLOCK_ITEMS.register("snowy_stone_stairs",
+            () -> new BlockItem(BlockRegistry.SNOWY_STONE_STAIRS.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> SNOWY_STONE_SLAB = BLOCK_ITEMS.register("snowy_stone_slab",
+            () -> new BlockItem(BlockRegistry.SNOWY_STONE_SLAB.get(), new Item.Properties()));
+    public static final RegistryObject<BlockItem> SNOWY_STONE_PRESSURE_PLATE = BLOCK_ITEMS.register("snowy_stone_pressure_plate",
+            () -> new BlockItem(BlockRegistry.SNOWY_STONE_PRESSURE_PLATE.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> PERMAFROST = BLOCK_ITEMS.register("permafrost",
             () -> new BlockItem(BlockRegistry.PERMAFROST.get(), new Item.Properties()));
     public static final RegistryObject<BlockItem> GRASSY_PERMAFROST = BLOCK_ITEMS.register("grassy_permafrost",

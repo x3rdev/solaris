@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "solaris:block/snowy_stone",
+    "side": "solaris:block/snowy_stone",
+    "top": "solaris:block/snowy_stone"
+  }
+}
