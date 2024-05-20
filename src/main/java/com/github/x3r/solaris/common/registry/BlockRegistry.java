@@ -37,6 +37,10 @@ public class BlockRegistry {
             () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.copy(SNOWY_STONE.get()), BlockSetType.STONE));
     public static final RegistryObject<Block> SNOWY_STONE_BRICKS = BLOCKS.register("snowy_stone_bricks",
             () -> new Block(BlockBehaviour.Properties.of().strength(1.5F, 6.0F).sound(SoundType.STONE)));
+    public static final RegistryObject<Block> SNOWY_STONE_BRICK_STAIRS = BLOCKS.register("snowy_stone_brick_stairs",
+            () -> new StairBlock(() -> SNOWY_STONE_BRICKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(SNOWY_STONE_BRICKS.get())));
+    public static final RegistryObject<Block> SNOWY_STONE_BRICK_SLAB = BLOCKS.register("snowy_stone_brick_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(SNOWY_STONE_BRICKS.get())));
     public static final RegistryObject<Block> PERMAFROST = BLOCKS.register("permafrost",
             () -> new Block(BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.GRAVEL)));
     public static final RegistryObject<Block> GRASSY_PERMAFROST = BLOCKS.register("grassy_permafrost",

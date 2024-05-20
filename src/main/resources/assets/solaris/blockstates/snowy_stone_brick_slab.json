@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "solaris:block/snowy_stone_brick_slab"
+    },
+    "type=double": {
+      "model": "solaris:block/snowy_stone_brick"
+    },
+    "type=top": {
+      "model": "solaris:block/snowy_stone_brick_slab_top"
+    }
+  }
+}

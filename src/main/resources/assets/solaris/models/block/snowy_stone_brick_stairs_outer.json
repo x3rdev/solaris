@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "solaris:block/snowy_stone_bricks",
+    "side": "solaris:block/snowy_stone_bricks",
+    "top": "solaris:block/snowy_stone_bricks"
+  }
+}
