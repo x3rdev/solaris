@@ -33,9 +33,33 @@ public class DimensionRegistry {
     public static final ResourceKey<DimensionType> SOLARIS_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
             new ResourceLocation(Solaris.MOD_ID, "solaris_type"));
 
+    public static final ResourceKey<LevelStem> TROLL_CAVE_KEY = ResourceKey.create(Registries.LEVEL_STEM,
+            new ResourceLocation(Solaris.MOD_ID, "troll_cave"));
+    public static final ResourceKey<Level> TROLL_CAVE_LEVEL_KEY = ResourceKey.create(Registries.DIMENSION,
+            new ResourceLocation(Solaris.MOD_ID, "troll_cave"));
+    public static final ResourceKey<DimensionType> TROLL_CAVE_TYPE = ResourceKey.create(Registries.DIMENSION_TYPE,
+            new ResourceLocation(Solaris.MOD_ID, "troll_cave_type"));
+
     public static void bootstrapType(BootstapContext<DimensionType> context) {
         context.register(SOLARIS_TYPE, new DimensionType(
                 OptionalLong.of(12000),
+                false,
+                false,
+                false,
+                false,
+                1.0,
+                false,
+                false,
+                0,
+                256,
+                256,
+                BlockTags.INFINIBURN_OVERWORLD,
+                BuiltinDimensionTypes.OVERWORLD_EFFECTS,
+                1.0F,
+                new DimensionType.MonsterSettings(false, false, ConstantInt.ZERO, 0)
+        ));
+        context.register(TROLL_CAVE_TYPE, new DimensionType(
+                OptionalLong.of(0),
                 false,
                 false,
                 false,
@@ -58,7 +82,7 @@ public class DimensionRegistry {
         HolderGetter<DimensionType> dimTypes = context.lookup(Registries.DIMENSION_TYPE);
         HolderGetter<NormalNoise.NoiseParameters> noiseParameters = context.lookup(Registries.NOISE);
 
-        NoiseBasedChunkGenerator noiseBasedChunkGenerator = new NoiseBasedChunkGenerator(
+        NoiseBasedChunkGenerator solarisChunkGenerator = new NoiseBasedChunkGenerator(
                 SolarisBiomeSource.create(biomeRegistry),
                 Holder.direct(
                         new NoiseGeneratorSettings(
@@ -76,9 +100,29 @@ public class DimensionRegistry {
                         )
                 )
         );
+        NoiseBasedChunkGenerator emptyChunkGenerator = new NoiseBasedChunkGenerator(
+                new FixedBiomeSource(biomeRegistry.getOrThrow(Biomes.THE_VOID)),
+                Holder.direct(
+                        new NoiseGeneratorSettings(
+                            new NoiseSettings(0, 256, 1, 1),
+                            Blocks.AIR.defaultBlockState(),
+                            Blocks.AIR.defaultBlockState(),
+                            NoiseRouterData.none(),
+                            SurfaceRules.state(Blocks.AIR.defaultBlockState()),
+                            List.of(),
+                            0,
+                            false,
+                            false,
+                            false,
+                            false
+                        )
+                )
+        );
 
-        LevelStem stem = new LevelStem(dimTypes.getOrThrow(DimensionRegistry.SOLARIS_TYPE), noiseBasedChunkGenerator);
-        context.register(SOLARIS_KEY, stem);
+        LevelStem solarisStem = new LevelStem(dimTypes.getOrThrow(DimensionRegistry.SOLARIS_TYPE), solarisChunkGenerator);
+        context.register(SOLARIS_KEY, solarisStem);
+        LevelStem trollCaveStem = new LevelStem(dimTypes.getOrThrow(DimensionRegistry.TROLL_CAVE_TYPE), emptyChunkGenerator);
+        context.register(TROLL_CAVE_KEY, trollCaveStem);
     }
 
     private static NoiseRouter router(HolderGetter<NormalNoise.NoiseParameters> noiseParameters) {

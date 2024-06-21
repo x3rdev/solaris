@@ -1,6 +1,8 @@
-// 1.20.1	2024-05-15T20:48:34.4959543	Registries
+// 1.20.1	2024-05-20T22:49:47.2250159	Registries
 591e842da460ff432c8f70a6ca892d0d71f726a8 data/solaris/dimension/solaris.json
+8958f6538f9312086a580470f0c9a468fba6cdf9 data/solaris/dimension/troll_cave.json
 c857a775193ab566c33f2742deffb12b6c943208 data/solaris/dimension_type/solaris_type.json
+6d9d3c6a1e3351037acb83b4adb27de5b6ebdc4e data/solaris/dimension_type/troll_cave_type.json
 ad7d4eec71beabc1b9cdc6cba5a2d58c88315809 data/solaris/forge/biome_modifier/add_scorched_grass.json
 40ff1ba1bf0e3926f0d2c23252632e313e51d083 data/solaris/forge/biome_modifier/add_scorched_iron_ore.json
 f7899650411625c6ace846bb31cdef4f2818e898 data/solaris/forge/biome_modifier/add_scorched_tree.json

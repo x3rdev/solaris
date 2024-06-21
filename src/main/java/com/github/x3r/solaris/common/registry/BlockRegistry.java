@@ -55,5 +55,7 @@ public class BlockRegistry {
             () -> new UrborosStrobilaBlock(BlockBehaviour.Properties.of().strength(2.0F, 0.2F).sound(SoundType.FROGLIGHT).pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> ANCIENT_GLOWING_BRICKS = BLOCKS.register("ancient_glowing_bricks",
             () -> new AncientGlowingBricksBlock(BlockBehaviour.Properties.of().strength(1.5F, 6F)));
+    public static final RegistryObject<Block> TROLL_CAVE_GATE = BLOCKS.register("troll_cave_gate",
+            () -> new TrollCaveGateBlock(BlockBehaviour.Properties.of().strength(-1.0F, 3600000.0F).noLootTable()));
 
 }

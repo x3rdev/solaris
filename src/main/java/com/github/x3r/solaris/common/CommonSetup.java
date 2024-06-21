@@ -1,12 +1,17 @@
 package com.github.x3r.solaris.common;
 
+import com.github.x3r.solaris.common.block.DungeonGateBlock;
 import com.github.x3r.solaris.common.entity.*;
 import com.github.x3r.solaris.common.network.SolarisPacketHandler;
+import com.github.x3r.solaris.common.registry.DimensionRegistry;
 import com.github.x3r.solaris.common.registry.EntityRegistry;
 import com.github.x3r.solaris.common.registry.SkillsRegistry;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
