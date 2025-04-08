@@ -981,7 +981,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="ItifaAga284lq9OAO7kd" name="Soulforge">
-    <mxGraphModel dx="2015" dy="755" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2147" dy="839" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1138,6 +1138,9 @@
         <mxCell id="YGjg6Eia_qKtthoppK8e-46" value="Undead souls" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="630" y="690" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-47" target="YGjg6Eia_qKtthoppK8e-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="YGjg6Eia_qKtthoppK8e-47" value="Nether souls" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="630" y="620" width="120" height="60" as="geometry" />
         </mxCell>
@@ -1180,12 +1183,8 @@
         <mxCell id="YGjg6Eia_qKtthoppK8e-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-64" target="YGjg6Eia_qKtthoppK8e-82">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="YGjg6Eia_qKtthoppK8e-96" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-64" target="YGjg6Eia_qKtthoppK8e-92">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="360" y="830" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-64" target="YGjg6Eia_qKtthoppK8e-92">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="YGjg6Eia_qKtthoppK8e-64" value="Soul forge" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="410" y="802" width="120" height="60" as="geometry" />
@@ -1215,46 +1214,20 @@
         <mxCell id="YGjg6Eia_qKtthoppK8e-74" value="Soul storage" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="52" y="1081" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="YGjg6Eia_qKtthoppK8e-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-77" target="YGjg6Eia_qKtthoppK8e-92">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="710" y="900" />
-              <mxPoint x="710" y="1199" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="YGjg6Eia_qKtthoppK8e-77" value="Soulsteel shied" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="530" y="870" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="YGjg6Eia_qKtthoppK8e-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-79" target="YGjg6Eia_qKtthoppK8e-92">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="710" y="970" />
-              <mxPoint x="710" y="1199" />
-            </Array>
-          </mxGeometry>
         </mxCell>
         <mxCell id="YGjg6Eia_qKtthoppK8e-79" value="Soulsteel armor" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="530" y="940" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="YGjg6Eia_qKtthoppK8e-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-80" target="YGjg6Eia_qKtthoppK8e-92">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="710" y="1040" />
-              <mxPoint x="710" y="1199" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-135" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-80" target="YGjg6Eia_qKtthoppK8e-129">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="YGjg6Eia_qKtthoppK8e-80" value="Soulsteel sword" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="530" y="1010" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="YGjg6Eia_qKtthoppK8e-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-82" target="YGjg6Eia_qKtthoppK8e-92">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="710" y="1111" />
-              <mxPoint x="710" y="1199" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-132" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-82" target="YGjg6Eia_qKtthoppK8e-131">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="YGjg6Eia_qKtthoppK8e-82" value="Soulsteel greatsword" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="530" y="1081" width="120" height="60" as="geometry" />
@@ -1267,6 +1240,82 @@
         </mxCell>
         <mxCell id="YGjg6Eia_qKtthoppK8e-92" value="Soulsteel equipment awakening" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="301" y="1169" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-110" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-107" target="YGjg6Eia_qKtthoppK8e-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-107" value="Demon skull" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="525" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-109" target="YGjg6Eia_qKtthoppK8e-113">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="930" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-109" value="Demons" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="770" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-114" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-113" target="YGjg6Eia_qKtthoppK8e-115">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="980" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-113" value="Lesser demon summoning rutial" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-117" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-115" target="YGjg6Eia_qKtthoppK8e-116">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-123" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-115" target="YGjg6Eia_qKtthoppK8e-122">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-115" value="Lesser demon" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-116" target="YGjg6Eia_qKtthoppK8e-119">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1340" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-116" value="Greater demon summoning ritual" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-134" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-119" target="YGjg6Eia_qKtthoppK8e-131">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-119" value="Greater demon" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-128" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-122" target="YGjg6Eia_qKtthoppK8e-129">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1120" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-133" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-122" target="YGjg6Eia_qKtthoppK8e-131">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-136" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-122" target="YGjg6Eia_qKtthoppK8e-137">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1010" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-122" value="Ritual of binding" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-129" value="Lesser demonic sword" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-131" value="Greater demonic sword" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1340" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-137" value="Ritual of posession" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="YGjg6Eia_qKtthoppK8e-138" target="YGjg6Eia_qKtthoppK8e-137">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="YGjg6Eia_qKtthoppK8e-138" value="?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="890" y="820" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
