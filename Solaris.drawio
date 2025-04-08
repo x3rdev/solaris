@@ -981,7 +981,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="ItifaAga284lq9OAO7kd" name="Soulforge">
-    <mxGraphModel dx="2987" dy="1373" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2312" dy="944" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -1394,6 +1394,36 @@
         <mxCell id="d5LVQZrHZJKwxke60xKA-12" value="Soul alta&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;r structure&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-190" y="1266" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="d5LVQZrHZJKwxke60xKA-30">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="d5LVQZrHZJKwxke60xKA-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="d5LVQZrHZJKwxke60xKA-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="d5LVQZrHZJKwxke60xKA-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="d5LVQZrHZJKwxke60xKA-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="d5LVQZrHZJKwxke60xKA-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="d5LVQZrHZJKwxke60xKA-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="d5LVQZrHZJKwxke60xKA-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="d5LVQZrHZJKwxke60xKA-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qP9GM5pX5-aO26EjyPFV-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-15" target="qP9GM5pX5-aO26EjyPFV-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="d5LVQZrHZJKwxke60xKA-15" value="Rituals" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-189.99999999999977" y="1450" width="120" height="60" as="geometry" />
         </mxCell>
@@ -1403,22 +1433,88 @@
         <mxCell id="d5LVQZrHZJKwxke60xKA-17" value="Dark staff" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="250" y="1450" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="RDuEs9LaPm0oiJne9vZ_-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-18" target="d5LVQZrHZJKwxke60xKA-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RDuEs9LaPm0oiJne9vZ_-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-18" target="d5LVQZrHZJKwxke60xKA-52">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RDuEs9LaPm0oiJne9vZ_-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-18" target="d5LVQZrHZJKwxke60xKA-53">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RDuEs9LaPm0oiJne9vZ_-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-18" target="d5LVQZrHZJKwxke60xKA-54">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="RDuEs9LaPm0oiJne9vZ_-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-18" target="d5LVQZrHZJKwxke60xKA-55">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="d5LVQZrHZJKwxke60xKA-18" value="Necromancy spells" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="250" y="1550" width="120" height="60" as="geometry" />
+          <mxGeometry x="250" y="1580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-24" target="d5LVQZrHZJKwxke60xKA-29">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="d5LVQZrHZJKwxke60xKA-24" value="Soul extractor" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="112" y="1450" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="d5LVQZrHZJKwxke60xKA-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-26" target="d5LVQZrHZJKwxke60xKA-29">
+        <mxCell id="d5LVQZrHZJKwxke60xKA-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="d5LVQZrHZJKwxke60xKA-26" target="d5LVQZrHZJKwxke60xKA-48">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="30.000000000000227" y="1580" as="targetPoint" />
+            <mxPoint x="30" y="1590" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="d5LVQZrHZJKwxke60xKA-26" value="Soul channels" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-30" y="1450" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="d5LVQZrHZJKwxke60xKA-29" value="Soul beacon" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-29.999999999999773" y="1550" width="120" height="60" as="geometry" />
+          <mxGeometry x="112.00000000000023" y="1580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-30" value="Undead summon ritual" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="1540" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-31" value="Lich transformation ritual" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="1630" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-32" value="Broken mirror ritual" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="1723.5" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-33" value="Progress sharing ritual" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="1820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-34" value="Enchantments removal ritual&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="1920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-35" value="Acceleration ritual" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="2020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-36" value="Familiar summon ritual" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="2120" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-44" value="Vampire creation blood ritual" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="2220" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-48" value="Portals" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-30" y="1580" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-49" value="Ritual of silent tomb" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="2320" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-51" value="Soul chains" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1694" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-52" value="Dark fireball" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1770" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-53" value="Undead rising" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-54" value="Pale flame" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="1930" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d5LVQZrHZJKwxke60xKA-55" value="Dark pact" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="2010" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qP9GM5pX5-aO26EjyPFV-2" value="Dead golem creation" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-360" y="2420" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
